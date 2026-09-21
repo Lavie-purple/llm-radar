@@ -1,0 +1,68 @@
+{
+ "runs": [
+  {
+   "at": "2026-09-21T12:55:32+08:00",
+   "sources": {
+    "aa": {
+     "groups": 4,
+     "rows": 272
+    },
+    "livebench": {
+     "groups": 7,
+     "rows": 58
+    },
+    "llmstats": {
+     "groups": 46,
+     "rows": 1675
+    },
+    "lmarena": {
+     "groups": 12,
+     "rows": 340
+    }
+   }
+  },
+  {
+   "at": "2026-09-21T12:55:33+08:00",
+   "sources": {
+    "aa": {
+     "groups": 4,
+     "rows": 272
+    },
+    "livebench": {
+     "groups": 7,
+     "rows": 58
+    },
+    "llmstats": {
+     "groups": 46,
+     "rows": 1675
+    },
+    "lmarena": {
+     "groups": 12,
+     "rows": 340
+    }
+   }
+  },
+  {
+   "at": "2026-09-21T12:55:33+08:00",
+   "sources": {
+    "aa": {
+     "groups": 4,
+     "rows": 272
+    },
+    "livebench": {
+     "groups": 7,
+     "rows": 58
+    },
+    "llmstats": {
+     "groups": 46,
+     "rows": 1675
+    },
+    "lmarena": {
+     "groups": 12,
+     "rows": 340
+    }
+   }
+  }
+ ],
+ "updatedAt": "2026-09-21T12:55:33+08:00"
+}

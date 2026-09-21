@@ -1,0 +1,628 @@
+/* ============================================================
+   LLM Radar — 决策台视图
+   工业实用暗色。等宽数字、发丝边框、高密度。
+   唯一强调色（灼橙）只留给「激活态」与「需要你注意的东西」。
+   ============================================================ */
+
+/* 容器宽度
+   1560px 是「17 列矩阵刚好排满一屏」的基准宽度。宽屏上逐级放宽。 */
+.wrap { width: min(1560px, calc(100% - 48px)); margin-inline: auto; }
+/* ≥1680：宽屏 */
+@media (min-width: 1680px) { .wrap { width: min(1840px, calc(100% - 64px)); } }
+/* ≥2100：超宽屏 */
+@media (min-width: 2100px) { .wrap { width: min(2080px, calc(100% - 80px)); } }
+@media (max-width: 720px) { .wrap { width: calc(100% - 24px); } }
+
+/* ── ≥2560：矩阵 + 右侧详情栏 ──────────────────────────────
+   ⚠️ 超宽屏上「继续加宽容器」是错的，实测过：
+   table.matrix 是 width:max-content + min-width:100%，容器一旦宽于 max-content，
+   浏览器就按「各列 preferred width 的比例」瓜分余量。模型列 preferred 最大
+   （模型名整串文字），于是独吞大头 —— 容器 2080→3400 时它 411px→671px，
+   整条死白；td { max-width } 在 auto 布局里被无视（实测 708px 巍然不动）。
+   所以超宽屏不把余量喂给矩阵：矩阵停在 ~2100 的舒适密度（格子 ~80px），
+   余量给右侧详情栏 —— 卡片本来就是按 1200px 设计的，正好落在栏里。
+   断点取 2560：此时栏宽 ≈ 940，够放下卡片的三栏栅格。 */
+.detailrail { display: none; }
+@media (min-width: 2560px) {
+  .wrap { width: min(3500px, calc(100% - 96px)); }
+  .matrix-split, .cat-split {
+    display: grid;
+    /* 两栏默认 stretch：详情栏的边框要和矩阵容器一样高，
+       否则右边是个矮一截的小盒子、下面露一片背景，看着像没做完。
+       两边都有 max-height:74vh 兜底，所以拉伸后高度天然相等。 */
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: var(--space-5);
+  }
+  .detailrail {
+    display: block; max-height: 74vh; overflow: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-2);
+    scrollbar-width: thin;
+  }
+}
+.detailrail::-webkit-scrollbar { width: 10px; height: 10px; }
+.detailrail::-webkit-scrollbar-thumb { background: var(--color-surface-3); border-radius: 10px; border: 2px solid var(--color-bg-2); }
+.detailrail::-webkit-scrollbar-track { background: transparent; }
+
+.railhead {
+  position: sticky; top: 0; z-index: 2;
+  display: flex; align-items: baseline; gap: 9px; flex-wrap: wrap;
+  padding: 8px 14px; border-bottom: 1px solid var(--color-border-2);
+  background: var(--color-surface-2);
+}
+.railhead b { font-size: 10px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--color-muted); }
+.railhead .railname { font-size: var(--fs-sm); font-weight: 600; color: var(--color-text); }
+.railhead .railhint { margin-left: auto; font-size: 10px; color: var(--color-faint); font-family: var(--font-mono); }
+.railbody { padding: var(--space-4) var(--space-5) var(--space-5); }
+/* 卡片自带 --cardw 是给表内 colspan 用的；栏里由栏宽决定，别继承表那套。
+   ⚠️ 三栏栅格在这里会溢出的：第 3 栏（全部落点表）的 min-content 实测 448px，
+   而 2560 视口下栏宽只有 936 → 内容区 888，三栏最小值合计 ~914 > 888，
+   于是栅格横向溢出 34px（实测）。所以栏内默认两栏、第三条通栏，
+   等栏够宽（视口 ≥2900 ≈ 栏 1105）再切回三栏。
+   轨道一律用 minmax(0, …)：否则 fr 会退化成 min-content 下限，照样撑破。 */
+.railbody .mcard-grid { width: 100%; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.railbody .mcard-grid > .mcard:last-child { grid-column: 1 / -1; }
+@media (min-width: 2900px) {
+  .railbody .mcard-grid {
+    grid-template-columns: minmax(200px, 1.02fr) minmax(0, 1.25fr) minmax(0, 1.55fr);
+  }
+  .railbody .mcard-grid > .mcard:last-child { grid-column: auto; }
+}
+.detailempty {
+  padding: 30px 20px; text-align: center;
+  font-size: var(--fs-xs); color: var(--color-faint); line-height: 1.8;
+}
+
+/* 氛围：两束极弱的冷光，避免纯黑平铺 */
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(52rem 30rem at 6% -10%, rgba(255, 90, 31, 0.10), transparent 62%),
+    radial-gradient(46rem 30rem at 96% 0%, rgba(56, 189, 248, 0.075), transparent 60%);
+}
+main, .topbar, .srcline, .footer { position: relative; z-index: 1; }
+
+/* ── 顶栏 ─────────────────────────────────────────────── */
+.topbar {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(11, 13, 16, 0.9);
+  backdrop-filter: blur(14px) saturate(1.4);
+  border-bottom: 1px solid var(--color-border);
+}
+.topbar-in {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--space-4); padding: 14px 0; flex-wrap: wrap;
+}
+.brand { display: flex; align-items: baseline; gap: 12px; }
+.brand-mark {
+  font-family: var(--font-display); font-size: 1.15rem; letter-spacing: -0.02em;
+}
+.brand-sub {
+  font-size: var(--fs-xs); color: var(--color-faint);
+  letter-spacing: 0.14em; text-transform: uppercase;
+}
+.topbar-right { display: flex; align-items: center; gap: var(--space-5); flex-wrap: wrap; }
+.freshness { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+.fresh {
+  display: flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--color-muted);
+}
+.fresh i {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--open); flex: none;
+  box-shadow: 0 0 0 3px rgba(63, 191, 127, 0.14);
+}
+.fresh.warn i { background: var(--stale); box-shadow: 0 0 0 3px rgba(224, 163, 62, 0.16); }
+.fresh.stale i { background: #d9534f; box-shadow: 0 0 0 3px rgba(217, 83, 79, 0.16); }
+.fresh b { color: var(--color-text); font-weight: 500; }
+.genstamp { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--color-faint); }
+
+/* ── 数据基准条 ───────────────────────────────────────── */
+.srcline { border-bottom: 1px solid var(--color-rule); background: rgba(15, 18, 22, 0.5); }
+.srcline-in {
+  display: flex; gap: 0; overflow-x: auto; scrollbar-width: thin;
+}
+.srccard {
+  flex: 1 1 0; min-width: 210px; padding: 12px 16px;
+  border-right: 1px solid var(--color-rule);
+  display: flex; flex-direction: column; gap: 3px;
+}
+.srccard:last-child { border-right: 0; }
+.srccard-h { display: flex; align-items: center; gap: 7px; }
+.srccard-h i { width: 8px; height: 8px; border-radius: 2px; flex: none; }
+.srccard-h b { font-size: var(--fs-sm); font-weight: 600; letter-spacing: 0.01em; }
+.srccard-h em {
+  font-style: normal; font-family: var(--font-mono); font-size: 10px;
+  color: var(--color-faint); margin-left: auto;
+}
+.srccard p { font-size: var(--fs-xs); color: var(--color-faint); line-height: 1.5; }
+
+/* ── 变更条 ───────────────────────────────────────────── */
+.changes { margin-top: var(--space-5); }
+.chbar {
+  display: flex; align-items: flex-start; gap: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-faint);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  flex-wrap: wrap;
+}
+.chbar.hot { border-left-color: var(--color-accent); }
+.chbar h3 {
+  font-family: var(--font-body); font-size: var(--fs-sm); font-weight: 700;
+  letter-spacing: 0.02em; flex: none; padding-top: 2px;
+}
+.chbar .chlist { display: flex; gap: 8px; flex-wrap: wrap; flex: 1; }
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: var(--fs-xs); padding: 2px 9px; border-radius: 100px;
+  border: 1px solid var(--color-border-2); color: var(--color-muted);
+  font-family: var(--font-mono); white-space: nowrap;
+}
+.chip.add { border-color: rgba(63, 191, 127, 0.5); color: #7fe0ad; background: rgba(63, 191, 127, 0.08); }
+.chip.del { border-color: rgba(217, 83, 79, 0.45); color: #e69a97; background: rgba(217, 83, 79, 0.07); }
+.chip.mov { border-color: rgba(255, 90, 31, 0.45); color: #ff9c72; background: var(--color-accent-soft); }
+.chbar .chnote { font-size: var(--fs-xs); color: var(--color-faint); width: 100%; }
+
+/* ── 控制条 ───────────────────────────────────────────── */
+.controls {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--space-4); flex-wrap: wrap;
+  margin: var(--space-5) 0 var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+.viewtabs { display: flex; gap: 7px; flex-wrap: wrap; }
+.viewtabs button {
+  background: transparent; border: 1px solid var(--color-border-2);
+  color: var(--color-muted); cursor: pointer;
+  padding: 7px 13px; border-radius: var(--radius-sm);
+  font-size: var(--fs-sm); font-weight: 500;
+  transition: all var(--dur-fast) var(--ease-out);
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.viewtabs button:hover { border-color: var(--color-text); color: var(--color-text); }
+.viewtabs button.on {
+  background: var(--color-accent); border-color: var(--color-accent);
+  color: #0b0d10; font-weight: 700;
+}
+.viewtabs button .n {
+  font-family: var(--font-mono); font-size: 10px; opacity: 0.62;
+}
+.viewtabs button.on .n { opacity: 0.75; }
+.viewtabs button .nb {
+  width: 5px; height: 5px; border-radius: 50%; background: var(--open);
+}
+.viewtabs button.on .nb { background: #0b0d10; opacity: 0.6; }
+
+.filters { display: flex; align-items: center; gap: var(--space-4); flex-wrap: wrap; }
+.seg { display: inline-flex; border: 1px solid var(--color-border-2); border-radius: var(--radius-sm); overflow: hidden; }
+.seg button {
+  background: transparent; border: 0; cursor: pointer;
+  padding: 6px 13px; font-size: var(--fs-xs); color: var(--color-muted);
+  transition: all var(--dur-fast) var(--ease-out);
+}
+.seg button + button { border-left: 1px solid var(--color-border-2); }
+.seg button:hover { color: var(--color-text); background: rgba(233, 238, 244, 0.05); }
+.seg button.on { background: var(--color-surface-3); color: var(--color-text); font-weight: 600; }
+.seg-sm button { padding: 4px 10px; font-size: 11px; }
+
+.search input {
+  background: var(--color-surface); border: 1px solid var(--color-border-2);
+  color: var(--color-text); border-radius: var(--radius-sm);
+  padding: 6px 11px; font-size: var(--fs-xs); width: 190px;
+  font-family: var(--font-body);
+}
+.search input::placeholder { color: var(--color-faint); }
+.search input:focus { border-color: var(--color-accent); outline: none; }
+
+.covtoggle { display: inline-flex; align-items: center; gap: 7px; font-size: var(--fs-xs); color: var(--color-muted); cursor: pointer; }
+.covtoggle input { accent-color: var(--color-accent); width: 14px; height: 14px; }
+
+/* ── 视图头 ───────────────────────────────────────────── */
+.viewhead {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: var(--space-6); flex-wrap: wrap; margin-bottom: var(--space-4);
+}
+.viewhead h2 { font-size: var(--fs-h2); }
+.viewhead .lead {
+  font-size: var(--fs-sm); color: var(--color-muted);
+  max-width: 62ch; margin-top: 8px; line-height: 1.65;
+}
+.viewhead .lead b { color: var(--color-text); font-weight: 600; }
+.viewhead-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+
+.legend { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; font-size: 10px; color: var(--color-faint); font-family: var(--font-mono); }
+.legend span { display: inline-flex; align-items: center; gap: 5px; }
+.legend i { width: 11px; height: 11px; border-radius: 2px; display: block; }
+
+/* ── 表容器 ───────────────────────────────────────────── */
+.tablewrap {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  overflow: auto;
+  max-height: 74vh;
+  scrollbar-width: thin;
+}
+.tablewrap::-webkit-scrollbar { width: 10px; height: 10px; }
+.tablewrap::-webkit-scrollbar-thumb { background: var(--color-surface-3); border-radius: 10px; border: 2px solid var(--color-surface); }
+.tablewrap::-webkit-scrollbar-track { background: transparent; }
+
+/* ── 矩阵表 ───────────────────────────────────────────── */
+table.matrix, table.dtable {
+  border-collapse: separate; border-spacing: 0;
+  font-size: var(--fs-xs); width: max-content; min-width: 100%;
+  /* 首列（模型名）的确定宽度，见下方"首列 sticky"注释 */
+  --colmodel: 270px;
+}
+table.matrix th, table.matrix td,
+table.dtable th, table.dtable td {
+  padding: 0; border-bottom: 1px solid var(--color-rule);
+  border-right: 1px solid var(--color-rule);
+}
+
+/* 表头：两行 sticky */
+table.matrix thead th { position: sticky; background: var(--color-surface-2); z-index: 3; }
+table.matrix thead tr.grp th { top: 0; height: 26px; }
+table.matrix thead tr.sub th { top: 26px; height: 44px; }
+table.matrix thead th.grp {
+  text-align: left; padding: 5px 10px;
+  font-family: var(--font-body); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.09em; text-transform: uppercase; color: var(--color-muted);
+  border-bottom: 1px solid var(--color-border-2);
+}
+table.matrix thead th.grp .ct { font-family: var(--font-mono); font-weight: 400; color: var(--color-faint); letter-spacing: 0; text-transform: none; }
+table.matrix thead th.sub {
+  padding: 3px 3px 2px; font-weight: 500; color: var(--color-muted);
+  font-size: 10.5px; text-align: center; vertical-align: middle;
+  white-space: nowrap; line-height: 1.2;
+  border-bottom: 3px solid var(--color-border-2);
+}
+table.matrix thead th.sub .srcline2 {
+  display: block; font-family: var(--font-mono); font-size: 8.5px;
+  letter-spacing: 0.02em; margin-top: 1px;
+}
+table.matrix thead th.sub.s-lmarena .srcline2 { color: var(--src-lm); }
+table.matrix thead th.sub.s-aa .srcline2 { color: var(--src-aa); }
+table.matrix thead th.sub.s-llmstats .srcline2 { color: var(--src-ls); }
+table.matrix thead th.sub.s-livebench .srcline2 { color: var(--src-lb); }
+table.matrix thead th.sub.s-lmarena { border-bottom-color: var(--src-lm); }
+table.matrix thead th.sub.s-aa { border-bottom-color: var(--src-aa); }
+table.matrix thead th.sub.s-llmstats { border-bottom-color: var(--src-ls); }
+table.matrix thead th.sub.s-livebench { border-bottom-color: var(--src-lb); }
+table.matrix thead th.corner {
+  left: 0; z-index: 5; text-align: left; padding: 5px 12px;
+  font-family: var(--font-body); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.09em; text-transform: uppercase; color: var(--color-muted);
+  border-right: 1px solid var(--color-border-2);
+}
+
+/* ── 价格列（第二根 sticky 列，紧贴模型名）──────────────────
+   放在最前面是因为「多少钱」和「叫什么」总是要一起看；
+   放在表尾的话，窄屏一横向滚动就看不见了。 */
+table.matrix th.pricehead {
+  left: var(--colmodel, 270px); z-index: 4;
+  width: 94px; padding: 3px 4px; text-align: center;
+  border-right: 1px solid var(--color-border-2);
+}
+table.matrix th.pricehead .sbl { display: block; font-size: 10.5px; font-weight: 500; color: var(--color-muted); }
+table.matrix th.pricehead .srcline2 {
+  display: block; font-family: var(--font-mono); font-size: 8.5px;
+  color: var(--color-faint); margin-top: 1px;
+}
+table.matrix td.pricecell {
+  position: sticky; left: var(--colmodel, 270px); z-index: 2;
+  background: var(--color-surface); border-right: 1px solid var(--color-border-2);
+  text-align: center; white-space: nowrap;
+  font-family: var(--font-mono); font-size: 10.5px;
+}
+table.matrix tr:hover td.pricecell { background: var(--color-surface-2); }
+.pricecell .pin { color: var(--color-text); }
+.pricecell .pout { color: var(--color-faint); }
+.pricecell .psep { color: var(--color-border-2); margin: 0 2px; }
+.pricecell .pmiss { color: var(--color-faint); opacity: 0.35; }
+
+/* ── 可排序表头 ───────────────────────────────────────── */
+table.matrix thead th.sub[data-sortcol],
+table.matrix thead th.pricehead[data-sortcol] { cursor: pointer; }
+table.matrix thead th.sub[data-sortcol]:hover,
+table.matrix thead th.pricehead[data-sortcol]:hover { color: var(--color-text); background: var(--color-surface-3); }
+table.matrix thead th.sorted { background: var(--color-surface-3); color: var(--color-text); }
+.sarrow { font-style: normal; font-size: 8px; margin-left: 3px; color: var(--color-accent); vertical-align: 1px; }
+
+.sortrow { display: flex; align-items: center; gap: var(--space-4); flex-wrap: wrap; justify-content: flex-end; }
+
+/* 首列 sticky
+   ⚠️ 必须给首列一个确定宽度。表格是 width:max-content + min-width:100%，
+   若首列宽度为 auto，浏览器会把「容器宽 - 内容宽」的全部余量都塞给首列
+   （实测：内容只需 ~215px，被撑到 554px，右侧留一条大空档，同时 17 个数据列
+   被压到最小宽度）。钉住宽度后，余量改由数据列按比例分摊。 */
+table.matrix td.modelcell, table.matrix th.corner {
+  position: sticky; left: 0; background: var(--color-surface); z-index: 2;
+  border-right: 1px solid var(--color-border-2);
+  width: var(--colmodel, 270px);
+}
+table.matrix tr:hover td.modelcell { background: var(--color-surface-2); }
+table.matrix td.modelcell { padding: 0; }
+
+.mbtn {
+  display: flex; align-items: center; gap: 8px;
+  width: 100%; min-width: 210px; padding: 5px 12px;
+  background: transparent; border: 0; cursor: pointer; text-align: left;
+  color: var(--color-text); font-size: var(--fs-xs);
+}
+.mbtn:hover { color: var(--color-accent); }
+.mbtn .caret {
+  font-family: var(--font-mono); font-size: 9px; color: var(--color-faint);
+  width: 9px; flex: none; transition: transform var(--dur-fast) var(--ease-out);
+}
+tr.open .mbtn .caret { transform: rotate(90deg); color: var(--color-accent); }
+.mbtn .mname { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; }
+.mbtn .cov {
+  font-family: var(--font-mono); font-size: 9.5px; color: var(--color-faint);
+  border: 1px solid var(--color-border); border-radius: 3px; padding: 0 4px; flex: none;
+}
+.badge-open {
+  font-size: 9px; font-family: var(--font-mono); letter-spacing: 0.04em;
+  color: var(--open); border: 1px solid rgba(63, 191, 127, 0.42);
+  background: rgba(63, 191, 127, 0.08);
+  border-radius: 2px; padding: 0 4px; flex: none;
+}
+
+/* 格 */
+td.cell { width: 50px; height: 31px; text-align: center; position: relative; }
+.cellbtn {
+  width: 100%; height: 100%; border: 0; background: transparent; cursor: default;
+  font-family: var(--font-mono); font-size: 11.5px; font-variant-numeric: tabular-nums;
+  color: var(--color-text); display: flex; align-items: center; justify-content: center;
+  position: relative; padding: 0 8px 0 2px;
+}
+td.cell.single { background-image: repeating-linear-gradient(135deg, transparent, transparent 5px, rgba(233,238,244,0.028) 5px, rgba(233,238,244,0.028) 6px); }
+.cell .miss { color: var(--color-faint); opacity: 0.35; font-size: 13px; }
+.cell .sm {
+  position: absolute; top: 2px; right: 3px;
+  font-size: 7px; line-height: 1; font-weight: 700;
+  color: var(--color-accent); opacity: 0.9;
+}
+td.cell.dv-high { box-shadow: inset 0 -2px 0 var(--color-accent); }
+
+/* 名次色阶：按「本列排名深度百分位」分 6 档，越靠前越亮。
+   ⚠️ 不是绝对名次。各列深度不同（实测 video.edit 只排到第 10 名、
+   chat.search 排到第 30 名），绝对名次下 rank 10 在浅列是末位、在深列是中游，
+   同一个颜色含义不同。分母取「本列最深名次」，rank 1 → 100、最深 → 0。
+   档位与 radar.js 的 qClass() 一一对应，改动需同步。 */
+.q1 { background-color: rgba(56, 189, 248, 0.30); }
+.q2 { background-color: rgba(56, 189, 248, 0.215); }
+.q3 { background-color: rgba(56, 189, 248, 0.145); }
+.q4 { background-color: rgba(56, 189, 248, 0.090); }
+.q5 { background-color: rgba(56, 189, 248, 0.048); }
+.q6 { background-color: rgba(56, 189, 248, 0.022); }
+.legend .qscale { color: var(--color-muted); margin-right: 2px; }
+
+/* 数据更新时闪一下。
+   只用 animation、不能用 transition —— radar.js 的 renderMatrix() 是
+   t.innerHTML = h 整块替换，1938 个格子节点全部销毁重建，transition 要求
+   「同一个元素」保存前一个值，新元素只有终值，所以永远不触发（有实测）。
+   animation 则在新插入的节点上照样会跑。
+   关键技巧：@keyframes 只写 from、不写 to —— 缺失的 to 会取元素自己的
+   背景色作为终值，于是不用把 .q1~.q6 六个颜色在这里再抄一遍。
+   这个 class 只加在「档位真的变了」的格子上（radar.js 的 computeFlash）。 */
+@keyframes cellflash {
+  from { background-color: rgba(56, 189, 248, 0.92); }
+}
+.cellbtn.flash { animation: cellflash 900ms var(--ease-out) 1; }
+@media (prefers-reduced-motion: reduce) {
+  .cellbtn.flash { animation: none; }
+}
+
+/* 悬停整行高亮。
+   ⚠️ 提亮倍数不能大：热力格的底色本身就是信息，整行提亮等于把色阶一起改了。
+   实测 brightness(1.5)：悬停中的 q2 反解 alpha = 0.292，而静止的 q1 = 0.300
+   —— 悬停的一瞬间，q2 看起来和 q1 一样深，一行内的色阶秩序当场失效。
+   而且 filter 连文字一起提亮（#e9eef4 × 1.5 直接截到纯白）。
+   改为 1.14 的轻度提亮，定位靠模型列左侧那根 3px 橙条，不动颜色。 */
+tr:hover td.cell { filter: brightness(1.14); }
+table.matrix tbody tr:hover td.modelcell { box-shadow: inset 3px 0 0 var(--color-accent); }
+
+/* ── 名次走势（sparkline）──────────────────────────────────
+   颜色语义与全站一致：蓝 = 名次在变好（和色阶「越蓝越靠前」同一套），
+   橙 = 名次在变差（和「分歧 ≥55」一样，属于要你注意的东西）。
+   两个方向都是 line，不放面积 —— 面积会让人误读成"量"。 */
+.tspark, .cspk { color: var(--color-muted); display: inline-flex; align-items: center; }
+.tspark.d-up, .cspk.d-up { color: #38bdf8; }
+.tspark.d-down, .cspk.d-down { color: var(--color-accent); }
+.tspark.d-flat, .cspk.d-flat { color: var(--color-faint); }
+.tspark .spark, .cspk .spark { display: block; overflow: visible; }
+.tspark .tnum {
+  font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+  margin-left: 5px; color: currentColor; white-space: nowrap;
+}
+.tspark.big { display: block; margin: 4px 0 5px; }
+.tflat { color: var(--color-faint); font-family: var(--font-mono); font-size: 10px; }
+.tflat .tnum { margin-left: 4px; color: var(--color-muted); font-weight: 500; }
+.tpend { font-size: 10px; color: var(--color-faint); font-family: var(--font-mono); opacity: 0.7; }
+
+/* 矩阵格右下角的微走势：绝对定位，不参与名次数字的居中布局。
+   高度 8px 是为了避开底部那道 2px 的分歧橙线（.dv-high）。 */
+td.cell .cspk { position: absolute; right: 2px; bottom: 3px; pointer-events: none; opacity: 0.95; }
+
+/* 展开卡片「全部落点」表的走势列 */
+.celltable th.tcol, .celltable td.tcol { text-align: right; white-space: nowrap; width: 92px; }
+.celltable td.tcol { padding-right: 0; }
+.tip .t-trend {
+  margin-top: 8px; padding-top: 7px;
+  border-top: 1px solid var(--color-border);
+}
+.tip .t-trend .t-note { margin-top: 0; }
+.tip .t-trend .t-note + .t-note { margin-top: 3px; }
+
+/* 展开的模型卡片行
+   表格是 width:max-content，colspan 单元格的实际宽度由列决定，不是视口宽。
+   所以卡片内容用 position:sticky;left:0 + 由 JS 写入的 --cardw，横向滚动时也钉在视野内。 */
+tr.mcard > td { padding: 0; background: var(--color-bg-2); vertical-align: top; }
+.mcard-in {
+  position: sticky; left: 0;
+  width: var(--cardw, 1200px); max-width: 100%;
+  padding: var(--space-4) var(--space-5) var(--space-5);
+  border-top: 1px solid var(--color-border-2);
+  border-bottom: 1px solid var(--color-border-2);
+  background: var(--color-bg-2);
+}
+.mcard-grid {
+  display: grid; grid-template-columns: minmax(240px, 1.02fr) 1.25fr 1.55fr;
+  gap: var(--space-5);
+}
+@media (max-width: 1180px) { .mcard-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 780px) { .mcard-grid { grid-template-columns: 1fr; } }
+
+.mcard h4 {
+  font-family: var(--font-body); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-muted);
+  margin: 0 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--color-border);
+}
+.mcard-title { display: flex; align-items: baseline; gap: 9px; flex-wrap: wrap; margin-bottom: 4px; }
+.mcard-title strong { font-family: var(--font-display); font-size: 1.15rem; letter-spacing: -0.02em; }
+.mcard-sub { font-size: var(--fs-xs); color: var(--color-faint); margin-bottom: 14px; }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; font-size: var(--fs-xs); }
+.kv dt { color: var(--color-faint); white-space: nowrap; }
+.kv dd { margin: 0; font-family: var(--font-mono); color: var(--color-text); }
+.kv dd.dim { color: var(--color-faint); font-family: var(--font-body); }
+
+.celltable { width: 100%; font-size: 11.5px; border-collapse: collapse; }
+.celltable th {
+  text-align: left; font-weight: 600; color: var(--color-faint);
+  font-size: 9.5px; letter-spacing: 0.07em; text-transform: uppercase;
+  padding: 0 8px 5px 0; border-bottom: 1px solid var(--color-border);
+}
+.celltable td { padding: 4px 8px 4px 0; border-bottom: 1px solid var(--color-rule); vertical-align: top; }
+.celltable .scname { color: var(--color-muted); white-space: nowrap; }
+.celltable .scname em { font-style: normal; color: var(--color-faint); font-family: var(--font-mono); font-size: 10px; }
+.celltable .vals { font-family: var(--font-mono); font-size: 11px; }
+.celltable .vals span { display: inline-block; margin-right: 10px; white-space: nowrap; }
+.srctag { font-size: 9.5px; font-family: var(--font-mono); padding: 0 3px; border-radius: 2px; margin-right: 3px; }
+.srctag.lmarena { color: var(--src-lm); background: rgba(155, 124, 240, 0.12); }
+.srctag.aa { color: var(--src-aa); background: rgba(47, 184, 154, 0.12); }
+.srctag.llmstats { color: var(--src-ls); background: rgba(224, 163, 62, 0.12); }
+.srctag.livebench { color: var(--src-lb); background: rgba(76, 141, 217, 0.12); }
+.dvbar { display: inline-flex; align-items: center; gap: 6px; }
+.dvbar i { height: 4px; border-radius: 2px; background: var(--color-surface-3); display: block; position: relative; width: 44px; }
+.dvbar i::after { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--w); background: var(--color-faint); border-radius: 2px; }
+.dvbar.hot i::after { background: var(--color-accent); }
+
+.links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+.links a {
+  font-size: var(--fs-xs); text-decoration: none; color: var(--color-text);
+  border: 1px solid var(--color-border-2); border-radius: var(--radius-sm);
+  padding: 4px 10px; transition: all var(--dur-fast) var(--ease-out);
+}
+.links a:hover { border-color: var(--color-accent); color: var(--color-accent); }
+
+/* ── 大类详情表 ───────────────────────────────────────── */
+.cathead { margin-bottom: var(--space-4); }
+.cathead .chead-row { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-5); flex-wrap: wrap; }
+.cathead h2 { font-size: var(--fs-h2); }
+.cathead .csub { font-size: var(--fs-sm); color: var(--color-muted); margin-top: 6px; max-width: 70ch; }
+.tol {
+  display: inline-flex; align-items: center; gap: 6px; font-size: var(--fs-xs);
+  border: 1px solid var(--color-border-2); border-radius: 100px; padding: 3px 11px;
+  color: var(--color-muted);
+}
+.tol.zero { border-color: rgba(255, 90, 31, 0.45); color: #ff9c72; background: var(--color-accent-soft); }
+.tol i { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+/* 大类头部的主指标条（agent 专用） */
+.headline-metric {
+  margin-top: var(--space-4); border: 1px solid var(--color-border);
+  border-radius: var(--radius-md); background: var(--color-surface);
+  padding: var(--space-3) var(--space-4);
+}
+.headline-metric .hm-h { display: flex; align-items: center; gap: 8px; font-size: var(--fs-sm); font-weight: 600; margin-bottom: 8px; }
+.headline-metric .hm-note { font-size: var(--fs-xs); color: var(--color-faint); margin-top: 8px; line-height: 1.6; }
+.hm-list { display: flex; gap: 8px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 11.5px; }
+.hm-list span { border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 3px 8px; }
+.hm-list span b { color: var(--color-text); font-weight: 500; }
+.hm-list span em { font-style: normal; color: var(--color-faint); }
+
+table.dtable thead th { position: sticky; top: 0; background: var(--color-surface-2); z-index: 3; }
+table.dtable thead th.grp {
+  text-align: center; padding: 5px 8px; font-size: 10px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-muted);
+  border-bottom: 1px solid var(--color-border-2); white-space: nowrap;
+}
+table.dtable thead th.grp small { display: block; font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--color-faint); font-size: 9.5px; margin-top: 1px; }
+table.dtable thead th.subcol {
+  text-align: center; padding: 4px 6px; font-size: 9.5px; font-weight: 500;
+  color: var(--color-faint); white-space: nowrap; border-bottom: 2px solid var(--color-border-2);
+}
+table.dtable thead th.subcol.s-lmarena { border-bottom-color: var(--src-lm); }
+table.dtable thead th.subcol.s-aa { border-bottom-color: var(--src-aa); }
+table.dtable thead th.subcol.s-llmstats { border-bottom-color: var(--src-ls); }
+table.dtable thead th.subcol.s-livebench { border-bottom-color: var(--src-lb); }
+table.dtable td { padding: 6px 9px; font-size: var(--fs-xs); }
+table.dtable td.rank { text-align: center; font-family: var(--font-mono); color: var(--color-muted); width: 40px; }
+table.dtable td.dval { text-align: right; font-family: var(--font-mono); white-space: nowrap; }
+table.dtable td.dval .a { display: block; font-size: 11.5px; }
+table.dtable td.dval .b { display: block; font-size: 9.5px; color: var(--color-faint); }
+table.dtable td.dval.empty { color: var(--color-faint); opacity: 0.4; }
+/* 详情表的位置色条：与矩阵同一套档位，但只在左边缘画一道，
+   不铺整块底色 —— 详情表文字密集，底色会压住可读性。 */
+table.dtable td.dval.dq1 { box-shadow: inset 3px 0 0 rgba(56, 189, 248, 0.85); }
+table.dtable td.dval.dq2 { box-shadow: inset 3px 0 0 rgba(56, 189, 248, 0.58); }
+table.dtable td.dval.dq3 { box-shadow: inset 3px 0 0 rgba(56, 189, 248, 0.38); }
+table.dtable td.dval.dq4 { box-shadow: inset 3px 0 0 rgba(56, 189, 248, 0.24); }
+table.dtable td.dval.dq5 { box-shadow: inset 3px 0 0 rgba(56, 189, 248, 0.13); }
+table.dtable td.dval.dq6 { box-shadow: inset 3px 0 0 rgba(56, 189, 248, 0.06); }
+table.dtable tbody tr:hover td { background: rgba(233, 238, 244, 0.035); }
+table.dtable td.modelcell { position: sticky; left: 0; background: var(--color-surface); }
+table.dtable td.modelcell, table.dtable th.corner { width: var(--colmodel, 270px); }
+table.dtable tbody tr:hover td.modelcell { background: var(--color-surface-2); }
+
+/* 单源标记 */
+.tag-single {
+  display: inline-block; font-size: 9px; font-family: var(--font-mono);
+  border: 1px dashed var(--color-border-2); color: var(--color-faint);
+  border-radius: 2px; padding: 0 4px; margin-left: 5px; vertical-align: 1px;
+}
+
+.tablenote { font-size: var(--fs-xs); color: var(--color-faint); margin-top: 10px; line-height: 1.7; }
+.tablenote b { color: var(--color-muted); }
+
+/* ── 空态 ─────────────────────────────────────────────── */
+.empty { padding: var(--space-6) var(--space-4); text-align: center; color: var(--color-faint); font-size: var(--fs-sm); }
+
+/* ── 悬浮提示 ─────────────────────────────────────────── */
+.tip {
+  position: fixed; z-index: 90; pointer-events: none;
+  background: #05070a; border: 1px solid var(--color-border-2);
+  border-radius: var(--radius-sm); padding: 9px 12px; max-width: 340px;
+  font-size: 11.5px; line-height: 1.6; box-shadow: var(--shadow-3);
+  color: var(--color-text);
+}
+.tip .t-h { font-weight: 600; margin-bottom: 5px; display: flex; align-items: center; gap: 7px; }
+.tip .t-h .srctag { margin: 0; }
+.tip dl { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; margin: 0; }
+.tip dt { color: var(--color-faint); }
+.tip dd { margin: 0; font-family: var(--font-mono); }
+.tip .t-note { color: var(--color-faint); margin-top: 6px; font-size: 10.5px; }
+
+/* ── 页脚 ─────────────────────────────────────────────── */
+.footer { margin-top: var(--space-8); border-top: 1px solid var(--color-border); padding: var(--space-6) 0 var(--space-7); }
+.footer-lead { font-size: var(--fs-body); max-width: 76ch; line-height: 1.75; color: var(--color-muted); }
+.footer-lead b { color: var(--color-text); }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-6); margin-top: var(--space-5); }
+.footer h4 { font-family: var(--font-body); font-size: 10px; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; color: var(--color-muted); margin: 0 0 10px; }
+.footer li { font-size: var(--fs-xs); color: var(--color-faint); line-height: 1.75; padding-left: 12px; position: relative; margin-bottom: 6px; }
+.footer li::before { content: "—"; position: absolute; left: 0; color: var(--color-border-2); }
+.footer li b { color: var(--color-muted); font-weight: 500; }
+.footer-fine { font-size: var(--fs-xs); color: var(--color-faint); margin-top: var(--space-5); line-height: 1.7; }
+.dot-miss {
+  display: inline-block; width: 5px; height: 5px; border-radius: 50%;
+  background: var(--color-faint); opacity: 0.4; vertical-align: 1px;
+}
+
+@media (max-width: 900px) {
+  .viewhead-meta { align-items: flex-start; }
+  .tablewrap { max-height: none; }
+}

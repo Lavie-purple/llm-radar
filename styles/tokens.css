@@ -1,0 +1,77 @@
+/* 设计令牌：工业实用方向，冷石墨暗色底 + 单一灼橙强调色
+   分类色只用于「数据语义」（来源徽章），强调色只留给激活态与关键标记 */
+
+:root {
+  /* 表面与文字 */
+  --color-bg: #0b0d10;
+  --color-bg-2: #0f1216;
+  --color-surface: #14181d;
+  --color-surface-2: #1a1f25;
+  --color-surface-3: #22282f;
+  --color-text: #e9eef4;
+  --color-muted: #9aa6b2;
+  --color-faint: #7b8794;
+  --color-accent: #ff5a1f;
+  --color-accent-soft: rgba(255, 90, 31, 0.14);
+  --color-accent-line: rgba(255, 90, 31, 0.42);
+
+  /* 边框 */
+  --color-border: rgba(233, 238, 244, 0.10);
+  --color-border-2: rgba(233, 238, 244, 0.20);
+  --color-rule: rgba(233, 238, 244, 0.06);
+
+  /* 来源分类色（低饱和，仅作语义区分） */
+  --src-aa: #2fb89a;
+  --src-ls: #e0a33e;
+  --src-lb: #4c8dd9;
+  --src-lm: #9b7cf0;
+
+  /* 状态色 */
+  --open: #3fbf7f;
+  --closed: #6b7684;
+  --stale: #e0a33e;
+
+  /* 字体 */
+  --font-display: "Archivo Black", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-body: "Public Sans", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+
+  /* 字阶（1.25 模块化，含中文行高修正） */
+  --fs-hero: clamp(2.75rem, 7vw, 5.25rem);
+  --fs-h2: clamp(1.5rem, 2.6vw, 2.125rem);
+  --fs-h3: 1.0625rem;
+  --fs-body: 0.9375rem;
+  --fs-sm: 0.8125rem;
+  --fs-xs: 0.75rem;
+  --fs-mono: 0.8125rem;
+
+  /* 间距梯度 */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 40px;
+  --space-7: 64px;
+  --space-8: 96px;
+
+  /* 圆角：工业方向偏硬，小圆角为主 */
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+
+  /* 阴影三级，带环境色而非纯黑 */
+  --shadow-1: 0 2px 8px rgba(3, 6, 10, 0.44);
+  --shadow-2: 0 8px 28px rgba(3, 6, 10, 0.56);
+  --shadow-3: 0 24px 64px rgba(3, 6, 10, 0.68);
+
+  /* 动效 */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 160ms;
+  --dur-base: 320ms;
+  --dur-slow: 640ms;
+
+  /* 布局 */
+  --rail-w: 244px;
+  --shell-max: 1560px;
+}

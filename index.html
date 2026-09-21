@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LLM Radar · 个人大模型决策台</title>
+<meta name="description" content="把 LMArena / Artificial Analysis / llm-stats / LiveBench 四个源按 6 大类 17 子类并排，不合成总分，只做源内名次与跨源分歧。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600&family=Public+Sans:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/radar.css">
+</head>
+<body>
+
+<!-- ══════════════ 顶栏 ══════════════ -->
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <div class="brand">
+      <span class="brand-mark">LLM RADAR</span>
+      <span class="brand-sub">个人决策台</span>
+    </div>
+    <div class="topbar-right">
+      <div class="freshness" id="freshness"></div>
+      <div class="genstamp" id="genstamp"></div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════ 数据基准条 ══════════════ -->
+<section class="srcline">
+  <div class="wrap srcline-in" id="srcline"></div>
+</section>
+
+<main class="wrap">
+
+  <!-- ══════════════ 变更 ══════════════ -->
+  <section class="changes" id="changes"></section>
+
+  <!-- ══════════════ 控制条 ══════════════ -->
+  <section class="controls">
+    <nav class="viewtabs" id="viewtabs" role="tablist" aria-label="视图切换"></nav>
+    <div class="filters">
+      <div class="seg" id="openfilter" role="group" aria-label="开源筛选">
+        <button data-open="all" class="on">全部</button>
+        <button data-open="open">开源</button>
+        <button data-open="closed">闭源</button>
+      </div>
+      <label class="search">
+        <input id="q" type="search" placeholder="搜模型 / 厂商…" autocomplete="off" aria-label="搜索模型">
+      </label>
+      <label class="covtoggle">
+        <input type="checkbox" id="covfilter">
+        <span>只看覆盖 ≥3 榜</span>
+      </label>
+    </div>
+  </section>
+
+  <!-- ══════════════ 矩阵视图 ══════════════ -->
+  <section id="view-matrix" class="view">
+    <div class="viewhead">
+      <div>
+        <h2>跨榜名次矩阵</h2>
+        <p class="lead">每一格是<b>该模型在该榜自己的名次</b>——名次是唯一能跨量纲比较的量。格内不出现分数，避免把 Elo 和指数混为一谈。<b>点列头按该列排序</b>（再点切换升/降序，第三次恢复默认），悬停看原始分与全榜位置，点行查看该模型全貌。</p>
+      </div>
+      <div class="viewhead-meta">
+        <div class="legend" id="matrix-legend"></div>
+        <div class="sortrow">
+          <div class="seg seg-sm" id="matrixsort">
+            <button data-sort="coverage" class="on">按覆盖广度</button>
+            <button data-sort="best">按最好名次</button>
+            <button data-sort="name">按名称</button>
+          </div>
+          <label class="covtoggle" title="性价比排序 = 名次 × $/1k 对话（越小越划算），缺名次或价格的一律沉底。⚠️ 价格跨度是三个数量级、名次只有一个，所以结果会明显偏向便宜的小模型；要纯看实力就把它关掉。">
+            <input type="checkbox" id="valuemode">
+            <span>性价比 ÷ 价格</span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="matrix-split" id="matrix-split">
+      <div class="tablewrap" id="wrap-matrix">
+        <table class="matrix" id="matrix"></table>
+      </div>
+      <aside class="detailrail" id="detailrail" aria-live="polite"></aside>
+    </div>
+    <p class="tablenote" id="matrix-note"></p>
+  </section>
+
+  <!-- ══════════════ 大类详情视图 ══════════════ -->
+  <section id="view-cat" class="view" hidden>
+    <div class="cathead" id="cathead"></div>
+    <div class="cat-split" id="cat-split">
+      <div class="tablewrap" id="wrap-cat">
+        <table class="dtable" id="dtable"></table>
+      </div>
+      <aside class="detailrail" id="detailrail-cat" aria-live="polite"></aside>
+    </div>
+    <p class="tablenote" id="cat-note"></p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p class="footer-lead">这个页面<b>不合成总分</b>。四个源的量纲互不换算，任何"平均分"都是把不同尺子叠在一起。所以这里只有源内名次、源内原始分，和一个跨源分歧度。</p>
+    <div class="footer-grid">
+      <div>
+        <h4>怎么读</h4>
+        <ul>
+          <li><b>名次</b>：1 = 该榜第一。空点 <span class="dot-miss"></span> 表示未进本页收录范围或未参评。</li>
+          <li><b>分歧度</b>：同一模型在各源名次的百分位极差（0–100）。越高说明它越依赖特定评测口径。</li>
+          <li><b>单源</b>：带 <span class="tag-single">单源</span> 的子类只有一个源，分歧度无法计算，留空是正常的。</li>
+        </ul>
+      </div>
+      <div>
+        <h4>数据口径</h4>
+        <ul id="footer-method"></ul>
+      </div>
+      <div>
+        <h4>已知缺口</h4>
+        <ul id="footer-gaps"></ul>
+      </div>
+    </div>
+    <p class="footer-fine" id="footer-fine"></p>
+  </div>
+</footer>
+
+<div class="tip" id="tip" hidden></div>
+
+<script src="data/app.json.js"></script>
+<script src="data/history.json.js"></script>
+<script src="scripts/radar.js"></script>
+</body>
+</html>
