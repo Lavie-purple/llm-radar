@@ -34,8 +34,18 @@
     sel: null,           // 超宽屏详情栏里显示的模型（窄屏不用，走 expanded 内联展开）
     selCat: null,        // 大类详情视图的详情栏选中项，与矩阵各记各的
     flash: null,         // 本次打开要闪的格子（null = 还没算）；算过一轮后置 {}，不重放
-    lastFlash: 0         // 本次打开实际闪出来的格子数（脚注用；0 = 没闪过）
+    lastFlash: 0,        // 本次打开实际闪出来的格子数（脚注用；0 = 没闪过）
+    newDays: null        // 「新发布」窗口的 URL 覆盖（?new=60）；null = 用 APP.newWindowDays
   };
+
+  /* ?new=NN 覆盖「新发布」窗口（NN=0 等于关掉这个标识）。
+     放进 URL 而不是只写死一个常量：可以分享「我看的是 60 天窗口」这条链接，
+     调窗口也不必重新构建数据。读之前先判空 —— 自检的 vm 环境里没有 location。 */
+  (function () {
+    var s = (window.location && window.location.search) || '';
+    var m = /[?&]new=(\d{1,4})\b/.exec(s);
+    if (m) state.newDays = parseInt(m[1], 10);
+  })();
 
   /* ── 超宽屏详情栏 ───────────────────────────────────────
      断点必须与 CSS @media (min-width: 2560px) 完全一致，
@@ -60,6 +70,72 @@
       return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c];
     });
   };
+
+  /* ── 「新发布」标识 ───────────────────────────────────────
+     只有一个数据来源：llm-stats 的 release_date（build_app.py 落成 models[].releasedAt）。
+     所以这个标识继承它的全部局限 —— 源里查不到的名字就没有日期，也就不给标识。
+     ⚠️「没有标识」≠「不新」。这两件事在界面上长得一模一样，所以 tooltip 必须把
+     「发布日期：llm-stats 无此模型」写出来，否则会被读成「它不新」。
+
+     两个刻意的取舍：
+     1) 用 APP.generatedAt 而不是 Date.now() 当「今天」。整页数字都是快照口径，
+        只有这一个值跟着墙上时钟走会与全页自相矛盾；数据不刷新时「新」也应当
+        按数据自身的时点判定，而且测试里能得到确定结果。
+     2) 只比日期、不比时刻（都按 UTC 零点解析）。否则同一份数据在
+        build_app.py（date 相减）与这里（时间戳相减）会差一天，时区一换再差一天。 */
+  function newWindowDays() {
+    return state.newDays != null ? state.newDays : (APP.newWindowDays || 45);
+  }
+
+  function relDays(id) {
+    var m = APP.models[id];
+    var rd = m && m.releasedAt;
+    if (!rd) return null;                        // 源里没有 → 不猜，直接「不可判」
+    var a = Date.parse(String(APP.generatedAt || rd).slice(0, 10) + 'T00:00:00Z');
+    var b = Date.parse(String(rd).slice(0, 10) + 'T00:00:00Z');
+    if (isNaN(a) || isNaN(b)) return null;       // 日期格式坏了 → 同样按不可判处理
+    var d = Math.round((a - b) / 86400000);
+    return d >= 0 ? d : null;                    // 晚于快照 = 数据异常，不当作「新」
+  }
+
+  function isNewRelease(id) {
+    var d = relDays(id);
+    return d != null && d <= newWindowDays();
+  }
+
+  /* 单字徽章。宽度是硬预算（见 radar.css 的注释），一个字刚好放得下。
+     不写 title —— 它归自定义 tooltip 管，同时挂 title 会冒出第二个原生气泡。 */
+  function newBadge(id) {
+    return isNewRelease(id) ? '<span class="newbadge">新</span>' : '';
+  }
+
+  /* 模型级提示。它必须回答两件事：① 这个模型的新旧；
+     ② 若没有标识，是「出窗口了」还是「源里压根没这个模型」——
+     这两种情况的处置完全不同，不能混成一句「不新」。 */
+  function modelTip(id) {
+    var m = APP.models[id] || {};
+    var d = relDays(id), w = newWindowDays();
+    var dl;
+    if (d == null) {
+      dl = '<dt>发布日期</dt><dd>' + (m.releasedAt
+        ? esc(String(m.releasedAt)) + '　<span style="color:var(--color-faint)">'
+          + '（格式无法解析，按不可判处理）</span>'
+        : 'llm-stats 无此模型') + '</dd>'
+        + '<dt>「新」标识</dt><dd>不可判 —— <b>不给</b>（不等于它不新）</dd>';
+    } else {
+      dl = '<dt>发布日期</dt><dd>' + esc(String(m.releasedAt).slice(0, 10))
+        + '　距今 ' + d + ' 天</dd>'
+        + '<dt>「新」标识</dt><dd>' + (d <= w
+          ? '<b>有</b> —— 距今 ' + d + ' 天 ≤ 窗口 ' + w + ' 天'
+          : '无 —— 距今 ' + d + ' 天已超出窗口 ' + w + ' 天') + '</dd>';
+    }
+    return '<div class="t-h">' + esc(m.name || id) + '</div><dl>' + dl
+      + (m.vendor ? '<dt>厂商</dt><dd>' + esc(m.vendor) + '</dd>' : '')
+      + '<dt>覆盖榜数</dt><dd>' + (m.coverage || 0) + ' 个子类</dd></dl>'
+      + '<div class="t-note">发布日期来自 llm-stats（四个源里只有它提供）。'
+      + '窗口 ' + w + ' 天' + (state.newDays != null ? '（由 URL ?new= 指定）' : '')
+      + '。</div>';
+  }
 
   /* ── 数据变化提示（只用 animation，不用 transition）──────────
      ⚠️ 这里不能用 CSS transition。renderMatrix() 是 t.innerHTML = h 整块替换，
@@ -634,8 +710,10 @@
       // 超宽屏：高亮交给详情栏的选中项；窄屏：还是各自独立的内联展开
       var isOpen = rail ? (id === selId) : !!state.expanded[id];
       h += '<tr class="' + (isOpen ? 'open' : '') + '" data-row="' + esc(id) + '">';
-      h += '<td class="modelcell"><button class="mbtn" data-toggle="' + esc(id) + '">'
+      h += '<td class="modelcell"><button class="mbtn" data-toggle="' + esc(id) + '"'
+        + ' data-model="' + esc(id) + '">'
         + '<span class="caret">▶</span>'
+        + newBadge(id)
         + '<span class="mname">' + esc(m.name || id) + '</span>'
         + (m.open ? '<span class="badge-open">开源</span>' : '')
         + '<span class="cov">' + (m.coverage || 0) + '</span>'
@@ -714,6 +792,9 @@
         + '攒到 ' + HIST_MIN_PTS + ' 天起，格子右下角会出现微折线，悬停可见整条走势。';
 
     var shown = ids.length;
+    /* 「新」标识的计数跟着筛选走，与上面「共 N 个模型」同一口径，
+       否则筛完只剩 3 行、脚注却还报着 13 个。 */
+    var newN = ids.filter(isNewRelease).length;
     $('matrix-note').innerHTML = '共 <b>' + shown + '</b> 个模型（候选池 ' + APP.matrixIds.length
       + ' 个：出现在 ≥2 个子类，或在任一子类进前 10）。每格显示<b>主指标来源</b>的名次；'
       + '<b>颜色表示它在本列中的相对位置</b>——列内第一最深、本列最深名次最浅。'
@@ -721,6 +802,10 @@
       + '同一个名次在不同列含义不同。悬停可看它在该榜<b>全榜</b>里的真实位置。'
       + '带 <span class="tag-single">单源</span> 的列只有一个数据源，其分歧度无法计算。'
       + '格内 <span class="dot-miss"></span> 表示该模型未进本页收录范围或未参评。'
+      + '模型名前的 <span class="newbadge">新</span> 表示<b>最近 ' + newWindowDays() + ' 天内发布</b>'
+      + '（发布日期来自 llm-stats），上面 ' + shown + ' 个里有 <b>' + newN + '</b> 个。'
+      + '<b>没有这个标记不等于模型不新</b> —— llm-stats 里查不到的名字就没有日期，'
+      + '悬停模型名会写明是哪一种情况。'
       + (flashHint()
           ? ' <b>' + flashCount() + ' 格闪过</b> —— 那是相对你上次打开时<b>档位变了</b>的格子'
             + '（只闪数据重抓过且真换了档的，普通排序筛选不会闪）。'
@@ -741,6 +826,16 @@
     var ctx = m.context;
     var ctxTxt = (typeof ctx === 'number') ? (ctx >= 1000000 ? (ctx / 1000000) + 'M' : Math.round(ctx / 1000) + 'K') : (ctx || '—');
 
+    /* 发布日期：和「新」标识同源、同判定，卡片里必须写明依据 ——
+       「llm-stats 无此模型」与「已出窗口」是两件不同的事，不能混成一句「不新」。 */
+    var _age = relDays(id), _nw = newWindowDays();
+    var relLine = (_age == null)
+      ? 'llm-stats 无此模型 <span class="dim">（因此不给「新」标识 —— 不等于它不新）</span>'
+      : esc(String(m.releasedAt).slice(0, 10)) + '　距今 ' + _age + ' 天 · '
+        + (_age <= _nw
+          ? '<span class="newbadge">新</span> <span class="dim">在 ' + _nw + ' 天窗口内</span>'
+          : '<span class="dim">已出 ' + _nw + ' 天窗口</span>');
+
     /* 列 1 —— 身份与可得性 */
     var c1 = '<div class="mcard"><div class="mcard-title"><strong>' + esc(m.name || id) + '</strong>'
       + (m.open ? '<span class="badge-open">开源</span>' : '<span class="cov" style="border-color:var(--color-border-2)">闭源</span>')
@@ -748,6 +843,7 @@
       + '<div class="mcard-sub">' + esc(v) + (m.country ? ' · ' + esc(m.country) : '')
       + ' · 出现在 ' + (m.coverage || 0) + ' 个子类的榜单里，最好名次第 ' + (m.bestRank || '—') + '</div>'
       + '<h4>身份</h4><dl class="kv">'
+      + '<dt>发布日期</dt><dd>' + relLine + '</dd>'
       + '<dt>开源判定</dt><dd class="dim">' + (m.open
         ? '是（来源：' + (m.openBy || []).map(function (k) { return SRC[k] ? SRC[k].short : k; }).join('、') + '）'
         : '否（四个源均标为闭源）') + '</dd>'
@@ -938,8 +1034,10 @@
     ids.forEach(function (id) {
       var m = APP.models[id];
       var isOpen = rail ? (id === selId) : !!state.expanded[id];
-      h += '<tr class="' + (isOpen ? 'open' : '') + '"><td class="modelcell"><button class="mbtn" data-toggle="' + esc(id) + '">'
-        + '<span class="caret">▶</span><span class="mname">' + esc(m.name || id) + '</span>'
+      h += '<tr class="' + (isOpen ? 'open' : '') + '"><td class="modelcell"><button class="mbtn"'
+        + ' data-toggle="' + esc(id) + '" data-model="' + esc(id) + '">'
+        + '<span class="caret">▶</span>' + newBadge(id)
+        + '<span class="mname">' + esc(m.name || id) + '</span>'
         + (m.open ? '<span class="badge-open">开源</span>' : '')
         + '<span class="cov">' + (m.coverage || 0) + '</span></button></td>';
       subs.forEach(function (s) {
@@ -976,14 +1074,17 @@
           return x.note ? '<br>　· ' + esc((SRC[x.key] ? SRC[x.key].short : x.key) + '：' + x.note) : '';
         }).join('')
         + '</div>';
-    }).join('');
+    }).join('')
+      /* 两个视图的标记规则必须同源，否则同一模型在两个视图里一个带「新」一个不带 */
+      + '<div style="margin-top:6px">模型名前的 <span class="newbadge">新</span> 表示'
+      + '<b>最近 ' + newWindowDays() + ' 天内发布</b>（发布日期来自 llm-stats）；'
+      + '本视图共 <b>' + ids.filter(isNewRelease).length + '</b> 个。'
+      + '没有这个标记不等于不新 —— 源里查不到的名字就没有日期，悬停模型名可看是哪种情况。</div>';
   }
 
   /* ── 悬浮提示 ───────────────────────────────────────── */
   var tip = $('tip');
-  function showTip(html, x, y) {
-    tip.innerHTML = html;
-    tip.hidden = false;
+  function placeTip(x, y) {
     var r = tip.getBoundingClientRect();
     var nx = x + 16, ny = y + 16;
     if (nx + r.width > window.innerWidth - 12) nx = x - r.width - 16;
@@ -991,7 +1092,30 @@
     tip.style.left = Math.max(8, nx) + 'px';
     tip.style.top = Math.max(8, ny) + 'px';
   }
+  function showTip(html, x, y) {
+    tip.innerHTML = html;
+    tip.hidden = false;
+    placeTip(x, y);
+  }
   function hideTip() { tip.hidden = true; }
+
+  /* 表里有两类悬浮提示：格子级 [data-cell]、模型级 [data-model]。
+     合并成一处判断，免得三个监听器各写一套分支 —— 漏一个就会出现
+     「鼠标移开了提示还赖着不走」这种半截状态。 */
+  function tipNode(e) {
+    if (!e.target || !e.target.closest) return null;
+    /* 分两次 closest 而不是写复合选择器 '[data-cell], [data-model]'：
+       自检里的 DOM 桩是把「选择器字符串」全等比对的，复合选择器匹配不上。
+       两次查找在真实浏览器里等价，还省掉一次选择器解析。 */
+    return e.target.closest('[data-cell]') || e.target.closest('[data-model]');
+  }
+  function tipHTML(t) {
+    if (t.dataset.cell) {
+      var p = t.dataset.cell.split('|');
+      return cellTip(p[0], p[1]);
+    }
+    return modelTip(t.dataset.model);
+  }
 
   function cellTip(id, key) {
     var m = APP.models[id];
@@ -1112,24 +1236,18 @@
   $('valuemode').addEventListener('change', function (e) { state.valueMode = e.target.checked; renderAll(); });
 
   document.addEventListener('mouseover', function (e) {
-    var c = e.target.closest('[data-cell]');
-    if (!c) return;
-    var parts = c.dataset.cell.split('|');
-    showTip(cellTip(parts[0], parts[1]), e.clientX, e.clientY);
+    var t = tipNode(e);
+    if (!t) return;
+    var html = tipHTML(t);
+    if (html) showTip(html, e.clientX, e.clientY);
   });
   document.addEventListener('mousemove', function (e) {
     if (tip.hidden) return;
-    var c = e.target.closest('[data-cell]');
-    if (!c) { hideTip(); return; }
-    var r = tip.getBoundingClientRect();
-    var nx = e.clientX + 16, ny = e.clientY + 16;
-    if (nx + r.width > window.innerWidth - 12) nx = e.clientX - r.width - 16;
-    if (ny + r.height > window.innerHeight - 12) ny = e.clientY - r.height - 16;
-    tip.style.left = Math.max(8, nx) + 'px';
-    tip.style.top = Math.max(8, ny) + 'px';
+    if (!tipNode(e)) { hideTip(); return; }
+    placeTip(e.clientX, e.clientY);
   });
   document.addEventListener('mouseout', function (e) {
-    if (!e.target.closest('[data-cell]')) hideTip();
+    if (!tipNode(e)) hideTip();
   });
   window.addEventListener('scroll', hideTip, { passive: true });
 
@@ -1147,7 +1265,19 @@
       + '<li><b>名次走势是本站自建的。</b>四个源全都只给「当下快照」，没有一个提供跨时间的名次变化；'
       + '页面上的走势线来自对 snapshots/ 的逐日重算。所以它只能从本站开始抓取的那天算起 ——'
       + '<b>再往前的走势补不回来</b>。历史只记各榜前 40 名，名次更深的不记。</li>'
-      + '<li>同名模型跨源靠规则归一化，推理强度变体（High/Max）已合并为同一条，保留最优名次。</li>';
+      + '<li>同名模型跨源靠规则归一化，推理强度变体（High/Max）已合并为同一条，保留最优名次。</li>'
+      + (function () {
+        var pool = APP.matrixIds.length;
+        var dated = APP.matrixIds.filter(function (i) {
+          return !!(APP.models[i] || {}).releasedAt;
+        }).length;
+        return '<li><b>「新」标识（模型名前的 <span class="newbadge">新</span>）覆盖是不完整的。</b>'
+          + '四个源里<b>只有 llm-stats 提供发布日期</b>，矩阵 ' + pool + ' 行中只有 '
+          + dated + ' 行查得到，其余 ' + (pool - dated) + ' 行<b>在源里根本没有这个模型</b>'
+          + '—— 它们不带标识，但那不等于它们不新。窗口默认 ' + newWindowDays() + ' 天，'
+          + '可用 <code>?new=NN</code> 覆盖（NN=0 关掉）。'
+          + '发布日期只用于这个标识，<b>不参与任何名次、原始分或分歧度的计算</b>。</li>';
+      })();
     $('footer-fine').textContent = '生成时间 ' + APP.generatedAt
       + '　·　每个子类收录前 ' + APP.topN + ' 名　·　模型库 ' + Object.keys(APP.models).length
       + ' 个　·　仅供个人使用，引用请注明原始来源。';

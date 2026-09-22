@@ -60,6 +60,9 @@ function newHarness(historySource, opts) {
   };
   const window = {
     innerWidth: o.rail ? 3840 : 1600, innerHeight: 900, addEventListener() {}, localStorage,
+    /* location 只在「?new=NN 覆盖窗口」那条路径上被读到。
+       默认给空串 = 没有 URL 参数，走 APP.newWindowDays 默认值。 */
+    location: { search: o.search || '' },
     matchMedia(query) {
       mqLog.push(query);
       return {
@@ -73,6 +76,10 @@ function newHarness(historySource, opts) {
   vm.createContext(ctx);
   vm.runInContext(appSrc, ctx, { filename: 'app.json.js' });
   if (historySource) vm.runInContext(historySource, ctx, { filename: 'history.json.js' });
+  /* 允许在 radar.js 跑起来之前改 APP。「新发布」标识要测窗口边界
+     （第 45 天亮 / 第 46 天不亮），必须在渲染前就把 generatedAt、
+     各模型的 releasedAt、newWindowDays 摆好，事后再改已经渲染完了。 */
+  if (o.patch) o.patch(ctx.window.APP);
   vm.runInContext(radarSrc, ctx, { filename: 'radar.js' });
   return { els, listeners, elListeners, document, window, ctx, mqLog, store, APP: ctx.window.APP };
 }
@@ -535,6 +542,102 @@ scan('超宽屏 空集', rail('detailrail'));
     n3.slice(Math.max(0, n3.indexOf('格闪过') - 14), n3.indexOf('格闪过') + 34));
   ok(/档位变了/.test(n3), '闪烁·6：脚注说明原因是「档位变了」');
   ok(!/格闪过/.test(noteOf(F1)), '闪烁·6：没有闪过时脚注不提这件事');
+}
+
+/* ══════════ 「新发布」标识 ══════════
+   这个功能最会骗人的地方不是「标错」，而是「沉默」—— 源里查不到发布日期的模型
+   不带标识，看上去和「不新」一模一样。所以这里一半断言守的是
+   「无日期 / 出窗口 / 在窗口内 三种状态必须能区分开」；
+   另一半守窗口边界：差一天就不该亮（`<=` 写成 `<` 会漏掉整条边界）。 */
+{
+  const REF = '2026-09-22T09:00:00+08:00';
+  const W = 45;
+  const nBadge = (h) => (h.match(/class="newbadge"/g) || []).length;
+  const rowHTML = (h, id) => {
+    const i = h.indexOf('data-row="' + id + '"');
+    if (i < 0) return '';
+    const j = h.indexOf('data-row="', i + 5);
+    return h.slice(i, j < 0 ? h.length : j);
+  };
+  let IN_ID = null, OUT_ID = null, NONE_ID = null, BAD_ID = null;
+
+  /* 夹具：把真实数据里的发布日期全部清掉，只给三个模型摆上受控的值。
+     2026-09-22 往回数：45 天 = 08-08（边界内），46 天 = 08-07（刚出窗口）。 */
+  const patch = (a) => {
+    a.generatedAt = REF;
+    a.newWindowDays = W;
+    Object.keys(a.models).forEach(k => { delete a.models[k].releasedAt; });
+    if (!IN_ID) {
+      IN_ID = a.matrixIds[0]; OUT_ID = a.matrixIds[1];
+      NONE_ID = a.matrixIds[2]; BAD_ID = a.matrixIds[3];
+    }
+    a.models[IN_ID].releasedAt = '2026-08-08';      // 恰好 45 天
+    a.models[OUT_ID].releasedAt = '2026-08-07';     // 46 天
+    a.models[BAD_ID].releasedAt = '不是日期';        // 有字段但解析不了
+  };
+
+  const B1 = newHarness(histSrc, { patch });
+  const mB = B1.els['matrix']._html || '';
+  ok(nBadge(mB) === 1, '新发布·1：整表只亮一个标识（夹具里只有一条在窗口内）',
+    '窗口 ' + W + ' -> ' + nBadge(mB) + ' 个');
+  ok(rowHTML(mB, IN_ID).indexOf('newbadge') > 0,
+    '新发布·1：距今恰好 ' + W + ' 天算「新」（边界含在内）', IN_ID);
+  ok(rowHTML(mB, OUT_ID).indexOf('newbadge') < 0,
+    '新发布·1：距今 ' + (W + 1) + ' 天不算（差一天就不亮）', OUT_ID);
+  ok(rowHTML(mB, NONE_ID).indexOf('newbadge') < 0,
+    '新发布·1：源里没有发布日期的模型不给标识', NONE_ID);
+  ok(rowHTML(mB, BAD_ID).indexOf('newbadge') < 0,
+    '新发布·1：日期解析不了的模型不给标识（也不许算成今天）', BAD_ID);
+  ok(/caret">▶<\/span><span class="newbadge">新<\/span><span class="mname">/.test(rowHTML(mB, IN_ID)),
+    '新发布·1：徽章插在 caret 与名字之间，且是单字「新」');
+
+  /* URL 覆盖：窗口必须能在运行时改，否则「换多少天」就得重新构建数据 */
+  const B2 = newHarness(histSrc, { patch, search: '?new=0' });
+  ok(nBadge(B2.els['matrix']._html) === 0, '新发布·2：?new=0 关掉这个标识',
+    String(nBadge(B2.els['matrix']._html)));
+  const B3 = newHarness(histSrc, { patch, search: '?new=90' });
+  ok(nBadge(B3.els['matrix']._html) === 2, '新发布·2：?new=90 把 46 天那条也收进来',
+    String(nBadge(B3.els['matrix']._html)));
+  const B4 = newHarness(histSrc, { patch, search: '?new=abc&x=1' });
+  ok(nBadge(B4.els['matrix']._html) === 1,
+    '新发布·2：URL 参数不合法时回落到 APP.newWindowDays，不崩',
+    String(nBadge(B4.els['matrix']._html)));
+
+  /* Tooltip —— 三种状态必须说三种话 */
+  const tipOf = (Fx, sel, dataset) => {
+    const target = { dataset, closest(s) { return s === sel ? this : null; } };
+    (Fx.listeners['mouseover'] || []).forEach(fn => fn({ target, clientX: 400, clientY: 300 }));
+    return Fx.els['tip']._html || '';
+  };
+  const tIn = tipOf(B1, '[data-model]', { model: IN_ID });
+  ok(/2026-08-08/.test(tIn) && new RegExp('距今 ' + W + ' 天').test(tIn),
+    '新发布·3：带标识的模型 tooltip 写明发布日期与天数', tIn.slice(0, 80));
+  ok(/<b>有<\/b>/.test(tIn), '新发布·3：tooltip 明确说「有」标识');
+  const tOut = tipOf(B1, '[data-model]', { model: OUT_ID });
+  ok(/距今 46 天/.test(tOut) && /超出窗口/.test(tOut),
+    '新发布·4：出窗口的模型 tooltip 说的是「已超出窗口」，不是「源里没有」', tOut.slice(0, 80));
+  const tNone = tipOf(B1, '[data-model]', { model: NONE_ID });
+  ok(/llm-stats 无此模型/.test(tNone),
+    '新发布·5：没日期的模型 tooltip 必须写明「llm-stats 无此模型」', tNone.slice(0, 80));
+  ok(/不等于它不新/.test(tNone), '新发布·5：tooltip 把「无日期」和「不新」区分开');
+  const tBad = tipOf(B1, '[data-model]', { model: BAD_ID });
+  ok(/格式无法解析/.test(tBad) && !/无此模型/.test(tBad),
+    '新发布·5：字段存在但解析不了时，tooltip 说的是解析失败，不冒充「源里没有」');
+
+  /* 脚注：窗口天数 + 计数都要跟着实际渲染走 */
+  const note1 = B1.els['matrix-note']._html || '';
+  ok(new RegExp('最近 ' + W + ' 天内发布').test(note1), '新发布·6：脚注写明窗口天数');
+  ok(/上面 114 个里有 <b>1<\/b> 个/.test(note1), '新发布·6：脚注给出亮标数',
+    (note1.match(/上面 \d+ 个里有 <b>\d+<\/b> 个/) || ['(没找到)'])[0]);
+  ok(/不等于模型不新/.test(note1), '新发布·6：脚注点明「没有标记 ≠ 不新」');
+  const qEl = B1.document.getElementById('q');
+  qEl.value = 'zzz-不存在的模型-zzz';
+  (B1.elListeners['q:input'] || []).forEach(fn => fn({ target: qEl }));
+  const note2 = B1.els['matrix-note']._html || '';
+  ok(/上面 0 个里有 <b>0<\/b> 个/.test(note2),
+    '新发布·6：筛选后脚注计数跟着变（不是写死的）',
+    (note2.match(/上面 \d+ 个里有 <b>\d+<\/b> 个/) || ['(没找到)'])[0]);
+  ok(nBadge(B1.els['matrix']._html) === 0, '新发布·6：筛到空集时标识也归零');
 }
 
 /* ══════════ 汇总 ══════════ */

@@ -85,6 +85,36 @@ def main():
     print("── 单源子类 %d / %d（分歧度必然为空）──" % (len(single), n_sub))
     for k in single:
         print("   %-22s %s" % (k, subs[k]["label"]))
+
+    # ── 「新发布」标识 ────────────────────────────────────────────────
+    # 三个数必须一起报：只报「亮了几行」会把「源里没有日期」误读成「不新」。
+    import datetime
+    win = app.get("newWindowDays")
+    ref = datetime.date.fromisoformat(app["generatedAt"][:10])
+
+    def age(m):
+        rd = m.get("releasedAt")
+        if not rd:
+            return None
+        try:
+            return (ref - datetime.date.fromisoformat(rd[:10])).days
+        except ValueError:
+            return None
+
+    dated_all = [m for m in models.values() if m.get("releasedAt")]
+    ages = [(mid, age(models[mid])) for mid in mids]
+    dated_mx = [a for _, a in ages if a is not None]
+    lit = [a for a in dated_mx if 0 <= a <= (win or 0)]
+    print()
+    print("── 「新发布」标识（数据源：llm-stats 的 release_date）──")
+    print("默认窗口     : %s 天（前端可用 ?new=NN 覆盖）" % win)
+    print("有发布日期的 : 模型库 %d / %d    矩阵 %d / %d"
+          % (len(dated_all), n_mod, len(dated_mx), len(mids)))
+    print("矩阵无日期   : %d（不给标识 —— 不等于不新）" % (len(mids) - len(dated_mx)))
+    print("窗口内亮标   : %d 行（%.0f%% 的矩阵行）" % (len(lit), len(lit) * 100.0 / len(mids) if mids else 0))
+    for w in (14, 30, 45, 60, 90):
+        n = sum(1 for a in dated_mx if 0 <= a <= w)
+        print("   窗口 %3d 天 -> %2d 行" % (w, n))
     return 0
 
 

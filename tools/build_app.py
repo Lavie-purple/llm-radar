@@ -20,6 +20,14 @@ from normalize import canonical, normalize_name
 
 DATA = os.path.join(HERE, '..', 'data')
 
+# 「新发布」标识的时间窗口（天）。这是**默认值**，前端可以用 ?new=NN 覆盖它。
+# 依据：日经 2026-09-21 实测，中美 9 家头部厂商「高性能模型」的平均更新间隔
+# 已从 2023-01~2026-03 的 125 天缩短到 2026-04~09 的 44 天。窗口取 45 天
+# ≈ 一个「发布代际」。取 30 天会系统性漏掉迭代慢的厂商 —— 本库实测各家自己的
+# 相邻发布间隔中位：Alibaba 19 / Meta 21 / Google 30 / OpenAI 34 / Anthropic 42 /
+# Zhipu 50 / Mistral 52 / DeepSeek 63 / xAI 71 天，>30 的那几家旗舰永远压不进窗口。
+NEW_WINDOW_DAYS = 45
+
 
 # --------------------------------------------------------------------------
 # 分类规格：6 大类 / 12 子类 + 通用能力
@@ -597,6 +605,31 @@ def main():
         if cov >= 2 or best <= 10:
             matrix_ids.append(fid)
 
+    # ============ 发布日期（「新发布」标识的唯一依据）============
+    # 只有 llm-stats 提供 release_date（见 fetch_llmstats.py 的 MODEL_FIELDS），
+    # 所以这个标识天然继承它的局限：源里查不到的名字就没有日期，也就不给标识。
+    # 键一律走项目自己的 canonical()，与上面 ensure_model 的口径同源；
+    # **不做模糊匹配** —— 实测 Veo 3≈o3(0.67)、Qwen 3.8≈Qwen3.5-0.8B(0.80)、
+    # Seedream 5.0 Pro≈Seed 2.0 Pro(0.73)：名字像，但根本不是一个东西，
+    # 自动匹配会给模型安上别人的发布日期。宁可没有标识。
+    rel_map = {}
+    for r in ls_raw.get('models', []):
+        rd = r.get('release_date')
+        if not rd:
+            continue
+        for cand in (r.get('name'), r.get('model_id')):
+            if not cand:
+                continue
+            fid, _ = canonical(cand)
+            if fid and fid != 'unknown':
+                rel_map.setdefault(fid, rd)
+    n_released = 0
+    for mm in models.values():
+        rd = rel_map.get(mm['id'])
+        if rd:
+            mm['releasedAt'] = rd
+            n_released += 1
+
     # 补 blended 单价（1k 输入 + 1k 输出）——chat 维的成本口径
     for m in models.values():
         p = m.get('price') or {}
@@ -632,6 +665,7 @@ def main():
         "order": order,
         "matrixIds": matrix_ids,
         "changes": ch,
+        "newWindowDays": NEW_WINDOW_DAYS,
     }
 
     # —— 模型库只保留出现在子类行里的（其余是仅作校验用的）——
@@ -674,6 +708,30 @@ def main():
     print('模型库 %d 个 | 子类 %d 个 | 矩阵候选 %d 个（覆盖>=2 或单榜前10）' % (
         len(app['models']), len(subcats), len(app['matrixIds'])))
     print('开源模型 %d 个' % sum(1 for m in app['models'].values() if m['open']))
+
+    # 「新发布」标识体检。三类数字都要报，缺一类就会把"源里没有"误读成"不新"。
+    _ref = datetime.date.fromisoformat(app['generatedAt'][:10])
+
+    def _age(m):
+        rd = m.get('releasedAt')
+        if not rd:
+            return None
+        try:
+            return (_ref - datetime.date.fromisoformat(rd[:10])).days
+        except ValueError:
+            return None
+
+    _mat = app['matrixIds']
+    _aged = [(f, _age(app['models'][f])) for f in _mat]
+    print('发布日期：模型库 %d 个有 / 矩阵 %d 行有 | 矩阵 %d 行源里没有（不给标识，不等于不新）'
+          % (n_released, sum(1 for _, a in _aged if a is not None),
+             sum(1 for _, a in _aged if a is None)))
+    print('「新」标识：窗口 %d 天 → 矩阵亮 %d 行 / %d（%.0f%%）%s'
+          % (NEW_WINDOW_DAYS,
+             sum(1 for _, a in _aged if a is not None and 0 <= a <= NEW_WINDOW_DAYS),
+             len(_mat),
+             100.0 * sum(1 for _, a in _aged if a is not None and 0 <= a <= NEW_WINDOW_DAYS) / max(1, len(_mat)),
+             '（可用 ?new=NN 覆盖）'))
 
     # 自检：同一子类里同一源出现多列时，必须已在 values 里折叠为 sub
     dup_bad = []

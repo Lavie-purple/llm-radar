@@ -279,6 +279,149 @@ function check(cond, label, detail) {
   }
   await page.evaluate(() => window.localStorage.removeItem('llmradar.bands.v1'));
 
+  /* ── 5c. 「新发布」标识：宽度预算 + 三种状态必须能区分 ──
+     首列是 flex + gap:8px，插入徽章要同时吃掉「自身宽度 + 一个间隙」。
+     ⚠️ .mname 是 nowrap + text-overflow:ellipsis —— 挤坏时的形态是
+     「名字提前被截成省略号」，**不是换行**（别去断言行高，那个永远不变）。
+     所以这里的核心断言是「被截断的行数 = 0」，并且检测器自己要先被证伪一次。 */
+  console.log('\n[新发布标识]');
+  await page.goto(BASE, { waitUntil: 'load' });
+  await page.waitForTimeout(700);
+  const nb = await page.evaluate(() => {
+    const cv = document.createElement('canvas').getContext('2d');
+    const rows = [...document.querySelectorAll('#matrix tbody tr[data-row]')];
+    const badgeOf = (r) => r.querySelector('.newbadge');
+    const marked = rows.filter(badgeOf);
+    const one = marked.length ? badgeOf(marked[0]) : null;
+    const btn = rows[0].querySelector('td.modelcell button.mbtn');
+    const nmOf = (r) => r.querySelector('td.modelcell button.mbtn .mname');
+    const free = rows.map(r => {
+      const nm = nmOf(r), cs = getComputedStyle(nm);
+      cv.font = cs.fontStyle + ' ' + cs.fontWeight + ' ' + cs.fontSize + ' ' + cs.fontFamily;
+      return +(nm.clientWidth - cv.measureText((nm.textContent || '').trim()).width).toFixed(1);
+    });
+    const truncCount = () => rows.filter(r => {
+      const nm = nmOf(r);
+      return nm.scrollWidth > nm.clientWidth + 1;
+    }).length;
+    const truncated = truncCount();
+    /* 检测器自检：把名字强行压到 40px。如果这时它还报 0，
+       说明这个检测器根本看不见截断，上面那个 0 也就毫无意义。 */
+    const st = document.createElement('style');
+    st.textContent = '#matrix .mname{max-width:40px}';
+    document.head.appendChild(st);
+    const forced = truncCount();
+    st.remove();
+
+    /* 颜色即来源：徽章应当用的就是 llm-stats 的源色，这样"这个日期从哪来"
+       一眼可见，不必去读 tooltip。 */
+    const probe = document.createElement('span');
+    probe.style.color = 'var(--src-ls)';
+    document.body.appendChild(probe);
+    const wantColor = getComputedStyle(probe).color;
+    probe.remove();
+
+    return {
+      n: rows.length, badged: marked.length, forced,
+      badgeW: one ? +one.getBoundingClientRect().width.toFixed(2) : 0,
+      badgeColor: one ? getComputedStyle(one).color : '',
+      wantColor,
+      gap: parseFloat(getComputedStyle(btn).columnGap || getComputedStyle(btn).gap) || 0,
+      minFree: Math.min(...free),
+      truncated,
+      hasDataModel: /data-model="/.test(document.getElementById('matrix').innerHTML),
+      note: (document.getElementById('matrix-note') || {}).innerText || '',
+    };
+  });
+  check(nb.forced > 90, `截断检测器本身有效（压窄后报出 ${nb.forced} / ${nb.n} 行）`);
+  check(nb.badged > 0, '矩阵里有「新」标识', nb.badged + ' / ' + nb.n);
+  check(nb.hasDataModel, '模型名按钮挂了 data-model（模型级 Tooltip 的挂载点）');
+  const cost = +(nb.badgeW + nb.gap).toFixed(2);
+  check(cost <= nb.minFree,
+    `徽章占用 ${cost}px（自身 ${nb.badgeW} + 间隙 ${nb.gap}）≤ 名字最小富余 ${nb.minFree}px`);
+  check(nb.truncated === 0, '没有任何一行的模型名被徽章挤成省略号',
+    '被截断 ' + nb.truncated + ' 行');
+  check(nb.badgeColor === nb.wantColor,
+    '徽章用的是 llm-stats 的源色（颜色即来源）', nb.badgeColor + ' vs ' + nb.wantColor);
+  check(/天内发布/.test(nb.note) && /不等于模型不新/.test(nb.note),
+    '矩阵脚注写明窗口天数，且点明「没有标记 ≠ 不新」',
+    (nb.note.match(/最近 \d+ 天内发布/) || [''])[0] + ' / ' + /不等于模型不新/.test(nb.note));
+  await shot('17-newbadge');
+
+  /* Tooltip 的三种状态：在窗口内 / 已出窗口 / 源里没有。
+     这三者在界面上都不带（或带）同一个徽章，只能靠 tooltip 区分，
+     所以必须逐个真悬停验一遍，不能只看 HTML 里有 data-model。 */
+  const picks = await page.evaluate(() => {
+    const rows = [...document.querySelectorAll('#matrix tbody tr[data-row]')];
+    const st = rows.map(r => ({
+      id: r.dataset.row,
+      has: !!r.querySelector('.newbadge'),
+      dated: !!(window.APP.models[r.dataset.row] || {}).releasedAt,
+    }));
+    const f = (fn) => (st.find(fn) || {}).id;
+    return { badged: f(x => x.has), dated: f(x => x.dated && !x.has), undated: f(x => !x.dated) };
+  });
+  check(!!picks.badged && !!picks.dated && !!picks.undated,
+    '三类样本（在窗口内 / 出窗口 / 源里没日期）都能取到', JSON.stringify(picks));
+  const hoverTip = async (id) => {
+    /* 把目标行摆进矩阵可视区中部再悬停。三个坑都在这里踩过：
+       · 矩阵在 .tablewrap 里自己滚（overflow:auto + max-height:74vh），
+         只滚 window 没用 —— 行还留在容器的裁剪区外，elementFromPoint 点不到；
+       · tr.offsetTop 相对的是 <table> 而不是文档，拿来算滚动量会差一个表头高度；
+       · 滚完要等一会儿再动鼠标：scroll 事件派发晚于输入事件，
+         迟到的那个 hideTip 会把刚弹出的提示关掉。 */
+    const hit = await page.evaluate((i) => {
+      document.documentElement.style.scrollBehavior = 'auto';
+      const tr = document.querySelector('#matrix tbody tr[data-row="' + i + '"]');
+      const wrap = tr.closest('.tablewrap');
+      const wr = wrap.getBoundingClientRect();
+      if (wr.top < 0 || wr.bottom > window.innerHeight) {
+        window.scrollTo(0, window.scrollY + wr.top - 80);
+      }
+      const trTop = tr.getBoundingClientRect().top - wrap.getBoundingClientRect().top + wrap.scrollTop;
+      wrap.scrollTop = Math.max(0, trTop - Math.round(wrap.clientHeight * 0.45));
+      const btn = tr.querySelector('button.mbtn');
+      const r = btn.getBoundingClientRect();
+      const x = Math.round(r.x + r.width / 2), y = Math.round(r.y + r.height / 2);
+      const el = document.elementFromPoint(x, y);
+      return { x, y, onButton: !!(el && el.closest && el.closest('[data-model]')) };
+    }, id);
+    check(hit.onButton, `悬停点 (${hit.x},${hit.y}) 确实落在模型名按钮上（不是顶栏/表头/裁剪区外）`);
+    await page.waitForTimeout(420);
+    await page.mouse.move(4, 4);
+    await page.mouse.move(hit.x, hit.y, { steps: 3 });
+    await page.waitForTimeout(220);
+    return page.evaluate(() => {
+      const t = document.getElementById('tip');
+      return t.hidden ? '' : t.innerText.replace(/\s+/g, ' ');
+    });
+  };
+  const tIn = await hoverTip(picks.badged);
+  check(/发布日期/.test(tIn) && /距今 \d+ 天/.test(tIn),
+    '悬停「在窗口内」的模型：写明发布日期与天数', tIn.slice(0, 60));
+  check(/「新」标识/.test(tIn) && /有/.test(tIn),
+    '悬停「在窗口内」的模型：说明标识为「有」', tIn.slice(0, 60));
+  const tOut = await hoverTip(picks.dated);
+  check(/超出窗口/.test(tOut), '悬停「已出窗口」的模型：说明是超出窗口，不是源里没有',
+    tOut.slice(0, 60));
+  const tNone = await hoverTip(picks.undated);
+  check(/llm-stats 无此模型/.test(tNone),
+    '悬停「源里没日期」的模型：必须写明 llm-stats 无此模型', tNone.slice(0, 60));
+  check(/不等于它不新/.test(tNone), '悬停「源里没日期」的模型：区分「无日期」与「不新」');
+  await shot('18-newtip');
+  await page.evaluate(() => window.scrollTo(0, 0));
+
+  /* 窗口必须能在 URL 上改 —— 这是「换多久算新」不用重新构建数据的唯一出口 */
+  for (const [q, want] of [['?new=0', 0], ['?new=90', 'more']]) {
+    await page.goto(BASE + q, { waitUntil: 'load' });
+    await page.waitForTimeout(600);
+    const k = await page.evaluate(() => document.querySelectorAll('#matrix .newbadge').length);
+    check(want === 0 ? k === 0 : k > nb.badged,
+      `${q} 生效（默认 ${nb.badged} → 这里 ${k}）`);
+  }
+  await page.goto(BASE, { waitUntil: 'load' });
+  await page.waitForTimeout(600);
+
   /* ── 6. 名次走势：真实数据（只有 1 天，应当走「积累中」降级）── */
   console.log('\n[走势 · 真实 1 天数据]');
   const realTrend = await page.evaluate(() => {
