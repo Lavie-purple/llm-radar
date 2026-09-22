@@ -61,11 +61,12 @@ python tools/run_all.py --no-snapshot --no-selftest --no-health   # 只抓取与
 - **Python 侧零第三方依赖。** `tools/*.py` 只 import 标准库（`urllib` / `json` / `statistics` /
   `csv` …），不需要 `pip install` 任何东西。开发环境为 Python 3.13。
 - **`selftest.js` 只用 Node 内置模块**（`fs` / `path` / `vm`），开箱即跑。
-- **`visual_check.js` 是唯一需要装包的**，它跑真实浏览器：
+- **`visual_check.js` 与 `check_deploy.js` 需要装包**，它们都要跑真实浏览器：
   ```bash
   npm i playwright && npx playwright install chromium
   ```
 - 抓取环节要联网；无网络时管道会在抓取步失败并**保留上一版数据**（不会覆盖出空页面）。
+  `check_deploy.js` 也联网（打线上），但它只读不写，离线时直接报"取不到"而不是改数据。
 
 ---
 
@@ -153,6 +154,12 @@ tools/run_all.py
   └─ 6. 走势    build_history.py     扫全部快照重算 → data/history.json（+ .js）
 ```
 
+**推完之后**（刻意**不**放进 `run_all.py`：每日管道不该因为外部站点不可达就失败）
+
+```bash
+node tools/check_deploy.js --wait=120   # 等 Pages 追平，再逐字节比对 + 线上真渲染
+```
+
 **三处设计上的保守**（都是被真实故障教出来的）：
 
 - **抓取器全绿 ≠ 抓全了。** 源站改版最典型的症状恰恰是「HTTP 200 + 解析无异常 + 结果为空」。
@@ -203,7 +210,8 @@ llm-radar/
 | `snapshot.py` | 快照存档 + 变更 diff |
 | `selftest.js` | DOM 桩冒烟测试，**236 条断言** |
 | `visual_check.js` | 真实浏览器量 DOM，**144 项检查** |
-| `falsify.py` | 证伪工具，**17 条用例**，验证上面两层守卫真的会红 |
+| `check_deploy.js` | 线上部署核验：本地 vs 线上逐字节比对 + 线上真渲染（**38 项**，带 `GITHUB_TOKEN` 53 项），**推完跑一次** |
+| `falsify.py` | 证伪工具，**17 条用例**（+1 条联网用例），验证上面各层守卫真的会红 |
 | `verify_lmarena.py` | LMArena 数据的独立一致性校验（名次连续性、分数降序等 6 类断言） |
 | `stat_app.py` | 统计当前快照规模（含「新」标识的各窗口亮标数）—— **本文档里的所有规模数字都出自它** |
 | `make_preview.py` / `make_report.py` | 生成人工核对用的 HTML 预览 / 管道总览页 |
@@ -213,17 +221,22 @@ llm-radar/
 
 ## 七、守卫与自检
 
-改完代码**不要靠看**。这个项目有三层，每一层都能独立抓 bug。
+改完代码**不要靠看**。这个项目有四层，每一层都能独立抓 bug。
+前三层证明「我这份源码是对的」，第四层证明**「线上跑的就是这一份」**。
 
 ```bash
 node tools/selftest.js          # 236 条断言：数据管道 + 前端逻辑（纯内置模块）
 node tools/visual_check.js      # 144 项检查：需先起 8758 端口 + 已装 playwright
 python tools/falsify.py         # 17 条证伪用例（退出码 0=全红通过 / 1=有用例失效 / 2=开跑前体检不过）
+node tools/check_deploy.js      # 线上部署核验：推完跑一次，本地 vs 线上逐字节比对 + 线上真渲染
+node tools/check_deploy.js --wait=120   # 推完立刻跑：等线上追平，最多等 120s
+FALSIFY_NET=1 python tools/falsify.py   # 连联网用例一起证伪（含 check_deploy）
 ```
 
-起服务：`python -m http.server 8758 -d .`（`visual_check.js` 会打开真实 Chromium 逐项量 DOM）
+起服务：`python -m http.server 8758 -d .`（`visual_check.js` 会打开真实 Chromium 逐项量 DOM。
+`check_deploy.js` **不用**先起服务 —— 它自己起一个随机端口的静态服务做本地渲染对照）
 
-**为什么是三层**
+**为什么是四层**
 
 1. **`selftest.js`（236 条）** —— 用 DOM 桩把页面逻辑跑起来，覆盖数据管道的每个环节与
    前端渲染分支。**依赖"数据随时间积累"的功能（如走势线）必须在夹具下测**：
@@ -270,6 +283,44 @@ python tools/falsify.py         # 17 条证伪用例（退出码 0=全红通过 
    与 `06-trend-pending` / `14-flash` 拍出来的 PNG **md5 完全相同**（都是「矩阵停在顶部」那一屏），
    等于什么也没记录 —— 而「靠形状传意」的元素（17px 宽的徽章）恰恰只能靠特写肉眼看。
    现在改成按首列按钮的 rect 裁框，并加了「裁剪框必须收在首列之内（不是整屏）」的断言守着它。
+
+4. **`check_deploy.js`（38 项；带 `GITHUB_TOKEN` 时 53 项）** —— 前三层**全部在本地跑**，它们证明「源码是对的」，
+   证明不了**「线上跑的就是这一份」**：Pages 可能还在部署、可能部署失败、
+   Jekyll 可能吃掉某个文件（`_` 开头的目录线上就是 404）、也可能推了代码但线上还是上一版数据。
+   这一层补的就是这段。推完 `git push` 跑一次：
+
+   - **静态文件逐字节比对**：`index.html` + `scripts/*.js` + `styles/*.css` + `data/*.js`
+     （清单由目录扫描得出，新增样式/脚本会自动进清单，不会因为忘了改脚本而漏检）。
+     不一致时报出**首个不同处的行号 + 两侧原文**，给的是能定位的线索而不是一句"不一样"。
+   - **线上数据自洽**：窗口默认值、带发布日期的模型数、`generatedAt` 与本地一致。
+   - **线上真渲染**：无头浏览器打开线上页，核对矩阵行数、**有值格子数**、「新」徽章数
+     —— 这三个数都用**独立重算**（另写一遍的口径，同 `verify_lmarena.py` 的思路）来比，
+     而不是读页面上现成的值互相对照。
+   - **本地渲染对照**：自己起一个随机端口的静态服务，把本地渲染出的
+     `rows / cells / miss / filled / badges / models / win / gen / title / 脚注 / 已知缺口`
+     逐项与线上对表。**这一项才是「线上真的和我本地一样」的直接证据。**
+   - **线上 URL 覆盖实测**：`?new=0` 必须变 0 个徽章，`?new=3650` 必须放宽到全部有日期的行
+     —— 证明运行时覆盖在**线上那份**里也好使，而不只是源码里有这行字。
+   - **Pages 构建结论**（可选，需 `GITHUB_TOKEN`）：读 `/actions/runs` 的 **job/step 级**结论。
+
+   ⚠️ **两个必须记住的坑，都写进源码注释了：**
+
+   1. **线上文件比本地每行少 1 字节** —— 仓库里是 CRLF，Pages 出去是 LF。
+      实测 `scripts/radar.js` 本地 68571 字节 / 1307 个 CRLF，线上 67264 字节 / 0 个 CRLF，
+      **差值恰好 = 行数**。不先做行尾归一化就直接比，会把「同一份文件」全部判成不一致。
+   2. **不要拿 `GET /pages` 或 `/pages/builds/latest` 判断部署成败** —— 那是 legacy 端点，
+      会把「连推两次时前一次 deploy 被取消」记成 failed 且**不自我复位**，长期假报 `errored`
+      （本仓库真踩过）。权威信号是 `/actions/runs` 里 `pages build and deployment` 的 job/step 结论。
+      脚本走后者，并在输出里显式写「不看 `/pages`」。
+
+   ⚠️ **它内部不起子进程。** 本机（WorkBuddy 沙箱）里 `execSync` / `execFileSync`
+   一律抛 `spawnSync ... EBUSY` —— 连 `cmd.exe` 和 `git` 都起不来。所以取 HEAD 与远端 slug
+   是**直接读 `.git/HEAD` / `.git/packed-refs` / `.git/config` 的文本**（也顺带去掉了
+   「PATH 上必须有 git」这个隐含依赖）。
+
+   代价：`check_deploy.js` 要联网 + 真浏览器，比前三层慢（实测 25~50s，取决于线上抓取），所以**不进 `run_all.py`**
+   （每日管道不该依赖外部站点的可达性），也不进 `falsify.py` 的默认用例
+   —— 它那条联网用例挂在 `FALSIFY_NET=1` 后面。
 
 ---
 
@@ -342,7 +393,19 @@ node tools/visual_check.js
 
 # 写完任何守卫后 —— 必须证明它会在被拆时变红
 python tools/falsify.py
+
+# 推完 —— 证明线上跑的就是刚推的这一份（不在 run_all.py 里）
+node tools/check_deploy.js --wait=120
 ```
+
+**本机环境陷阱：Node 里起不了子进程**
+
+- **`execSync` / `execFileSync` 一律抛 `EBUSY`。** 实测连 `cmd.exe` 和 `git` 都 spawn 不起来
+  （`spawnSync C:\Windows\system32\cmd.exe EBUSY`）。所以要在 Node 里拿 git 信息，
+  得**直接读 `.git/HEAD`、`.git/packed-refs`、`.git/config` 的文本**，而不是调 `git`
+  （`check_deploy.js` 就是这么做的，附带好处是不再依赖 PATH 上有没有 git）。
+  同理**不要在守卫里用 `child_process`** —— 一旦本机的执行策略变化，守卫会以「跑不完」的形态挂掉，
+  而按 `falsify.py` 的三态判定它只会被记成"没跑完"，真正的死因容易被忽略。
 
 ---
 
@@ -370,6 +433,10 @@ python tools/falsify.py
 - **同名模型跨源靠规则归一化**，推理强度变体（High / Max / thinking）已合并为同一条并保留最优名次。
   `normalize.py` 的别名表目前为空，**无法归一的模型会保持独立 id**；
   docstring 里提到的 `check_merge.py`（未匹配清单报告）**尚未实现** —— 排查合并问题时需要人工比对。
+- **部署核验只覆盖「页面真正会加载的那 7 个文件」**（`index.html` + `scripts/*.js` +
+  `styles/*.css` + `data/*.js`）。仓库里其它文件线上即使 404 也发现不了 —— 比如 `_` 开头的目录
+  会被 Jekyll 吃掉（`_legacy/` 线上就是 404），页面不依赖它们，所以不算问题。
+  另外字体走 Google Fonts，**跨域请求失败只记账不判错**，避免一个 CDN 抖动把部署判成坏的。
 - **每日计划任务未注册**（Windows `schtasks.exe` 被本机安全策略拦截），
   目前靠手动执行 `tools/run_daily.bat`。
 

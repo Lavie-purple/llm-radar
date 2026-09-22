@@ -1,11 +1,12 @@
 """守卫证伪器 —— 「没见过它变红的守卫不算守卫」。
 
-本项目有两条测试层（selftest.js 的 DOM 桩、visual_check.js 的真浏览器）。
-新写一条断言之后，必须把**它守护的那段代码拆掉**，确认断言真的变红。
-这件事以前每轮手工做，这里把它机械化了。
+本项目有多条测试层（selftest.js 的 DOM 桩、visual_check.js 的真浏览器、
+check_deploy.js 的线上部署核验）。新写一条断言之后，必须把**它守护的那段代码拆掉**，
+确认断言真的变红。这件事以前每轮手工做，这里把它机械化了。
 
 用法：
-    python tools/falsify.py
+    python tools/falsify.py                # 默认只跑不需要联网的用例
+    FALSIFY_NET=1 python tools/falsify.py  # 连联网用例一起跑（真浏览器 + 打线上）
 
 退出码：
     0  每条用例都被证实「拆掉守护对象就会变红」
@@ -34,7 +35,10 @@ JS = os.path.join(ROOT, 'scripts', 'radar.js')
 CSS = os.path.join(ROOT, 'styles', 'radar.css')
 # 守卫自己也会写出没信息量的产物（比如把特写截成整屏），所以它也要能被证伪。
 VC = os.path.join(ROOT, 'tools', 'visual_check.js')
+# 部署守卫（需要联网 + 真浏览器），同样要能被证伪。
+CD = os.path.join(ROOT, 'tools', 'check_deploy.js')
 NODE = os.environ.get('NODE_BIN') or 'node'
+NET = os.environ.get('FALSIFY_NET') == '1'
 
 # (用例名, 目标文件, 原文, 替换成, 跑哪个测试)
 CASES = [
@@ -88,6 +92,14 @@ CASES = [
      VC, '        width: b.width + pad * 2,', '        width: 1680,', 'visual_check.js'),
 ]
 
+# 需要联网 + 真浏览器的用例，默认不跑（每次推完手动开一次就够）。
+# 单列一张表而不是加一个第 6 元组字段：默认路径上完全不需要知道它存在。
+# 启用：FALSIFY_NET=1 python tools/falsify.py
+CASES_NET = [
+    ('丢掉 CRLF 归一化（线上比本地每行少 1 字节，会被判成内容不一致）',
+     CD, 'const EOL = /\\r\\n/g;', 'const EOL = /ZZZ_NEVER_MATCHES/g;', 'check_deploy.js'),
+]
+
 
 def read(p):
     return io.open(p, encoding='utf-8').read()
@@ -104,6 +116,7 @@ def write(p, s):
 SUMMARY = {
     'selftest.js': '／ FAIL ',
     'visual_check.js': '截图目录：',
+    'check_deploy.js': '线上核验：',
 }
 
 
@@ -118,7 +131,7 @@ def run(tool):
 
 
 def main():
-    orig = {JS: read(JS), CSS: read(CSS), VC: read(VC)}
+    orig = {JS: read(JS), CSS: read(CSS), VC: read(VC), CD: read(CD)}
 
     # ⚠️ 这个脚本会**真的改源码**再还原。被 Ctrl-C / SIGTERM 打断时（无 TTY 环境里
     # 超时杀进程也算），`finally` 不保证执行 —— 于是替换留在源码里没人还原。
@@ -140,7 +153,7 @@ def main():
         except Exception:
             pass
 
-    stale = [name for name, path, old, _new, _t in CASES if old not in orig[path]]
+    stale = [name for name, path, old, _new, _t in (CASES + CASES_NET) if old not in orig[path]]
     if stale:
         print('!! 开跑前体检不通过：%d 条用例的锚点在源码里找不到。' % len(stale))
         for name in stale:
@@ -150,8 +163,14 @@ def main():
         return 2
 
     problems = []
+    cases = CASES + (CASES_NET if NET else [])
+    if not NET and CASES_NET:
+        print('  跳过 %d 条联网用例（要联网 + 真浏览器，设 FALSIFY_NET=1 启用）：' % len(CASES_NET))
+        for name in [c[0] for c in CASES_NET]:
+            print('    · ' + name)
+        print()
     try:
-        for name, path, old, new, tool in CASES:
+        for name, path, old, new, tool in cases:
             src = read(path)
             if old not in src:
                 problems.append('%s —— 锚点失效（源码里找不到要改的那段，用例需要更新）' % name)
@@ -193,7 +212,7 @@ def main():
             print('!! ' + p)
         print('结论：证伪未通过（%d 个问题）' % (len(problems) + (0 if ok_all else 1)))
         return 1
-    print('结论：%d 条用例全部被证实「拆掉守护对象就会变红」。' % len(CASES))
+    print('结论：%d 条用例全部被证实「拆掉守护对象就会变红」。' % len(cases))
     return 0
 
 
