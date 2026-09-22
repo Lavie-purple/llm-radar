@@ -77,7 +77,7 @@ function newHarness(historySource, opts) {
   vm.runInContext(appSrc, ctx, { filename: 'app.json.js' });
   if (historySource) vm.runInContext(historySource, ctx, { filename: 'history.json.js' });
   /* 允许在 radar.js 跑起来之前改 APP。「新发布」标识要测窗口边界
-     （第 45 天亮 / 第 46 天不亮），必须在渲染前就把 generatedAt、
+     （第 30 天亮 / 第 31 天不亮），必须在渲染前就把 generatedAt、
      各模型的 releasedAt、newWindowDays 摆好，事后再改已经渲染完了。 */
   if (o.patch) o.patch(ctx.window.APP);
   vm.runInContext(radarSrc, ctx, { filename: 'radar.js' });
@@ -551,7 +551,7 @@ scan('超宽屏 空集', rail('detailrail'));
    另一半守窗口边界：差一天就不该亮（`<=` 写成 `<` 会漏掉整条边界）。 */
 {
   const REF = '2026-09-22T09:00:00+08:00';
-  const W = 45;
+  const W = 30;
   const nBadge = (h) => (h.match(/class="newbadge"/g) || []).length;
   const rowHTML = (h, id) => {
     const i = h.indexOf('data-row="' + id + '"');
@@ -562,7 +562,7 @@ scan('超宽屏 空集', rail('detailrail'));
   let IN_ID = null, OUT_ID = null, NONE_ID = null, BAD_ID = null;
 
   /* 夹具：把真实数据里的发布日期全部清掉，只给三个模型摆上受控的值。
-     2026-09-22 往回数：45 天 = 08-08（边界内），46 天 = 08-07（刚出窗口）。 */
+     2026-09-22 往回数：30 天 = 08-23（边界内），31 天 = 08-22（刚出窗口）。 */
   const patch = (a) => {
     a.generatedAt = REF;
     a.newWindowDays = W;
@@ -571,8 +571,8 @@ scan('超宽屏 空集', rail('detailrail'));
       IN_ID = a.matrixIds[0]; OUT_ID = a.matrixIds[1];
       NONE_ID = a.matrixIds[2]; BAD_ID = a.matrixIds[3];
     }
-    a.models[IN_ID].releasedAt = '2026-08-08';      // 恰好 45 天
-    a.models[OUT_ID].releasedAt = '2026-08-07';     // 46 天
+    a.models[IN_ID].releasedAt = '2026-08-23';      // 恰好 30 天
+    a.models[OUT_ID].releasedAt = '2026-08-22';     // 31 天
     a.models[BAD_ID].releasedAt = '不是日期';        // 有字段但解析不了
   };
 
@@ -596,7 +596,7 @@ scan('超宽屏 空集', rail('detailrail'));
   ok(nBadge(B2.els['matrix']._html) === 0, '新发布·2：?new=0 关掉这个标识',
     String(nBadge(B2.els['matrix']._html)));
   const B3 = newHarness(histSrc, { patch, search: '?new=90' });
-  ok(nBadge(B3.els['matrix']._html) === 2, '新发布·2：?new=90 把 46 天那条也收进来',
+  ok(nBadge(B3.els['matrix']._html) === 2, '新发布·2：?new=90 把 31 天那条也收进来',
     String(nBadge(B3.els['matrix']._html)));
   const B4 = newHarness(histSrc, { patch, search: '?new=abc&x=1' });
   ok(nBadge(B4.els['matrix']._html) === 1,
@@ -610,11 +610,11 @@ scan('超宽屏 空集', rail('detailrail'));
     return Fx.els['tip']._html || '';
   };
   const tIn = tipOf(B1, '[data-model]', { model: IN_ID });
-  ok(/2026-08-08/.test(tIn) && new RegExp('距今 ' + W + ' 天').test(tIn),
+  ok(/2026-08-23/.test(tIn) && new RegExp('距今 ' + W + ' 天').test(tIn),
     '新发布·3：带标识的模型 tooltip 写明发布日期与天数', tIn.slice(0, 80));
   ok(/<b>有<\/b>/.test(tIn), '新发布·3：tooltip 明确说「有」标识');
   const tOut = tipOf(B1, '[data-model]', { model: OUT_ID });
-  ok(/距今 46 天/.test(tOut) && /超出窗口/.test(tOut),
+  ok(/距今 31 天/.test(tOut) && /超出窗口/.test(tOut),
     '新发布·4：出窗口的模型 tooltip 说的是「已超出窗口」，不是「源里没有」', tOut.slice(0, 80));
   const tNone = tipOf(B1, '[data-model]', { model: NONE_ID });
   ok(/llm-stats 无此模型/.test(tNone),

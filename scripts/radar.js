@@ -84,7 +84,7 @@
      2) 只比日期、不比时刻（都按 UTC 零点解析）。否则同一份数据在
         build_app.py（date 相减）与这里（时间戳相减）会差一天，时区一换再差一天。 */
   function newWindowDays() {
-    return state.newDays != null ? state.newDays : (APP.newWindowDays || 45);
+    return state.newDays != null ? state.newDays : (APP.newWindowDays || 30);
   }
 
   function relDays(id) {

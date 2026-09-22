@@ -72,7 +72,7 @@ CASES = [
     ('URL 覆盖窗口失效（?new=NN 全部回落到默认）',
      JS, 'var m = /[?&]new=(\\d{1,4})\\b/.exec(s);', 'var m = null;', 'selftest.js'),
     ('脚注计数写死（筛选后不跟着变）',
-     JS, 'var newN = ids.filter(isNewRelease).length;', 'var newN = 13;', 'selftest.js'),
+     JS, 'var newN = ids.filter(isNewRelease).length;', 'var newN = 8;', 'selftest.js'),
     ('脚注不再声明「没有标记 ≠ 不新」',
      JS, "'<b>没有这个标记不等于模型不新</b> —— llm-stats 里查不到的名字就没有日期，'",
      "''", 'selftest.js'),
