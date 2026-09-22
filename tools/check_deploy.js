@@ -15,7 +15,7 @@
  * 用法
  * ----
  *   node tools/check_deploy.js                  # 比对默认线上地址
- *   node tools/check_deploy.js --wait=120       # 推完立刻跑：等线上追平，最多等 120s
+ *   node tools/check_deploy.js --wait=120       # 推完立刻跑：等 Pages 追平 + 部署任务跑完（整轮 120s 预算）
  *   node tools/check_deploy.js http://127.0.0.1:9000/   # 也可拿来比对任意镜像
  *   GITHUB_TOKEN=xxx node tools/check_deploy.js # 额外核对 Pages 构建的 job 级结论
  *
@@ -51,6 +51,10 @@ const WAIT = (() => {
 })();
 const OUTDIR = path.join(ROOT, '_shot', 'live');
 const TOKEN = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || '';
+/* `--wait` 的预算是**整轮共享**的（静态轮询 + 等 Pages run 结束），不是每段各给一次。
+ * 这样「等待上限 120s」就是字面意思，不会因为前一段等满了把后一段饿空。 */
+const T0 = Date.now();
+const DEADLINE = WAIT ? T0 + WAIT * 1000 : 0;
 
 const fails = [];
 let nchecks = 0;
@@ -91,12 +95,16 @@ function manifest() {
   return out;
 }
 
-async function fetchText(url, tries = 3) {
+/* 抓线上文件：带重试，**并把每次重试打出来**。
+ * 本机走代理，偶发 502 / 超时是常事 —— 实测有一次 7 个文件抓了 99s，
+ * 全程没有任何提示，看起来就像脚本"卡住了"。把原因打出来比让它快更重要：
+ * 慢得莫名其妙，和慢得有解释，是完全不同的两件事。 */
+async function fetchText(url, tries = 3, label = '') {
   let last = '';
   for (let i = 0; i < tries; i++) {
     try {
       const ac = new AbortController();
-      const tid = setTimeout(() => ac.abort(), 30000);
+      const tid = setTimeout(() => ac.abort(), 20000);
       const r = await fetch(url, {
         cache: 'no-store',
         headers: { 'Cache-Control': 'no-cache', 'User-Agent': 'llm-radar-check' },
@@ -106,8 +114,11 @@ async function fetchText(url, tries = 3) {
       const text = await r.text();
       if (!r.ok) { last = 'HTTP ' + r.status; }
       else return { status: r.status, text };
-    } catch (e) { last = e.name === 'AbortError' ? '超时 30s' : String(e.message || e); }
-    await new Promise(r => setTimeout(r, 1500));
+    } catch (e) { last = e.name === 'AbortError' ? '超时 20s' : String(e.message || e); }
+    if (i < tries - 1) {
+      console.log(`  ! 线上取 ${label || url} 失败（${last}），1.5s 后重试 ${i + 2}/${tries}`);
+      await new Promise(r => setTimeout(r, 1500));
+    }
   }
   return { status: 0, text: '', err: last };
 }
@@ -259,22 +270,21 @@ async function gotoAndMeasure(page, url, errs, failed) {
   const files = manifest();
   console.log(`  ${files.join('  ')}`);
   const onlineText = {};
-  const t0 = Date.now();
   for (;;) {
     let bad = 0;
     for (const f of files) {
-      const r = await fetchText(ONLINE + f);
+      const r = await fetchText(ONLINE + f, 3, f);
       if (!r.text) { onlineText[f] = null; bad++; continue; }
       onlineText[f] = r.text;
       if (norm(fs.readFileSync(path.join(ROOT, f), 'utf8')) !== norm(r.text)) bad++;
     }
     if (bad === 0) break;
-    if (!WAIT || Date.now() - t0 >= WAIT * 1000) break;
-    const waited = Math.round((Date.now() - t0) / 1000);
+    if (!WAIT || Date.now() >= DEADLINE) break;
+    const waited = Math.round((Date.now() - T0) / 1000);
     console.log(`  .. 线上还没追上（${bad} 个文件不一致或缺失），10s 后重试（已等 ${waited}s / 上限 ${WAIT}s）`);
     await new Promise(r => setTimeout(r, 10000));
   }
-  console.log(`  清单 ${files.length} 个，抓取耗时 ${Math.round((Date.now() - t0) / 1000)}s`);
+  console.log(`  清单 ${files.length} 个，抓取耗时 ${Math.round((Date.now() - T0) / 1000)}s`);
   const nStaticFail = fails.length;
   for (const f of files) {
     const lp = path.join(ROOT, f);
@@ -437,14 +447,37 @@ async function gotoAndMeasure(page, url, errs, failed) {
         return r.json();
       };
       try {
-        const runs = (await api('/repos/' + gi.slug + '/actions/runs?per_page=10')).workflow_runs || [];
-        const mine = runs.find(r => /pages/i.test(r.name || ''));
+        /* 取 run 时**优先挑对应当前 HEAD 的那个** —— 否则「推完立刻跑」很可能拿到上一次的
+         * run（Pages 还没为这个 commit 建任务），于是拿别人的结论当自己的。 */
+        const pickRun = async () => {
+          const runs = (await api('/repos/' + gi.slug + '/actions/runs?per_page=10')).workflow_runs || [];
+          const pages = runs.filter(r => /pages/i.test(r.name || ''));
+          return pages.find(r => !head || r.head_sha.startsWith(head)) || pages[0] || null;
+        };
+        let mine = null;
+        /* `--wait` 也必须等这个 run 结束。实测踩过：这次提交只动了 tools/ 与 README，
+         * 静态文件全等 → 上面那轮轮询立刻通过、等不到任何东西，而部署其实还在跑，
+         * 于是报出 3 条 FAIL（run in_progress / Deploy step 为 null），
+         * 看着像「线上坏了」，其实只是「没等」。 */
+        for (;;) {
+          mine = await pickRun();
+          if (mine && mine.status === 'completed') break;
+          if (!WAIT || Date.now() >= DEADLINE) break;
+          const waited = Math.round((Date.now() - T0) / 1000);
+          console.log(`  .. Pages ${mine ? 'run ' + mine.head_sha.slice(0, 7) + ' 还在 ' + mine.status : '还没为这个 commit 起任务'}`
+            + `，10s 后重试（已等 ${waited}s / 上限 ${WAIT}s）`);
+          await new Promise(r => setTimeout(r, 10000));
+        }
         if (!mine) {
           console.log('  跳过（最近 10 次 run 里没有 pages 相关任务）');
         } else {
           console.log('  最新 pages run ' + mine.head_sha.slice(0, 7) + ' | status ' + mine.status + ' | conclusion ' + mine.conclusion);
-          check(mine.status === 'completed', 'Pages run 已完成', mine.status);
+          check(mine.status === 'completed', 'Pages run 已完成（当前 status=' + mine.status + '）', mine.status);
           check(mine.conclusion === 'success', 'Pages run 结论 success', String(mine.conclusion));
+          if (mine.status !== 'completed') {
+            console.log('     ↑ 这是「推完马上跑」的正常中间态，不是部署坏了：');
+            console.log('       加 `--wait=120` 等它跑完，或过一会儿重跑本脚本。');
+          }
           const jobs = (await api('/repos/' + gi.slug + '/actions/runs/' + mine.id + '/jobs')).jobs || [];
           for (const j of jobs) {
             for (const s of j.steps || []) {

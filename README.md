@@ -157,7 +157,7 @@ tools/run_all.py
 **推完之后**（刻意**不**放进 `run_all.py`：每日管道不该因为外部站点不可达就失败）
 
 ```bash
-node tools/check_deploy.js --wait=120   # 等 Pages 追平，再逐字节比对 + 线上真渲染
+node tools/check_deploy.js --wait=120   # 等 Pages 追平 + 部署任务跑完，再逐字节比对 + 线上真渲染
 ```
 
 **三处设计上的保守**（都是被真实故障教出来的）：
@@ -229,7 +229,7 @@ node tools/selftest.js          # 236 条断言：数据管道 + 前端逻辑（
 node tools/visual_check.js      # 144 项检查：需先起 8758 端口 + 已装 playwright
 python tools/falsify.py         # 17 条证伪用例（退出码 0=全红通过 / 1=有用例失效 / 2=开跑前体检不过）
 node tools/check_deploy.js      # 线上部署核验：推完跑一次，本地 vs 线上逐字节比对 + 线上真渲染
-node tools/check_deploy.js --wait=120   # 推完立刻跑：等线上追平，最多等 120s
+node tools/check_deploy.js --wait=120   # 推完立刻跑：等线上追平 + 部署跑完（整轮 120s 预算）
 FALSIFY_NET=1 python tools/falsify.py   # 连联网用例一起证伪（含 check_deploy）
 ```
 
@@ -318,9 +318,26 @@ FALSIFY_NET=1 python tools/falsify.py   # 连联网用例一起证伪（含 chec
    是**直接读 `.git/HEAD` / `.git/packed-refs` / `.git/config` 的文本**（也顺带去掉了
    「PATH 上必须有 git」这个隐含依赖）。
 
-   代价：`check_deploy.js` 要联网 + 真浏览器，比前三层慢（实测 25~50s，取决于线上抓取），所以**不进 `run_all.py`**
+   代价：`check_deploy.js` 要联网 + 真浏览器，比前三层慢（实测 25~100s，取决于线上抓取），所以**不进 `run_all.py`**
    （每日管道不该依赖外部站点的可达性），也不进 `falsify.py` 的默认用例
    —— 它那条联网用例挂在 `FALSIFY_NET=1` 后面。
+
+   ⚠️ **两次「推完立刻跑」的实测，各暴露一个坑：**
+
+   1. **`--wait` 原先只等静态文件，不够。** 若这次提交没动清单里的文件（比如只改了 `tools/`），
+      静态比对会立刻通过、`--wait` 等于没等，而部署其实还在跑 → 报出 3 条 FAIL
+      （`run in_progress` / `Deploy to GitHub Pages → null`），看着像「线上坏了」。
+      现在 `--wait` 的预算是**整轮共享**的，并且**也会等 Pages run 跑到 `completed`**，
+      实测推完立刻跑等了 **2 分 05 秒**后 PASS。没带 `--wait` 又撞上中间态时，
+      也会多打两行说清「这是正常的中间态，不是部署坏了」。
+   2. **网络重试是隐形的，会让人以为脚本卡住。** 实测有一次 7 个文件抓了 **99 秒**
+      而全程没有任何提示 —— 原因是本机走代理、偶发 502 后静默重试。
+      现在每次重试都打一行 `! 线上取 xx 失败（HTTP 502），1.5s 后重试 2/3`，
+      单次超时也从 30s 收到 20s。**慢得莫名其妙，和慢得有解释，是完全不同的两件事。**
+
+   另：`Pages run` 的 **sha 是否等于 HEAD** 刻意**只打印、不判定** ——
+   只改了 `tools/` 这类提交下，Pages 可能还没为这个 commit 起任务，
+   把它判成失败就是误报。真正「线上 == 这一份」的证据是上面那段逐字节比对。
 
 ---
 
