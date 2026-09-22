@@ -321,8 +321,32 @@ function check(cond, label, detail) {
     const wantColor = getComputedStyle(probe).color;
     probe.remove();
 
+    /* 徽章特写的裁剪框。**必须裁** —— 整屏截图对这一处完全无信息量：
+       实测 shot('17-newbadge') 与 06-trend-pending / 14-flash 拍出来的 PNG
+       md5 完全相同（都是「矩阵停在顶部」那一屏），等于什么也没记录。
+       徽章只有 17px 宽，靠形状传意的小元素必须在特写下肉眼看一遍。 */
+    let clip = null;
+    if (one && one.parentElement) {
+      const wrap = document.querySelector('#view-matrix .tablewrap');
+      const tr = one.closest('tr');
+      if (wrap && tr) {
+        /* 行可能不在 .tablewrap 的可视区里 —— 先滚进去，否则裁出来是空白。 */
+        const wr = wrap.getBoundingClientRect();
+        const rr = tr.getBoundingClientRect();
+        wrap.scrollTop += (rr.top - wr.top) - (wr.height - rr.height) / 2;
+      }
+      const b = one.parentElement.getBoundingClientRect();   // 整个 .mbtn
+      const pad = 6;
+      clip = {
+        x: Math.max(0, b.left + window.scrollX - pad),
+        y: Math.max(0, b.top + window.scrollY - pad),
+        width: b.width + pad * 2,
+        height: b.height + pad * 2,
+      };
+    }
+
     return {
-      n: rows.length, badged: marked.length, forced,
+      n: rows.length, badged: marked.length, forced, clip,
       badgeW: one ? +one.getBoundingClientRect().width.toFixed(2) : 0,
       badgeColor: one ? getComputedStyle(one).color : '',
       wantColor,
@@ -346,7 +370,11 @@ function check(cond, label, detail) {
   check(/天内发布/.test(nb.note) && /不等于模型不新/.test(nb.note),
     '矩阵脚注写明窗口天数，且点明「没有标记 ≠ 不新」',
     (nb.note.match(/最近 \d+ 天内发布/) || [''])[0] + ' / ' + /不等于模型不新/.test(nb.note));
-  await shot('17-newbadge');
+  /* 特写必须真的裁到东西：宽度不能接近整屏，否则又退化成那张「和别的截图 md5 相同」的图。 */
+  check(nb.clip && nb.clip.width > 40 && nb.clip.width < 500,
+    '徽章特写的裁剪框收在首列之内（不是整屏）',
+    nb.clip ? Math.round(nb.clip.width) + 'px 宽 × ' + Math.round(nb.clip.height) + 'px 高' : '没算出裁剪框');
+  await shot('17-newbadge', nb.clip || undefined);
 
   /* Tooltip 的三种状态：在窗口内 / 已出窗口 / 源里没有。
      这三者在界面上都不带（或带）同一个徽章，只能靠 tooltip 区分，

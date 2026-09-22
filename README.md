@@ -202,8 +202,8 @@ llm-radar/
 | `health.py` | 抓取量体检 |
 | `snapshot.py` | 快照存档 + 变更 diff |
 | `selftest.js` | DOM 桩冒烟测试，**236 条断言** |
-| `visual_check.js` | 真实浏览器量 DOM，**143 项检查** |
-| `falsify.py` | 证伪工具，**16 条用例**，验证上面两层守卫真的会红 |
+| `visual_check.js` | 真实浏览器量 DOM，**144 项检查** |
+| `falsify.py` | 证伪工具，**17 条用例**，验证上面两层守卫真的会红 |
 | `verify_lmarena.py` | LMArena 数据的独立一致性校验（名次连续性、分数降序等 6 类断言） |
 | `stat_app.py` | 统计当前快照规模（含「新」标识的各窗口亮标数）—— **本文档里的所有规模数字都出自它** |
 | `make_preview.py` / `make_report.py` | 生成人工核对用的 HTML 预览 / 管道总览页 |
@@ -217,8 +217,8 @@ llm-radar/
 
 ```bash
 node tools/selftest.js          # 236 条断言：数据管道 + 前端逻辑（纯内置模块）
-node tools/visual_check.js      # 143 项检查：需先起 8758 端口 + 已装 playwright
-python tools/falsify.py         # 16 条证伪用例（退出码 0=全红通过 / 1=有用例失效 / 2=开跑前体检不过）
+node tools/visual_check.js      # 144 项检查：需先起 8758 端口 + 已装 playwright
+python tools/falsify.py         # 17 条证伪用例（退出码 0=全红通过 / 1=有用例失效 / 2=开跑前体检不过）
 ```
 
 起服务：`python -m http.server 8758 -d .`（`visual_check.js` 会打开真实 Chromium 逐项量 DOM）
@@ -231,7 +231,7 @@ python tools/falsify.py         # 16 条证伪用例（退出码 0=全红通过 
    它用 `newHarness(historySrc, {patch, search})` 开第二套环境喂合成夹具 ——
    `patch` 可在渲染前改 `APP`（测「新」标识的窗口边界），`search` 可伪造 `?new=NN`。
 
-2. **`visual_check.js`（143 项）** —— 起真实浏览器**量 DOM**，而不是看截图。
+2. **`visual_check.js`（144 项）** —— 起真实浏览器**量 DOM**，而不是看截图。
    量的是：表格列宽是否把内容压成逐字换行、搜索框实际能显示几个字、
    对比度是否过 AA、悬停时色阶是否还保持秩序、悬停是否恰好高亮一行、
    超宽屏两栏是否等高、有无横向溢出、**插入「新」徽章后有没有把模型名挤成省略号**。
@@ -239,7 +239,7 @@ python tools/falsify.py         # 16 条证伪用例（退出码 0=全红通过 
    > **这个项目里的两个真 bug 都是"看着正常、量出来才现原形"** ——
    > 所以「截图看着没问题」不构成通过依据。
 
-3. **`falsify.py`（16 条）** —— **证伪**：把被守卫保护的那行代码真的拆掉，看守卫是否变红。
+3. **`falsify.py`（17 条）** —— **证伪**：把被守卫保护的那行代码真的拆掉，看守卫是否变红。
    锚点直接绑在源码字符串上，**「锚点失效」和「拆了还全绿」都算失败**（退出码 1），
    防止过期用例长期假装通过。
 
@@ -264,6 +264,12 @@ python tools/falsify.py         # 16 条证伪用例（退出码 0=全红通过 
    （`selftest.js` 的 `／ FAIL `、`visual_check.js` 的 `截图目录：`），打不出来就不给结论。
    顺带修掉一个 Windows 坑：`subprocess(..., text=True)` 默认按本地编码解码，
    而 node 输出的是 UTF-8 —— 必须显式 `encoding='utf-8', errors='replace'`。
+
+   ⚠️ **靶子不止 `radar.js` / `radar.css` —— `tools/visual_check.js` 自己也是靶子。**
+   守卫也会写出没信息量的产物，同样要被证伪。实测：`shot('17-newbadge')` 原先是整屏截图，
+   与 `06-trend-pending` / `14-flash` 拍出来的 PNG **md5 完全相同**（都是「矩阵停在顶部」那一屏），
+   等于什么也没记录 —— 而「靠形状传意」的元素（17px 宽的徽章）恰恰只能靠特写肉眼看。
+   现在改成按首列按钮的 rect 裁框，并加了「裁剪框必须收在首列之内（不是整屏）」的断言守着它。
 
 ---
 

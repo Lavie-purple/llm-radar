@@ -32,6 +32,8 @@ import sys
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 JS = os.path.join(ROOT, 'scripts', 'radar.js')
 CSS = os.path.join(ROOT, 'styles', 'radar.css')
+# 守卫自己也会写出没信息量的产物（比如把特写截成整屏），所以它也要能被证伪。
+VC = os.path.join(ROOT, 'tools', 'visual_check.js')
 NODE = os.environ.get('NODE_BIN') or 'node'
 
 # (用例名, 目标文件, 原文, 替换成, 跑哪个测试)
@@ -82,6 +84,8 @@ CASES = [
      CSS, '  color: var(--src-ls); border: 1px solid rgba(224, 163, 62, 0.45);',
      '  color: var(--src-lb); border: 1px solid rgba(224, 163, 62, 0.45);',
      'visual_check.js'),
+    ('徽章特写不裁剪（退化成与别的截图 md5 相同的整屏图）',
+     VC, '        width: b.width + pad * 2,', '        width: 1680,', 'visual_check.js'),
 ]
 
 
@@ -114,7 +118,7 @@ def run(tool):
 
 
 def main():
-    orig = {JS: read(JS), CSS: read(CSS)}
+    orig = {JS: read(JS), CSS: read(CSS), VC: read(VC)}
 
     # ⚠️ 这个脚本会**真的改源码**再还原。被 Ctrl-C / SIGTERM 打断时（无 TTY 环境里
     # 超时杀进程也算），`finally` 不保证执行 —— 于是替换留在源码里没人还原。
@@ -169,11 +173,9 @@ def main():
             else:
                 problems.append('%s —— 拆掉守护对象后测试仍然全绿，这条断言是假的' % name)
                 print('%-42s  ★ 仍然全绿，守卫失效' % name)
-            write(JS, orig[JS])
-            write(CSS, orig[CSS])
+            restore()
     finally:
-        write(JS, orig[JS])
-        write(CSS, orig[CSS])
+        restore()
 
     print()
     print('还原后复跑：')
