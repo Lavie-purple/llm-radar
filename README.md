@@ -291,6 +291,14 @@ FALSIFY_NET=1 python tools/falsify.py   # 连联网用例一起证伪（含 chec
    与 `06-trend-pending` / `14-flash` 拍出来的 PNG **md5 完全相同**（都是「矩阵停在顶部」那一屏），
    等于什么也没记录 —— 而「靠形状传意」的元素（17px 宽的徽章）恰恰只能靠特写肉眼看。
    现在改成按首列按钮的 rect 裁框，并加了「裁剪框必须收在首列之内（不是整屏）」的断言守着它。
+   裁框这件事后来又踩出两个坑（探针 `_shot/coord_probe.js` 留档可复现）：
+   **① 可见带 = 包裹盒 ∩ 视口，不是包裹盒本身** —— `.tablewrap` 高 74vh，1600×900 下
+   盒子自己伸到视口外（盒底 1282 > 900），只跟盒子比可见性，滚动条件永不触发，
+   裁剪框整块出视口，`page.screenshot` 抛「Clipped area is either empty or outside the resulting image」
+   （check_deploy.js 首次全量跑就崩在这）。**② 非 fullPage 截图的 `clip` 是视口坐标，
+   不是文档坐标** —— playwright-core 源码 `trimClipToSize(clip, viewportSize)` +
+   `Page.snapshotRect coordinateSystem:"Viewport"`，实测窗口滚 500px 后 `+scrollY` 必崩、
+   rect 原值成功；`visual_check.js` 原来写的 `+ window.scrollX/scrollY` 只是恰好没滚过才没炸。
 
 4. **`check_deploy.js`（38 项；带 `GITHUB_TOKEN` 时 53 项）** —— 前三层**全部在本地跑**，它们证明「源码是对的」，
    证明不了**「线上跑的就是这一份」**：Pages 可能还在部署、可能部署失败、
