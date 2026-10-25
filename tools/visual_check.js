@@ -341,16 +341,32 @@ function check(cond, label, detail) {
       const wrap = document.querySelector('#view-matrix .tablewrap');
       const tr = one.closest('tr');
       if (wrap && tr) {
-        /* 行可能不在 .tablewrap 的可视区里 —— 先滚进去，否则裁出来是空白。 */
-        const wr = wrap.getBoundingClientRect();
+        /* 行可能不在 .tablewrap 的可视区里 —— 先滚进去，否则裁出来是空白。
+           两个坑（与 check_deploy.js 的徽章特写同源，探针 _shot/coord_probe.js 可复现）：
+           · **可见带 = 包裹盒 ∩ 视口**，不是包裹盒本身：.tablewrap 高 74vh，盒子自己
+             会伸到视口外，只跟盒子比会把行「居中」到视口外；
+           · 包裹盒不在视口内先滚 window（html 是 scroll-behavior:smooth，先置 auto）。 */
+        document.documentElement.style.scrollBehavior = 'auto';
+        let wr = wrap.getBoundingClientRect();
+        if (wr.top < 0 || wr.bottom > window.innerHeight) {
+          window.scrollTo(0, window.scrollY + wr.top - 80);
+          wr = wrap.getBoundingClientRect();
+        }
         const rr = tr.getBoundingClientRect();
-        wrap.scrollTop += (rr.top - wr.top) - (wr.height - rr.height) / 2;
+        const vTop = Math.max(wr.top, 0), vBot = Math.min(wr.bottom, window.innerHeight);
+        if (vBot - vTop > rr.height + 16 && (rr.top < vTop + 8 || rr.bottom > vBot - 8)) {
+          wrap.scrollTop += rr.top - (vTop + vBot) / 2 + rr.height / 2;
+        }
       }
       const b = one.parentElement.getBoundingClientRect();   // 整个 .mbtn
       const pad = 6;
+      /* ⚠️ 非 fullPage 截图的 clip 是**视口坐标**（playwright-core：
+         trimClipToSize(clip, viewportSize) + coordinateSystem:"Viewport"；
+         实测窗口滚 500px 后 +scrollY 必崩、rect 原值成功）。
+         这里原来写 + window.scrollX/scrollY，只是恰好没滚过才没炸 —— 已去掉。 */
       clip = {
-        x: Math.max(0, b.left + window.scrollX - pad),
-        y: Math.max(0, b.top + window.scrollY - pad),
+        x: Math.max(0, b.left - pad),
+        y: Math.max(0, b.top - pad),
         width: b.width + pad * 2,
         height: b.height + pad * 2,
       };

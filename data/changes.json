@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-25T20:25:01+08:00",
+ "generatedAt": "2026-10-25T22:23:18+08:00",
  "current": "2026-10-25",
  "previous": "2026-09-21T1100",
  "hasBaseline": true,
@@ -73,6 +73,12 @@
        "delta": 8
       },
       {
+       "model": "Claude Sonnet 5 (High)",
+       "from": 9,
+       "to": 14,
+       "delta": 5
+      },
+      {
        "model": "Claude Fable 5 (High)",
        "from": 5,
        "to": 10,
@@ -82,12 +88,6 @@
        "model": "Claude Opus 5 (Max)",
        "from": 4,
        "to": 9,
-       "delta": 5
-      },
-      {
-       "model": "Claude Sonnet 5 (High)",
-       "from": 9,
-       "to": 14,
        "delta": 5
       },
       {

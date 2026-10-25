@@ -375,14 +375,33 @@ async function gotoAndMeasure(page, url, errs, failed) {
   await page.screenshot({ path: path.join(OUTDIR, 'online-top.png') });
 
   /* 徽章特写：17px 宽的东西只能靠裁特写肉眼看（详见 README 里 shot('17-newbadge') 那条教训）。
-   * 先把目标行滚进 .tablewrap 的可视区再取坐标 —— 矩阵是在 .tablewrap 里自己滚的，
-   * tr.offsetTop 相对的是 <table> 而不是文档。 */
+   * 这段有三个坑，全部实测踩过（探针 _shot/coord_probe.js 可复现）：
+   *  ① 矩阵在 .tablewrap 里自己滚，tr.offsetTop 相对 <table> 不是文档 —— 全程用 getBoundingClientRect；
+   *  ② **可见带 = 包裹盒 ∩ 视口，不是包裹盒本身**：.tablewrap 高 74vh，1600×900 下
+   *     盒顶 616 / 盒底 1282，盒子整个伸到视口外 —— 只跟盒子比可见性，滚动条件
+   *     永不触发，裁剪框整块落在视口外，page.screenshot 抛
+   *     「Clipped area is either empty or outside the resulting image」。
+   *     所以先看包裹盒是否入镜（不在就滚 window），再把行滚进交集带中部；
+   *  ③ Playwright 非 fullPage 截图的 clip 是**视口坐标**（playwright-core：
+   *     trimClipToSize(clip, viewportSize) + Page.snapshotRect coordinateSystem:"Viewport"；
+   *     实测窗口滚 500px 后：+scrollY 的文档坐标必崩、rect 原值成功）——
+   *     **不能**加 window.scrollX/scrollY。html 是 scroll-behavior:smooth，
+   *     滚 window 前要先置 auto，否则 scrollTo 是动画、随后读 rect 拿到中途位置。 */
   const clip = await page.evaluate(() => {
     const b = document.querySelector('#matrix .newbadge');
     if (!b) return null;
-    const row = b.closest('tr'), wrap = document.querySelector('#view-matrix .tablewrap');
-    const rt = row.getBoundingClientRect(), wt = wrap.getBoundingClientRect();
-    if (rt.top < wt.top + 8 || rt.bottom > wt.bottom - 8) wrap.scrollTop += (rt.top - wt.top) - 40;
+    document.documentElement.style.scrollBehavior = 'auto';
+    const wrap = document.querySelector('#view-matrix .tablewrap');
+    let wr = wrap.getBoundingClientRect();
+    if (wr.top < 0 || wr.bottom > window.innerHeight) {
+      window.scrollTo(0, window.scrollY + wr.top - 80);
+      wr = wrap.getBoundingClientRect();
+    }
+    const rr = b.closest('tr').getBoundingClientRect();
+    const vTop = Math.max(wr.top, 0), vBot = Math.min(wr.bottom, window.innerHeight);
+    if (vBot - vTop > rr.height + 16 && (rr.top < vTop + 8 || rr.bottom > vBot - 8)) {
+      wrap.scrollTop += rr.top - (vTop + vBot) / 2 + rr.height / 2;
+    }
     return true;
   });
   let clipBox = null;
@@ -393,6 +412,9 @@ async function gotoAndMeasure(page, url, errs, failed) {
       const mbtn = b.closest('.mbtn');
       if (!mbtn) return null;
       const r = mbtn.getBoundingClientRect();
+      /* clip 是视口坐标：出了视口截图必崩，取坐标前先自证在视口里 ——
+       * 进不了视口就回落成一条干净的 FAIL，而不是整轮 CRASH。 */
+      if (r.top < 0 || r.bottom > window.innerHeight || r.left < 0 || r.right > window.innerWidth) return null;
       const pad = 6;
       return { x: Math.max(0, r.x - pad), y: Math.max(0, r.y - pad), width: r.width + pad * 2, height: r.height + pad * 2 };
     });
