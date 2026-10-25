@@ -109,6 +109,42 @@ def best_array(chunks, key, min_items=1):
     return max(arrays, key=lambda t: t[1])[0]
 
 
+def arrays_with_field(chunks, field, min_items=1, sample=5):
+    """找「首若干项里含 field 字段」的所有数组，不管它挂什么 key。
+
+    为什么需要：源站改版不只会改字段值，还会**改数组名**。AA 2026-10 就把指标数组
+    从 "models" 改名为 "initialModels"，models 退化成 709 条只有 slug/name 的名录 ——
+    按 key 名找会静默抓到空壳（HTTP 200、解析无异常、指标全空）。按「含关键指标字段」
+    找才对：下次再改名照样能抓到，而且抓不到时能明确报错。
+    """
+    import re as _re
+    out = []
+    for c in chunks:
+        for m in _re.finditer(r'"([A-Za-z][A-Za-z0-9_]{1,40})":\s*\[', c):
+            key = m.group(1)
+            arr = _decode_at(c, m.end() - 1)
+            if not isinstance(arr, list) or len(arr) < min_items:
+                continue
+            if not isinstance(arr[0], dict):
+                continue
+            head = arr[:sample]
+            if any(isinstance(x, dict) and field in x for x in head):
+                out.append((key, arr))
+    return out
+
+
+def best_metrics_array(chunks, must_have, min_items=50):
+    """含 must_have 字段的数组里，取条目最多的一个；找不到返回 None。
+
+    must_have 用一个「只有真指标数组才可能有的字段」做锚（如 intelligenceIndex），
+    名录类数组（只有 slug/name）会被自然排除。
+    """
+    cands = arrays_with_field(chunks, must_have, min_items=min_items)
+    if not cands:
+        return None
+    return max(cands, key=lambda t: len(t[1]))[1]
+
+
 def write_json(payload, out_path):
     out_path = os.path.abspath(out_path)
     os.makedirs(os.path.dirname(out_path), exist_ok=True)

@@ -224,8 +224,19 @@ function check(cond, label, detail) {
     seed.gen = '2000-01-01T00:00:00+08:00';                       // 假装数据重抓过
     seed.bands[seedInfo.cell] = (seed.bands[seedInfo.cell] % 6) + 1;   // 只改这一格
     await page.evaluate((v) => window.localStorage.setItem('llmradar.bands.v1', v), JSON.stringify(seed));
-    await page.reload({ waitUntil: 'networkidle' });
-    await page.waitForTimeout(160);
+    /* ⚠️ 不能 reload 后睡一个固定毫秒数再读 getAnimations()：
+       flash 动画只有 900ms，而 networkidle 在大表（124 行 + 178 条微折线）下
+       可能迟到几百 ms —— 睡醒时动画已结束并被移出动画队列，「节点在、动画 0」
+       的假 FAIL 就这么来的（2026-10-25 实测：改数据前全绿，改重后连挂）。
+       正确做法：等 flash 节点出现（= 类刚加上、动画刚启动）立刻读，
+       900ms 窗口必命中。waitUntil 用 load 不用 networkidle，尽早拿回控制权。 */
+    await page.reload({ waitUntil: 'load' });
+    /* 等不到不能抛：拆掉被守护的渲染代码时（falsify 的用例）flash 节点永远不会出现，
+       抛异常会让整个 visual_check 中途崩掉、没有收尾汇总 —— 那条用例就变成
+       「没跑完、结论不作数」，明明是该报红的。接住超时，让后面的检查照常报红。 */
+    try {
+      await page.waitForSelector('#matrix .cellbtn.flash', { timeout: 5000 });
+    } catch (e) { /* 走下面：nodes=0、kf=null，断言会红 */ }
     const fl = await page.evaluate(() => {
       const a = document.getAnimations().filter(x => x.animationName === 'cellflash');
       const el = document.querySelector('#matrix .cellbtn.flash');
@@ -450,8 +461,8 @@ function check(cond, label, detail) {
   await page.goto(BASE, { waitUntil: 'load' });
   await page.waitForTimeout(600);
 
-  /* ── 6. 名次走势：真实数据（只有 1 天，应当走「积累中」降级）── */
-  console.log('\n[走势 · 真实 1 天数据]');
+  /* ── 6. 名次走势：真实数据（攒够 ≥2 天后应当真画线）── */
+  console.log('\n[走势 · 真实数据]');
   const realTrend = await page.evaluate(() => {
     const h = window.HISTORY;
     return {
@@ -462,9 +473,39 @@ function check(cond, label, detail) {
     };
   });
   check(realTrend.hasFile, 'data/history.json.js 已加载');
-  check(realTrend.sparks === 0, '只有 1 天时不画假折线（微走势数 = 0）', realTrend.sparks);
-  check(/名次走势还在积累/.test(realTrend.note), '矩阵脚注说明走势在积累中',
+  check(realTrend.days >= 2, '真实快照已攒够 ≥2 天（画线的最低要求）', realTrend.days);
+  check(realTrend.sparks > 0, '≥2 天时微走势真的画出来了（不是 0）', realTrend.sparks);
+  check(!/名次走势还在积累/.test(realTrend.note) && /微折线/.test(realTrend.note),
+    '≥2 天时脚注讲的是微折线读法，不再说「积累中」',
     realTrend.note.slice(-60));
+  await shot('06-trend-live');
+
+  /* ── 6b. 名次走势：1 天夹具（降级路径必须还能走）──
+     真实数据只会一天天变多，「只有 1 天」这条路径迟早测不到 ——
+     所以把真实序列截成 1 天注入，当场验降级：不画假折线、脚注说还在积累。 */
+  console.log('\n[走势 · 1 天夹具（降级路径）]');
+  const ONE = await page.evaluate(() => {
+    const h = window.HISTORY;
+    const series = {};
+    Object.keys(h.series).forEach((id) => {
+      Object.keys(h.series[id]).forEach((k) => {
+        const a = h.series[id][k];
+        if (a && a.length) (series[id] = series[id] || {})[k] = a.slice(0, 1);
+      });
+    });
+    window.HISTORY = { builtAt: h.builtAt, n: 1, tags: h.tags.slice(0, 1), series };
+    return Object.keys(series).length;
+  });
+  check(ONE > 0, `1 天夹具已注入（${ONE} 个模型）`);
+  await page.click('#matrixsort button[data-sort="best"]');
+  await page.waitForTimeout(500);
+  const oneTrend = await page.evaluate(() => ({
+    sparks: document.querySelectorAll('#matrix .cspk').length,
+    note: (document.querySelector('#matrix-note') || {}).innerText || '',
+  }));
+  check(oneTrend.sparks === 0, '只有 1 天时不画假折线（微走势数 = 0）', oneTrend.sparks);
+  check(/名次走势还在积累/.test(oneTrend.note), '矩阵脚注说明走势在积累中',
+    oneTrend.note.slice(-60));
   await shot('06-trend-pending');
 
   /* ── 7. 名次走势：注入 6 天夹具，量真格子的几何 ── */

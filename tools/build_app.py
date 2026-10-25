@@ -73,23 +73,25 @@ CATEGORIES = [
         "subcats": [
             {"key": "general.overall", "label": "综合", "primary": "livebench", "tolerance": "零容忍",
              "question": "三个「最重要指标」并排：客观题总分 / 独立指数 / 聚合分",
-             "cols": [("livebench", "overall", "LiveBench Overall", "pct", "7 类等权平均，全客观判分"),
+             # note 在装配时按 payload 里的 overallWeights 动态生成（v1 旧版没有权重字段，
+             # 退回等权平均文案）——写死「7 类等权平均」在 LiveBench 2.0 改加权后就是假话。
+             "cols": [("livebench", "overall", "LiveBench Overall", "pct", "各类别分等权平均，全客观判分"),
                       ("aa", "intelligenceIndex", "AA Intelligence Index", "index", ""),
                       ("llmstats", "general", "LLM Stats Score", "score", "聚合层，反映公开 benchmark 覆盖密度")]},
-            {"key": "general.if", "label": "指令遵循", "primary": "livebench", "tolerance": "零容忍",
+            # LiveBench 2.0（2026-10-23）删掉了 Instruction Following 套件，主源换成 llm-stats。
+            {"key": "general.if", "label": "指令遵循", "primary": "llmstats", "tolerance": "零容忍",
              "question": "严格按要求格式、字数、条件输出",
-             "cols": [("livebench", "Instruction Following", "LiveBench IF", "pct", ""),
-                      ("llmstats", "instruction_following", "LLM Stats Score", "score", ""),
+             "cols": [("llmstats", "instruction_following", "LLM Stats Score", "score", ""),
                       ("aa", "ifbench", "IFBench", "pct", "")]},
             {"key": "general.reasoning", "label": "推理", "primary": "llmstats", "tolerance": "零容忍",
              "question": "复杂多步推理",
              "cols": [("llmstats", "reasoning", "LLM Stats Score", "score", ""),
                       ("aa", "hle", "HLE", "pct", "Humanity's Last Exam"),
                       ("aa", "gpqa", "GPQA Diamond", "pct", "")]},
-            {"key": "general.math", "label": "数学", "primary": "livebench", "tolerance": "零容忍",
+            # LiveBench 2.0 删掉了 Mathematics 套件，主源换成 llm-stats。
+            {"key": "general.math", "label": "数学", "primary": "llmstats", "tolerance": "零容忍",
              "question": "数学与竞赛题",
-             "cols": [("livebench", "Mathematics", "LiveBench Math", "pct", "注意：该列已接近饱和，区分度低"),
-                      ("llmstats", "math", "LLM Stats Score", "score", ""),
+             "cols": [("llmstats", "math", "LLM Stats Score", "score", ""),
                       ("aa", "critpt", "CritPt", "pct", "")]},
             {"key": "general.hallucination", "label": "幻觉控制", "primary": "aa", "tolerance": "零容忍",
              "question": "不知道时是否老实说不知道",
@@ -123,7 +125,11 @@ CATEGORIES = [
              "cols": [("lmarena", "agent", "净改善度", "pct", ""),
                       ("aa", "gdpvalNormalized", "GDPval-AA", "pct", "归一化到人类专家水平，100% = 人类专家同等产出"),
                       ("llmstats", "agents", "LLM Stats Score", "score", ""),
-                      ("aa", "terminalBench40", "Terminal-Bench 4.0", "pct", "")]},
+                      ("aa", "terminalBench40", "Terminal-Bench 4.0", "pct", ""),
+                      # LiveBench 2.0 的旗舰套件（官方权重 ×2）：长时程智能体任务，
+                      # 与「自主跑完一个任务」对口。旧版 LiveBench 在此子类没有对应列。
+                      ("livebench", "Long Agentic", "LiveBench Long Agentic", "pct",
+                       "长时程智能体任务，0~100（LiveBench 2.0 官方权重 ×2 的旗舰套件）")]},
         ],
     },
     {
@@ -475,7 +481,18 @@ def main():
                             if num(m.get(f)) is not None:
                                 ensure_model(fid, src='livebench', name=normalize_name(m.get('model')))
                                 models[fid]['extra'][dst] = round(num(m[f]), 4)
-                    srcs.append({"key": skey, "label": label, "unit": unit, "note": note or "",
+                    # overall 的口径（等权 / 加权）写在数据里，不写死在规格上：
+                    # LiveBench 2.0 把 overall 改成加权平均，权重在 payload 的 overallWeights。
+                    note_use = note or ''
+                    if sk == 'overall':
+                        w = lb_raw.get('overallWeights') or {}
+                        if w:
+                            parts = ' / '.join('%s ×%g' % (k, v)
+                                               for k, v in sorted(w.items(), key=lambda t: (-t[1], t[0])))
+                            note_use = '各类别分加权平均（%s，其余 ×1），全客观判分' % parts
+                        else:
+                            note_use = '各类别分等权平均，全客观判分'
+                    srcs.append({"key": skey, "label": label, "unit": unit, "note": note_use,
                                  "total": total, "updated": lb_raw.get('fetchedAt'),
                                  "sourceUrl": "https://livebench.ai/", "values": value})
 
@@ -546,8 +563,15 @@ def main():
             # 语义即用户直觉："在一个源的榜上它是头部，在另一个源上是尾部"。
             def pct_of(src_key, v):
                 n = src_depth.get(src_key, 1)
-                if n <= 1 or v.get('rank') is None:
+                if v.get('rank') is None:
                     return None
+                if n <= 1:
+                    # 该源在本子类只落在一个展示行上。非 lmarena 源的名次由本文件
+                    # 统一编排，只出现一行时名次必为 1 —— 它就是本列可见范围内该源的第一名。
+                    # 2026-10-25 实测：code.webdev 的 llm-stats 只匹配到 1 行（#1），
+                    # 若这里返回 None，该行「有 2 个源却算不出分歧度」，页面多一个
+                    # 解释不了的空格（selftest 的多源行分歧度断言当场抓住）。
+                    return 100.0 if v['rank'] == 1 else None
                 return max(0.0, min(100.0, 100.0 * (1 - (v['rank'] - 1) / (n - 1))))
 
             def board_pct(v):
@@ -645,10 +669,24 @@ def main():
     except Exception:
         ch = {"hasBaseline": False}
 
+    # 源规模字符串按数据现算，不写死。写死的口径只会腐烂：llm-stats 那儿曾经长期挂着
+    # 「55 分类」，而实际早就变成 46 了，没人发现是因为它只是个展示字符串。
+    def _scale(k):
+        if k == 'lmarena':
+            return '%d 榜 / %d 行' % (len(lm), sum(len(b['rows']) for b in lm.values()))
+        if k == 'aa':
+            return '%d 模型' % len(aa_raw.get('models') or [])
+        if k == 'llmstats':
+            return '%d 模型 / %d 分类' % (len(ls_raw.get('models') or []), len(ls))
+        if k == 'livebench':
+            return '%d 模型 / %d 类' % (len(lb_raw.get('models') or []),
+                                        len(lb_raw.get('categoryMap') or {}))
+        return ''
+
     app = {
         "generatedAt": datetime.datetime.now().astimezone().isoformat(timespec='seconds'),
         "topN": args.top,
-        "sources": [dict(SOURCE_META[k], key=k,
+        "sources": [dict(SOURCE_META[k], key=k, scale=_scale(k),
                          fetchedAt={"lmarena": lm_raw.get('fetchedAt'),
                                     "aa": aa_raw.get('fetchedAt'),
                                     "llmstats": ls_raw.get('fetchedAt'),

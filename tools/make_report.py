@@ -65,7 +65,6 @@ def main():
         rows = "".join(
             f"<tr><td class='n'>{m['intelligenceIndex']:.2f}</td>"
             f"<td>{e(m.get('shortName') or m['name'])}</td>"
-            f"<td class='s'>{e(m.get('effort'))}</td>"
             f"<td class='n'>${e(m.get('price1mInputTokens'))}/${e(m.get('price1mOutputTokens'))}</td>"
             f"<td class='n'>{m.get('medianOutputTokensPerSecond', 0):.0f}</td></tr>"
             for m in top
@@ -78,8 +77,10 @@ def main():
             f"GDPval-AA {pct(cov['gdpval'], aa['count'])} · "
             f"价格 {pct(cov['price'], aa['count'])} · "
             f"速度 {pct(cov['speed'], aa['count'])}<br>"
-            f"抓取于 {e(aa['fetchedAt'])}",
-            "<table><thead><tr><th>指数</th><th>模型</th><th>effort</th><th>价格 $/M</th><th>tok/s</th></tr></thead>"
+            f"抓取于 {e(aa['fetchedAt'])}<br>"
+            "注：2026-10 改版后 effort 字段已从页面消失，下表不再有该列；"
+            "releaseDate 改由 releases 数组按 slug 关联。",
+            "<table><thead><tr><th>指数</th><th>模型</th><th>价格 $/M</th><th>tok/s</th></tr></thead>"
             "<tbody>" + rows + "</tbody></table>",
         ))
 
@@ -107,21 +108,31 @@ def main():
     if lb:
         top = sorted([m for m in lb["models"] if m["overall"] is not None],
                      key=lambda m: -m["overall"])[:10]
+        # 类别列按 payload 里的 categoryMap 动态取（LiveBench 2.0 换过一整套类别），
+        # 不再写死 Agentic Coding / IF。
+        cats = list((lb.get("categoryMap") or {}).keys())[:3]
+        n_tasks = sum(len(v) for v in (lb.get("categoryMap") or {}).values())
+        w = lb.get("overallWeights") or {}
+        if w:
+            overall_note = "加权平均（%s，其余 ×1）" % "、".join(
+                "%s ×%g" % (k, v) for k, v in sorted(w.items(), key=lambda t: (-t[1], t[0])))
+        else:
+            overall_note = "各类别分等权平均（v1 旧口径）"
         rows = "".join(
             f"<tr><td class='n'>{m['overall']:.2f}</td><td>{e(m['model'])}</td>"
-            f"<td class='n'>{e(m['categories'].get('Agentic Coding'))}</td>"
-            f"<td class='n'>{e(m['categories'].get('Instruction Following'))}</td>"
-            f"<td class='n'>{'$'+str(m['costPerSuccessfulTask']) if m['costPerSuccessfulTask'] is not None else '—'}</td></tr>"
+            + "".join(f"<td class='n'>{e((m['categories'] or {}).get(c))}</td>" for c in cats)
+            + f"<td class='n'>{'$'+str(m['costPerSuccessfulTask']) if m['costPerSuccessfulTask'] is not None else '—'}</td></tr>"
             for m in top
         )
         cards.append((
             "LiveBench",
-            f"livebench.ai 静态文件（release {e(lb['release'])}）",
-            f"{lb['stats']['modelCount']} 个模型 / {len(lb['categoryMap'])} 类 / 22 任务",
-            "无官方 API。含你要的 <b>Agentic Coding</b>、<b>Instruction Following</b>（键名 IF）、"
-            "<b>Cost per successful task</b><br>"
-            "CPST =（Σcost ÷ Σquestions ÷ score）× 100；Overall = 7 类等权平均",
-            "<table><thead><tr><th>Overall</th><th>模型</th><th>Agentic</th><th>IF</th><th>CPST</th></tr></thead>"
+            f"livebench.ai 静态文件（release {e(lb['release'])}，{e(lb.get('format', '?'))} 格式）",
+            f"{lb['stats']['modelCount']} 个模型 / {len(lb.get('categoryMap') or {})} 类 / {n_tasks} 任务",
+            f"无官方 API。2.0 起数据在 data/&lt;release&gt;/ 下，release 列表解自站点 JS bundle。<br>"
+            f"CPST =（Σcost ÷ Σquestions ÷ score）× 100；Overall = {overall_note}",
+            "<table><thead><tr><th>Overall</th><th>模型</th>"
+            + "".join(f"<th>{e(c)}</th>" for c in cats)
+            + "<th>CPST</th></tr></thead>"
             "<tbody>" + rows + "</tbody></table>",
         ))
 

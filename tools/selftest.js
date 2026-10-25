@@ -312,8 +312,14 @@ const gh = panel('dtable');
 ok(!/\d{3,}\.\d%/.test(gh), '通用能力表无三位数百分数', (gh.match(/\d{3,}\.\d%/g) || []).slice(0, 4).join(','));
 click('[data-view]', { view: 'cat', cat: 'agent' });
 const ah = panel('dtable');
-ok(ah.indexOf('13.7%') > 0, 'agent 详情表显示 13.7%', ah.indexOf('13.7%'));
-ok(panel('cathead').indexOf('13.71%') > 0, 'agent 主指标条显示 13.71%', panel('cathead').indexOf('13.71%'));
+// agent 头条值从数据里取，不写死：写死的数字（曾经是 13.71%）会在每次数据更新后假报。
+// 详情表用 toFixed(1)（fmtVal/pct100），主指标条用裸值，两边分别对。
+const agTop = APP.subcats['agent.work'].rows[0];
+const agV = agTop.values[APP.subcats['agent.work'].primary];
+ok(ah.indexOf(agV.value.toFixed(1) + '%') > 0, 'agent 详情表显示头条净改善度（' + agV.value.toFixed(1) + '%）',
+  ah.indexOf(agV.value.toFixed(1) + '%'));
+ok(panel('cathead').indexOf(agV.value + '%') > 0, 'agent 主指标条显示 ' + agV.value + '%',
+  panel('cathead').indexOf(agV.value + '%'));
 ok(!/\d{3,}\.\d%/.test(ah), 'agent 表无三位数百分数', (ah.match(/\d{3,}\.\d%/g) || []).slice(0, 4).join(','));
 click('[data-view]', { view: 'matrix' });
 
@@ -627,7 +633,9 @@ scan('超宽屏 空集', rail('detailrail'));
   /* 脚注：窗口天数 + 计数都要跟着实际渲染走 */
   const note1 = B1.els['matrix-note']._html || '';
   ok(new RegExp('最近 ' + W + ' 天内发布').test(note1), '新发布·6：脚注写明窗口天数');
-  ok(/上面 114 个里有 <b>1<\/b> 个/.test(note1), '新发布·6：脚注给出亮标数',
+  // 行数用 APP.matrixIds.length 现算，不写死（写死过 114，矩阵涨到 124 后假报）
+  ok(new RegExp('上面 ' + APP.matrixIds.length + ' 个里有 <b>1</b> 个').test(note1),
+    '新发布·6：脚注给出亮标数',
     (note1.match(/上面 \d+ 个里有 <b>\d+<\/b> 个/) || ['(没找到)'])[0]);
   ok(/不等于模型不新/.test(note1), '新发布·6：脚注点明「没有标记 ≠ 不新」');
   const qEl = B1.document.getElementById('q');
