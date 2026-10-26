@@ -5,7 +5,7 @@
   "officialUrl": "https://lmarena.ai/",
   "licenseNote": "license 字段区分 open / proprietary，可直接用于开源筛选。"
  },
- "fetchedAt": "2026-10-25T22:20:33+08:00",
+ "fetchedAt": "2026-10-27T07:12:31+08:00",
  "top": 30,
  "boards": {
   "agent": {
@@ -14,8 +14,8 @@
    "unit": "pct",
    "route": "/agent/",
    "sourceUrl": "https://arena.ai/leaderboard/agent",
-   "sourceUpdated": "Oct 25, 2026",
-   "sourceFetchedAt": "2026-10-25T13:41:10.163Z",
+   "sourceUpdated": "Oct 26, 2026",
+   "sourceFetchedAt": "2026-10-26T18:01:05.302Z",
    "fullCount": 55,
    "rows": [
     {
@@ -45,7 +45,7 @@
       "bashRecoveryCi": 0.5,
       "toolHallucination": 0.57,
       "toolHallucinationCi": 0.13,
-      "costTaskP50": 6.38,
+      "costTaskP50": 6.31,
       "outputTokensTaskP50": 124.5
      }
     },
@@ -74,8 +74,8 @@
       "bashRecoveryCi": 0.88,
       "toolHallucination": 0.65,
       "toolHallucinationCi": 0.13,
-      "costTaskP50": 4.52,
-      "outputTokensTaskP50": 188.4
+      "costTaskP50": 4.58,
+      "outputTokensTaskP50": 192.3
      }
     },
     {
@@ -105,8 +105,8 @@
       "bashRecoveryCi": 1.29,
       "toolHallucination": 0.71,
       "toolHallucinationCi": 0.08,
-      "costTaskP50": 4.4,
-      "outputTokensTaskP50": 33.2
+      "costTaskP50": 4.42,
+      "outputTokensTaskP50": 32.9
      }
     },
     {
@@ -136,8 +136,8 @@
       "bashRecoveryCi": 0.98,
       "toolHallucination": 0.61,
       "toolHallucinationCi": 0.14,
-      "costTaskP50": 8.19,
-      "outputTokensTaskP50": 62.6
+      "costTaskP50": 8.44,
+      "outputTokensTaskP50": 66.5
      }
     },
     {
@@ -167,8 +167,8 @@
       "bashRecoveryCi": 1.1,
       "toolHallucination": 0.75,
       "toolHallucinationCi": 0.06,
-      "costTaskP50": 0.8,
-      "outputTokensTaskP50": 32
+      "costTaskP50": 0.84,
+      "outputTokensTaskP50": 32.9
      }
     },
     {
@@ -198,7 +198,7 @@
       "bashRecoveryCi": 1.15,
       "toolHallucination": 0.35,
       "toolHallucinationCi": 0.14,
-      "costTaskP50": 1.08,
+      "costTaskP50": 1.09,
       "outputTokensTaskP50": 37.8
      }
     },
@@ -228,7 +228,7 @@
       "toolHallucination": 0.39,
       "toolHallucinationCi": 0.19,
       "costTaskP50": "N/A",
-      "outputTokensTaskP50": 33.7
+      "outputTokensTaskP50": 34.3
      }
     },
     {
@@ -258,8 +258,8 @@
       "bashRecoveryCi": 0.62,
       "toolHallucination": 0.64,
       "toolHallucinationCi": 0.07,
-      "costTaskP50": 1.54,
-      "outputTokensTaskP50": 36.3
+      "costTaskP50": 1.55,
+      "outputTokensTaskP50": 36.6
      }
     },
     {
@@ -289,8 +289,8 @@
       "bashRecoveryCi": 0.82,
       "toolHallucination": 0.7,
       "toolHallucinationCi": 0.08,
-      "costTaskP50": 5.19,
-      "outputTokensTaskP50": 67.8
+      "costTaskP50": 5.24,
+      "outputTokensTaskP50": 70.1
      }
     },
     {
@@ -320,8 +320,8 @@
       "bashRecoveryCi": 1.29,
       "toolHallucination": 0.64,
       "toolHallucinationCi": 0.17,
-      "costTaskP50": 3.46,
-      "outputTokensTaskP50": 24.5
+      "costTaskP50": 3.45,
+      "outputTokensTaskP50": 24.9
      }
     },
     {
@@ -351,8 +351,8 @@
       "bashRecoveryCi": 1.56,
       "toolHallucination": 0.75,
       "toolHallucinationCi": 0.06,
-      "costTaskP50": 1.2,
-      "outputTokensTaskP50": 39.7
+      "costTaskP50": 1.25,
+      "outputTokensTaskP50": 40.5
      }
     },
     {
@@ -383,7 +383,7 @@
       "toolHallucination": 0.62,
       "toolHallucinationCi": 0.1,
       "costTaskP50": 1.7,
-      "outputTokensTaskP50": 22.4
+      "outputTokensTaskP50": 21.9
      }
     },
     {
@@ -400,8 +400,8 @@
      "huggingfaceId": null,
      "detailSlug": "deepseek--deepseek-v4.1-flash-1017",
      "scoreCi": 0.86,
-     "priceIn": 0.3,
-     "priceOut": 1.2,
+     "priceIn": 0.15,
+     "priceOut": 0.6,
      "extra": {
       "confirmedSuccess": 7.12,
       "confirmedSuccessCi": 1.82,
@@ -414,7 +414,7 @@
       "toolHallucination": 0.42,
       "toolHallucinationCi": 0.09,
       "costTaskP50": 0.2,
-      "outputTokensTaskP50": 84.4
+      "outputTokensTaskP50": 84.1
      }
     },
     {
@@ -444,8 +444,8 @@
       "bashRecoveryCi": 0.87,
       "toolHallucination": 0.45,
       "toolHallucinationCi": 0.15,
-      "costTaskP50": 1.29,
-      "outputTokensTaskP50": 31.4
+      "costTaskP50": 1.34,
+      "outputTokensTaskP50": 31.5
      }
     },
     {
@@ -475,8 +475,8 @@
       "bashRecoveryCi": 0.97,
       "toolHallucination": -0.84,
       "toolHallucinationCi": 2.18,
-      "costTaskP50": 1.56,
-      "outputTokensTaskP50": 26
+      "costTaskP50": 1.57,
+      "outputTokensTaskP50": 26.1
      }
     },
     {
@@ -537,8 +537,8 @@
       "bashRecoveryCi": 0.54,
       "toolHallucination": 0.56,
       "toolHallucinationCi": 0.11,
-      "costTaskP50": 0.82,
-      "outputTokensTaskP50": 56.2
+      "costTaskP50": 0.87,
+      "outputTokensTaskP50": 56.6
      }
     },
     {
@@ -569,7 +569,7 @@
       "toolHallucination": 0.66,
       "toolHallucinationCi": 0.08,
       "costTaskP50": 0.47,
-      "outputTokensTaskP50": 22.9
+      "outputTokensTaskP50": 23.1
      }
     },
     {
@@ -599,8 +599,8 @@
       "bashRecoveryCi": 0.66,
       "toolHallucination": 0.68,
       "toolHallucinationCi": 0.07,
-      "costTaskP50": 2.47,
-      "outputTokensTaskP50": 68.4
+      "costTaskP50": 2.53,
+      "outputTokensTaskP50": 69.3
      }
     },
     {
@@ -630,8 +630,8 @@
       "bashRecoveryCi": 0.28,
       "toolHallucination": 0.61,
       "toolHallucinationCi": 0.07,
-      "costTaskP50": 0.08,
-      "outputTokensTaskP50": 41.5
+      "costTaskP50": 0.09,
+      "outputTokensTaskP50": 41.4
      }
     },
     {
@@ -661,8 +661,8 @@
       "bashRecoveryCi": 0.26,
       "toolHallucination": 0.55,
       "toolHallucinationCi": 0.07,
-      "costTaskP50": 0.15,
-      "outputTokensTaskP50": 70.3
+      "costTaskP50": 0.16,
+      "outputTokensTaskP50": 71.7
      }
     },
     {
@@ -693,7 +693,7 @@
       "toolHallucination": -2.99,
       "toolHallucinationCi": 0.44,
       "costTaskP50": 0.06,
-      "outputTokensTaskP50": 45.9
+      "outputTokensTaskP50": 47.8
      }
     },
     {
@@ -723,8 +723,8 @@
       "bashRecoveryCi": 0.47,
       "toolHallucination": 0.09,
       "toolHallucinationCi": 0.18,
-      "costTaskP50": 0.43,
-      "outputTokensTaskP50": 47.5
+      "costTaskP50": 0.44,
+      "outputTokensTaskP50": 48.5
      }
     },
     {
@@ -754,8 +754,8 @@
       "bashRecoveryCi": 0.95,
       "toolHallucination": 0.73,
       "toolHallucinationCi": 0.07,
-      "costTaskP50": 0.96,
-      "outputTokensTaskP50": 56.6
+      "costTaskP50": 0.98,
+      "outputTokensTaskP50": 57.4
      }
     },
     {
@@ -816,8 +816,8 @@
       "bashRecoveryCi": 1.08,
       "toolHallucination": 0.7,
       "toolHallucinationCi": 0.08,
-      "costTaskP50": 0.9,
-      "outputTokensTaskP50": 54.9
+      "costTaskP50": 1.01,
+      "outputTokensTaskP50": 57.3
      }
     },
     {
@@ -848,7 +848,7 @@
       "toolHallucination": -0.89,
       "toolHallucinationCi": 0.65,
       "costTaskP50": 0.1,
-      "outputTokensTaskP50": 29.8
+      "outputTokensTaskP50": 29.2
      }
     },
     {
@@ -878,8 +878,8 @@
       "bashRecoveryCi": 0.71,
       "toolHallucination": -0.83,
       "toolHallucinationCi": 0.2,
-      "costTaskP50": 1.07,
-      "outputTokensTaskP50": 45.5
+      "costTaskP50": 1.21,
+      "outputTokensTaskP50": 48.8
      }
     },
     {
@@ -907,8 +907,8 @@
       "bashRecoveryCi": 1.03,
       "toolHallucination": 0.61,
       "toolHallucinationCi": 0.1,
-      "costTaskP50": 1.35,
-      "outputTokensTaskP50": 34.6
+      "costTaskP50": 1.42,
+      "outputTokensTaskP50": 35.3
      }
     },
     {
@@ -938,8 +938,8 @@
       "bashRecoveryCi": 1.52,
       "toolHallucination": 0.55,
       "toolHallucinationCi": 0.14,
-      "costTaskP50": 0.59,
-      "outputTokensTaskP50": 17.3
+      "costTaskP50": 0.61,
+      "outputTokensTaskP50": 16.8
      }
     }
    ]
@@ -950,8 +950,8 @@
    "unit": "elo",
    "route": "/text/",
    "sourceUrl": "https://arena.ai/leaderboard/chat/text",
-   "sourceUpdated": "Oct 25, 2026",
-   "sourceFetchedAt": "2026-10-25T13:40:32.154Z",
+   "sourceUpdated": "Oct 26, 2026",
+   "sourceFetchedAt": "2026-10-26T18:20:33.343Z",
    "fullCount": 418,
    "rows": [
     {
@@ -1583,8 +1583,8 @@
    "unit": "elo",
    "route": "/vision/",
    "sourceUrl": "https://arena.ai/leaderboard/chat/vision",
-   "sourceUpdated": "Oct 25, 2026",
-   "sourceFetchedAt": "2026-10-25T13:40:22.253Z",
+   "sourceUpdated": "Oct 26, 2026",
+   "sourceFetchedAt": "2026-10-26T18:20:25.965Z",
    "fullCount": 167,
    "rows": [
     {
@@ -2211,8 +2211,8 @@
    "unit": "elo",
    "route": "/search/",
    "sourceUrl": "https://arena.ai/leaderboard/chat/search",
-   "sourceUpdated": "Oct 25, 2026",
-   "sourceFetchedAt": "2026-10-25T13:40:27.839Z",
+   "sourceUpdated": "Oct 26, 2026",
+   "sourceFetchedAt": "2026-10-26T18:20:26.861Z",
    "fullCount": 42,
    "rows": [
     {
@@ -2843,8 +2843,8 @@
    "unit": "elo",
    "route": "/document/",
    "sourceUrl": "https://arena.ai/leaderboard/chat/document",
-   "sourceUpdated": "Oct 25, 2026",
-   "sourceFetchedAt": "2026-10-25T13:40:36.369Z",
+   "sourceUpdated": "Oct 26, 2026",
+   "sourceFetchedAt": "2026-10-26T18:00:40.853Z",
    "fullCount": 44,
    "rows": [
     {
@@ -3473,8 +3473,8 @@
    "unit": "elo",
    "route": "/code/",
    "sourceUrl": "https://arena.ai/leaderboard/code/webdev",
-   "sourceUpdated": "Oct 25, 2026",
-   "sourceFetchedAt": "2026-10-25T13:40:49.273Z",
+   "sourceUpdated": "Oct 26, 2026",
+   "sourceFetchedAt": "2026-10-26T18:01:02.763Z",
    "fullCount": 151,
    "rows": [
     {
@@ -3746,8 +3746,8 @@
      "openrouterId": "deepseek/deepseek-v4.1-flash-1017",
      "huggingfaceId": null,
      "detailSlug": "deepseek--deepseek-v4.1-flash-1017",
-     "priceIn": 0.3,
-     "priceOut": 1.2,
+     "priceIn": 0.15,
+     "priceOut": 0.6,
      "context": "1M",
      "extra": {
       "costTaskP50": ""
@@ -4081,8 +4081,8 @@
    "unit": "elo",
    "route": "/image-to-webdev/",
    "sourceUrl": "https://arena.ai/leaderboard/code/image-to-webdev",
-   "sourceUpdated": "Oct 25, 2026",
-   "sourceFetchedAt": "2026-10-25T13:41:28.765Z",
+   "sourceUpdated": "Oct 26, 2026",
+   "sourceFetchedAt": "2026-10-26T18:02:13.439Z",
    "fullCount": 65,
    "rows": [
     {
@@ -4692,8 +4692,8 @@
    "unit": "elo",
    "route": "/text-to-image/",
    "sourceUrl": "https://arena.ai/leaderboard/image/text-to-image",
-   "sourceUpdated": "Oct 25, 2026",
-   "sourceFetchedAt": "2026-10-25T13:41:00.947Z",
+   "sourceUpdated": "Oct 26, 2026",
+   "sourceFetchedAt": "2026-10-26T18:01:11.173Z",
    "fullCount": 82,
    "rows": [
     {
@@ -5154,8 +5154,8 @@
    "unit": "elo",
    "route": "/image-edit/",
    "sourceUrl": "https://arena.ai/leaderboard/image/image-edit/single-image",
-   "sourceUpdated": "Oct 25, 2026",
-   "sourceFetchedAt": "2026-10-25T13:41:26.058Z",
+   "sourceUpdated": "Oct 26, 2026",
+   "sourceFetchedAt": "2026-10-26T18:01:30.775Z",
    "fullCount": 60,
    "rows": [
     {
@@ -5616,8 +5616,8 @@
    "unit": "elo",
    "route": "/text-to-video/",
    "sourceUrl": "https://arena.ai/leaderboard/video/text-to-video",
-   "sourceUpdated": "Oct 25, 2026",
-   "sourceFetchedAt": "2026-10-25T13:41:11.561Z",
+   "sourceUpdated": "Oct 26, 2026",
+   "sourceFetchedAt": "2026-10-26T18:01:25.560Z",
    "fullCount": 48,
    "rows": [
     {
@@ -6078,8 +6078,8 @@
    "unit": "elo",
    "route": "/image-to-video/",
    "sourceUrl": "https://arena.ai/leaderboard/video/image-to-video",
-   "sourceUpdated": "Oct 25, 2026",
-   "sourceFetchedAt": "2026-10-25T13:41:19.359Z",
+   "sourceUpdated": "Oct 26, 2026",
+   "sourceFetchedAt": "2026-10-26T18:01:19.168Z",
    "fullCount": 48,
    "rows": [
     {
@@ -6540,8 +6540,8 @@
    "unit": "elo",
    "route": "/video-edit/",
    "sourceUrl": "https://arena.ai/leaderboard/video/video-edit",
-   "sourceUpdated": "Oct 25, 2026",
-   "sourceFetchedAt": "2026-10-25T13:41:33.442Z",
+   "sourceUpdated": "Oct 26, 2026",
+   "sourceFetchedAt": "2026-10-26T18:01:34.049Z",
    "fullCount": 10,
    "rows": [
     {

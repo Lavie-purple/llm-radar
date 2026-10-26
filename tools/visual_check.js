@@ -41,7 +41,15 @@ function check(cond, label, detail) {
   const browser = await chromium.launch();
   const page = await browser.newPage({ viewport: { width: 1680, height: 1050 }, deviceScaleFactor: 2 });
   const errs = [];
-  page.on('console', m => { if (m.type() === 'error') errs.push(m.text()); });
+  page.on('console', m => {
+    if (m.type() !== 'error') return;
+    /* 跨域资源（Google Fonts 等）加载失败是网络环境噪音，今晨实测会把
+       「无控制台错误」拖成假 FAIL —— 与 check_deploy 的 requestfailed 同款口径：
+       只对同源的资源错误和真正的 JS 错误叫错。 */
+    const loc = (m.location() || {}).url || '';
+    if (/^Failed to load resource/.test(m.text()) && !loc.includes('127.0.0.1:8758')) return;
+    errs.push(m.text());
+  });
   page.on('pageerror', e => errs.push('PAGEERROR: ' + e.message));
 
   const shot = (name, clip) => page.screenshot({ path: path.join(OUTDIR, name + '.png'), ...(clip ? { clip } : {}) });
@@ -228,9 +236,12 @@ function check(cond, label, detail) {
        flash 动画只有 900ms，而 networkidle 在大表（124 行 + 178 条微折线）下
        可能迟到几百 ms —— 睡醒时动画已结束并被移出动画队列，「节点在、动画 0」
        的假 FAIL 就这么来的（2026-10-25 实测：改数据前全绿，改重后连挂）。
-       正确做法：等 flash 节点出现（= 类刚加上、动画刚启动）立刻读，
-       900ms 窗口必命中。waitUntil 用 load 不用 networkidle，尽早拿回控制权。 */
-    await page.reload({ waitUntil: 'load' });
+       也不能指望 waitUntil:'load' 及时返回：2026-10-27 实测 Google Fonts 超时
+       会把 load 事件拖到 900ms 之外，waitForSelector 拿到控制权时动画早放完了
+       （「nodes=1 / anims=0」三连复现）。正确做法：reload 只发起不等它，
+       **并行**等 flash 节点出现（= 类刚加上、动画刚启动）立刻读；
+       读完再等 reload 收尾，保证后续段落跑在稳定的页面上。 */
+    const rp = page.reload({ waitUntil: 'load' }).catch(() => {});
     /* 等不到不能抛：拆掉被守护的渲染代码时（falsify 的用例）flash 节点永远不会出现，
        抛异常会让整个 visual_check 中途崩掉、没有收尾汇总 —— 那条用例就变成
        「没跑完、结论不作数」，明明是该报红的。接住超时，让后面的检查照常报红。 */
@@ -273,6 +284,7 @@ function check(cond, label, detail) {
     check(!!fl.kf && fl.kf.last === fl.kf.own,
       '隐式 to = 元素自己的档位色（不用把六档颜色再抄一遍）', JSON.stringify(fl.kf));
     check(!!fl.kf && fl.kf.first !== fl.kf.last, '闪的起点与档位色不同（否则等于没闪）', JSON.stringify(fl.kf));
+    await rp;   // reload 收尾：后续段落必须跑在导航完成后的稳定页面上
     await shot('14-flash');
     await page.waitForTimeout(1200);
     const settled = await page.evaluate((dc) => {

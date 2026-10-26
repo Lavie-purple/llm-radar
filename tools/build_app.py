@@ -57,13 +57,11 @@ CATEGORIES = [
             {"key": "chat.vision", "label": "视觉多模态", "primary": "lmarena", "tolerance": "宽容",
              "question": "看懂你贴的截图、照片、界面",
              "cols": [("lmarena", "vision", "Arena Elo", "elo", ""),
-                      ("llmstats", "vision", "LLM Stats Score", "score", ""),
-                      ("aa", "mmmuPro", "MMMU-Pro", "pct", "")]},
+                      ("llmstats", "vision", "LLM Stats Score", "score", "")]},
             {"key": "chat.document", "label": "文档理解", "primary": "lmarena", "tolerance": "零容忍",
              "question": "长 PDF、长文档的信息提取",
              "cols": [("lmarena", "document", "Arena Elo", "elo", ""),
-                      ("llmstats", "long_context", "LLM Stats Score", "score", "llm-stats 以长上下文类目代理"),
-                      ("aa", "lcr", "AA-LCR", "pct", "")]},
+                      ("llmstats", "long_context", "LLM Stats Score", "score", "llm-stats 以长上下文类目代理")]},
         ],
     },
     {
@@ -79,24 +77,26 @@ CATEGORIES = [
                       ("aa", "intelligenceIndex", "AA Intelligence Index", "index", ""),
                       ("llmstats", "general", "LLM Stats Score", "score", "聚合层，反映公开 benchmark 覆盖密度")]},
             # LiveBench 2.0（2026-10-23）删掉了 Instruction Following 套件，主源换成 llm-stats。
+            # 2026-10-27 起 AA 首页 payload 不再内嵌各 benchmark 明细（IFBench 等，
+            # Intelligence Index v4.1.1 仍含它们，但单榜明细字段整个下线）—— 死列删除。
             {"key": "general.if", "label": "指令遵循", "primary": "llmstats", "tolerance": "零容忍",
              "question": "严格按要求格式、字数、条件输出",
-             "cols": [("llmstats", "instruction_following", "LLM Stats Score", "score", ""),
-                      ("aa", "ifbench", "IFBench", "pct", "")]},
+             "cols": [("llmstats", "instruction_following", "LLM Stats Score", "score", "")]},
             {"key": "general.reasoning", "label": "推理", "primary": "llmstats", "tolerance": "零容忍",
              "question": "复杂多步推理",
-             "cols": [("llmstats", "reasoning", "LLM Stats Score", "score", ""),
-                      ("aa", "hle", "HLE", "pct", "Humanity's Last Exam"),
-                      ("aa", "gpqa", "GPQA Diamond", "pct", "")]},
+             "cols": [("llmstats", "reasoning", "LLM Stats Score", "score", "")]},
             # LiveBench 2.0 删掉了 Mathematics 套件，主源换成 llm-stats。
             {"key": "general.math", "label": "数学", "primary": "llmstats", "tolerance": "零容忍",
              "question": "数学与竞赛题",
-             "cols": [("llmstats", "math", "LLM Stats Score", "score", ""),
-                      ("aa", "critpt", "CritPt", "pct", "")]},
+             "cols": [("llmstats", "math", "LLM Stats Score", "score", "")]},
+            # 2026-10-27 AA 改版：omniscienceAccuracy / omniscienceNonHallucination 两个字段
+            # 从首页 payload 下线，换成一直就有的聚合分 omniscience（官方口径：
+            # 答对 +1 / 答错 −1 / 弃权 0，范围 −100~100，0 = 对错各半，负 = 错多于对）。
+            # 它与旧两字段不是线性关系（实测拟合残差最大 13.5），是站方换的口径。
             {"key": "general.hallucination", "label": "幻觉控制", "primary": "aa", "tolerance": "零容忍",
              "question": "不知道时是否老实说不知道",
-             "cols": [("aa", "omniscienceNonHallucination", "非幻觉率", "pct", "越高越好"),
-                      ("aa", "omniscienceAccuracy", "AA-Omniscience 准确率", "pct", "")]},
+             "cols": [("aa", "omniscience", "AA-Omniscience", "score",
+                       "答对 +1 / 答错 −1 / 弃权 0，范围 −100~100；负分 = 错比对多")]},
         ],
     },
     {
@@ -106,8 +106,7 @@ CATEGORIES = [
             {"key": "code.webdev", "label": "前端开发（vibe coding）", "primary": "lmarena", "tolerance": "零容忍",
              "question": "直接产出能跑的页面——这是 vibe coding 唯一对口的信号",
              "cols": [("lmarena", "code", "WebDev Arena Elo", "elo", ""),
-                      ("llmstats", "frontend_development", "LLM Stats Score", "score", "llm-stats 自建的前端开发类目"),
-                      ("aa", "terminalBench21", "Terminal-Bench", "pct", "终端任务，不等于页面产出，仅作交叉校验")]},
+                      ("llmstats", "frontend_development", "LLM Stats Score", "score", "llm-stats 自建的前端开发类目")]},
             {"key": "code.img2web", "label": "图生网页", "primary": "lmarena", "tolerance": "零容忍",
              "question": "给一张设计图，直接还原成网页",
              "cols": [("lmarena", "image-to-webdev", "Arena Elo", "elo", "")]},
@@ -123,11 +122,10 @@ CATEGORIES = [
             {"key": "agent.work", "label": "真实工作任务", "primary": "lmarena", "tolerance": "零容忍",
              "question": "交给它一个完整任务，能否自主跑完",
              "cols": [("lmarena", "agent", "净改善度", "pct", ""),
-                      ("aa", "gdpvalNormalized", "GDPval-AA", "pct", "归一化到人类专家水平，100% = 人类专家同等产出"),
                       ("llmstats", "agents", "LLM Stats Score", "score", ""),
-                      ("aa", "terminalBench40", "Terminal-Bench 4.0", "pct", ""),
                       # LiveBench 2.0 的旗舰套件（官方权重 ×2）：长时程智能体任务，
                       # 与「自主跑完一个任务」对口。旧版 LiveBench 在此子类没有对应列。
+                      # （GDPval-AA / Terminal-Bench 4.0 两列 AA 明细已于 2026-10-27 下线，删除。）
                       ("livebench", "Long Agentic", "LiveBench Long Agentic", "pct",
                        "长时程智能体任务，0~100（LiveBench 2.0 官方权重 ×2 的旗舰套件）")]},
         ],

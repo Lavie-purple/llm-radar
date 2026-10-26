@@ -17,6 +17,17 @@ AA 把指标数组从 `"models"` 改名成 `"initialModels"`，`"models"` 退化
 同时 `releaseDate` 不在指标数组里，在 `"releases"` 数组里（slug → releaseDate），
 按 slug 关联；`effort` 字段整个从页面消失了，相关展示降级为无。
 
+2026-10-27 二次改版
+-------------------
+首页 payload 把**全部 benchmark 明细字段下线**（hle / gpqa / critpt / lcr /
+mmmuPro / ifbench / gdpvalNormalized / terminalBench21 / terminalBench40 /
+analystAgent / apexAgents / itbenchSre / tau2 / tauBanking / scicode /
+omniscienceAccuracy / omniscienceNonHallucination，共 17 个），只保留
+Intelligence Index + **omniscience**（AA-Omniscience Index，站方口径：
+答对 +1 / 答错 −1 / 弃权 0，−100~100，0 = 对错各半）+ 价格 + 速度。
+实测 omniscience 与旧 accuracy/nonHallucination 不是线性关系（残差最大 13.5），
+是站方换的口径，不是字段换算。FIELDS 里保留旧字段名做兼容：字段回来会自动接上。
+
 用法
 ----
     python tools/fetch_aa.py
@@ -131,6 +142,7 @@ def main():
 
     # 统计
     has_idx = sum(1 for r in rows if r.get("intelligenceIndex") is not None)
+    has_omni = sum(1 for r in rows if r.get("omniscience") is not None)
     has_gdp = sum(1 for r in rows if r.get("gdpvalNormalized") is not None)
     has_price = sum(1 for r in rows if r.get("price1mInputTokens") is not None)
     has_speed = sum(1 for r in rows if r.get("medianOutputTokensPerSecond") is not None)
@@ -142,6 +154,15 @@ def main():
         print(f"抓到 {len(rows)} 个条目但 intelligenceIndex 全为空"
               " —— 指标数组可能又改名了，拒绝写出", file=sys.stderr)
         return 1
+    # omniscience 是「幻觉控制」子类的唯一来源，全空时页面会凭空少一个子类 ——
+    # 这是站方产品事件（可能下线了该指标），不拒绝写出，但必须显式喊出来。
+    if has_omni == 0:
+        print("⚠️ omniscience 全为空 —— 「幻觉控制」子类将无数据，"
+              "AA 可能下线了 AA-Omniscience（或又改了字段名）", file=sys.stderr)
+    # 2026-10-27 起明细 benchmark 字段整体下线是**已知状态**，不再逐个喊；
+    # 若哪天它们回来了，这里也会如实显示非零。
+    if has_gdp > 0:
+        print(f"  （GDPval 明细字段回来了：{has_gdp} 个有值 —— 可考虑在 build_app 加回该列）")
 
     payload = {
         "source": {
@@ -155,6 +176,7 @@ def main():
         "count": len(rows),
         "coverage": {
             "intelligenceIndex": has_idx,
+            "omniscience": has_omni,
             "gdpval": has_gdp,
             "price": has_price,
             "speed": has_speed,
@@ -165,6 +187,7 @@ def main():
     path, size = rsc.write_json(payload, args.out)
     print(f"\n{len(rows)} 个模型（跳过 deprecated {skipped_dep}）-> {path} ({size/1024:.0f} KB)")
     print(f"  有 Intelligence Index : {has_idx}")
+    print(f"  有 AA-Omniscience     : {has_omni}")
     print(f"  有 GDPval-AA          : {has_gdp}")
     print(f"  有价格                : {has_price}")
     print(f"  有输出速度            : {has_speed}")
