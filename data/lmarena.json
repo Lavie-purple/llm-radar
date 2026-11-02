@@ -5,7 +5,7 @@
   "officialUrl": "https://lmarena.ai/",
   "licenseNote": "license 字段区分 open / proprietary，可直接用于开源筛选。"
  },
- "fetchedAt": "2026-10-27T07:12:31+08:00",
+ "fetchedAt": "2026-11-02T21:12:55+08:00",
  "top": 30,
  "boards": {
   "agent": {
@@ -14,9 +14,9 @@
    "unit": "pct",
    "route": "/agent/",
    "sourceUrl": "https://arena.ai/leaderboard/agent",
-   "sourceUpdated": "Oct 26, 2026",
-   "sourceFetchedAt": "2026-10-26T18:01:05.302Z",
-   "fullCount": 55,
+   "sourceUpdated": "Nov 2, 2026",
+   "sourceFetchedAt": "2026-11-02T11:00:23.690Z",
+   "fullCount": 57,
    "rows": [
     {
      "rank": 1,
@@ -25,624 +25,686 @@
      "displayName": "Claude Opus 5.5 (Max)",
      "vendor": "Anthropic",
      "license": "proprietary",
-     "score": 20.77,
-     "votes": 12057,
+     "score": 20.94,
+     "votes": 13584,
      "country": "US",
      "openrouterId": "anthropic/claude-opus-5.5",
      "huggingfaceId": null,
      "detailSlug": "anthropic--claude-opus-5.5",
-     "scoreCi": 2.38,
+     "scoreCi": 2.15,
      "priceIn": 4.0,
      "priceOut": 20.0,
      "extra": {
-      "confirmedSuccess": 22.08,
-      "confirmedSuccessCi": 3.38,
-      "praiseVsComplaint": 45.32,
-      "praiseVsComplaintCi": 9.27,
-      "steerability": 17.6,
-      "steerabilityCi": 1.99,
-      "bashRecovery": 15.77,
-      "bashRecoveryCi": 0.5,
-      "toolHallucination": 0.57,
-      "toolHallucinationCi": 0.13,
-      "costTaskP50": 6.31,
-      "outputTokensTaskP50": 124.5
+      "confirmedSuccess": 22.29,
+      "confirmedSuccessCi": 3.11,
+      "praiseVsComplaint": 45.97,
+      "praiseVsComplaintCi": 8.24,
+      "steerability": 18,
+      "steerabilityCi": 1.94,
+      "bashRecovery": 14.99,
+      "bashRecoveryCi": 0.46,
+      "toolHallucination": 0.47,
+      "toolHallucinationCi": 0.21,
+      "costTaskP50": 6.94,
+      "outputTokensTaskP50": 135.4
      }
     },
     {
      "rank": 2,
-     "rankSpread": "2 7",
-     "model": "Claude Sonnet 5.5 (Max)",
-     "displayName": "Claude Sonnet 5.5 (Max)",
-     "vendor": "Anthropic",
+     "rankSpread": "2 4",
+     "model": "Gemini 4 Carbon (High)",
+     "displayName": "Gemini 4 Carbon (High)",
+     "vendor": "Google",
      "license": "proprietary",
-     "score": 13.99,
-     "votes": 8097,
+     "score": 16.04,
+     "votes": 26511,
      "country": "US",
-     "openrouterId": "anthropic/claude-sonnet-5.5",
+     "openrouterId": null,
      "huggingfaceId": null,
-     "detailSlug": "anthropic--claude-sonnet-5.5",
-     "scoreCi": 3.04,
+     "detailSlug": null,
+     "scoreCi": 1,
+     "priceIn": 2.0,
+     "priceOut": 10.0,
      "extra": {
-      "confirmedSuccess": 21.7,
-      "confirmedSuccessCi": 4.75,
-      "praiseVsComplaint": 23.2,
-      "praiseVsComplaintCi": 11.7,
-      "steerability": 10.82,
-      "steerabilityCi": 3.58,
-      "bashRecovery": 13.17,
-      "bashRecoveryCi": 0.88,
-      "toolHallucination": 0.65,
-      "toolHallucinationCi": 0.13,
-      "costTaskP50": 4.58,
-      "outputTokensTaskP50": 192.3
+      "confirmedSuccess": 18.05,
+      "confirmedSuccessCi": 1.6,
+      "praiseVsComplaint": 37.95,
+      "praiseVsComplaintCi": 3.68,
+      "steerability": 18.42,
+      "steerabilityCi": 0.95,
+      "bashRecovery": -5.44,
+      "bashRecoveryCi": 0.94,
+      "toolHallucination": 0.48,
+      "toolHallucinationCi": 0.16,
+      "costTaskP50": 1.76,
+      "outputTokensTaskP50": 56.8
      }
     },
     {
      "rank": 3,
-     "rankSpread": "2 7",
-     "model": "GPT-6 Astra (Max)",
-     "displayName": "GPT 6 Astra (Max)",
-     "vendor": "OpenAI",
+     "rankSpread": "2 8",
+     "model": "Claude Sonnet 5.5 (Max)",
+     "displayName": "Claude Sonnet 5.5 (Max)",
+     "vendor": "Anthropic",
      "license": "proprietary",
-     "score": 13.96,
-     "votes": 14567,
+     "score": 13.84,
+     "votes": 8300,
      "country": "US",
-     "openrouterId": "openai/gpt-6-astra",
+     "openrouterId": "anthropic/claude-sonnet-5.5",
      "huggingfaceId": null,
-     "detailSlug": "openai--gpt-6-astra",
-     "scoreCi": 2.08,
-     "priceIn": 10.0,
-     "priceOut": 50.0,
+     "detailSlug": "anthropic--claude-sonnet-5.5",
+     "scoreCi": 2.65,
      "extra": {
-      "confirmedSuccess": 13.25,
-      "confirmedSuccessCi": 3.59,
-      "praiseVsComplaint": 29.76,
-      "praiseVsComplaintCi": 7.58,
-      "steerability": 14.46,
-      "steerabilityCi": 2.13,
-      "bashRecovery": 9.29,
-      "bashRecoveryCi": 1.29,
-      "toolHallucination": 0.71,
-      "toolHallucinationCi": 0.08,
-      "costTaskP50": 4.42,
-      "outputTokensTaskP50": 32.9
+      "confirmedSuccess": 20.76,
+      "confirmedSuccessCi": 4.23,
+      "praiseVsComplaint": 23.76,
+      "praiseVsComplaintCi": 10.3,
+      "steerability": 10.75,
+      "steerabilityCi": 3.05,
+      "bashRecovery": 12.68,
+      "bashRecoveryCi": 0.74,
+      "toolHallucination": 0.66,
+      "toolHallucinationCi": 0.11,
+      "costTaskP50": 4.11,
+      "outputTokensTaskP50": 172.3
      }
     },
     {
      "rank": 4,
-     "rankSpread": "2 7",
+     "rankSpread": "2 8",
      "model": "Claude Fable 5.1 (Max)",
      "displayName": "Claude Fable 5.1 (Max)",
      "vendor": "Anthropic",
      "license": "proprietary",
-     "score": 13.94,
-     "votes": 17062,
+     "score": 13.35,
+     "votes": 17347,
      "country": "US",
      "openrouterId": "anthropic/claude-fable-5.1",
      "huggingfaceId": null,
      "detailSlug": "anthropic--claude-fable-5.1",
-     "scoreCi": 1.93,
+     "scoreCi": 1.89,
      "priceIn": 10.0,
      "priceOut": 50.0,
      "extra": {
-      "confirmedSuccess": 13.86,
-      "confirmedSuccessCi": 3.44,
-      "praiseVsComplaint": 27.66,
-      "praiseVsComplaintCi": 7.13,
-      "steerability": 15.33,
-      "steerabilityCi": 2.14,
-      "bashRecovery": 10.56,
-      "bashRecoveryCi": 0.98,
-      "toolHallucination": 0.61,
-      "toolHallucinationCi": 0.14,
-      "costTaskP50": 8.44,
-      "outputTokensTaskP50": 66.5
+      "confirmedSuccess": 12.47,
+      "confirmedSuccessCi": 3.51,
+      "praiseVsComplaint": 27.07,
+      "praiseVsComplaintCi": 6.9,
+      "steerability": 14.9,
+      "steerabilityCi": 2.05,
+      "bashRecovery": 10.05,
+      "bashRecoveryCi": 0.97,
+      "toolHallucination": 0.62,
+      "toolHallucinationCi": 0.12,
+      "costTaskP50": 7.3,
+      "outputTokensTaskP50": 58.9
      }
     },
     {
      "rank": 5,
-     "rankSpread": "2 7",
-     "model": "GPT-6.1 Sol (Max)",
-     "displayName": "GPT 6.1 Sol (Max)",
+     "rankSpread": "3 9",
+     "model": "GPT-6 Astra (Max)",
+     "displayName": "GPT 6 Astra (Max)",
      "vendor": "OpenAI",
      "license": "proprietary",
-     "score": 13.64,
-     "votes": 16092,
+     "score": 12.96,
+     "votes": 15070,
      "country": "US",
-     "openrouterId": "openai/gpt-6.1-sol",
+     "openrouterId": "openai/gpt-6-astra",
      "huggingfaceId": null,
-     "detailSlug": "openai--gpt-6.1-sol",
-     "scoreCi": 1.63,
-     "priceIn": 2.0,
-     "priceOut": 10.0,
+     "detailSlug": "openai--gpt-6-astra",
+     "scoreCi": 2.02,
+     "priceIn": 10.0,
+     "priceOut": 50.0,
      "extra": {
-      "confirmedSuccess": 13.73,
-      "confirmedSuccessCi": 2.75,
-      "praiseVsComplaint": 31.26,
-      "praiseVsComplaintCi": 5.97,
-      "steerability": 13.7,
-      "steerabilityCi": 1.62,
-      "bashRecovery": 3.93,
-      "bashRecoveryCi": 1.1,
-      "toolHallucination": 0.75,
-      "toolHallucinationCi": 0.06,
-      "costTaskP50": 0.84,
-      "outputTokensTaskP50": 32.9
+      "confirmedSuccess": 12.59,
+      "confirmedSuccessCi": 3.52,
+      "praiseVsComplaint": 27.1,
+      "praiseVsComplaintCi": 7.3,
+      "steerability": 13.61,
+      "steerabilityCi": 2.08,
+      "bashRecovery": 8.6,
+      "bashRecoveryCi": 1.22,
+      "toolHallucination": 0.72,
+      "toolHallucinationCi": 0.07,
+      "costTaskP50": 5.85,
+      "outputTokensTaskP50": 40.8
      }
     },
     {
      "rank": 6,
-     "rankSpread": "2 7",
-     "model": "Gemini 4 Argon (High)",
-     "displayName": "Gemini 4 Argon (High)",
-     "vendor": "Google",
+     "rankSpread": "3 8",
+     "model": "GPT-6.1 Sol (Max)",
+     "displayName": "GPT 6.1 Sol (Max)",
+     "vendor": "OpenAI",
      "license": "proprietary",
-     "score": 11.75,
-     "votes": 45840,
+     "score": 12.47,
+     "votes": 28883,
      "country": "US",
-     "openrouterId": "google/gemini-4-argon",
+     "openrouterId": "openai/gpt-6.1-sol",
      "huggingfaceId": null,
-     "detailSlug": "google--gemini-4-argon",
-     "scoreCi": 0.91,
+     "detailSlug": "openai--gpt-6.1-sol",
+     "scoreCi": 1.08,
      "priceIn": 2.0,
      "priceOut": 10.0,
      "extra": {
-      "confirmedSuccess": 13.51,
-      "confirmedSuccessCi": 1.61,
-      "praiseVsComplaint": 26.62,
-      "praiseVsComplaintCi": 3.19,
-      "steerability": 14.4,
-      "steerabilityCi": 0.99,
-      "bashRecovery": -4.03,
-      "bashRecoveryCi": 1.15,
-      "toolHallucination": 0.35,
-      "toolHallucinationCi": 0.14,
-      "costTaskP50": 1.09,
-      "outputTokensTaskP50": 37.8
+      "confirmedSuccess": 11.38,
+      "confirmedSuccessCi": 1.91,
+      "praiseVsComplaint": 27.67,
+      "praiseVsComplaintCi": 3.9,
+      "steerability": 13.51,
+      "steerabilityCi": 1.07,
+      "bashRecovery": 5.58,
+      "bashRecoveryCi": 0.7,
+      "toolHallucination": 0.75,
+      "toolHallucinationCi": 0.05,
+      "costTaskP50": 0.92,
+      "outputTokensTaskP50": 32.7
      }
     },
     {
      "rank": 7,
-     "rankSpread": "2 10",
-     "model": "Muse Wonder Full (Max)",
-     "displayName": "Muse Wonder Full (Max)",
-     "vendor": "Meta",
+     "rankSpread": "3 9",
+     "model": "Gemini 4 Argon (High)",
+     "displayName": "Gemini 4 Argon (High)",
+     "vendor": "Google",
      "license": "proprietary",
-     "score": 10.74,
-     "votes": 14474,
+     "score": 10.73,
+     "votes": 50974,
      "country": "US",
-     "openrouterId": "meta/muse-wonder",
+     "openrouterId": "google/gemini-4-argon",
      "huggingfaceId": null,
-     "detailSlug": "meta--muse-wonder",
-     "scoreCi": 1.39,
+     "detailSlug": "google--gemini-4-argon",
+     "scoreCi": 0.81,
+     "priceIn": 2.0,
+     "priceOut": 10.0,
      "extra": {
-      "confirmedSuccess": 11.78,
-      "confirmedSuccessCi": 2.62,
-      "praiseVsComplaint": 19.97,
-      "praiseVsComplaintCi": 4.94,
-      "steerability": 11.81,
-      "steerabilityCi": 1.65,
-      "bashRecovery": 8.73,
-      "bashRecoveryCi": 0.7,
-      "toolHallucination": 0.39,
-      "toolHallucinationCi": 0.19,
-      "costTaskP50": "N/A",
-      "outputTokensTaskP50": 34.3
+      "confirmedSuccess": 12.84,
+      "confirmedSuccessCi": 1.47,
+      "praiseVsComplaint": 23.96,
+      "praiseVsComplaintCi": 2.78,
+      "steerability": 13.71,
+      "steerabilityCi": 0.93,
+      "bashRecovery": -5.07,
+      "bashRecoveryCi": 1,
+      "toolHallucination": 0.3,
+      "toolHallucinationCi": 0.13,
+      "costTaskP50": 1.04,
+      "outputTokensTaskP50": 35.9
      }
     },
     {
      "rank": 8,
-     "rankSpread": "7 12",
-     "model": "GPT-6 Sol (Max)",
-     "displayName": "GPT 6 Sol (Max)",
+     "rankSpread": "3 12",
+     "model": "GPT-6.1 Terra (Max)",
+     "displayName": "GPT 6.1 Terra (Max)",
      "vendor": "OpenAI",
      "license": "proprietary",
-     "score": 8.57,
-     "votes": 10305,
+     "score": 10.57,
+     "votes": 8977,
      "country": "US",
-     "openrouterId": "openai/gpt-6-sol",
+     "openrouterId": "openai/gpt-6.1-terra",
      "huggingfaceId": null,
-     "detailSlug": "openai--gpt-6-sol",
-     "scoreCi": 1.71,
+     "detailSlug": "openai--gpt-6.1-terra",
+     "scoreCi": 1.96,
      "priceIn": 1.0,
      "priceOut": 5.0,
      "extra": {
-      "confirmedSuccess": 6.9,
-      "confirmedSuccessCi": 3.42,
-      "praiseVsComplaint": 14.1,
-      "praiseVsComplaintCi": 5.86,
-      "steerability": 11.07,
-      "steerabilityCi": 1.84,
-      "bashRecovery": 11.66,
-      "bashRecoveryCi": 0.62,
-      "toolHallucination": 0.64,
-      "toolHallucinationCi": 0.07,
-      "costTaskP50": 1.55,
-      "outputTokensTaskP50": 36.6
+      "confirmedSuccess": 10.1,
+      "confirmedSuccessCi": 3.48,
+      "praiseVsComplaint": 16.84,
+      "praiseVsComplaintCi": 6.78,
+      "steerability": 13.29,
+      "steerabilityCi": 2.34,
+      "bashRecovery": 13.21,
+      "bashRecoveryCi": 0.65,
+      "toolHallucination": 0.75,
+      "toolHallucinationCi": 0.05,
+      "costTaskP50": 0.77,
+      "outputTokensTaskP50": 43.3
      }
     },
     {
      "rank": 9,
-     "rankSpread": "7 12",
-     "model": "Claude Opus 5 (Max)",
-     "displayName": "Claude Opus 5 (Max)",
-     "vendor": "Anthropic",
-     "license": "proprietary",
-     "score": 8.22,
-     "votes": 24440,
-     "country": "US",
-     "openrouterId": "anthropic/claude-opus-5",
-     "huggingfaceId": null,
-     "detailSlug": "anthropic--claude-opus-5",
-     "scoreCi": 1.63,
-     "priceIn": 5.0,
-     "priceOut": 25.0,
-     "extra": {
-      "confirmedSuccess": 11.58,
-      "confirmedSuccessCi": 2.98,
-      "praiseVsComplaint": 12.36,
-      "praiseVsComplaintCi": 5.48,
-      "steerability": 6.69,
-      "steerabilityCi": 2.11,
-      "bashRecovery": 11.3,
-      "bashRecoveryCi": 0.82,
-      "toolHallucination": 0.7,
-      "toolHallucinationCi": 0.08,
-      "costTaskP50": 5.24,
-      "outputTokensTaskP50": 70.1
-     }
-    },
-    {
-     "rank": 10,
-     "rankSpread": "8 12",
-     "model": "Claude Fable 5 (High)",
-     "displayName": "Claude Fable 5 (High)",
-     "vendor": "Anthropic",
-     "license": "proprietary",
-     "score": 7.75,
-     "votes": 43567,
-     "country": "US",
-     "openrouterId": "anthropic/claude-fable-5",
-     "huggingfaceId": null,
-     "detailSlug": "anthropic--claude-fable-5",
-     "scoreCi": 1.4,
-     "priceIn": 10.0,
-     "priceOut": 50.0,
-     "extra": {
-      "confirmedSuccess": 3.43,
-      "confirmedSuccessCi": 2.75,
-      "praiseVsComplaint": 15.28,
-      "praiseVsComplaintCi": 4.48,
-      "steerability": 9.6,
-      "steerabilityCi": 1.92,
-      "bashRecovery": 11.89,
-      "bashRecoveryCi": 1.29,
-      "toolHallucination": 0.64,
-      "toolHallucinationCi": 0.17,
-      "costTaskP50": 3.45,
-      "outputTokensTaskP50": 24.9
-     }
-    },
-    {
-     "rank": 11,
-     "rankSpread": "7 15",
-     "model": "Kimi K3.1 Pro (Max)",
-     "displayName": "Kimi K3.1 Pro (Max)",
-     "vendor": "Moonshot",
-     "license": "proprietary",
-     "score": 7.61,
-     "votes": 4071,
-     "country": "CN",
-     "openrouterId": "moonshotai/kimi-k3.1-pro",
-     "huggingfaceId": null,
-     "detailSlug": "moonshotai--kimi-k3.1-pro",
-     "scoreCi": 3,
-     "priceIn": 2.0,
-     "priceOut": 10.0,
-     "extra": {
-      "confirmedSuccess": 2.03,
-      "confirmedSuccessCi": 5.86,
-      "praiseVsComplaint": 19.04,
-      "praiseVsComplaintCi": 10.12,
-      "steerability": 8.3,
-      "steerabilityCi": 3.36,
-      "bashRecovery": 8.27,
-      "bashRecoveryCi": 1.56,
-      "toolHallucination": 0.75,
-      "toolHallucinationCi": 0.06,
-      "costTaskP50": 1.25,
-      "outputTokensTaskP50": 40.5
-     }
-    },
-    {
-     "rank": 12,
-     "rankSpread": "8 15",
-     "model": "GPT-5.6 Sol (xHigh)",
-     "displayName": "GPT 5.6 Sol (xHigh)",
-     "vendor": "OpenAI",
-     "license": "proprietary",
-     "score": 6.06,
-     "votes": 37542,
-     "country": "US",
-     "openrouterId": "openai/gpt-5.6-sol",
-     "huggingfaceId": null,
-     "detailSlug": "openai--gpt-5.6-sol",
-     "scoreCi": 1.34,
-     "priceIn": 4.0,
-     "priceOut": 20.0,
-     "extra": {
-      "confirmedSuccess": 1.86,
-      "confirmedSuccessCi": 2.8,
-      "praiseVsComplaint": 10.37,
-      "praiseVsComplaintCi": 4.19,
-      "steerability": 8.41,
-      "steerabilityCi": 1.83,
-      "bashRecovery": 11.99,
-      "bashRecoveryCi": 0.93,
-      "toolHallucination": 0.62,
-      "toolHallucinationCi": 0.1,
-      "costTaskP50": 1.7,
-      "outputTokensTaskP50": 21.9
-     }
-    },
-    {
-     "rank": 13,
-     "rankSpread": "11 19",
-     "model": "DeepSeek-V4.1-Flash-20261017 (Max)",
-     "displayName": "DeepSeek V4.1 Flash (Max) (1017)",
-     "vendor": "DeepSeek",
-     "license": "open",
-     "score": 4.37,
-     "votes": 34721,
-     "country": "CN",
-     "openrouterId": "deepseek/deepseek-v4.1-flash-1017",
-     "huggingfaceId": null,
-     "detailSlug": "deepseek--deepseek-v4.1-flash-1017",
-     "scoreCi": 0.86,
-     "priceIn": 0.15,
-     "priceOut": 0.6,
-     "extra": {
-      "confirmedSuccess": 7.12,
-      "confirmedSuccessCi": 1.82,
-      "praiseVsComplaint": 5.97,
-      "praiseVsComplaintCi": 2.75,
-      "steerability": 3.56,
-      "steerabilityCi": 1.15,
-      "bashRecovery": 5.13,
-      "bashRecoveryCi": 0.42,
-      "toolHallucination": 0.42,
-      "toolHallucinationCi": 0.09,
-      "costTaskP50": 0.2,
-      "outputTokensTaskP50": 84.1
-     }
-    },
-    {
-     "rank": 14,
-     "rankSpread": "11 27",
-     "model": "Claude Sonnet 5 (High)",
-     "displayName": "Claude Sonnet 5 (High)",
-     "vendor": "Anthropic",
-     "license": "proprietary",
-     "score": 3.75,
-     "votes": 33991,
-     "country": "US",
-     "openrouterId": "anthropic/claude-sonnet-5",
-     "huggingfaceId": null,
-     "detailSlug": "anthropic--claude-sonnet-5",
-     "scoreCi": 1.7,
-     "priceIn": 2.0,
-     "priceOut": 10.0,
-     "extra": {
-      "confirmedSuccess": -1.05,
-      "confirmedSuccessCi": 3.54,
-      "praiseVsComplaint": 3.81,
-      "praiseVsComplaintCi": 5.24,
-      "steerability": 5.96,
-      "steerabilityCi": 2.33,
-      "bashRecovery": 15.44,
-      "bashRecoveryCi": 0.87,
-      "toolHallucination": 0.45,
-      "toolHallucinationCi": 0.15,
-      "costTaskP50": 1.34,
-      "outputTokensTaskP50": 31.5
-     }
-    },
-    {
-     "rank": 15,
-     "rankSpread": "11 29",
-     "model": "Muse Wonder (Max)",
-     "displayName": "Muse Wonder (Max)",
+     "rankSpread": "6 10",
+     "model": "Muse Wonder Full (Max)",
+     "displayName": "Muse Wonder Full (Max)",
      "vendor": "Meta",
      "license": "proprietary",
-     "score": 3.31,
-     "votes": 11134,
+     "score": 10.09,
+     "votes": 26753,
      "country": "US",
      "openrouterId": "meta/muse-wonder",
      "huggingfaceId": null,
      "detailSlug": "meta--muse-wonder",
-     "scoreCi": 1.57,
+     "scoreCi": 0.94,
+     "extra": {
+      "confirmedSuccess": 11.93,
+      "confirmedSuccessCi": 1.83,
+      "praiseVsComplaint": 17.69,
+      "praiseVsComplaintCi": 3.27,
+      "steerability": 11.31,
+      "steerabilityCi": 1.08,
+      "bashRecovery": 8.08,
+      "bashRecoveryCi": 0.49,
+      "toolHallucination": 0.43,
+      "toolHallucinationCi": 0.12,
+      "costTaskP50": "N/A",
+      "outputTokensTaskP50": 36.1
+     }
+    },
+    {
+     "rank": 10,
+     "rankSpread": "9 13",
+     "model": "Claude Fable 5 (High)",
+     "displayName": "Claude Fable 5 (High)",
+     "vendor": "Anthropic",
+     "license": "proprietary",
+     "score": 8.04,
+     "votes": 50866,
+     "country": "US",
+     "openrouterId": "anthropic/claude-fable-5",
+     "huggingfaceId": null,
+     "detailSlug": "anthropic--claude-fable-5",
+     "scoreCi": 1.09,
+     "priceIn": 10.0,
+     "priceOut": 50.0,
+     "extra": {
+      "confirmedSuccess": 5.57,
+      "confirmedSuccessCi": 2.12,
+      "praiseVsComplaint": 15.45,
+      "praiseVsComplaintCi": 3.54,
+      "steerability": 9.27,
+      "steerabilityCi": 1.37,
+      "bashRecovery": 10.75,
+      "bashRecoveryCi": 0.88,
+      "toolHallucination": 0.51,
+      "toolHallucinationCi": 0.2,
+      "costTaskP50": 3.76,
+      "outputTokensTaskP50": 25.2
+     }
+    },
+    {
+     "rank": 11,
+     "rankSpread": "8 13",
+     "model": "GPT-6 Sol (Max)",
+     "displayName": "GPT 6 Sol (Max)",
+     "vendor": "OpenAI",
+     "license": "proprietary",
+     "score": 7.96,
+     "votes": 12107,
+     "country": "US",
+     "openrouterId": "openai/gpt-6-sol",
+     "huggingfaceId": null,
+     "detailSlug": "openai--gpt-6-sol",
+     "scoreCi": 1.63,
+     "priceIn": 1.0,
+     "priceOut": 5.0,
+     "extra": {
+      "confirmedSuccess": 5.41,
+      "confirmedSuccessCi": 3.39,
+      "praiseVsComplaint": 13.36,
+      "praiseVsComplaintCi": 5.57,
+      "steerability": 10.58,
+      "steerabilityCi": 1.76,
+      "bashRecovery": 11.54,
+      "bashRecoveryCi": 0.58,
+      "toolHallucination": 0.67,
+      "toolHallucinationCi": 0.06,
+      "costTaskP50": 1.71,
+      "outputTokensTaskP50": 38.7
+     }
+    },
+    {
+     "rank": 12,
+     "rankSpread": "9 13",
+     "model": "Claude Opus 5 (Max)",
+     "displayName": "Claude Opus 5 (Max)",
+     "vendor": "Anthropic",
+     "license": "proprietary",
+     "score": 7.57,
+     "votes": 31777,
+     "country": "US",
+     "openrouterId": "anthropic/claude-opus-5",
+     "huggingfaceId": null,
+     "detailSlug": "anthropic--claude-opus-5",
+     "scoreCi": 1.22,
+     "priceIn": 5.0,
+     "priceOut": 25.0,
+     "extra": {
+      "confirmedSuccess": 11.47,
+      "confirmedSuccessCi": 2.29,
+      "praiseVsComplaint": 11.01,
+      "praiseVsComplaintCi": 4.11,
+      "steerability": 5.66,
+      "steerabilityCi": 1.55,
+      "bashRecovery": 10.37,
+      "bashRecoveryCi": 0.57,
+      "toolHallucination": 0.72,
+      "toolHallucinationCi": 0.06,
+      "costTaskP50": 5.78,
+      "outputTokensTaskP50": 70.9
+     }
+    },
+    {
+     "rank": 13,
+     "rankSpread": "10 15",
+     "model": "Kimi K3.1 Pro (Max)",
+     "displayName": "Kimi K3.1 Pro (Max)",
+     "vendor": "Moonshot",
+     "license": "proprietary",
+     "score": 5.96,
+     "votes": 14300,
+     "country": "CN",
+     "openrouterId": "moonshotai/kimi-k3.1-pro",
+     "huggingfaceId": null,
+     "detailSlug": "moonshotai--kimi-k3.1-pro",
+     "scoreCi": 1.59,
+     "priceIn": 2.0,
+     "priceOut": 10.0,
+     "extra": {
+      "confirmedSuccess": 4.27,
+      "confirmedSuccessCi": 3.43,
+      "praiseVsComplaint": 11.17,
+      "praiseVsComplaintCi": 5.1,
+      "steerability": 6.55,
+      "steerabilityCi": 1.92,
+      "bashRecovery": 8.11,
+      "bashRecoveryCi": 0.67,
+      "toolHallucination": 0.75,
+      "toolHallucinationCi": 0.05,
+      "costTaskP50": 1.46,
+      "outputTokensTaskP50": 40.9
+     }
+    },
+    {
+     "rank": 14,
+     "rankSpread": "13 17",
+     "model": "GPT-5.6 Sol (xHigh)",
+     "displayName": "GPT 5.6 Sol (xHigh)",
+     "vendor": "OpenAI",
+     "license": "proprietary",
+     "score": 4.79,
+     "votes": 45156,
+     "country": "US",
+     "openrouterId": "openai/gpt-5.6-sol",
+     "huggingfaceId": null,
+     "detailSlug": "openai--gpt-5.6-sol",
+     "scoreCi": 1.03,
      "priceIn": 4.0,
      "priceOut": 20.0,
      "extra": {
-      "confirmedSuccess": 7.67,
-      "confirmedSuccessCi": 3.26,
-      "praiseVsComplaint": 1.07,
-      "praiseVsComplaintCi": 4.72,
-      "steerability": 3.73,
-      "steerabilityCi": 2.14,
-      "bashRecovery": 6.47,
-      "bashRecoveryCi": 0.97,
-      "toolHallucination": -0.84,
-      "toolHallucinationCi": 2.18,
-      "costTaskP50": 1.57,
-      "outputTokensTaskP50": 26.1
+      "confirmedSuccess": 2.29,
+      "confirmedSuccessCi": 2.16,
+      "praiseVsComplaint": 6.56,
+      "praiseVsComplaintCi": 3.26,
+      "steerability": 6.44,
+      "steerabilityCi": 1.4,
+      "bashRecovery": 11.25,
+      "bashRecoveryCi": 0.69,
+      "toolHallucination": 0.64,
+      "toolHallucinationCi": 0.08,
+      "costTaskP50": 1.72,
+      "outputTokensTaskP50": 21.3
+     }
+    },
+    {
+     "rank": 15,
+     "rankSpread": "13 27",
+     "model": "Muse Wonder (Max)",
+     "displayName": "Muse Wonder (Max)",
+     "vendor": "Meta",
+     "license": "proprietary",
+     "score": 3.14,
+     "votes": 12530,
+     "country": "US",
+     "openrouterId": "meta/muse-wonder",
+     "huggingfaceId": null,
+     "detailSlug": "meta--muse-wonder",
+     "scoreCi": 1.45,
+     "priceIn": 4.0,
+     "priceOut": 20.0,
+     "extra": {
+      "confirmedSuccess": 7.14,
+      "confirmedSuccessCi": 3.01,
+      "praiseVsComplaint": 2.13,
+      "praiseVsComplaintCi": 4.43,
+      "steerability": 3.21,
+      "steerabilityCi": 1.87,
+      "bashRecovery": 5.16,
+      "bashRecoveryCi": 0.95,
+      "toolHallucination": -0.95,
+      "toolHallucinationCi": 1.86,
+      "costTaskP50": 1.45,
+      "outputTokensTaskP50": 25.8
      }
     },
     {
      "rank": 16,
-     "rankSpread": "13 24",
-     "model": "MiMo-V2.6-Pro",
-     "displayName": "Mimo V2.6 Pro",
-     "vendor": "Xiaomi",
-     "license": "open",
-     "score": 3.3,
-     "votes": 43983,
-     "country": "CN",
-     "openrouterId": "xiaomi/mimo-v2.6-pro",
-     "huggingfaceId": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
-     "detailSlug": "xiaomi--mimo-v2.6-pro",
-     "scoreCi": 0.81,
-     "priceIn": 0.43,
-     "priceOut": 0.87,
+     "rankSpread": "14 27",
+     "model": "Claude Sonnet 5 (High)",
+     "displayName": "Claude Sonnet 5 (High)",
+     "vendor": "Anthropic",
+     "license": "proprietary",
+     "score": 2.94,
+     "votes": 41456,
+     "country": "US",
+     "openrouterId": "anthropic/claude-sonnet-5",
+     "huggingfaceId": null,
+     "detailSlug": "anthropic--claude-sonnet-5",
+     "scoreCi": 1.17,
+     "priceIn": 2.0,
+     "priceOut": 10.0,
      "extra": {
-      "confirmedSuccess": 6.87,
-      "confirmedSuccessCi": 1.66,
-      "praiseVsComplaint": 4.12,
-      "praiseVsComplaintCi": 2.56,
-      "steerability": 2.11,
-      "steerabilityCi": 1.16,
-      "bashRecovery": 3.68,
-      "bashRecoveryCi": 0.57,
-      "toolHallucination": -0.06,
-      "toolHallucinationCi": 0.23,
-      "costTaskP50": 0.13,
-      "outputTokensTaskP50": 43.6
+      "confirmedSuccess": -0.61,
+      "confirmedSuccessCi": 2.54,
+      "praiseVsComplaint": 1,
+      "praiseVsComplaintCi": 3.59,
+      "steerability": 4.78,
+      "steerabilityCi": 1.61,
+      "bashRecovery": 15.24,
+      "bashRecoveryCi": 0.52,
+      "toolHallucination": 0.44,
+      "toolHallucinationCi": 0.12,
+      "costTaskP50": 1.24,
+      "outputTokensTaskP50": 30.3
      }
     },
     {
      "rank": 17,
-     "rankSpread": "13 26",
-     "model": "Gemini 3.8 Flash (High)",
-     "displayName": "Gemini 3.8 Flash (High)",
-     "vendor": "Google",
-     "license": "proprietary",
-     "score": 3.17,
-     "votes": 39719,
-     "country": "US",
-     "openrouterId": "google/gemini-3.8-flash",
-     "huggingfaceId": null,
-     "detailSlug": "google--gemini-3.8-flash",
-     "scoreCi": 1.08,
-     "priceIn": 0.75,
-     "priceOut": 3.75,
+     "rankSpread": "15 26",
+     "model": "MiMo-V2.6-Pro",
+     "displayName": "Mimo V2.6 Pro",
+     "vendor": "Xiaomi",
+     "license": "open",
+     "score": 2.77,
+     "votes": 46354,
+     "country": "CN",
+     "openrouterId": "xiaomi/mimo-v2.6-pro",
+     "huggingfaceId": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
+     "detailSlug": "xiaomi--mimo-v2.6-pro",
+     "scoreCi": 0.87,
+     "priceIn": 0.43,
+     "priceOut": 0.87,
      "extra": {
-      "confirmedSuccess": 2.91,
-      "confirmedSuccessCi": 2.26,
-      "praiseVsComplaint": 4.17,
-      "praiseVsComplaintCi": 3.25,
-      "steerability": 1.16,
-      "steerabilityCi": 1.59,
-      "bashRecovery": 10.92,
-      "bashRecoveryCi": 0.54,
-      "toolHallucination": 0.56,
-      "toolHallucinationCi": 0.11,
-      "costTaskP50": 0.87,
-      "outputTokensTaskP50": 56.6
+      "confirmedSuccess": 6.54,
+      "confirmedSuccessCi": 1.82,
+      "praiseVsComplaint": 3.38,
+      "praiseVsComplaintCi": 2.73,
+      "steerability": 1.17,
+      "steerabilityCi": 1.22,
+      "bashRecovery": 3.07,
+      "bashRecoveryCi": 0.64,
+      "toolHallucination": -0.16,
+      "toolHallucinationCi": 0.26,
+      "costTaskP50": 0.15,
+      "outputTokensTaskP50": 46.8
      }
     },
     {
      "rank": 18,
-     "rankSpread": "13 25",
-     "model": "Muse Spark 1.3 (Max)",
-     "displayName": "Muse Spark 1.3 (Max)",
-     "vendor": "Meta",
-     "license": "proprietary",
-     "score": 3.05,
-     "votes": 78017,
-     "country": "US",
-     "openrouterId": "meta/muse-spark-1.3",
+     "rankSpread": "15 25",
+     "model": "DeepSeek-V4.1-Flash-20261017 (Max)",
+     "displayName": "DeepSeek V4.1 Flash (Max) (1017)",
+     "vendor": "DeepSeek",
+     "license": "open",
+     "score": 2.67,
+     "votes": 54255,
+     "country": "CN",
+     "openrouterId": "deepseek/deepseek-v4.1-flash-1017",
      "huggingfaceId": null,
-     "detailSlug": "meta--muse-spark-1.3",
-     "scoreCi": 0.83,
-     "priceIn": 1.25,
-     "priceOut": 4.25,
+     "detailSlug": "deepseek--deepseek-v4.1-flash-1017",
+     "scoreCi": 0.64,
+     "priceIn": 0.15,
+     "priceOut": 0.6,
      "extra": {
-      "confirmedSuccess": 4.26,
-      "confirmedSuccessCi": 1.71,
-      "praiseVsComplaint": 2.87,
-      "praiseVsComplaintCi": 2.64,
-      "steerability": 4.81,
-      "steerabilityCi": 1.1,
-      "bashRecovery": 2.29,
-      "bashRecoveryCi": 0.85,
-      "toolHallucination": 0.66,
-      "toolHallucinationCi": 0.08,
-      "costTaskP50": 0.47,
-      "outputTokensTaskP50": 23.1
+      "confirmedSuccess": 4.99,
+      "confirmedSuccessCi": 1.44,
+      "praiseVsComplaint": 2.41,
+      "praiseVsComplaintCi": 1.98,
+      "steerability": 2.1,
+      "steerabilityCi": 0.88,
+      "bashRecovery": 4.2,
+      "bashRecoveryCi": 0.33,
+      "toolHallucination": 0.44,
+      "toolHallucinationCi": 0.07,
+      "costTaskP50": 0.18,
+      "outputTokensTaskP50": 85.4
      }
     },
     {
      "rank": 19,
-     "rankSpread": "13 31",
-     "model": "Grok 4.7 (xHigh)",
-     "displayName": "Grok 4.7 (xHigh)",
-     "vendor": "SpaceXAI",
+     "rankSpread": "15 27",
+     "model": "Gemini 3.8 Flash (High)",
+     "displayName": "Gemini 3.8 Flash (High)",
+     "vendor": "Google",
      "license": "proprietary",
-     "score": 3.02,
-     "votes": 16639,
+     "score": 2.65,
+     "votes": 52730,
      "country": "US",
-     "openrouterId": "x-ai/grok-4.7",
+     "openrouterId": "google/gemini-3.8-flash",
      "huggingfaceId": null,
-     "detailSlug": "x-ai--grok-4.7",
-     "scoreCi": 1.57,
-     "priceIn": 2.0,
-     "priceOut": 6.0,
+     "detailSlug": "google--gemini-3.8-flash",
+     "scoreCi": 0.82,
+     "priceIn": 0.75,
+     "priceOut": 3.75,
      "extra": {
-      "confirmedSuccess": 6.04,
-      "confirmedSuccessCi": 3.24,
-      "praiseVsComplaint": 3.55,
-      "praiseVsComplaintCi": 4.92,
-      "steerability": -1.5,
-      "steerabilityCi": 2.32,
-      "bashRecovery": 9.68,
-      "bashRecoveryCi": 0.66,
-      "toolHallucination": 0.68,
-      "toolHallucinationCi": 0.07,
-      "costTaskP50": 2.53,
-      "outputTokensTaskP50": 69.3
+      "confirmedSuccess": 1.11,
+      "confirmedSuccessCi": 1.75,
+      "praiseVsComplaint": 5.08,
+      "praiseVsComplaintCi": 2.49,
+      "steerability": 0.36,
+      "steerabilityCi": 1.15,
+      "bashRecovery": 10.13,
+      "bashRecoveryCi": 0.38,
+      "toolHallucination": 0.31,
+      "toolHallucinationCi": 0.14,
+      "costTaskP50": 0.78,
+      "outputTokensTaskP50": 52.5
      }
     },
     {
      "rank": 20,
-     "rankSpread": "14 24",
-     "model": "GPT-6 Luna (Max)",
-     "displayName": "GPT 6 Luna (Max)",
-     "vendor": "OpenAI",
+     "rankSpread": "15 27",
+     "model": "Muse Spark 1.3 (Max)",
+     "displayName": "Muse Spark 1.3 (Max)",
+     "vendor": "Meta",
      "license": "proprietary",
-     "score": 2.79,
-     "votes": 194437,
+     "score": 2.59,
+     "votes": 80518,
      "country": "US",
-     "openrouterId": "openai/gpt-6-luna",
+     "openrouterId": "meta/muse-spark-1.3",
      "huggingfaceId": null,
-     "detailSlug": "openai--gpt-6-luna",
-     "scoreCi": 0.42,
-     "priceIn": 0.05,
-     "priceOut": 0.25,
+     "detailSlug": "meta--muse-spark-1.3",
+     "scoreCi": 0.82,
+     "priceIn": 1.25,
+     "priceOut": 4.25,
      "extra": {
-      "confirmedSuccess": 0.46,
-      "confirmedSuccessCi": 0.92,
-      "praiseVsComplaint": 0.5,
-      "praiseVsComplaintCi": 1.35,
-      "steerability": 5.65,
-      "steerabilityCi": 0.54,
-      "bashRecovery": 10.69,
-      "bashRecoveryCi": 0.28,
-      "toolHallucination": 0.61,
+      "confirmedSuccess": 3.7,
+      "confirmedSuccessCi": 1.76,
+      "praiseVsComplaint": 2.16,
+      "praiseVsComplaintCi": 2.53,
+      "steerability": 4.13,
+      "steerabilityCi": 1.09,
+      "bashRecovery": 2.03,
+      "bashRecoveryCi": 0.79,
+      "toolHallucination": 0.66,
       "toolHallucinationCi": 0.07,
-      "costTaskP50": 0.09,
-      "outputTokensTaskP50": 41.4
+      "costTaskP50": 0.46,
+      "outputTokensTaskP50": 26.6
      }
     },
     {
      "rank": 21,
-     "rankSpread": "14 27",
+     "rankSpread": "14 32",
+     "model": "Grok 4.7 (xHigh)",
+     "displayName": "Grok 4.7 (xHigh)",
+     "vendor": "SpaceXAI",
+     "license": "proprietary",
+     "score": 2.39,
+     "votes": 18559,
+     "country": "US",
+     "openrouterId": "x-ai/grok-4.7",
+     "huggingfaceId": null,
+     "detailSlug": "x-ai--grok-4.7",
+     "scoreCi": 1.46,
+     "priceIn": 2.0,
+     "priceOut": 6.0,
+     "extra": {
+      "confirmedSuccess": 4.54,
+      "confirmedSuccessCi": 3.14,
+      "praiseVsComplaint": 2.29,
+      "praiseVsComplaintCi": 4.6,
+      "steerability": -1.51,
+      "steerabilityCi": 2.11,
+      "bashRecovery": 9.53,
+      "bashRecoveryCi": 0.62,
+      "toolHallucination": 0.69,
+      "toolHallucinationCi": 0.06,
+      "costTaskP50": 2.55,
+      "outputTokensTaskP50": 69.6
+     }
+    },
+    {
+     "rank": 22,
+     "rankSpread": "15 27",
+     "model": "GPT-6 Luna (Max)",
+     "displayName": "GPT 6 Luna (Max)",
+     "vendor": "OpenAI",
+     "license": "proprietary",
+     "score": 2.23,
+     "votes": 217544,
+     "country": "US",
+     "openrouterId": "openai/gpt-6-luna",
+     "huggingfaceId": null,
+     "detailSlug": "openai--gpt-6-luna",
+     "scoreCi": 0.41,
+     "priceIn": 0.05,
+     "priceOut": 0.25,
+     "extra": {
+      "confirmedSuccess": -0.22,
+      "confirmedSuccessCi": 0.91,
+      "praiseVsComplaint": 0.07,
+      "praiseVsComplaintCi": 1.3,
+      "steerability": 4.5,
+      "steerabilityCi": 0.53,
+      "bashRecovery": 10.04,
+      "bashRecoveryCi": 0.26,
+      "toolHallucination": 0.64,
+      "toolHallucinationCi": 0.06,
+      "costTaskP50": 0.09,
+      "outputTokensTaskP50": 41.9
+     }
+    },
+    {
+     "rank": 23,
+     "rankSpread": "15 30",
      "model": "DeepSeek-V4.1-Flash-20260910 (Max)",
      "displayName": "Deepseek V4.1 Flash (Max)",
      "vendor": "DeepSeek",
      "license": "open",
-     "score": 2.25,
-     "votes": 259479,
+     "score": 1.91,
+     "votes": 266436,
      "country": "CN",
      "openrouterId": "deepseek/deepseek-v4.1-flash",
      "huggingfaceId": "deepseek-ai/DeepSeek-V4.1-Flash",
@@ -651,295 +713,233 @@
      "priceIn": 0.3,
      "priceOut": 1.2,
      "extra": {
-      "confirmedSuccess": 5.79,
-      "confirmedSuccessCi": 0.72,
-      "praiseVsComplaint": 2.94,
-      "praiseVsComplaintCi": 1.09,
-      "steerability": 0.99,
-      "steerabilityCi": 0.49,
-      "bashRecovery": -0.23,
-      "bashRecoveryCi": 0.26,
-      "toolHallucination": 0.55,
-      "toolHallucinationCi": 0.07,
-      "costTaskP50": 0.16,
-      "outputTokensTaskP50": 71.7
-     }
-    },
-    {
-     "rank": 22,
-     "rankSpread": "14 31",
-     "model": "MiMo-V2.6-Flash",
-     "displayName": "Mimo V2.6 Flash",
-     "vendor": "Xiaomi",
-     "license": "open",
-     "score": 2.1,
-     "votes": 22895,
-     "country": "CN",
-     "openrouterId": "xiaomi/mimo-v2.6-flash",
-     "huggingfaceId": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
-     "detailSlug": "xiaomi--mimo-v2.6-flash",
-     "scoreCi": 1.33,
-     "priceIn": 0.14,
-     "priceOut": 0.28,
-     "extra": {
-      "confirmedSuccess": 6.17,
-      "confirmedSuccessCi": 2.67,
-      "praiseVsComplaint": 2.56,
-      "praiseVsComplaintCi": 4.29,
-      "steerability": 4.65,
-      "steerabilityCi": 1.68,
-      "bashRecovery": -1.86,
-      "bashRecoveryCi": 1.02,
-      "toolHallucination": -2.99,
-      "toolHallucinationCi": 0.44,
-      "costTaskP50": 0.06,
-      "outputTokensTaskP50": 47.8
-     }
-    },
-    {
-     "rank": 23,
-     "rankSpread": "14 31",
-     "model": "Hy4 preview",
-     "displayName": "Hy4 (Preview)",
-     "vendor": "Tencent",
-     "license": "open",
-     "score": 2.02,
-     "votes": 93764,
-     "country": "CN",
-     "openrouterId": "tencent/hy4-preview",
-     "huggingfaceId": "tencent/Hy4-preview",
-     "detailSlug": "tencent--hy4-preview",
-     "scoreCi": 0.64,
-     "priceIn": 0.83,
-     "priceOut": 2.5,
-     "extra": {
-      "confirmedSuccess": 5.1,
-      "confirmedSuccessCi": 1.35,
-      "praiseVsComplaint": 3.43,
-      "praiseVsComplaintCi": 2.03,
-      "steerability": 1.56,
-      "steerabilityCi": 0.85,
-      "bashRecovery": -2.22,
-      "bashRecoveryCi": 0.47,
-      "toolHallucination": 0.09,
-      "toolHallucinationCi": 0.18,
-      "costTaskP50": 0.44,
-      "outputTokensTaskP50": 48.5
+      "confirmedSuccess": 5.94,
+      "confirmedSuccessCi": 0.71,
+      "praiseVsComplaint": 2.36,
+      "praiseVsComplaintCi": 1.06,
+      "steerability": 0.13,
+      "steerabilityCi": 0.48,
+      "bashRecovery": -0.8,
+      "bashRecoveryCi": 0.25,
+      "toolHallucination": 0.56,
+      "toolHallucinationCi": 0.06,
+      "costTaskP50": "N/A",
+      "outputTokensTaskP50": 216.8
      }
     },
     {
      "rank": 24,
-     "rankSpread": "14 31",
-     "model": "GLM-5.2 (Max)",
-     "displayName": "GLM 5.2 (Max)",
-     "vendor": "Z.ai",
-     "license": "open",
-     "score": 1.69,
-     "votes": 90051,
-     "country": "CN",
-     "openrouterId": "z-ai/glm-5.2",
-     "huggingfaceId": "zai-org/GLM-5.2",
-     "detailSlug": "z-ai--glm-5.2",
-     "scoreCi": 0.82,
-     "priceIn": 1.4,
-     "priceOut": 4.4,
-     "extra": {
-      "confirmedSuccess": 2.83,
-      "confirmedSuccessCi": 1.72,
-      "praiseVsComplaint": 4.78,
-      "praiseVsComplaintCi": 2.53,
-      "steerability": 1.3,
-      "steerabilityCi": 1.26,
-      "bashRecovery": -4.02,
-      "bashRecoveryCi": 0.95,
-      "toolHallucination": 0.73,
-      "toolHallucinationCi": 0.07,
-      "costTaskP50": 0.98,
-      "outputTokensTaskP50": 57.4
-     }
-    },
-    {
-     "rank": 25,
-     "rankSpread": "16 31",
-     "model": "Kimi K3 (Max)",
-     "displayName": "Kimi K3 (Max)",
-     "vendor": "Moonshot",
-     "license": "open",
-     "score": 1.57,
-     "votes": 139480,
-     "country": "CN",
-     "openrouterId": "moonshotai/kimi-k3",
-     "huggingfaceId": "moonshotai/Kimi-K3",
-     "detailSlug": "moonshotai--kimi-k3",
-     "scoreCi": 0.75,
-     "priceIn": 3.0,
-     "priceOut": 15.0,
-     "extra": {
-      "confirmedSuccess": 5.16,
-      "confirmedSuccessCi": 1.57,
-      "praiseVsComplaint": 2.03,
-      "praiseVsComplaintCi": 2.24,
-      "steerability": 0.29,
-      "steerabilityCi": 1.2,
-      "bashRecovery": -2.33,
-      "bashRecoveryCi": 0.97,
-      "toolHallucination": 0.75,
-      "toolHallucinationCi": 0.06,
-      "costTaskP50": 1.2,
-      "outputTokensTaskP50": 33.6
-     }
-    },
-    {
-     "rank": 26,
-     "rankSpread": "18 31",
-     "model": "GLM-5.3 (Max)",
-     "displayName": "GLM 5.3 (Max)",
-     "vendor": "Z.ai",
-     "license": "open",
-     "score": 1.22,
-     "votes": 88117,
-     "country": "CN",
-     "openrouterId": "z-ai/glm-5.3",
-     "huggingfaceId": null,
-     "detailSlug": "z-ai--glm-5.3",
-     "scoreCi": 0.84,
-     "priceIn": 1.4,
-     "priceOut": 4.4,
-     "extra": {
-      "confirmedSuccess": 2.57,
-      "confirmedSuccessCi": 1.78,
-      "praiseVsComplaint": 4.77,
-      "praiseVsComplaintCi": 2.52,
-      "steerability": -0.24,
-      "steerabilityCi": 1.25,
-      "bashRecovery": -4.66,
-      "bashRecoveryCi": 1.08,
-      "toolHallucination": 0.7,
-      "toolHallucinationCi": 0.08,
-      "costTaskP50": 1.01,
-      "outputTokensTaskP50": 57.3
-     }
-    },
-    {
-     "rank": 27,
-     "rankSpread": "17 32",
+     "rankSpread": "15 32",
      "model": "Claude Haiku 5.5 (High)",
      "displayName": "Claude Haiku 5.5 (High)",
      "vendor": "Anthropic",
      "license": "proprietary",
-     "score": 1.14,
-     "votes": 27887,
+     "score": 1.43,
+     "votes": 29343,
      "country": "US",
      "openrouterId": "anthropic/claude-haiku-5.5",
      "huggingfaceId": null,
      "detailSlug": "anthropic--claude-haiku-5.5",
-     "scoreCi": 1.03,
+     "scoreCi": 1.05,
      "priceIn": 0.1,
      "priceOut": 0.5,
      "extra": {
-      "confirmedSuccess": 1.71,
+      "confirmedSuccess": 2.61,
       "confirmedSuccessCi": 2.41,
-      "praiseVsComplaint": -4,
-      "praiseVsComplaintCi": 3.18,
-      "steerability": 4.53,
-      "steerabilityCi": 1.32,
+      "praiseVsComplaint": -2.99,
+      "praiseVsComplaintCi": 3.3,
+      "steerability": 4.08,
+      "steerabilityCi": 1.31,
       "bashRecovery": 7.55,
-      "bashRecoveryCi": 0.6,
-      "toolHallucination": -0.89,
-      "toolHallucinationCi": 0.65,
+      "bashRecoveryCi": 0.56,
+      "toolHallucination": -1.03,
+      "toolHallucinationCi": 0.61,
       "costTaskP50": 0.1,
-      "outputTokensTaskP50": 29.2
+      "outputTokensTaskP50": 27.7
+     }
+    },
+    {
+     "rank": 25,
+     "rankSpread": "16 32",
+     "model": "GLM-5.2 (Max)",
+     "displayName": "GLM 5.2 (Max)",
+     "vendor": "Z.ai",
+     "license": "open",
+     "score": 1.26,
+     "votes": 98542,
+     "country": "CN",
+     "openrouterId": "z-ai/glm-5.2",
+     "huggingfaceId": "zai-org/GLM-5.2",
+     "detailSlug": "z-ai--glm-5.2",
+     "scoreCi": 0.77,
+     "priceIn": 1.4,
+     "priceOut": 4.4,
+     "extra": {
+      "confirmedSuccess": 2.88,
+      "confirmedSuccessCi": 1.61,
+      "praiseVsComplaint": 3.79,
+      "praiseVsComplaintCi": 2.33,
+      "steerability": 0.37,
+      "steerabilityCi": 1.16,
+      "bashRecovery": -4.25,
+      "bashRecoveryCi": 0.78,
+      "toolHallucination": 0.74,
+      "toolHallucinationCi": 0.06,
+      "costTaskP50": 1.08,
+      "outputTokensTaskP50": 60.4
+     }
+    },
+    {
+     "rank": 26,
+     "rankSpread": "17 32",
+     "model": "Hy4 preview",
+     "displayName": "Hy4 (Preview)",
+     "vendor": "Tencent",
+     "license": "open",
+     "score": 1.22,
+     "votes": 98590,
+     "country": "CN",
+     "openrouterId": "tencent/hy4-preview",
+     "huggingfaceId": "tencent/Hy4-preview",
+     "detailSlug": "tencent--hy4-preview",
+     "scoreCi": 0.67,
+     "priceIn": 0.83,
+     "priceOut": 2.5,
+     "extra": {
+      "confirmedSuccess": 4.44,
+      "confirmedSuccessCi": 1.48,
+      "praiseVsComplaint": 1.63,
+      "praiseVsComplaintCi": 2.09,
+      "steerability": 0.85,
+      "steerabilityCi": 0.9,
+      "bashRecovery": -2.92,
+      "bashRecoveryCi": 0.51,
+      "toolHallucination": 0.05,
+      "toolHallucinationCi": 0.18,
+      "costTaskP50": 0.45,
+      "outputTokensTaskP50": 50.5
+     }
+    },
+    {
+     "rank": 27,
+     "rankSpread": "22 32",
+     "model": "Kimi K3 (Max)",
+     "displayName": "Kimi K3 (Max)",
+     "vendor": "Moonshot",
+     "license": "open",
+     "score": 1.08,
+     "votes": 160249,
+     "country": "CN",
+     "openrouterId": "moonshotai/kimi-k3",
+     "huggingfaceId": "moonshotai/Kimi-K3",
+     "detailSlug": "moonshotai--kimi-k3",
+     "scoreCi": 0.57,
+     "priceIn": 3.0,
+     "priceOut": 15.0,
+     "extra": {
+      "confirmedSuccess": 4.29,
+      "confirmedSuccessCi": 1.24,
+      "praiseVsComplaint": 1.53,
+      "praiseVsComplaintCi": 1.71,
+      "steerability": 0.45,
+      "steerabilityCi": 0.84,
+      "bashRecovery": -4.32,
+      "bashRecoveryCi": 0.63,
+      "toolHallucination": 0.75,
+      "toolHallucinationCi": 0.05,
+      "costTaskP50": 1.15,
+      "outputTokensTaskP50": 31.2
      }
     },
     {
      "rank": 28,
-     "rankSpread": "20 31",
-     "model": "Qwen3.8-Max",
-     "displayName": "Qwen 3.8 Max",
-     "vendor": "Alibaba",
-     "license": "proprietary",
-     "score": 1.13,
-     "votes": 75307,
+     "rankSpread": "15 32",
+     "model": "MiMo-V2.6-Flash",
+     "displayName": "Mimo V2.6 Flash",
+     "vendor": "Xiaomi",
+     "license": "open",
+     "score": 1,
+     "votes": 26781,
      "country": "CN",
-     "openrouterId": null,
-     "huggingfaceId": null,
-     "detailSlug": null,
-     "scoreCi": 0.61,
-     "priceIn": 2.0,
-     "priceOut": 6.0,
+     "openrouterId": "xiaomi/mimo-v2.6-flash",
+     "huggingfaceId": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
+     "detailSlug": "xiaomi--mimo-v2.6-flash",
+     "scoreCi": 1.15,
+     "priceIn": 0.14,
+     "priceOut": 0.28,
      "extra": {
-      "confirmedSuccess": 3.83,
-      "confirmedSuccessCi": 1.3,
-      "praiseVsComplaint": 1.1,
-      "praiseVsComplaintCi": 1.85,
-      "steerability": 1.43,
-      "steerabilityCi": 0.87,
-      "bashRecovery": -0.87,
-      "bashRecoveryCi": 0.71,
-      "toolHallucination": -0.83,
-      "toolHallucinationCi": 0.2,
-      "costTaskP50": 1.21,
-      "outputTokensTaskP50": 48.8
+      "confirmedSuccess": 6.48,
+      "confirmedSuccessCi": 2.42,
+      "praiseVsComplaint": 0.28,
+      "praiseVsComplaintCi": 3.61,
+      "steerability": 2.6,
+      "steerabilityCi": 1.55,
+      "bashRecovery": -3.37,
+      "bashRecoveryCi": 0.98,
+      "toolHallucination": -3.16,
+      "toolHallucinationCi": 0.43,
+      "costTaskP50": 0.07,
+      "outputTokensTaskP50": 49.1
      }
     },
     {
      "rank": 29,
-     "rankSpread": "20 34",
-     "model": "Grok 4.6 (xHigh)",
-     "displayName": "Grok 4.6 (xHigh)",
-     "vendor": "SpaceXAI",
-     "license": "proprietary",
-     "score": 0.63,
-     "votes": 29832,
-     "country": "US",
-     "openrouterId": "x-ai/grok-4.6",
+     "rankSpread": "22 32",
+     "model": "GLM-5.3 (Max)",
+     "displayName": "GLM 5.3 (Max)",
+     "vendor": "Z.ai",
+     "license": "open",
+     "score": 0.91,
+     "votes": 96109,
+     "country": "CN",
+     "openrouterId": "z-ai/glm-5.3",
      "huggingfaceId": null,
-     "detailSlug": "x-ai--grok-4.6",
-     "scoreCi": 1.12,
+     "detailSlug": "z-ai--glm-5.3",
+     "scoreCi": 0.77,
+     "priceIn": 1.4,
+     "priceOut": 4.4,
      "extra": {
-      "confirmedSuccess": -1.8,
-      "confirmedSuccessCi": 2.41,
-      "praiseVsComplaint": -1.28,
-      "praiseVsComplaintCi": 3.29,
-      "steerability": 0.49,
-      "steerabilityCi": 1.64,
-      "bashRecovery": 9.6,
-      "bashRecoveryCi": 1.03,
-      "toolHallucination": 0.61,
-      "toolHallucinationCi": 0.1,
-      "costTaskP50": 1.42,
-      "outputTokensTaskP50": 35.3
+      "confirmedSuccess": 3.09,
+      "confirmedSuccessCi": 1.67,
+      "praiseVsComplaint": 3.65,
+      "praiseVsComplaintCi": 2.33,
+      "steerability": -0.76,
+      "steerabilityCi": 1.13,
+      "bashRecovery": -5.16,
+      "bashRecoveryCi": 0.83,
+      "toolHallucination": 0.71,
+      "toolHallucinationCi": 0.07,
+      "costTaskP50": 1.09,
+      "outputTokensTaskP50": 58.5
      }
     },
     {
      "rank": 30,
-     "rankSpread": "21 36",
-     "model": "GPT-5.6 Terra (xHigh)",
-     "displayName": "GPT 5.6 Terra (xHigh)",
-     "vendor": "OpenAI",
+     "rankSpread": "22 34",
+     "model": "Grok 4.6 (xHigh)",
+     "displayName": "Grok 4.6 (xHigh)",
+     "vendor": "SpaceXAI",
      "license": "proprietary",
-     "score": 0.22,
-     "votes": 25167,
+     "score": 0.49,
+     "votes": 30228,
      "country": "US",
-     "openrouterId": "openai/gpt-5.6-terra",
+     "openrouterId": "x-ai/grok-4.6",
      "huggingfaceId": null,
-     "detailSlug": "openai--gpt-5.6-terra",
-     "scoreCi": 1.32,
-     "priceIn": 2.0,
-     "priceOut": 12.0,
+     "detailSlug": "x-ai--grok-4.6",
+     "scoreCi": 1.13,
      "extra": {
-      "confirmedSuccess": -4.36,
-      "confirmedSuccessCi": 2.73,
-      "praiseVsComplaint": 2.03,
-      "praiseVsComplaintCi": 4.01,
-      "steerability": 2.03,
-      "steerabilityCi": 2.02,
-      "bashRecovery": 1.45,
-      "bashRecoveryCi": 1.52,
-      "toolHallucination": 0.55,
-      "toolHallucinationCi": 0.14,
-      "costTaskP50": 0.61,
-      "outputTokensTaskP50": 16.8
+      "confirmedSuccess": -1.75,
+      "confirmedSuccessCi": 2.53,
+      "praiseVsComplaint": -2.01,
+      "praiseVsComplaintCi": 3.3,
+      "steerability": 0.44,
+      "steerabilityCi": 1.64,
+      "bashRecovery": 9.9,
+      "bashRecoveryCi": 0.96,
+      "toolHallucination": 0.56,
+      "toolHallucinationCi": 0.1,
+      "costTaskP50": 1.67,
+      "outputTokensTaskP50": 37.7
      }
     }
    ]
@@ -950,40 +950,60 @@
    "unit": "elo",
    "route": "/text/",
    "sourceUrl": "https://arena.ai/leaderboard/chat/text",
-   "sourceUpdated": "Oct 26, 2026",
-   "sourceFetchedAt": "2026-10-26T18:20:33.343Z",
-   "fullCount": 418,
+   "sourceUpdated": "Nov 2, 2026",
+   "sourceFetchedAt": "2026-11-02T11:00:17.601Z",
+   "fullCount": 419,
    "rows": [
     {
      "rank": 1,
-     "rankSpread": "1 3",
-     "model": "Gemini 4 Argon (High)",
-     "displayName": "Gemini 4 Argon (High)",
+     "rankSpread": "1 2",
+     "model": "Gemini 4 Carbon (High)",
+     "displayName": "Gemini 4 Carbon (High)",
      "vendor": "Google",
      "license": "proprietary",
-     "score": 1517,
-     "votes": 10083,
+     "score": 1528,
+     "votes": 4403,
      "country": "US",
-     "openrouterId": "google/gemini-4-argon",
+     "openrouterId": null,
      "huggingfaceId": null,
-     "detailSlug": "google--gemini-4-argon",
-     "scoreCi": 7,
+     "detailSlug": null,
+     "scoreCi": 9,
      "priceIn": 2.0,
      "priceOut": 10.0,
-     "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.05
      }
     },
     {
      "rank": 2,
-     "rankSpread": "1 7",
+     "rankSpread": "1 4",
+     "model": "Gemini 4 Argon (High)",
+     "displayName": "Gemini 4 Argon (High)",
+     "vendor": "Google",
+     "license": "proprietary",
+     "score": 1520,
+     "votes": 11889,
+     "country": "US",
+     "openrouterId": "google/gemini-4-argon",
+     "huggingfaceId": null,
+     "detailSlug": "google--gemini-4-argon",
+     "scoreCi": 6,
+     "priceIn": 2.0,
+     "priceOut": 10.0,
+     "context": "1M",
+     "extra": {
+      "costTaskP50": 0.03
+     }
+    },
+    {
+     "rank": 3,
+     "rankSpread": "2 8",
      "model": "Claude Opus 5.5 (High)",
      "displayName": "Claude Opus 5.5 (High)",
      "vendor": "Anthropic",
      "license": "proprietary",
      "score": 1509,
-     "votes": 10322,
+     "votes": 11415,
      "country": "US",
      "openrouterId": "anthropic/claude-opus-5.5",
      "huggingfaceId": null,
@@ -993,60 +1013,39 @@
      "priceOut": 20.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
-     }
-    },
-    {
-     "rank": 3,
-     "rankSpread": "1 8",
-     "model": "Muse Wonder (Max)",
-     "displayName": "Muse Wonder (Max)",
-     "vendor": "Meta",
-     "license": "proprietary",
-     "score": 1509,
-     "votes": 6001,
-     "country": "US",
-     "openrouterId": "meta/muse-wonder",
-     "huggingfaceId": null,
-     "detailSlug": "meta--muse-wonder",
-     "scoreCi": 8,
-     "priceIn": 4.0,
-     "priceOut": 20.0,
-     "context": "1M",
-     "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.09
      }
     },
     {
      "rank": 4,
      "rankSpread": "2 10",
-     "model": "Claude Fable 5 (High)",
-     "displayName": "Claude Fable 5 (High)",
-     "vendor": "Anthropic",
+     "model": "Muse Wonder (Max)",
+     "displayName": "Muse Wonder (Max)",
+     "vendor": "Meta",
      "license": "proprietary",
-     "score": 1503,
-     "votes": 44253,
+     "score": 1507,
+     "votes": 7749,
      "country": "US",
-     "openrouterId": "anthropic/claude-fable-5",
+     "openrouterId": "meta/muse-wonder",
      "huggingfaceId": null,
-     "detailSlug": "anthropic--claude-fable-5",
-     "scoreCi": 4,
-     "priceIn": 10.0,
-     "priceOut": 50.0,
+     "detailSlug": "meta--muse-wonder",
+     "scoreCi": 7,
+     "priceIn": 4.0,
+     "priceOut": 20.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.1
      }
     },
     {
      "rank": 5,
-     "rankSpread": "2 12",
+     "rankSpread": "3 11",
      "model": "Claude Fable 5.1 (Max)",
      "displayName": "Claude Fable 5.1 (Max)",
      "vendor": "Anthropic",
      "license": "proprietary",
-     "score": 1503,
-     "votes": 16343,
+     "score": 1504,
+     "votes": 17178,
      "country": "US",
      "openrouterId": "anthropic/claude-fable-5.1",
      "huggingfaceId": null,
@@ -1056,18 +1055,39 @@
      "priceOut": 50.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.47
      }
     },
     {
      "rank": 6,
-     "rankSpread": "2 10",
+     "rankSpread": "3 10",
+     "model": "Claude Fable 5 (High)",
+     "displayName": "Claude Fable 5 (High)",
+     "vendor": "Anthropic",
+     "license": "proprietary",
+     "score": 1504,
+     "votes": 45341,
+     "country": "US",
+     "openrouterId": "anthropic/claude-fable-5",
+     "huggingfaceId": null,
+     "detailSlug": "anthropic--claude-fable-5",
+     "scoreCi": 4,
+     "priceIn": 10.0,
+     "priceOut": 50.0,
+     "context": "1M",
+     "extra": {
+      "costTaskP50": 0.14
+     }
+    },
+    {
+     "rank": 7,
+     "rankSpread": "3 10",
      "model": "Claude Opus 4.6 (High)",
      "displayName": "Claude Opus 4.6 (High)",
      "vendor": "Anthropic",
      "license": "proprietary",
      "score": 1503,
-     "votes": 83454,
+     "votes": 84512,
      "country": "US",
      "openrouterId": "anthropic/claude-opus-4.6",
      "huggingfaceId": null,
@@ -1077,18 +1097,18 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.07
      }
     },
     {
-     "rank": 7,
-     "rankSpread": "2 12",
+     "rank": 8,
+     "rankSpread": "3 13",
      "model": "Claude Opus 4.7 (High)",
      "displayName": "Claude Opus 4.7 (High)",
      "vendor": "Anthropic",
      "license": "proprietary",
      "score": 1501,
-     "votes": 65140,
+     "votes": 65110,
      "country": "US",
      "openrouterId": "anthropic/claude-opus-4.7",
      "huggingfaceId": null,
@@ -1098,18 +1118,18 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.06
      }
     },
     {
-     "rank": 8,
-     "rankSpread": "4 17",
+     "rank": 9,
+     "rankSpread": "7 18",
      "model": "Claude Opus 4.6",
      "displayName": "Claude Opus 4.6",
      "vendor": "Anthropic",
      "license": "proprietary",
-     "score": 1497,
-     "votes": 88206,
+     "score": 1496,
+     "votes": 89324,
      "country": "US",
      "openrouterId": "anthropic/claude-opus-4.6",
      "huggingfaceId": null,
@@ -1119,18 +1139,18 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.06
      }
     },
     {
-     "rank": 9,
-     "rankSpread": "4 18",
+     "rank": 10,
+     "rankSpread": "4 19",
      "model": "Gemini 3.8 Flash (High)",
      "displayName": "Gemini 3.8 Flash (High)",
      "vendor": "Google",
      "license": "proprietary",
      "score": 1496,
-     "votes": 43997,
+     "votes": 47803,
      "country": "US",
      "openrouterId": "google/gemini-3.8-flash",
      "huggingfaceId": null,
@@ -1140,18 +1160,18 @@
      "priceOut": 3.75,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.01
      }
     },
     {
-     "rank": 10,
-     "rankSpread": "3 18",
+     "rank": 11,
+     "rankSpread": "4 20",
      "model": "Muse Spark 1.3 (Max)",
      "displayName": "Muse Spark 1.3 (Max)",
      "vendor": "Meta",
      "license": "proprietary",
-     "score": 1496,
-     "votes": 20506,
+     "score": 1495,
+     "votes": 22134,
      "country": "US",
      "openrouterId": "meta/muse-spark-1.3",
      "huggingfaceId": null,
@@ -1161,18 +1181,18 @@
      "priceOut": 4.25,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.02
      }
     },
     {
-     "rank": 11,
-     "rankSpread": "6 19",
+     "rank": 12,
+     "rankSpread": "8 19",
      "model": "Claude Opus 4.7",
      "displayName": "Claude Opus 4.7",
      "vendor": "Anthropic",
      "license": "proprietary",
      "score": 1494,
-     "votes": 66183,
+     "votes": 66140,
      "country": "US",
      "openrouterId": "anthropic/claude-opus-4.7",
      "huggingfaceId": null,
@@ -1182,38 +1202,59 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
-     }
-    },
-    {
-     "rank": 12,
-     "rankSpread": "6 28",
-     "model": "Muse Spark 1.2 (xHigh)",
-     "displayName": "Muse Spark 1.2 (xHigh)",
-     "vendor": "Meta",
-     "license": "proprietary",
-     "score": 1491,
-     "votes": 10470,
-     "country": "US",
-     "openrouterId": "meta/muse-spark-1.2",
-     "huggingfaceId": null,
-     "detailSlug": "meta--muse-spark-1.2",
-     "scoreCi": 7,
-     "priceIn": 1.25,
-     "priceOut": 4.25,
-     "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.06
      }
     },
     {
      "rank": 13,
-     "rankSpread": "8 25",
+     "rankSpread": "8 26",
+     "model": "Muse Spark 1.2 (xHigh)",
+     "displayName": "Muse Spark 1.2 (xHigh)",
+     "vendor": "Meta",
+     "license": "proprietary",
+     "score": 1492,
+     "votes": 11724,
+     "country": "US",
+     "openrouterId": "meta/muse-spark-1.2",
+     "huggingfaceId": null,
+     "detailSlug": "meta--muse-spark-1.2",
+     "scoreCi": 6,
+     "priceIn": 1.25,
+     "priceOut": 4.25,
+     "extra": {
+      "costTaskP50": 0.02
+     }
+    },
+    {
+     "rank": 14,
+     "rankSpread": "9 24",
+     "model": "Claude Opus 5 (High)",
+     "displayName": "Claude Opus 5 (High)",
+     "vendor": "Anthropic",
+     "license": "proprietary",
+     "score": 1492,
+     "votes": 73167,
+     "country": "US",
+     "openrouterId": "anthropic/claude-opus-5",
+     "huggingfaceId": null,
+     "detailSlug": "anthropic--claude-opus-5",
+     "scoreCi": 4,
+     "priceIn": 5.0,
+     "priceOut": 25.0,
+     "context": "1M",
+     "extra": {
+      "costTaskP50": 0.13
+     }
+    },
+    {
+     "rank": 15,
+     "rankSpread": "9 26",
      "model": "Claude Opus 5 (Max)",
      "displayName": "Claude Opus 5 (Max)",
      "vendor": "Anthropic",
      "license": "proprietary",
      "score": 1491,
-     "votes": 34526,
+     "votes": 35531,
      "country": "US",
      "openrouterId": "anthropic/claude-opus-5",
      "huggingfaceId": null,
@@ -1223,39 +1264,18 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.16
      }
     },
     {
-     "rank": 14,
-     "rankSpread": "8 25",
-     "model": "Claude Opus 5 (High)",
-     "displayName": "Claude Opus 5 (High)",
-     "vendor": "Anthropic",
-     "license": "proprietary",
-     "score": 1491,
-     "votes": 71020,
-     "country": "US",
-     "openrouterId": "anthropic/claude-opus-5",
-     "huggingfaceId": null,
-     "detailSlug": "anthropic--claude-opus-5",
-     "scoreCi": 4,
-     "priceIn": 5.0,
-     "priceOut": 25.0,
-     "context": "1M",
-     "extra": {
-      "costTaskP50": ""
-     }
-    },
-    {
-     "rank": 15,
-     "rankSpread": "8 26",
+     "rank": 16,
+     "rankSpread": "9 26",
      "model": "Muse Spark 1.1",
      "displayName": "Muse Spark 1.1",
      "vendor": "Meta",
      "license": "proprietary",
      "score": 1490,
-     "votes": 46121,
+     "votes": 46354,
      "country": "US",
      "openrouterId": "meta/muse-spark-1.1",
      "huggingfaceId": null,
@@ -1264,18 +1284,18 @@
      "priceIn": 1.25,
      "priceOut": 4.25,
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.02
      }
     },
     {
-     "rank": 16,
-     "rankSpread": "8 28",
+     "rank": 17,
+     "rankSpread": "9 29",
      "model": "Gemini 3.7 Flash (High)",
      "displayName": "Gemini 3.7 Flash (High)",
      "vendor": "Google",
      "license": "proprietary",
      "score": 1490,
-     "votes": 30501,
+     "votes": 32289,
      "country": "US",
      "openrouterId": "google/gemini-3.7-flash",
      "huggingfaceId": null,
@@ -1285,54 +1305,54 @@
      "priceOut": 3.75,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.01
      }
     },
     {
-     "rank": 17,
-     "rankSpread": "8 30",
+     "rank": 18,
+     "rankSpread": "9 31",
      "model": "Muse Spark",
      "displayName": "Muse Spark",
      "vendor": "Meta",
      "license": "proprietary",
      "score": 1489,
-     "votes": 14147,
+     "votes": 14140,
      "country": "US",
      "openrouterId": null,
      "huggingfaceId": null,
      "detailSlug": null,
      "scoreCi": 6,
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": "N/A"
      }
     },
     {
-     "rank": 18,
-     "rankSpread": "9 30",
+     "rank": 19,
+     "rankSpread": "10 30",
      "model": "Kimi K3 (Max)",
      "displayName": "Kimi K3 (Max)",
      "vendor": "Moonshot",
      "license": "open",
-     "score": 1487,
-     "votes": 35379,
+     "score": 1488,
+     "votes": 36780,
      "country": "CN",
      "openrouterId": "moonshotai/kimi-k3",
      "huggingfaceId": "moonshotai/Kimi-K3",
      "detailSlug": "moonshotai--kimi-k3",
      "scoreCi": 4,
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.06
      }
     },
     {
-     "rank": 19,
-     "rankSpread": "11 29",
+     "rank": 20,
+     "rankSpread": "12 29",
      "model": "Gemini 3.1 Pro Preview",
      "displayName": "Gemini 3.1 Pro Preview",
      "vendor": "Google",
      "license": "proprietary",
      "score": 1487,
-     "votes": 130819,
+     "votes": 132547,
      "country": "US",
      "openrouterId": "google/gemini-3.1-pro-preview",
      "huggingfaceId": null,
@@ -1342,18 +1362,18 @@
      "priceOut": 6.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.04
      }
     },
     {
-     "rank": 20,
-     "rankSpread": "12 32",
+     "rank": 21,
+     "rankSpread": "13 32",
      "model": "Gemini 3 Pro",
      "displayName": "Gemini 3 Pro",
      "vendor": "Google",
      "license": "proprietary",
-     "score": 1486,
-     "votes": 42054,
+     "score": 1485,
+     "votes": 42057,
      "country": "US",
      "openrouterId": null,
      "huggingfaceId": null,
@@ -1363,18 +1383,18 @@
      "priceOut": 12.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": "N/A"
      }
     },
     {
-     "rank": 21,
-     "rankSpread": "12 33",
+     "rank": 22,
+     "rankSpread": "13 35",
      "model": "GPT-5.6 Sol (xHigh)",
      "displayName": "GPT 5.6 Sol (xHigh)",
      "vendor": "OpenAI",
      "license": "proprietary",
      "score": 1485,
-     "votes": 42713,
+     "votes": 43796,
      "country": "US",
      "openrouterId": "openai/gpt-5.6-sol",
      "huggingfaceId": null,
@@ -1383,18 +1403,18 @@
      "priceIn": 4.0,
      "priceOut": 20.0,
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.08
      }
     },
     {
-     "rank": 22,
-     "rankSpread": "12 40",
+     "rank": 23,
+     "rankSpread": "14 41",
      "model": "Gemini 3.6 Flash (High)",
      "displayName": "Gemini 3.6 Flash (High)",
      "vendor": "Google",
      "license": "proprietary",
      "score": 1483,
-     "votes": 36102,
+     "votes": 36028,
      "country": "US",
      "openrouterId": "google/gemini-3.6-flash",
      "huggingfaceId": null,
@@ -1404,18 +1424,18 @@
      "priceOut": 3.75,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.02
      }
     },
     {
-     "rank": 23,
-     "rankSpread": "12 41",
+     "rank": 24,
+     "rankSpread": "14 43",
      "model": "Qwen3.8-Max",
      "displayName": "Qwen 3.8 Max",
      "vendor": "Alibaba",
      "license": "proprietary",
-     "score": 1483,
-     "votes": 30500,
+     "score": 1482,
+     "votes": 31915,
      "country": "CN",
      "openrouterId": null,
      "huggingfaceId": null,
@@ -1425,39 +1445,18 @@
      "priceOut": 6.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
-     }
-    },
-    {
-     "rank": 24,
-     "rankSpread": "15 42",
-     "model": "GPT-5.5 (High)",
-     "displayName": "GPT 5.5 (High)",
-     "vendor": "OpenAI",
-     "license": "proprietary",
-     "score": 1482,
-     "votes": 69375,
-     "country": "US",
-     "openrouterId": "openai/gpt-5.5",
-     "huggingfaceId": null,
-     "detailSlug": "openai--gpt-5.5",
-     "scoreCi": 4,
-     "priceIn": 5.0,
-     "priceOut": 30.0,
-     "context": "1.1M",
-     "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.02
      }
     },
     {
      "rank": 25,
-     "rankSpread": "15 42",
+     "rankSpread": "17 43",
      "model": "Claude Opus 4.8 (High)",
      "displayName": "Claude Opus 4.8 (High)",
      "vendor": "Anthropic",
      "license": "proprietary",
-     "score": 1481,
-     "votes": 64096,
+     "score": 1482,
+     "votes": 63994,
      "country": "US",
      "openrouterId": "anthropic/claude-opus-4.8",
      "huggingfaceId": null,
@@ -1467,39 +1466,39 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.07
      }
     },
     {
      "rank": 26,
-     "rankSpread": "14 44",
-     "model": "GLM-5.3 (Max)",
-     "displayName": "GLM 5.3 (Max)",
-     "vendor": "Z.ai",
-     "license": "open",
-     "score": 1481,
-     "votes": 25144,
-     "country": "CN",
-     "openrouterId": "z-ai/glm-5.3",
+     "rankSpread": "17 43",
+     "model": "GPT-5.5 (High)",
+     "displayName": "GPT 5.5 (High)",
+     "vendor": "OpenAI",
+     "license": "proprietary",
+     "score": 1482,
+     "votes": 69377,
+     "country": "US",
+     "openrouterId": "openai/gpt-5.5",
      "huggingfaceId": null,
-     "detailSlug": "z-ai--glm-5.3",
-     "scoreCi": 5,
-     "priceIn": 1.4,
-     "priceOut": 4.4,
-     "context": "1M",
+     "detailSlug": "openai--gpt-5.5",
+     "scoreCi": 4,
+     "priceIn": 5.0,
+     "priceOut": 30.0,
+     "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.09
      }
     },
     {
      "rank": 27,
-     "rankSpread": "12 48",
+     "rankSpread": "13 48",
      "model": "GPT-6.1 Sol (Max)",
      "displayName": "GPT 6.1 Sol (Max)",
      "vendor": "OpenAI",
      "license": "proprietary",
-     "score": 1480,
-     "votes": 8305,
+     "score": 1481,
+     "votes": 9367,
      "country": "US",
      "openrouterId": "openai/gpt-6.1-sol",
      "huggingfaceId": null,
@@ -1509,18 +1508,39 @@
      "priceOut": 10.0,
      "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.04
      }
     },
     {
      "rank": 28,
-     "rankSpread": "12 51",
+     "rankSpread": "17 45",
+     "model": "GLM-5.3 (Max)",
+     "displayName": "GLM 5.3 (Max)",
+     "vendor": "Z.ai",
+     "license": "open",
+     "score": 1481,
+     "votes": 26606,
+     "country": "CN",
+     "openrouterId": "z-ai/glm-5.3",
+     "huggingfaceId": null,
+     "detailSlug": "z-ai--glm-5.3",
+     "scoreCi": 5,
+     "priceIn": 1.4,
+     "priceOut": 4.4,
+     "context": "1M",
+     "extra": {
+      "costTaskP50": 0.03
+     }
+    },
+    {
+     "rank": 29,
+     "rankSpread": "13 52",
      "model": "MiMo-V2.6-Pro",
      "displayName": "Mimo V2.6 Pro",
      "vendor": "Xiaomi",
      "license": "open",
      "score": 1480,
-     "votes": 4067,
+     "votes": 4037,
      "country": "CN",
      "openrouterId": "xiaomi/mimo-v2.6-pro",
      "huggingfaceId": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
@@ -1530,39 +1550,18 @@
      "priceOut": 0.87,
      "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
-     }
-    },
-    {
-     "rank": 29,
-     "rankSpread": "17 51",
-     "model": "Claude Sonnet 5.5 (xHigh)",
-     "displayName": "Claude Sonnet 5.5 (xHigh)",
-     "vendor": "Anthropic",
-     "license": "proprietary",
-     "score": 1478,
-     "votes": 8977,
-     "country": "US",
-     "openrouterId": "anthropic/claude-sonnet-5.5",
-     "huggingfaceId": null,
-     "detailSlug": "anthropic--claude-sonnet-5.5",
-     "scoreCi": 7,
-     "priceIn": 2.0,
-     "priceOut": 10.0,
-     "context": "1M",
-     "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.0035
      }
     },
     {
      "rank": 30,
-     "rankSpread": "21 47",
+     "rankSpread": "22 48",
      "model": "Gemini 3.5 Flash (High)",
      "displayName": "Gemini 3.5 Flash (High)",
      "vendor": "Google",
      "license": "proprietary",
-     "score": 1477,
-     "votes": 48504,
+     "score": 1478,
+     "votes": 48376,
      "country": "US",
      "openrouterId": "google/gemini-3.5-flash",
      "huggingfaceId": null,
@@ -1572,7 +1571,7 @@
      "priceOut": 4.5,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.03
      }
     }
    ]
@@ -1583,8 +1582,8 @@
    "unit": "elo",
    "route": "/vision/",
    "sourceUrl": "https://arena.ai/leaderboard/chat/vision",
-   "sourceUpdated": "Oct 26, 2026",
-   "sourceFetchedAt": "2026-10-26T18:20:25.965Z",
+   "sourceUpdated": "Nov 2, 2026",
+   "sourceFetchedAt": "2026-11-02T11:00:30.316Z",
    "fullCount": 167,
    "rows": [
     {
@@ -1605,7 +1604,7 @@
      "priceOut": 50.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.21
      }
     },
     {
@@ -1626,7 +1625,7 @@
      "priceOut": 6.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.04
      }
     },
     {
@@ -1647,7 +1646,7 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.1
      }
     },
     {
@@ -1668,7 +1667,7 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.09
      }
     },
     {
@@ -1689,7 +1688,7 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.1
      }
     },
     {
@@ -1710,7 +1709,7 @@
      "priceOut": 3.75,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.02
      }
     },
     {
@@ -1728,7 +1727,7 @@
      "detailSlug": null,
      "scoreCi": 9,
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": "N/A"
      }
     },
     {
@@ -1749,7 +1748,7 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.09
      }
     },
     {
@@ -1770,7 +1769,7 @@
      "priceOut": 10.0,
      "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.06
      }
     },
     {
@@ -1791,7 +1790,7 @@
      "priceOut": 20.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.1
      }
     },
     {
@@ -1811,7 +1810,7 @@
      "priceIn": 1.25,
      "priceOut": 4.25,
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.03
      }
     },
     {
@@ -1832,7 +1831,7 @@
      "priceOut": 3.75,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.02
      }
     },
     {
@@ -1850,7 +1849,7 @@
      "detailSlug": "meta--muse-spark-1.3",
      "scoreCi": 9,
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.03
      }
     },
     {
@@ -1871,7 +1870,7 @@
      "priceOut": 12.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": "N/A"
      }
     },
     {
@@ -1892,7 +1891,7 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.13
      }
     },
     {
@@ -1910,7 +1909,7 @@
      "detailSlug": "meta--muse-spark-1.3",
      "scoreCi": 10,
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.03
      }
     },
     {
@@ -1931,7 +1930,7 @@
      "priceOut": 50.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.44
      }
     },
     {
@@ -1951,7 +1950,7 @@
      "priceIn": 4.0,
      "priceOut": 20.0,
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.11
      }
     },
     {
@@ -1972,7 +1971,7 @@
      "priceOut": 30.0,
      "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.11
      }
     },
     {
@@ -1993,7 +1992,7 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.11
      }
     },
     {
@@ -2011,7 +2010,7 @@
      "detailSlug": "openai--gpt-6-astra",
      "scoreCi": 10,
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.34
      }
     },
     {
@@ -2032,7 +2031,7 @@
      "priceOut": 15.0,
      "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.07
      }
     },
     {
@@ -2053,7 +2052,7 @@
      "priceOut": 4.5,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.04
      }
     },
     {
@@ -2074,7 +2073,7 @@
      "priceOut": 4.5,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.04
      }
     },
     {
@@ -2095,7 +2094,7 @@
      "priceOut": 30.0,
      "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.13
      }
     },
     {
@@ -2116,7 +2115,7 @@
      "priceOut": 3.75,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.02
      }
     },
     {
@@ -2137,7 +2136,7 @@
      "priceOut": 4.25,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.02
      }
     },
     {
@@ -2158,7 +2157,7 @@
      "priceOut": 6.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.05
      }
     },
     {
@@ -2179,7 +2178,7 @@
      "priceOut": 6.0,
      "context": "500K",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.01
      }
     },
     {
@@ -2200,7 +2199,7 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.09
      }
     }
    ]
@@ -2211,8 +2210,8 @@
    "unit": "elo",
    "route": "/search/",
    "sourceUrl": "https://arena.ai/leaderboard/chat/search",
-   "sourceUpdated": "Oct 26, 2026",
-   "sourceFetchedAt": "2026-10-26T18:20:26.861Z",
+   "sourceUpdated": "Nov 2, 2026",
+   "sourceFetchedAt": "2026-11-02T11:00:25.212Z",
    "fullCount": 42,
    "rows": [
     {
@@ -2233,7 +2232,7 @@
      "priceOut": 20.0,
      "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.44
      }
     },
     {
@@ -2254,7 +2253,7 @@
      "priceOut": 6.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": "N/A"
      }
     },
     {
@@ -2275,7 +2274,7 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.3
      }
     },
     {
@@ -2296,7 +2295,7 @@
      "priceOut": 30.0,
      "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.39
      }
     },
     {
@@ -2317,7 +2316,7 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.55
      }
     },
     {
@@ -2338,7 +2337,7 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.36
      }
     },
     {
@@ -2359,7 +2358,7 @@
      "priceOut": 50.0,
      "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.99
      }
     },
     {
@@ -2380,7 +2379,7 @@
      "priceOut": 10.0,
      "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.18
      }
     },
     {
@@ -2401,7 +2400,7 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.21
      }
     },
     {
@@ -2422,7 +2421,7 @@
      "priceOut": 50.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.48
      }
     },
     {
@@ -2443,7 +2442,7 @@
      "priceOut": 2.54,
      "context": "119K",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.02
      }
     },
     {
@@ -2464,7 +2463,7 @@
      "priceOut": 7.5,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.13
      }
     },
     {
@@ -2485,7 +2484,7 @@
      "priceOut": 6.0,
      "context": "500K",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.12
      }
     },
     {
@@ -2506,7 +2505,7 @@
      "priceOut": 20.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.21
      }
     },
     {
@@ -2523,8 +2522,11 @@
      "huggingfaceId": null,
      "detailSlug": null,
      "scoreCi": 5,
+     "priceIn": 2.7,
+     "priceOut": 16.2,
+     "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.05
      }
     },
     {
@@ -2545,7 +2547,7 @@
      "priceOut": 7.0,
      "context": "400K",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": "N/A"
      }
     },
     {
@@ -2565,7 +2567,7 @@
      "priceIn": 2.0,
      "priceOut": 12.0,
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": "N/A"
      }
     },
     {
@@ -2586,7 +2588,7 @@
      "priceOut": 2.5,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.23
      }
     },
     {
@@ -2607,7 +2609,7 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.21
      }
     },
     {
@@ -2628,7 +2630,7 @@
      "priceOut": 5.0,
      "context": "400K",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": "N/A"
      }
     },
     {
@@ -2649,7 +2651,7 @@
      "priceOut": 15.0,
      "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.22
      }
     },
     {
@@ -2666,8 +2668,11 @@
      "huggingfaceId": null,
      "detailSlug": null,
      "scoreCi": 4,
+     "priceIn": 0.68,
+     "priceOut": 4.05,
+     "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.0085
      }
     },
     {
@@ -2688,7 +2693,7 @@
      "priceOut": 10.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.1
      }
     },
     {
@@ -2706,7 +2711,7 @@
      "detailSlug": "x-ai--grok-4.20",
      "scoreCi": 6,
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": "N/A"
      }
     },
     {
@@ -2727,7 +2732,7 @@
      "priceOut": 25.0,
      "context": "200K",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": "N/A"
      }
     },
     {
@@ -2748,7 +2753,7 @@
      "priceOut": 5.0,
      "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.22
      }
     },
     {
@@ -2769,7 +2774,7 @@
      "priceOut": 7.0,
      "context": "400K",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": "N/A"
      }
     },
     {
@@ -2790,7 +2795,7 @@
      "priceOut": 2.5,
      "context": "2M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": "N/A"
      }
     },
     {
@@ -2811,7 +2816,7 @@
      "priceOut": 0.5,
      "context": "2M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": "N/A"
      }
     },
     {
@@ -2832,7 +2837,7 @@
      "priceOut": 2.5,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.03
      }
     }
    ]
@@ -2843,8 +2848,8 @@
    "unit": "elo",
    "route": "/document/",
    "sourceUrl": "https://arena.ai/leaderboard/chat/document",
-   "sourceUpdated": "Oct 26, 2026",
-   "sourceFetchedAt": "2026-10-26T18:00:40.853Z",
+   "sourceUpdated": "Nov 2, 2026",
+   "sourceFetchedAt": "2026-11-02T11:00:12.622Z",
    "fullCount": 44,
    "rows": [
     {
@@ -2865,7 +2870,7 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.63
      }
     },
     {
@@ -2886,7 +2891,7 @@
      "priceOut": 50.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 1.57
      }
     },
     {
@@ -2907,7 +2912,7 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.54
      }
     },
     {
@@ -2928,7 +2933,7 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.5
      }
     },
     {
@@ -2949,7 +2954,7 @@
      "priceOut": 50.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 1.07
      }
     },
     {
@@ -2970,7 +2975,7 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.71
      }
     },
     {
@@ -2991,7 +2996,7 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.72
      }
     },
     {
@@ -3012,7 +3017,7 @@
      "priceOut": 30.0,
      "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.28
      }
     },
     {
@@ -3033,7 +3038,7 @@
      "priceOut": 30.0,
      "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.35
      }
     },
     {
@@ -3053,7 +3058,7 @@
      "priceIn": 4.0,
      "priceOut": 20.0,
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.41
      }
     },
     {
@@ -3074,7 +3079,7 @@
      "priceOut": 7.5,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.3
      }
     },
     {
@@ -3095,7 +3100,7 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.72
      }
     },
     {
@@ -3115,7 +3120,7 @@
      "priceIn": 2.0,
      "priceOut": 12.0,
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.19
      }
     },
     {
@@ -3136,7 +3141,7 @@
      "priceOut": 15.0,
      "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.12
      }
     },
     {
@@ -3154,7 +3159,7 @@
      "detailSlug": "meta--muse-spark-1.3",
      "scoreCi": 18,
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.12
      }
     },
     {
@@ -3172,7 +3177,7 @@
      "detailSlug": "openai--gpt-6-astra",
      "scoreCi": 14,
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 1.05
      }
     },
     {
@@ -3193,7 +3198,7 @@
      "priceOut": 10.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.23
      }
     },
     {
@@ -3214,7 +3219,7 @@
      "priceOut": 4.25,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.08
      }
     },
     {
@@ -3235,7 +3240,7 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.6
      }
     },
     {
@@ -3256,7 +3261,7 @@
      "priceOut": 4.5,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.08
      }
     },
     {
@@ -3277,7 +3282,7 @@
      "priceOut": 25.0,
      "context": "200K",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": "N/A"
      }
     },
     {
@@ -3298,7 +3303,7 @@
      "priceOut": 4.5,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.09
      }
     },
     {
@@ -3318,7 +3323,7 @@
      "priceIn": 0.2,
      "priceOut": 1.2,
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.03
      }
     },
     {
@@ -3339,7 +3344,7 @@
      "priceOut": 3.75,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.06
      }
     },
     {
@@ -3360,7 +3365,7 @@
      "priceOut": 6.0,
      "context": "500K",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.1
      }
     },
     {
@@ -3381,7 +3386,7 @@
      "priceOut": 6.0,
      "context": "500K",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.04
      }
     },
     {
@@ -3402,7 +3407,7 @@
      "priceOut": 4.0,
      "context": "262.1K",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.06
      }
     },
     {
@@ -3423,7 +3428,7 @@
      "priceOut": 15.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.21
      }
     },
     {
@@ -3441,7 +3446,7 @@
      "detailSlug": null,
      "scoreCi": 18,
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": "N/A"
      }
     },
     {
@@ -3462,7 +3467,7 @@
      "priceOut": 1.28,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.05
      }
     }
    ]
@@ -3473,9 +3478,9 @@
    "unit": "elo",
    "route": "/code/",
    "sourceUrl": "https://arena.ai/leaderboard/code/webdev",
-   "sourceUpdated": "Oct 26, 2026",
-   "sourceFetchedAt": "2026-10-26T18:01:02.763Z",
-   "fullCount": 151,
+   "sourceUpdated": "Nov 2, 2026",
+   "sourceFetchedAt": "2026-11-02T11:00:26.789Z",
+   "fullCount": 153,
    "rows": [
     {
      "rank": 1,
@@ -3484,8 +3489,8 @@
      "displayName": "Claude Opus 5.5 (Max)",
      "vendor": "Anthropic",
      "license": "proprietary",
-     "score": 1807,
-     "votes": 3140,
+     "score": 1810,
+     "votes": 3473,
      "country": "US",
      "openrouterId": "anthropic/claude-opus-5.5",
      "huggingfaceId": null,
@@ -3494,18 +3499,18 @@
      "priceOut": 20.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 9.09
      }
     },
     {
      "rank": 2,
-     "rankSpread": "2 3",
+     "rankSpread": "2 4",
      "model": "GPT-6 Astra (Max)",
      "displayName": "GPT 6 Astra (Max)",
      "vendor": "OpenAI",
      "license": "proprietary",
-     "score": 1774,
-     "votes": 6579,
+     "score": 1773,
+     "votes": 7210,
      "country": "US",
      "openrouterId": "openai/gpt-6-astra",
      "huggingfaceId": null,
@@ -3514,18 +3519,18 @@
      "priceOut": 50.0,
      "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 9.43
      }
     },
     {
      "rank": 3,
-     "rankSpread": "2 4",
+     "rankSpread": "2 5",
      "model": "Claude Sonnet 5.5 (xHigh)",
      "displayName": "Claude Sonnet 5.5 (xHigh)",
      "vendor": "Anthropic",
      "license": "proprietary",
-     "score": 1769,
-     "votes": 3822,
+     "score": 1770,
+     "votes": 4469,
      "country": "US",
      "openrouterId": "anthropic/claude-sonnet-5.5",
      "huggingfaceId": null,
@@ -3534,18 +3539,37 @@
      "priceOut": 10.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 2.99
      }
     },
     {
      "rank": 4,
-     "rankSpread": "3 6",
+     "rankSpread": "2 6",
+     "model": "Gemini 4 Carbon (High)",
+     "displayName": "Gemini 4 Carbon (High)",
+     "vendor": "Google",
+     "license": "proprietary",
+     "score": 1768,
+     "votes": 2230,
+     "country": "US",
+     "openrouterId": null,
+     "huggingfaceId": null,
+     "detailSlug": null,
+     "priceIn": 2.0,
+     "priceOut": 10.0,
+     "extra": {
+      "costTaskP50": 1.62
+     }
+    },
+    {
+     "rank": 5,
+     "rankSpread": "3 7",
      "model": "GPT-6.1 Sol (Max)",
      "displayName": "GPT 6.1 Sol (Max)",
      "vendor": "OpenAI",
      "license": "proprietary",
-     "score": 1749,
-     "votes": 3469,
+     "score": 1751,
+     "votes": 4092,
      "country": "US",
      "openrouterId": "openai/gpt-6.1-sol",
      "huggingfaceId": null,
@@ -3554,18 +3578,18 @@
      "priceOut": 10.0,
      "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 1.61
      }
     },
     {
-     "rank": 5,
-     "rankSpread": "4 6",
+     "rank": 6,
+     "rankSpread": "4 7",
      "model": "Claude Fable 5.1 (Max)",
      "displayName": "Claude Fable 5.1 (Max)",
      "vendor": "Anthropic",
      "license": "proprietary",
-     "score": 1742,
-     "votes": 8098,
+     "score": 1746,
+     "votes": 8614,
      "country": "US",
      "openrouterId": "anthropic/claude-fable-5.1",
      "huggingfaceId": null,
@@ -3574,35 +3598,35 @@
      "priceOut": 50.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 11.46
      }
     },
     {
-     "rank": 6,
-     "rankSpread": "4 7",
+     "rank": 7,
+     "rankSpread": "5 8",
      "model": "Muse Wonder Full (Max)",
      "displayName": "Muse Wonder Full (Max)",
      "vendor": "Meta",
      "license": "proprietary",
-     "score": 1726,
-     "votes": 2253,
+     "score": 1725,
+     "votes": 2248,
      "country": "US",
      "openrouterId": "meta/muse-wonder",
      "huggingfaceId": null,
      "detailSlug": "meta--muse-wonder",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": "N/A"
      }
     },
     {
-     "rank": 7,
-     "rankSpread": "6 8",
+     "rank": 8,
+     "rankSpread": "7 9",
      "model": "Claude Sonnet 5.5 (High)",
      "displayName": "Claude Sonnet 5.5 (High)",
      "vendor": "Anthropic",
      "license": "proprietary",
-     "score": 1709,
-     "votes": 5632,
+     "score": 1711,
+     "votes": 6371,
      "country": "US",
      "openrouterId": "anthropic/claude-sonnet-5.5",
      "huggingfaceId": null,
@@ -3611,18 +3635,18 @@
      "priceOut": 10.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 1.28
      }
     },
     {
-     "rank": 8,
-     "rankSpread": "7 13",
+     "rank": 9,
+     "rankSpread": "8 15",
      "model": "Kimi K3.1 Pro (Max)",
      "displayName": "Kimi K3.1 Pro (Max)",
      "vendor": "Moonshot",
      "license": "proprietary",
-     "score": 1692,
-     "votes": 2451,
+     "score": 1695,
+     "votes": 2671,
      "country": "CN",
      "openrouterId": "moonshotai/kimi-k3.1-pro",
      "huggingfaceId": null,
@@ -3631,18 +3655,18 @@
      "priceOut": 10.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 1.24
      }
     },
     {
-     "rank": 9,
-     "rankSpread": "8 11",
+     "rank": 10,
+     "rankSpread": "9 13",
      "model": "Claude Opus 5 (Max)",
      "displayName": "Claude Opus 5 (Max)",
      "vendor": "Anthropic",
      "license": "proprietary",
      "score": 1691,
-     "votes": 18995,
+     "votes": 19641,
      "country": "US",
      "openrouterId": "anthropic/claude-opus-5",
      "huggingfaceId": null,
@@ -3651,38 +3675,18 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
-     }
-    },
-    {
-     "rank": 10,
-     "rankSpread": "8 14",
-     "model": "GPT-6 Sol (Max)",
-     "displayName": "GPT 6 Sol (Max)",
-     "vendor": "OpenAI",
-     "license": "proprietary",
-     "score": 1681,
-     "votes": 5008,
-     "country": "US",
-     "openrouterId": "openai/gpt-6-sol",
-     "huggingfaceId": null,
-     "detailSlug": "openai--gpt-6-sol",
-     "priceIn": 2.0,
-     "priceOut": 10.0,
-     "context": "1.1M",
-     "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 4.8
      }
     },
     {
      "rank": 11,
-     "rankSpread": "8 17",
+     "rankSpread": "9 16",
      "model": "Gemini 4 Argon (High)",
      "displayName": "Gemini 4 Argon (High)",
      "vendor": "Google",
      "license": "proprietary",
-     "score": 1674,
-     "votes": 2729,
+     "score": 1679,
+     "votes": 3437,
      "country": "US",
      "openrouterId": "google/gemini-4-argon",
      "huggingfaceId": null,
@@ -3691,18 +3695,38 @@
      "priceOut": 10.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 1.18
      }
     },
     {
      "rank": 12,
-     "rankSpread": "9 14",
+     "rankSpread": "9 16",
+     "model": "GPT-6 Sol (Max)",
+     "displayName": "GPT 6 Sol (Max)",
+     "vendor": "OpenAI",
+     "license": "proprietary",
+     "score": 1678,
+     "votes": 5714,
+     "country": "US",
+     "openrouterId": "openai/gpt-6-sol",
+     "huggingfaceId": null,
+     "detailSlug": "openai--gpt-6-sol",
+     "priceIn": 2.0,
+     "priceOut": 10.0,
+     "context": "1.1M",
+     "extra": {
+      "costTaskP50": 1.71
+     }
+    },
+    {
+     "rank": 13,
+     "rankSpread": "10 16",
      "model": "Qwen3.8-Max (0902)",
      "displayName": "Qwen 3.8 (Max 0902)",
      "vendor": "Alibaba",
      "license": "proprietary",
-     "score": 1673,
-     "votes": 15637,
+     "score": 1676,
+     "votes": 17936,
      "country": "CN",
      "openrouterId": "qwen/qwen3.8-max-0902",
      "huggingfaceId": null,
@@ -3710,18 +3734,38 @@
      "priceIn": 2.0,
      "priceOut": 6.0,
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 1.79
      }
     },
     {
-     "rank": 13,
-     "rankSpread": "9 18",
+     "rank": 14,
+     "rankSpread": "9 20",
+     "model": "GPT-6.1 Terra (Max)",
+     "displayName": "GPT 6.1 Terra (Max)",
+     "vendor": "OpenAI",
+     "license": "proprietary",
+     "score": 1673,
+     "votes": 1821,
+     "country": "US",
+     "openrouterId": "openai/gpt-6.1-terra",
+     "huggingfaceId": null,
+     "detailSlug": "openai--gpt-6.1-terra",
+     "priceIn": 1.0,
+     "priceOut": 5.0,
+     "context": "1.1M",
+     "extra": {
+      "costTaskP50": 0.53
+     }
+    },
+    {
+     "rank": 15,
+     "rankSpread": "10 20",
      "model": "Qwen3.8-Max",
      "displayName": "Qwen 3.8 Max",
      "vendor": "Alibaba",
      "license": "proprietary",
      "score": 1672,
-     "votes": 3429,
+     "votes": 3406,
      "country": "CN",
      "openrouterId": null,
      "huggingfaceId": null,
@@ -3730,18 +3774,18 @@
      "priceOut": 6.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 2.31
      }
     },
     {
-     "rank": 14,
-     "rankSpread": "10 18",
+     "rank": 16,
+     "rankSpread": "11 20",
      "model": "DeepSeek-V4.1-Flash-20261017 (Max)",
      "displayName": "DeepSeek V4.1 Flash (Max) (1017)",
      "vendor": "DeepSeek",
      "license": "open",
      "score": 1665,
-     "votes": 2500,
+     "votes": 7842,
      "country": "CN",
      "openrouterId": "deepseek/deepseek-v4.1-flash-1017",
      "huggingfaceId": null,
@@ -3750,18 +3794,18 @@
      "priceOut": 0.6,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.12
      }
     },
     {
-     "rank": 15,
-     "rankSpread": "12 18",
+     "rank": 17,
+     "rankSpread": "14 20",
      "model": "Claude Opus 5 (High)",
      "displayName": "Claude Opus 5 (High)",
      "vendor": "Anthropic",
      "license": "proprietary",
-     "score": 1659,
-     "votes": 25607,
+     "score": 1658,
+     "votes": 26887,
      "country": "US",
      "openrouterId": "anthropic/claude-opus-5",
      "huggingfaceId": null,
@@ -3770,38 +3814,18 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 2.95
      }
     },
     {
-     "rank": 16,
-     "rankSpread": "12 18",
-     "model": "Muse Spark 1.3 (Max)",
-     "displayName": "Muse Spark 1.3 (Max)",
-     "vendor": "Meta",
-     "license": "proprietary",
-     "score": 1657,
-     "votes": 9921,
-     "country": "US",
-     "openrouterId": "meta/muse-spark-1.3",
-     "huggingfaceId": null,
-     "detailSlug": "meta--muse-spark-1.3",
-     "priceIn": 1.25,
-     "priceOut": 4.25,
-     "context": "1M",
-     "extra": {
-      "costTaskP50": ""
-     }
-    },
-    {
-     "rank": 17,
-     "rankSpread": "13 18",
+     "rank": 18,
+     "rankSpread": "14 20",
      "model": "Kimi K3 (Max)",
      "displayName": "Kimi K3 (Max)",
      "vendor": "Moonshot",
      "license": "open",
-     "score": 1655,
-     "votes": 20312,
+     "score": 1656,
+     "votes": 21281,
      "country": "CN",
      "openrouterId": "moonshotai/kimi-k3",
      "huggingfaceId": "moonshotai/Kimi-K3",
@@ -3810,178 +3834,18 @@
      "priceOut": 15.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
-     }
-    },
-    {
-     "rank": 18,
-     "rankSpread": "12 21",
-     "model": "Muse Wonder (Max)",
-     "displayName": "Muse Wonder (Max)",
-     "vendor": "Meta",
-     "license": "proprietary",
-     "score": 1651,
-     "votes": 2733,
-     "country": "US",
-     "openrouterId": "meta/muse-wonder",
-     "huggingfaceId": null,
-     "detailSlug": "meta--muse-wonder",
-     "priceIn": 4.0,
-     "priceOut": 20.0,
-     "context": "1M",
-     "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 1.74
      }
     },
     {
      "rank": 19,
-     "rankSpread": "18 26",
-     "model": "Grok 4.7 (xHigh)",
-     "displayName": "Grok 4.7 (xHigh)",
-     "vendor": "SpaceXAI",
-     "license": "proprietary",
-     "score": 1638,
-     "votes": 5725,
-     "country": "US",
-     "openrouterId": "x-ai/grok-4.7",
-     "huggingfaceId": null,
-     "detailSlug": "x-ai--grok-4.7",
-     "priceIn": 2.0,
-     "priceOut": 6.0,
-     "context": "500K",
-     "extra": {
-      "costTaskP50": ""
-     }
-    },
-    {
-     "rank": 20,
-     "rankSpread": "18 27",
-     "model": "MiMo-V2.6-Flash",
-     "displayName": "Mimo V2.6 Flash",
-     "vendor": "Xiaomi",
-     "license": "open",
-     "score": 1635,
-     "votes": 5749,
-     "country": "CN",
-     "openrouterId": "xiaomi/mimo-v2.6-flash",
-     "huggingfaceId": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
-     "detailSlug": "xiaomi--mimo-v2.6-flash",
-     "priceIn": 0.14,
-     "priceOut": 0.28,
-     "context": "1.1M",
-     "extra": {
-      "costTaskP50": ""
-     }
-    },
-    {
-     "rank": 21,
-     "rankSpread": "18 28",
-     "model": "Hy4 preview",
-     "displayName": "Hy4 (Preview)",
-     "vendor": "Tencent",
-     "license": "open",
-     "score": 1631,
-     "votes": 4788,
-     "country": "CN",
-     "openrouterId": "tencent/hy4-preview",
-     "huggingfaceId": "tencent/Hy4-preview",
-     "detailSlug": "tencent--hy4-preview",
-     "priceIn": 0.83,
-     "priceOut": 2.5,
-     "context": "1M",
-     "extra": {
-      "costTaskP50": ""
-     }
-    },
-    {
-     "rank": 22,
-     "rankSpread": "19 28",
-     "model": "Qwen3.8-Flash-Next",
-     "displayName": "Qwen 3.8 Flash Next",
-     "vendor": "Alibaba",
-     "license": "open",
-     "score": 1629,
-     "votes": 8866,
-     "country": "CN",
-     "openrouterId": "qwen/qwen3.8-flash",
-     "huggingfaceId": "Qwen/Qwen3.8-Flash-Next",
-     "detailSlug": "qwen--qwen3.8-flash",
-     "priceIn": 0.16,
-     "priceOut": 0.47,
-     "context": "1M",
-     "extra": {
-      "costTaskP50": ""
-     }
-    },
-    {
-     "rank": 23,
-     "rankSpread": "19 29",
-     "model": "MiMo-V2.6-Pro",
-     "displayName": "Mimo V2.6 Pro",
-     "vendor": "Xiaomi",
-     "license": "open",
-     "score": 1625,
-     "votes": 5678,
-     "country": "CN",
-     "openrouterId": "xiaomi/mimo-v2.6-pro",
-     "huggingfaceId": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
-     "detailSlug": "xiaomi--mimo-v2.6-pro",
-     "priceIn": 0.43,
-     "priceOut": 0.87,
-     "context": "1.1M",
-     "extra": {
-      "costTaskP50": ""
-     }
-    },
-    {
-     "rank": 24,
-     "rankSpread": "19 29",
-     "model": "Claude Fable 5 (High)",
-     "displayName": "Claude Fable 5 (High)",
-     "vendor": "Anthropic",
-     "license": "proprietary",
-     "score": 1624,
-     "votes": 16342,
-     "country": "US",
-     "openrouterId": "anthropic/claude-fable-5",
-     "huggingfaceId": null,
-     "detailSlug": "anthropic--claude-fable-5",
-     "priceIn": 10.0,
-     "priceOut": 50.0,
-     "context": "1M",
-     "extra": {
-      "costTaskP50": ""
-     }
-    },
-    {
-     "rank": 25,
-     "rankSpread": "19 29",
-     "model": "GLM-5.3 (Max)",
-     "displayName": "GLM 5.3 (Max)",
-     "vendor": "Z.ai",
-     "license": "open",
-     "score": 1623,
-     "votes": 10315,
-     "country": "CN",
-     "openrouterId": "z-ai/glm-5.3",
-     "huggingfaceId": null,
-     "detailSlug": "z-ai--glm-5.3",
-     "priceIn": 1.4,
-     "priceOut": 4.4,
-     "context": "1M",
-     "extra": {
-      "costTaskP50": ""
-     }
-    },
-    {
-     "rank": 26,
-     "rankSpread": "20 30",
-     "model": "Muse Spark 1.3 (xHigh)",
-     "displayName": "Muse Spark 1.3 (xHigh)",
+     "rankSpread": "14 20",
+     "model": "Muse Spark 1.3 (Max)",
+     "displayName": "Muse Spark 1.3 (Max)",
      "vendor": "Meta",
      "license": "proprietary",
-     "score": 1620,
-     "votes": 9289,
+     "score": 1656,
+     "votes": 10796,
      "country": "US",
      "openrouterId": "meta/muse-spark-1.3",
      "huggingfaceId": null,
@@ -3990,18 +3854,198 @@
      "priceOut": 4.25,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.8
+     }
+    },
+    {
+     "rank": 20,
+     "rankSpread": "14 22",
+     "model": "Muse Wonder (Max)",
+     "displayName": "Muse Wonder (Max)",
+     "vendor": "Meta",
+     "license": "proprietary",
+     "score": 1652,
+     "votes": 3724,
+     "country": "US",
+     "openrouterId": "meta/muse-wonder",
+     "huggingfaceId": null,
+     "detailSlug": "meta--muse-wonder",
+     "priceIn": 4.0,
+     "priceOut": 20.0,
+     "context": "1M",
+     "extra": {
+      "costTaskP50": 1.73
+     }
+    },
+    {
+     "rank": 21,
+     "rankSpread": "20 28",
+     "model": "Grok 4.7 (xHigh)",
+     "displayName": "Grok 4.7 (xHigh)",
+     "vendor": "SpaceXAI",
+     "license": "proprietary",
+     "score": 1637,
+     "votes": 6572,
+     "country": "US",
+     "openrouterId": "x-ai/grok-4.7",
+     "huggingfaceId": null,
+     "detailSlug": "x-ai--grok-4.7",
+     "priceIn": 2.0,
+     "priceOut": 6.0,
+     "context": "500K",
+     "extra": {
+      "costTaskP50": 3.38
+     }
+    },
+    {
+     "rank": 22,
+     "rankSpread": "20 28",
+     "model": "MiMo-V2.6-Flash",
+     "displayName": "Mimo V2.6 Flash",
+     "vendor": "Xiaomi",
+     "license": "open",
+     "score": 1637,
+     "votes": 7068,
+     "country": "CN",
+     "openrouterId": "xiaomi/mimo-v2.6-flash",
+     "huggingfaceId": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
+     "detailSlug": "xiaomi--mimo-v2.6-flash",
+     "priceIn": 0.14,
+     "priceOut": 0.28,
+     "context": "1.1M",
+     "extra": {
+      "costTaskP50": 0.05
+     }
+    },
+    {
+     "rank": 23,
+     "rankSpread": "21 31",
+     "model": "Hy4 preview",
+     "displayName": "Hy4 (Preview)",
+     "vendor": "Tencent",
+     "license": "open",
+     "score": 1631,
+     "votes": 4765,
+     "country": "CN",
+     "openrouterId": "tencent/hy4-preview",
+     "huggingfaceId": "tencent/Hy4-preview",
+     "detailSlug": "tencent--hy4-preview",
+     "priceIn": 0.83,
+     "priceOut": 2.5,
+     "context": "1M",
+     "extra": {
+      "costTaskP50": 0.35
+     }
+    },
+    {
+     "rank": 24,
+     "rankSpread": "21 31",
+     "model": "Qwen3.8-Flash-Next",
+     "displayName": "Qwen 3.8 Flash Next",
+     "vendor": "Alibaba",
+     "license": "open",
+     "score": 1628,
+     "votes": 9703,
+     "country": "CN",
+     "openrouterId": "qwen/qwen3.8-flash",
+     "huggingfaceId": "Qwen/Qwen3.8-Flash-Next",
+     "detailSlug": "qwen--qwen3.8-flash",
+     "priceIn": 0.16,
+     "priceOut": 0.47,
+     "context": "1M",
+     "extra": {
+      "costTaskP50": 0.17
+     }
+    },
+    {
+     "rank": 25,
+     "rankSpread": "21 31",
+     "model": "MiMo-V2.6-Pro",
+     "displayName": "Mimo V2.6 Pro",
+     "vendor": "Xiaomi",
+     "license": "open",
+     "score": 1625,
+     "votes": 6820,
+     "country": "CN",
+     "openrouterId": "xiaomi/mimo-v2.6-pro",
+     "huggingfaceId": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
+     "detailSlug": "xiaomi--mimo-v2.6-pro",
+     "priceIn": 0.43,
+     "priceOut": 0.87,
+     "context": "1.1M",
+     "extra": {
+      "costTaskP50": 0.1
+     }
+    },
+    {
+     "rank": 26,
+     "rankSpread": "21 31",
+     "model": "Claude Fable 5 (High)",
+     "displayName": "Claude Fable 5 (High)",
+     "vendor": "Anthropic",
+     "license": "proprietary",
+     "score": 1624,
+     "votes": 16951,
+     "country": "US",
+     "openrouterId": "anthropic/claude-fable-5",
+     "huggingfaceId": null,
+     "detailSlug": "anthropic--claude-fable-5",
+     "priceIn": 10.0,
+     "priceOut": 50.0,
+     "context": "1M",
+     "extra": {
+      "costTaskP50": 3.1
      }
     },
     {
      "rank": 27,
-     "rankSpread": "19 31",
+     "rankSpread": "21 31",
+     "model": "GLM-5.3 (Max)",
+     "displayName": "GLM 5.3 (Max)",
+     "vendor": "Z.ai",
+     "license": "open",
+     "score": 1623,
+     "votes": 11150,
+     "country": "CN",
+     "openrouterId": "z-ai/glm-5.3",
+     "huggingfaceId": null,
+     "detailSlug": "z-ai--glm-5.3",
+     "priceIn": 1.4,
+     "priceOut": 4.4,
+     "context": "1M",
+     "extra": {
+      "costTaskP50": 1.37
+     }
+    },
+    {
+     "rank": 28,
+     "rankSpread": "23 32",
+     "model": "Muse Spark 1.3 (xHigh)",
+     "displayName": "Muse Spark 1.3 (xHigh)",
+     "vendor": "Meta",
+     "license": "proprietary",
+     "score": 1620,
+     "votes": 10243,
+     "country": "US",
+     "openrouterId": "meta/muse-spark-1.3",
+     "huggingfaceId": null,
+     "detailSlug": "meta--muse-spark-1.3",
+     "priceIn": 1.25,
+     "priceOut": 4.25,
+     "context": "1M",
+     "extra": {
+      "costTaskP50": 0.49
+     }
+    },
+    {
+     "rank": 29,
+     "rankSpread": "21 33",
      "model": "DeepSeek-V4.1-Flash-20260910 (Max)",
      "displayName": "Deepseek V4.1 Flash (Max)",
      "vendor": "DeepSeek",
      "license": "open",
      "score": 1619,
-     "votes": 3530,
+     "votes": 3510,
      "country": "CN",
      "openrouterId": "deepseek/deepseek-v4.1-flash",
      "huggingfaceId": "deepseek-ai/DeepSeek-V4.1-Flash",
@@ -4010,18 +4054,18 @@
      "priceOut": 1.2,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.06
      }
     },
     {
-     "rank": 28,
-     "rankSpread": "21 31",
+     "rank": 30,
+     "rankSpread": "23 33",
      "model": "Grok 4.6 (High)",
      "displayName": "Grok 4.6 (High)",
      "vendor": "SpaceXAI",
      "license": "proprietary",
-     "score": 1617,
-     "votes": 11022,
+     "score": 1616,
+     "votes": 11966,
      "country": "US",
      "openrouterId": "x-ai/grok-4.6",
      "huggingfaceId": null,
@@ -4030,47 +4074,7 @@
      "priceOut": 6.0,
      "context": "500K",
      "extra": {
-      "costTaskP50": ""
-     }
-    },
-    {
-     "rank": 29,
-     "rankSpread": "23 31",
-     "model": "GPT-5.6 Sol (xHigh, Codex Harness)",
-     "displayName": "GPT 5.6 Sol (xHigh)",
-     "vendor": "OpenAI",
-     "license": "proprietary",
-     "score": 1615,
-     "votes": 18243,
-     "country": "US",
-     "openrouterId": "openai/gpt-5.6-sol",
-     "huggingfaceId": null,
-     "detailSlug": "openai--gpt-5.6-sol",
-     "priceIn": 4.0,
-     "priceOut": 20.0,
-     "context": "1.1M",
-     "extra": {
-      "costTaskP50": ""
-     }
-    },
-    {
-     "rank": 30,
-     "rankSpread": "26 32",
-     "model": "GLM-5.3-Flash",
-     "displayName": "GLM 5.3 Flash",
-     "vendor": "Z.ai",
-     "license": "open",
-     "score": 1608,
-     "votes": 19680,
-     "country": "CN",
-     "openrouterId": "z-ai/glm-5.3-flash",
-     "huggingfaceId": null,
-     "detailSlug": "z-ai--glm-5.3-flash",
-     "priceIn": 0.05,
-     "priceOut": 0.18,
-     "context": "1M",
-     "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 1.26
      }
     }
    ]
@@ -4081,8 +4085,8 @@
    "unit": "elo",
    "route": "/image-to-webdev/",
    "sourceUrl": "https://arena.ai/leaderboard/code/image-to-webdev",
-   "sourceUpdated": "Oct 26, 2026",
-   "sourceFetchedAt": "2026-10-26T18:02:13.439Z",
+   "sourceUpdated": "Nov 2, 2026",
+   "sourceFetchedAt": "2026-11-02T11:00:28.110Z",
    "fullCount": 65,
    "rows": [
     {
@@ -4102,7 +4106,7 @@
      "priceOut": 20.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 7.33
      }
     },
     {
@@ -4122,7 +4126,7 @@
      "priceOut": 10.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 2.36
      }
     },
     {
@@ -4142,7 +4146,7 @@
      "priceOut": 50.0,
      "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 9.05
      }
     },
     {
@@ -4162,7 +4166,7 @@
      "priceOut": 50.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 9.55
      }
     },
     {
@@ -4182,7 +4186,7 @@
      "priceOut": 10.0,
      "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 1.51
      }
     },
     {
@@ -4202,7 +4206,7 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 4.93
      }
     },
     {
@@ -4222,7 +4226,7 @@
      "priceOut": 10.0,
      "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 1.82
      }
     },
     {
@@ -4242,7 +4246,7 @@
      "priceOut": 4.25,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 1.25
      }
     },
     {
@@ -4262,7 +4266,7 @@
      "priceOut": 6.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": "N/A"
      }
     },
     {
@@ -4282,7 +4286,7 @@
      "priceOut": 50.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 4.29
      }
     },
     {
@@ -4302,7 +4306,7 @@
      "priceOut": 6.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 2.82
      }
     },
     {
@@ -4322,7 +4326,7 @@
      "priceOut": 20.0,
      "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 1.87
      }
     },
     {
@@ -4342,7 +4346,7 @@
      "priceOut": 1.2,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.06
      }
     },
     {
@@ -4362,7 +4366,7 @@
      "priceOut": 6.0,
      "context": "500K",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 1.5
      }
     },
     {
@@ -4382,7 +4386,7 @@
      "priceOut": 3.75,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.78
      }
     },
     {
@@ -4402,7 +4406,7 @@
      "priceOut": 0.87,
      "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.11
      }
     },
     {
@@ -4422,7 +4426,7 @@
      "priceOut": 4.25,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.72
      }
     },
     {
@@ -4442,7 +4446,7 @@
      "priceOut": 0.28,
      "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.04
      }
     },
     {
@@ -4462,7 +4466,7 @@
      "priceOut": 3.75,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.82
      }
     },
     {
@@ -4482,7 +4486,7 @@
      "priceOut": 6.0,
      "context": "500K",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 3.11
      }
     },
     {
@@ -4502,7 +4506,7 @@
      "priceOut": 15.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 1.65
      }
     },
     {
@@ -4522,7 +4526,7 @@
      "priceOut": 0.18,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.18
      }
     },
     {
@@ -4542,7 +4546,7 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 2
      }
     },
     {
@@ -4561,7 +4565,7 @@
      "priceIn": 0.4,
      "priceOut": 3.0,
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.44
      }
     },
     {
@@ -4581,7 +4585,7 @@
      "priceOut": 0.5,
      "context": "1.1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.08
      }
     },
     {
@@ -4601,7 +4605,7 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 1.89
      }
     },
     {
@@ -4621,7 +4625,7 @@
      "priceOut": 6.0,
      "context": "500K",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.66
      }
     },
     {
@@ -4641,7 +4645,7 @@
      "priceOut": 2.7,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.95
      }
     },
     {
@@ -4661,7 +4665,7 @@
      "priceOut": 3.75,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 0.82
      }
     },
     {
@@ -4681,7 +4685,7 @@
      "priceOut": 25.0,
      "context": "1M",
      "extra": {
-      "costTaskP50": ""
+      "costTaskP50": 2.14
      }
     }
    ]
@@ -4692,8 +4696,8 @@
    "unit": "elo",
    "route": "/text-to-image/",
    "sourceUrl": "https://arena.ai/leaderboard/image/text-to-image",
-   "sourceUpdated": "Oct 26, 2026",
-   "sourceFetchedAt": "2026-10-26T18:01:11.173Z",
+   "sourceUpdated": "Nov 2, 2026",
+   "sourceFetchedAt": "2026-11-02T11:00:28.988Z",
    "fullCount": 82,
    "rows": [
     {
@@ -4703,13 +4707,13 @@
      "displayName": "GPT Image 2.5 Sunburst",
      "vendor": "OpenAI",
      "license": "proprietary",
-     "score": 1425,
-     "votes": 17752,
+     "score": 1427,
+     "votes": 40323,
      "country": "US",
      "openrouterId": "openai/gpt-image-2.5-sunburst",
      "huggingfaceId": null,
      "detailSlug": "openai--gpt-image-2.5-sunburst",
-     "scoreCi": 7
+     "scoreCi": 5
     },
     {
      "rank": 2,
@@ -4718,13 +4722,13 @@
      "displayName": "GPT Image 2.5 Flare",
      "vendor": "OpenAI",
      "license": "proprietary",
-     "score": 1398,
-     "votes": 16889,
+     "score": 1401,
+     "votes": 39218,
      "country": "US",
      "openrouterId": "openai/gpt-image-2.5-flare",
      "huggingfaceId": null,
      "detailSlug": "openai--gpt-image-2.5-flare",
-     "scoreCi": 7
+     "scoreCi": 5
     },
     {
      "rank": 3,
@@ -4733,8 +4737,8 @@
      "displayName": "GPT Image 2 (medium)",
      "vendor": "OpenAI",
      "license": "proprietary",
-     "score": 1383,
-     "votes": 93334,
+     "score": 1381,
+     "votes": 103385,
      "country": "US",
      "openrouterId": "openai/gpt-image-2",
      "huggingfaceId": null,
@@ -4744,27 +4748,12 @@
     {
      "rank": 4,
      "rankSpread": "4 6",
-     "model": "Grok Imagine Image 2.0",
-     "displayName": "Grok Imagine Image 2.0 (canvas)",
-     "vendor": "SpaceXAI",
-     "license": "proprietary",
-     "score": 1334,
-     "votes": 3113,
-     "country": "US",
-     "openrouterId": "x-ai/grok-imagine-image-2.0",
-     "huggingfaceId": null,
-     "detailSlug": "x-ai--grok-imagine-image-2.0",
-     "scoreCi": 12
-    },
-    {
-     "rank": 5,
-     "rankSpread": "4 6",
      "model": "MAI-Image-2.6",
      "displayName": "Mai Image 2.6",
      "vendor": "Microsoft AI",
      "license": "proprietary",
-     "score": 1332,
-     "votes": 25091,
+     "score": 1329,
+     "votes": 34596,
      "country": "US",
      "openrouterId": "microsoft/mai-image-2.6",
      "huggingfaceId": null,
@@ -4772,19 +4761,34 @@
      "scoreCi": 5
     },
     {
-     "rank": 6,
+     "rank": 5,
      "rankSpread": "4 6",
      "model": "Gemini Nano Banana 2.1",
      "displayName": "Gemini Nano Banana 2.1",
      "vendor": "Google",
      "license": "proprietary",
-     "score": 1328,
-     "votes": 5310,
+     "score": 1325,
+     "votes": 5290,
      "country": "US",
      "openrouterId": "google/gemini-nano-banana-2.1",
      "huggingfaceId": null,
      "detailSlug": "google--gemini-nano-banana-2.1",
      "scoreCi": 9
+    },
+    {
+     "rank": 6,
+     "rankSpread": "4 6",
+     "model": "Grok Imagine Image 2.0",
+     "displayName": "Grok Imagine Image 2.0 (canvas)",
+     "vendor": "SpaceXAI",
+     "license": "proprietary",
+     "score": 1317,
+     "votes": 10902,
+     "country": "US",
+     "openrouterId": "x-ai/grok-imagine-image-2.0",
+     "huggingfaceId": null,
+     "detailSlug": "x-ai--grok-imagine-image-2.0",
+     "scoreCi": 7
     },
     {
      "rank": 7,
@@ -4793,8 +4797,8 @@
      "displayName": "Reve 2.1",
      "vendor": "Reve",
      "license": "proprietary",
-     "score": 1302,
-     "votes": 8249,
+     "score": 1300,
+     "votes": 8243,
      "country": "US",
      "openrouterId": null,
      "huggingfaceId": null,
@@ -4808,13 +4812,13 @@
      "displayName": "Grok Imagine Image 2.0 (20260801)",
      "vendor": "SpaceXAI",
      "license": "proprietary",
-     "score": 1294,
-     "votes": 14483,
+     "score": 1288,
+     "votes": 26191,
      "country": "US",
      "openrouterId": "x-ai/grok-imagine-image-2.0",
      "huggingfaceId": null,
      "detailSlug": "x-ai--grok-imagine-image-2.0",
-     "scoreCi": 6
+     "scoreCi": 5
     },
     {
      "rank": 9,
@@ -4823,8 +4827,8 @@
      "displayName": "Muse Image",
      "vendor": "Meta",
      "license": "proprietary",
-     "score": 1274,
-     "votes": 42262,
+     "score": 1269,
+     "votes": 53444,
      "country": "US",
      "openrouterId": "meta/muse-image",
      "huggingfaceId": null,
@@ -4833,13 +4837,13 @@
     },
     {
      "rank": 10,
-     "rankSpread": "9 11",
+     "rankSpread": "9 10",
      "model": "Reve 2.0",
      "displayName": "Reve 2.0",
      "vendor": "Reve",
      "license": "proprietary",
-     "score": 1269,
-     "votes": 15773,
+     "score": 1268,
+     "votes": 15768,
      "country": "US",
      "openrouterId": null,
      "huggingfaceId": null,
@@ -4848,13 +4852,13 @@
     },
     {
      "rank": 11,
-     "rankSpread": "10 14",
+     "rankSpread": "11 15",
      "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
      "displayName": "Gemini 3.1 Flash Image (nano Banana 2) [web Search]",
      "vendor": "Google",
      "license": "proprietary",
-     "score": 1262,
-     "votes": 60515,
+     "score": 1257,
+     "votes": 73278,
      "country": "US",
      "openrouterId": "google/gemini-3.1-flash-image",
      "huggingfaceId": null,
@@ -4863,28 +4867,13 @@
     },
     {
      "rank": 12,
-     "rankSpread": "11 15",
-     "model": "Seedream 5.0 Pro",
-     "displayName": "Seedream 5.0 Pro",
-     "vendor": "Bytedance",
-     "license": "proprietary",
-     "score": 1255,
-     "votes": 94181,
-     "country": "CN",
-     "openrouterId": "bytedance-seed/seedream-5-0-pro",
-     "huggingfaceId": null,
-     "detailSlug": "bytedance-seed--seedream-5-0-pro",
-     "scoreCi": 4
-    },
-    {
-     "rank": 13,
      "rankSpread": "11 16",
      "model": "Qwen-Image-3.0-Pro",
      "displayName": "Qwen Image 3.0 Pro",
      "vendor": "Alibaba",
      "license": "proprietary",
-     "score": 1255,
-     "votes": 11440,
+     "score": 1254,
+     "votes": 11444,
      "country": "CN",
      "openrouterId": "qwen/qwen-image-3-pro",
      "huggingfaceId": null,
@@ -4892,14 +4881,14 @@
      "scoreCi": 6
     },
     {
-     "rank": 14,
+     "rank": 13,
      "rankSpread": "11 16",
      "model": "MAI-Image-2.5",
      "displayName": "Mai Image 2.5",
      "vendor": "Microsoft AI",
      "license": "proprietary",
-     "score": 1254,
-     "votes": 61265,
+     "score": 1253,
+     "votes": 61286,
      "country": "US",
      "openrouterId": "microsoft/mai-image-2.5",
      "huggingfaceId": null,
@@ -4907,14 +4896,29 @@
      "scoreCi": 4
     },
     {
+     "rank": 14,
+     "rankSpread": "11 16",
+     "model": "Seedream 5.0 Pro",
+     "displayName": "Seedream 5.0 Pro",
+     "vendor": "Bytedance",
+     "license": "proprietary",
+     "score": 1250,
+     "votes": 105824,
+     "country": "CN",
+     "openrouterId": "bytedance-seed/seedream-5-0-pro",
+     "huggingfaceId": null,
+     "detailSlug": "bytedance-seed--seedream-5-0-pro",
+     "scoreCi": 4
+    },
+    {
      "rank": 15,
-     "rankSpread": "12 16",
+     "rankSpread": "11 16",
      "model": "Gemini 3.1 Flash-Lite Image (nano-banana-2-lite)",
      "displayName": "Gemini 3.1 Flash Lite Image (nano-banana-2-lite)",
      "vendor": "Google",
      "license": "proprietary",
-     "score": 1250,
-     "votes": 17804,
+     "score": 1249,
+     "votes": 17813,
      "country": "US",
      "openrouterId": "google/gemini-3.1-flash-lite-image",
      "huggingfaceId": null,
@@ -4923,13 +4927,13 @@
     },
     {
      "rank": 16,
-     "rankSpread": "13 16",
+     "rankSpread": "12 16",
      "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
      "displayName": "Gemini 3 Pro Image 2k (nano-banana-pro)",
      "vendor": "Google",
      "license": "proprietary",
-     "score": 1248,
-     "votes": 175734,
+     "score": 1246,
+     "votes": 188288,
      "country": "US",
      "openrouterId": "google/gemini-3-pro-image",
      "huggingfaceId": null,
@@ -4943,8 +4947,8 @@
      "displayName": "GPT Image 1.5 High Fidelity",
      "vendor": "OpenAI",
      "license": "proprietary",
-     "score": 1237,
-     "votes": 169927,
+     "score": 1236,
+     "votes": 174012,
      "country": "US",
      "openrouterId": null,
      "huggingfaceId": null,
@@ -4958,8 +4962,8 @@
      "displayName": "Gemini 3 Pro Image (Preview)",
      "vendor": "Google",
      "license": "proprietary",
-     "score": 1234,
-     "votes": 86464,
+     "score": 1232,
+     "votes": 86470,
      "country": "US",
      "openrouterId": "google/gemini-3-pro-image",
      "huggingfaceId": null,
@@ -4973,23 +4977,23 @@
      "displayName": "Qwen Image 2.1",
      "vendor": "Alibaba",
      "license": "open",
-     "score": 1223,
-     "votes": 11441,
+     "score": 1225,
+     "votes": 19604,
      "country": "CN",
      "openrouterId": null,
      "huggingfaceId": null,
      "detailSlug": null,
-     "scoreCi": 7
+     "scoreCi": 6
     },
     {
      "rank": 20,
-     "rankSpread": "20 20",
+     "rankSpread": "20 21",
      "model": "Ideogram 4.0 (Quality)",
      "displayName": "Ideogram 4.0 Quality",
      "vendor": "Ideogram",
      "license": "open",
-     "score": 1205,
-     "votes": 60591,
+     "score": 1200,
+     "votes": 72865,
      "country": "US",
      "openrouterId": null,
      "huggingfaceId": null,
@@ -4998,13 +5002,13 @@
     },
     {
      "rank": 21,
-     "rankSpread": "21 24",
+     "rankSpread": "20 24",
      "model": "Qwen-Image-2.0-Pro (2026-06-22)",
      "displayName": "Qwen Image 2.0 Pro 2026.06.22",
      "vendor": "Alibaba",
      "license": "proprietary",
-     "score": 1192,
-     "votes": 13096,
+     "score": 1191,
+     "votes": 13092,
      "country": "CN",
      "openrouterId": null,
      "huggingfaceId": null,
@@ -5019,7 +5023,7 @@
      "vendor": "Luma AI",
      "license": "proprietary",
      "score": 1189,
-     "votes": 14072,
+     "votes": 14076,
      "country": "US",
      "openrouterId": null,
      "huggingfaceId": null,
@@ -5029,32 +5033,32 @@
     {
      "rank": 23,
      "rankSpread": "21 25",
-     "model": "UNI-1.1",
-     "displayName": "Uni 1.1",
-     "vendor": "Luma AI",
-     "license": "proprietary",
-     "score": 1184,
-     "votes": 46699,
-     "country": "US",
-     "openrouterId": null,
-     "huggingfaceId": null,
-     "detailSlug": null,
-     "scoreCi": 4
-    },
-    {
-     "rank": 24,
-     "rankSpread": "21 25",
      "model": "MAI-Image-2",
      "displayName": "Mai Image 2",
      "vendor": "Microsoft AI",
      "license": "proprietary",
-     "score": 1184,
-     "votes": 51475,
+     "score": 1183,
+     "votes": 51442,
      "country": "US",
      "openrouterId": null,
      "huggingfaceId": null,
      "detailSlug": null,
      "scoreCi": 5
+    },
+    {
+     "rank": 24,
+     "rankSpread": "21 25",
+     "model": "UNI-1.1",
+     "displayName": "Uni 1.1",
+     "vendor": "Luma AI",
+     "license": "proprietary",
+     "score": 1183,
+     "votes": 55179,
+     "country": "US",
+     "openrouterId": null,
+     "huggingfaceId": null,
+     "detailSlug": null,
+     "scoreCi": 4
     },
     {
      "rank": 25,
@@ -5063,8 +5067,8 @@
      "displayName": "Grok Imagine Image",
      "vendor": "SpaceXAI",
      "license": "proprietary",
-     "score": 1170,
-     "votes": 272085,
+     "score": 1169,
+     "votes": 286515,
      "country": "US",
      "openrouterId": null,
      "huggingfaceId": null,
@@ -5078,8 +5082,8 @@
      "displayName": "Recraft V4.1 Utility Pro",
      "vendor": "Recraft",
      "license": "proprietary",
-     "score": 1169,
-     "votes": 2617,
+     "score": 1168,
+     "votes": 2618,
      "country": "GB",
      "openrouterId": "recraft/recraft-v4.1-utility-pro",
      "huggingfaceId": null,
@@ -5093,8 +5097,8 @@
      "displayName": "Cosmos3 Super Text2Image (Agentic)",
      "vendor": "Nvidia",
      "license": "open",
-     "score": 1165,
-     "votes": 10805,
+     "score": 1164,
+     "votes": 10803,
      "country": "US",
      "openrouterId": null,
      "huggingfaceId": null,
@@ -5104,12 +5108,27 @@
     {
      "rank": 28,
      "rankSpread": "26 31",
+     "model": "FLUX.2 [max]",
+     "displayName": "Flux 2 (Max)",
+     "vendor": "Black Forest Labs",
+     "license": "proprietary",
+     "score": 1161,
+     "votes": 123144,
+     "country": "DE",
+     "openrouterId": "black-forest-labs/flux.2-max",
+     "huggingfaceId": null,
+     "detailSlug": "black-forest-labs--flux.2-max",
+     "scoreCi": 4
+    },
+    {
+     "rank": 29,
+     "rankSpread": "26 31",
      "model": "Grok Imagine Image Pro",
      "displayName": "Grok Imagine Image Pro",
      "vendor": "SpaceXAI",
      "license": "proprietary",
-     "score": 1162,
-     "votes": 99455,
+     "score": 1161,
+     "votes": 99389,
      "country": "US",
      "openrouterId": null,
      "huggingfaceId": null,
@@ -5117,29 +5136,14 @@
      "scoreCi": 4
     },
     {
-     "rank": 29,
-     "rankSpread": "26 31",
-     "model": "FLUX.2 [max]",
-     "displayName": "Flux 2 (Max)",
-     "vendor": "Black Forest Labs",
-     "license": "proprietary",
-     "score": 1162,
-     "votes": 123203,
-     "country": "DE",
-     "openrouterId": "black-forest-labs/flux.2-max",
-     "huggingfaceId": null,
-     "detailSlug": "black-forest-labs--flux.2-max",
-     "scoreCi": 3
-    },
-    {
      "rank": 30,
-     "rankSpread": "26 33",
+     "rankSpread": "26 34",
      "model": "FLUX.2 [flex]",
      "displayName": "Flux 2 Flex",
      "vendor": "Black Forest Labs",
      "license": "proprietary",
-     "score": 1157,
-     "votes": 156923,
+     "score": 1156,
+     "votes": 156876,
      "country": "DE",
      "openrouterId": "black-forest-labs/flux.2-flex",
      "huggingfaceId": null,
@@ -5154,9 +5158,9 @@
    "unit": "elo",
    "route": "/image-edit/",
    "sourceUrl": "https://arena.ai/leaderboard/image/image-edit/single-image",
-   "sourceUpdated": "Oct 26, 2026",
-   "sourceFetchedAt": "2026-10-26T18:01:30.775Z",
-   "fullCount": 60,
+   "sourceUpdated": "Nov 2, 2026",
+   "sourceFetchedAt": "2026-11-02T11:00:18.888Z",
+   "fullCount": 61,
    "rows": [
     {
      "rank": 1,
@@ -5165,23 +5169,23 @@
      "displayName": "GPT Image 2.5 Sunburst",
      "vendor": "OpenAI",
      "license": "proprietary",
-     "score": 1514,
-     "votes": 82078,
+     "score": 1517,
+     "votes": 90545,
      "country": "US",
      "openrouterId": "openai/gpt-image-2.5-sunburst",
      "huggingfaceId": null,
      "detailSlug": "openai--gpt-image-2.5-sunburst",
-     "scoreCi": 6
+     "scoreCi": 5
     },
     {
      "rank": 2,
-     "rankSpread": "2 2",
+     "rankSpread": "2 3",
      "model": "GPT-Image-2.5 Flare",
      "displayName": "GPT Image 2.5 Flare",
      "vendor": "OpenAI",
      "license": "proprietary",
-     "score": 1481,
-     "votes": 79506,
+     "score": 1482,
+     "votes": 87941,
      "country": "US",
      "openrouterId": "openai/gpt-image-2.5-flare",
      "huggingfaceId": null,
@@ -5190,13 +5194,28 @@
     },
     {
      "rank": 3,
-     "rankSpread": "3 3",
+     "rankSpread": "2 4",
+     "model": "MAI-Image-2.7-Preview",
+     "displayName": "Mai Image 2.7 (Preview)",
+     "vendor": "Microsoft AI",
+     "license": "proprietary",
+     "score": 1471,
+     "votes": 3402,
+     "country": "US",
+     "openrouterId": null,
+     "huggingfaceId": null,
+     "detailSlug": null,
+     "scoreCi": 10
+    },
+    {
+     "rank": 4,
+     "rankSpread": "3 4",
      "model": "GPT-Image-2 (Medium)",
      "displayName": "GPT Image 2 (medium)",
      "vendor": "OpenAI",
      "license": "proprietary",
-     "score": 1461,
-     "votes": 328307,
+     "score": 1460,
+     "votes": 336785,
      "country": "US",
      "openrouterId": "openai/gpt-image-2",
      "huggingfaceId": null,
@@ -5204,14 +5223,14 @@
      "scoreCi": 3
     },
     {
-     "rank": 4,
-     "rankSpread": "4 4",
+     "rank": 5,
+     "rankSpread": "5 5",
      "model": "Grok Imagine Image 2.0",
      "displayName": "Grok Imagine Image 2.0 (canvas)",
      "vendor": "SpaceXAI",
      "license": "proprietary",
      "score": 1439,
-     "votes": 30542,
+     "votes": 32951,
      "country": "US",
      "openrouterId": "x-ai/grok-imagine-image-2.0",
      "huggingfaceId": null,
@@ -5219,29 +5238,14 @@
      "scoreCi": 6
     },
     {
-     "rank": 5,
-     "rankSpread": "5 7",
-     "model": "Gemini Nano Banana 2.1",
-     "displayName": "Gemini Nano Banana 2.1",
-     "vendor": "Google",
-     "license": "proprietary",
-     "score": 1426,
-     "votes": 12938,
-     "country": "US",
-     "openrouterId": "google/gemini-nano-banana-2.1",
-     "huggingfaceId": null,
-     "detailSlug": "google--gemini-nano-banana-2.1",
-     "scoreCi": 6
-    },
-    {
      "rank": 6,
-     "rankSpread": "5 7",
+     "rankSpread": "6 7",
      "model": "MAI-Image-2.6",
      "displayName": "Mai Image 2.6",
      "vendor": "Microsoft AI",
      "license": "proprietary",
-     "score": 1425,
-     "votes": 69611,
+     "score": 1427,
+     "votes": 76933,
      "country": "US",
      "openrouterId": "microsoft/mai-image-2.6",
      "huggingfaceId": null,
@@ -5250,28 +5254,43 @@
     },
     {
      "rank": 7,
-     "rankSpread": "7 8",
+     "rankSpread": "6 9",
+     "model": "Gemini Nano Banana 2.1",
+     "displayName": "Gemini Nano Banana 2.1",
+     "vendor": "Google",
+     "license": "proprietary",
+     "score": 1427,
+     "votes": 12956,
+     "country": "US",
+     "openrouterId": "google/gemini-nano-banana-2.1",
+     "huggingfaceId": null,
+     "detailSlug": "google--gemini-nano-banana-2.1",
+     "scoreCi": 6
+    },
+    {
+     "rank": 8,
+     "rankSpread": "7 9",
      "model": "Grok Imagine Image 2.0 (20260801)",
      "displayName": "Grok Imagine Image 2.0 (20260801)",
      "vendor": "SpaceXAI",
      "license": "proprietary",
-     "score": 1415,
-     "votes": 76730,
+     "score": 1418,
+     "votes": 86928,
      "country": "US",
      "openrouterId": "x-ai/grok-imagine-image-2.0",
      "huggingfaceId": null,
      "detailSlug": "x-ai--grok-imagine-image-2.0",
-     "scoreCi": 5
+     "scoreCi": 4
     },
     {
-     "rank": 8,
-     "rankSpread": "5 10",
+     "rank": 9,
+     "rankSpread": "7 11",
      "model": "Krea 3 Ultra",
      "displayName": "Krea 3 Ultra",
      "vendor": "Krea",
      "license": "open",
      "score": 1411,
-     "votes": 2619,
+     "votes": 2799,
      "country": "US",
      "openrouterId": null,
      "huggingfaceId": null,
@@ -5279,14 +5298,14 @@
      "scoreCi": 11
     },
     {
-     "rank": 9,
-     "rankSpread": "8 10",
+     "rank": 10,
+     "rankSpread": "9 11",
      "model": "MAI-Image-2.5",
      "displayName": "Mai Image 2.5",
      "vendor": "Microsoft AI",
      "license": "proprietary",
      "score": 1400,
-     "votes": 190119,
+     "votes": 190127,
      "country": "US",
      "openrouterId": "microsoft/mai-image-2.5",
      "huggingfaceId": null,
@@ -5294,14 +5313,14 @@
      "scoreCi": 4
     },
     {
-     "rank": 10,
-     "rankSpread": "8 12",
+     "rank": 11,
+     "rankSpread": "9 12",
      "model": "Muse Image",
      "displayName": "Muse Image",
      "vendor": "Meta",
      "license": "proprietary",
-     "score": 1398,
-     "votes": 164982,
+     "score": 1400,
+     "votes": 173384,
      "country": "US",
      "openrouterId": "meta/muse-image",
      "huggingfaceId": null,
@@ -5309,23 +5328,8 @@
      "scoreCi": 4
     },
     {
-     "rank": 11,
-     "rankSpread": "10 16",
-     "model": "Seedream 5.0 Pro",
-     "displayName": "Seedream 5.0 Pro",
-     "vendor": "Bytedance",
-     "license": "proprietary",
-     "score": 1391,
-     "votes": 307763,
-     "country": "CN",
-     "openrouterId": "bytedance-seed/seedream-5-0-pro",
-     "huggingfaceId": null,
-     "detailSlug": "bytedance-seed--seedream-5-0-pro",
-     "scoreCi": 4
-    },
-    {
      "rank": 12,
-     "rankSpread": "10 16",
+     "rankSpread": "11 17",
      "model": "Grok Imagine Image (Quality, 20260519)",
      "displayName": "Grok Imagine Image Quality (20260519)",
      "vendor": "SpaceXAI",
@@ -5340,13 +5344,28 @@
     },
     {
      "rank": 13,
-     "rankSpread": "11 16",
+     "rankSpread": "12 17",
+     "model": "Seedream 5.0 Pro",
+     "displayName": "Seedream 5.0 Pro",
+     "vendor": "Bytedance",
+     "license": "proprietary",
+     "score": 1390,
+     "votes": 317111,
+     "country": "CN",
+     "openrouterId": "bytedance-seed/seedream-5-0-pro",
+     "huggingfaceId": null,
+     "detailSlug": "bytedance-seed--seedream-5-0-pro",
+     "scoreCi": 3
+    },
+    {
+     "rank": 14,
+     "rankSpread": "12 17",
      "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
      "displayName": "Gemini 3 Pro Image 2k (nano-banana-pro)",
      "vendor": "Google",
      "license": "proprietary",
      "score": 1390,
-     "votes": 676298,
+     "votes": 685788,
      "country": "US",
      "openrouterId": "google/gemini-3-pro-image",
      "huggingfaceId": null,
@@ -5354,14 +5373,14 @@
      "scoreCi": 3
     },
     {
-     "rank": 14,
-     "rankSpread": "11 16",
+     "rank": 15,
+     "rankSpread": "12 17",
      "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
      "displayName": "Gemini 3.1 Flash Image (nano Banana 2) [web Search]",
      "vendor": "Google",
      "license": "proprietary",
      "score": 1387,
-     "votes": 253535,
+     "votes": 262911,
      "country": "US",
      "openrouterId": "google/gemini-3.1-flash-image",
      "huggingfaceId": null,
@@ -5369,14 +5388,14 @@
      "scoreCi": 3
     },
     {
-     "rank": 15,
-     "rankSpread": "11 16",
+     "rank": 16,
+     "rankSpread": "12 17",
      "model": "ChatGPT Image Latest (High Fidelity, 20251216)",
      "displayName": "ChatGPT Image Latest High Fidelity (20251216)",
      "vendor": "OpenAI",
      "license": "proprietary",
-     "score": 1387,
-     "votes": 651019,
+     "score": 1386,
+     "votes": 659303,
      "country": "US",
      "openrouterId": null,
      "huggingfaceId": null,
@@ -5384,14 +5403,14 @@
      "scoreCi": 3
     },
     {
-     "rank": 16,
-     "rankSpread": "11 16",
+     "rank": 17,
+     "rankSpread": "12 17",
      "model": "Gemini 3 Pro Image Preview (nano-banana-pro)",
      "displayName": "Gemini 3 Pro Image (Preview)",
      "vendor": "Google",
      "license": "proprietary",
      "score": 1385,
-     "votes": 540728,
+     "votes": 540717,
      "country": "US",
      "openrouterId": "google/gemini-3-pro-image",
      "huggingfaceId": null,
@@ -5399,14 +5418,14 @@
      "scoreCi": 3
     },
     {
-     "rank": 17,
-     "rankSpread": "17 19",
+     "rank": 18,
+     "rankSpread": "18 20",
      "model": "Reve 2.1",
      "displayName": "Reve 2.1",
      "vendor": "Reve",
      "license": "proprietary",
      "score": 1373,
-     "votes": 20810,
+     "votes": 20815,
      "country": "US",
      "openrouterId": null,
      "huggingfaceId": null,
@@ -5414,14 +5433,14 @@
      "scoreCi": 6
     },
     {
-     "rank": 18,
-     "rankSpread": "17 19",
+     "rank": 19,
+     "rankSpread": "18 20",
      "model": "GPT-Image-1.5 (High Fidelity)",
      "displayName": "GPT Image 1.5 High Fidelity",
      "vendor": "OpenAI",
      "license": "proprietary",
-     "score": 1367,
-     "votes": 676312,
+     "score": 1368,
+     "votes": 684650,
      "country": "US",
      "openrouterId": null,
      "huggingfaceId": null,
@@ -5429,14 +5448,14 @@
      "scoreCi": 3
     },
     {
-     "rank": 19,
-     "rankSpread": "17 20",
+     "rank": 20,
+     "rankSpread": "18 21",
      "model": "Qwen-Image-2.1",
      "displayName": "Qwen Image 2.1",
      "vendor": "Alibaba",
      "license": "open",
      "score": 1362,
-     "votes": 36713,
+     "votes": 39412,
      "country": "CN",
      "openrouterId": null,
      "huggingfaceId": null,
@@ -5444,14 +5463,14 @@
      "scoreCi": 6
     },
     {
-     "rank": 20,
-     "rankSpread": "19 21",
+     "rank": 21,
+     "rankSpread": "20 22",
      "model": "Reve 2.0",
      "displayName": "Reve 2.0",
      "vendor": "Reve",
      "license": "proprietary",
      "score": 1358,
-     "votes": 19270,
+     "votes": 19281,
      "country": "US",
      "openrouterId": null,
      "huggingfaceId": null,
@@ -5459,29 +5478,14 @@
      "scoreCi": 6
     },
     {
-     "rank": 21,
-     "rankSpread": "20 21",
+     "rank": 22,
+     "rankSpread": "21 22",
      "model": "Ideogram 4.5",
      "displayName": "Ideogram 4.5",
      "vendor": "Ideogram",
      "license": "proprietary",
      "score": 1347,
-     "votes": 47127,
-     "country": "US",
-     "openrouterId": null,
-     "huggingfaceId": null,
-     "detailSlug": null,
-     "scoreCi": 5
-    },
-    {
-     "rank": 22,
-     "rankSpread": "22 23",
-     "model": "UNI-1.1 Max",
-     "displayName": "Uni 1.1 (Max)",
-     "vendor": "Luma AI",
-     "license": "proprietary",
-     "score": 1334,
-     "votes": 43459,
+     "votes": 57711,
      "country": "US",
      "openrouterId": null,
      "huggingfaceId": null,
@@ -5490,28 +5494,43 @@
     },
     {
      "rank": 23,
-     "rankSpread": "22 23",
+     "rankSpread": "23 24",
+     "model": "UNI-1.1 Max",
+     "displayName": "Uni 1.1 (Max)",
+     "vendor": "Luma AI",
+     "license": "proprietary",
+     "score": 1334,
+     "votes": 43462,
+     "country": "US",
+     "openrouterId": null,
+     "huggingfaceId": null,
+     "detailSlug": null,
+     "scoreCi": 5
+    },
+    {
+     "rank": 24,
+     "rankSpread": "23 24",
      "model": "Grok Imagine Image",
      "displayName": "Grok Imagine Image",
      "vendor": "SpaceXAI",
      "license": "proprietary",
      "score": 1329,
-     "votes": 792122,
+     "votes": 805966,
      "country": "US",
      "openrouterId": null,
      "huggingfaceId": null,
      "detailSlug": null,
-     "scoreCi": 3
+     "scoreCi": 2
     },
     {
-     "rank": 24,
-     "rankSpread": "24 25",
+     "rank": 25,
+     "rankSpread": "25 26",
      "model": "UNI-1.1",
      "displayName": "Uni 1.1",
      "vendor": "Luma AI",
      "license": "proprietary",
      "score": 1316,
-     "votes": 210418,
+     "votes": 218673,
      "country": "US",
      "openrouterId": null,
      "huggingfaceId": null,
@@ -5519,14 +5538,14 @@
      "scoreCi": 3
     },
     {
-     "rank": 25,
-     "rankSpread": "24 25",
+     "rank": 26,
+     "rankSpread": "25 26",
      "model": "Gemini 3.1 Flash-Lite Image (nano-banana-2-lite)",
      "displayName": "Gemini 3.1 Flash Lite Image (nano-banana-2-lite)",
      "vendor": "Google",
      "license": "proprietary",
      "score": 1313,
-     "votes": 65657,
+     "votes": 65660,
      "country": "US",
      "openrouterId": "google/gemini-3.1-flash-lite-image",
      "huggingfaceId": null,
@@ -5534,14 +5553,14 @@
      "scoreCi": 5
     },
     {
-     "rank": 26,
-     "rankSpread": "26 30",
+     "rank": 27,
+     "rankSpread": "27 31",
      "model": "Seedream 4.5",
      "displayName": "Seedream 4.5",
      "vendor": "Bytedance",
      "license": "proprietary",
      "score": 1303,
-     "votes": 1342849,
+     "votes": 1361328,
      "country": "CN",
      "openrouterId": "bytedance-seed/seedream-4.5",
      "huggingfaceId": null,
@@ -5549,14 +5568,14 @@
      "scoreCi": 2
     },
     {
-     "rank": 27,
-     "rankSpread": "26 30",
+     "rank": 28,
+     "rankSpread": "27 31",
      "model": "Qwen-Image-2.0-Pro (2026-06-22)",
      "displayName": "Qwen Image 2.0 Pro 2026.06.22",
      "vendor": "Alibaba",
      "license": "proprietary",
      "score": 1302,
-     "votes": 56713,
+     "votes": 56715,
      "country": "CN",
      "openrouterId": null,
      "huggingfaceId": null,
@@ -5564,14 +5583,14 @@
      "scoreCi": 5
     },
     {
-     "rank": 28,
-     "rankSpread": "26 30",
+     "rank": 29,
+     "rankSpread": "27 31",
      "model": "Wan 2.7 Image Pro",
      "displayName": "Wan 2.7 Image Pro",
      "vendor": "Alibaba",
      "license": "proprietary",
      "score": 1302,
-     "votes": 43966,
+     "votes": 43969,
      "country": "CN",
      "openrouterId": null,
      "huggingfaceId": null,
@@ -5579,34 +5598,19 @@
      "scoreCi": 4
     },
     {
-     "rank": 29,
-     "rankSpread": "26 30",
+     "rank": 30,
+     "rankSpread": "27 31",
      "model": "HunyuanImage 3.0 Instruct",
      "displayName": "Hunyuan Image 3.0 Instruct",
      "vendor": "Tencent",
      "license": "open",
      "score": 1302,
-     "votes": 331438,
+     "votes": 331432,
      "country": "CN",
      "openrouterId": null,
      "huggingfaceId": null,
      "detailSlug": null,
      "scoreCi": 3
-    },
-    {
-     "rank": 30,
-     "rankSpread": "26 31",
-     "model": "Wan 2.7 Image",
-     "displayName": "Wan 2.7 Image",
-     "vendor": "Alibaba",
-     "license": "proprietary",
-     "score": 1301,
-     "votes": 44788,
-     "country": "CN",
-     "openrouterId": null,
-     "huggingfaceId": null,
-     "detailSlug": null,
-     "scoreCi": 4
     }
    ]
   },
@@ -5616,8 +5620,8 @@
    "unit": "elo",
    "route": "/text-to-video/",
    "sourceUrl": "https://arena.ai/leaderboard/video/text-to-video",
-   "sourceUpdated": "Oct 26, 2026",
-   "sourceFetchedAt": "2026-10-26T18:01:25.560Z",
+   "sourceUpdated": "Nov 2, 2026",
+   "sourceFetchedAt": "2026-11-02T11:00:20.502Z",
    "fullCount": 48,
    "rows": [
     {
@@ -6078,8 +6082,8 @@
    "unit": "elo",
    "route": "/image-to-video/",
    "sourceUrl": "https://arena.ai/leaderboard/video/image-to-video",
-   "sourceUpdated": "Oct 26, 2026",
-   "sourceFetchedAt": "2026-10-26T18:01:19.168Z",
+   "sourceUpdated": "Nov 2, 2026",
+   "sourceFetchedAt": "2026-11-02T11:00:21.821Z",
    "fullCount": 48,
    "rows": [
     {
@@ -6540,8 +6544,8 @@
    "unit": "elo",
    "route": "/video-edit/",
    "sourceUrl": "https://arena.ai/leaderboard/video/video-edit",
-   "sourceUpdated": "Oct 26, 2026",
-   "sourceFetchedAt": "2026-10-26T18:01:34.049Z",
+   "sourceUpdated": "Nov 2, 2026",
+   "sourceFetchedAt": "2026-11-02T11:00:30.525Z",
    "fullCount": 10,
    "rows": [
     {

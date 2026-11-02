@@ -5,14 +5,14 @@
   "note": "解析自页面内嵌 RSC payload，未使用官方 API（免 key）。Intelligence Index 版本请以站方标注为准。",
   "licenseNote": "isOpenWeights 字段区分开放权重与闭源；官方另有 Openness Index。"
  },
- "fetchedAt": "2026-10-27T07:12:32+08:00",
- "count": 272,
+ "fetchedAt": "2026-11-02T21:14:42+08:00",
+ "count": 278,
  "coverage": {
-  "intelligenceIndex": 266,
-  "omniscience": 260,
+  "intelligenceIndex": 89,
+  "omniscience": 99,
   "gdpval": 0,
-  "price": 170,
-  "speed": 161
+  "price": 173,
+  "speed": 159
  },
  "models": [
   {
@@ -24,9 +24,7 @@
    "isReasoning": false,
    "isOpenWeights": false,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 18.6626376411117,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -24.216666666666665
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-03-30",
@@ -37,15 +35,13 @@
    "isReasoning": false,
    "isOpenWeights": false,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 20.3839890713777,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -13.116666666666667,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.4,
    "price1mOutputTokens": 4.8,
-   "medianOutputTokensPerSecond": 118.697557722298,
-   "medianTimeToFirstTokenSeconds": 2.11053726149999,
-   "medianTimeToFirstAnswerTokenSeconds": 2.11053726149999,
-   "medianEndToEndResponseTimeSeconds": 6.32292384800237
+   "medianOutputTokensPerSecond": 131.164075532196,
+   "medianTimeToFirstTokenSeconds": 2.06942810749995,
+   "medianTimeToFirstAnswerTokenSeconds": 2.06942810749995,
+   "medianEndToEndResponseTimeSeconds": 5.881447503597994
   },
   {
    "slug": "nova-2-0-omni-reasoning-medium",
@@ -55,9 +51,7 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 13.6465213725579,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -59.083333333333336
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "qwen3-5-122b-a10b-non-reasoning",
@@ -67,15 +61,13 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 17.7480154665397,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -54.96666666666667,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.4,
    "price1mOutputTokens": 3.2,
-   "medianOutputTokensPerSecond": 144.731690247091,
-   "medianTimeToFirstTokenSeconds": 2.30086835299994,
-   "medianTimeToFirstAnswerTokenSeconds": 2.30086835299994,
-   "medianEndToEndResponseTimeSeconds": 5.755536775281076
+   "medianOutputTokensPerSecond": 142.500131772669,
+   "medianTimeToFirstTokenSeconds": 2.31444516299999,
+   "medianTimeToFirstAnswerTokenSeconds": 2.31444516299999,
+   "medianEndToEndResponseTimeSeconds": 5.823213848194274
   },
   {
    "slug": "gemma-4-12b-non-reasoning",
@@ -85,15 +77,13 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 9.37989472421056,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -52.8,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.3,
-   "medianOutputTokensPerSecond": 119.791113089339,
-   "medianTimeToFirstTokenSeconds": 2.21698633800002,
-   "medianTimeToFirstAnswerTokenSeconds": 2.21698633800002,
-   "medianEndToEndResponseTimeSeconds": 6.390918669917706
+   "medianOutputTokensPerSecond": 117.387283929563,
+   "medianTimeToFirstTokenSeconds": 2.19692912250008,
+   "medianTimeToFirstAnswerTokenSeconds": 2.19692912250008,
+   "medianEndToEndResponseTimeSeconds": 6.456334257898049
   },
   {
    "slug": "claude-sonnet-5-5-medium",
@@ -103,17 +93,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 40.838652287929,
+   "intelligenceIndex": 30.3195522148431,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 20.1,
+   "omniscience": 18.633333333333333,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 10,
    "cacheHitPrice": 0.1,
    "cacheWritePrice": 2.5,
-   "medianOutputTokensPerSecond": 104.253421227958,
-   "medianTimeToFirstTokenSeconds": 3.06571717849994,
-   "medianTimeToFirstAnswerTokenSeconds": 3.06571717849994,
-   "medianEndToEndResponseTimeSeconds": 7.8617228549631815
+   "medianOutputTokensPerSecond": 103.780416071292,
+   "medianTimeToFirstTokenSeconds": 1.21981564999999,
+   "medianTimeToFirstAnswerTokenSeconds": 1.21981564999999,
+   "medianEndToEndResponseTimeSeconds": 6.037680319732329
   },
   {
    "releaseDate": "2025-08-14",
@@ -124,9 +114,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 32000,
-   "intelligenceIndex": 5.11705960692171,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -29.266666666666666
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "claude-fable-5-1-low",
@@ -136,17 +124,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 46.8163422014862,
+   "intelligenceIndex": 38.483648810734,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 34.13333333333333,
+   "omniscience": 33.93333333333333,
    "price1mInputTokens": 10,
    "price1mOutputTokens": 50,
    "cacheHitPrice": 0.25,
    "cacheWritePrice": 12.5,
-   "medianOutputTokensPerSecond": 56.3950297831374,
-   "medianTimeToFirstTokenSeconds": 2.38672632950003,
-   "medianTimeToFirstAnswerTokenSeconds": 2.38672632950003,
-   "medianEndToEndResponseTimeSeconds": 11.25275587009448
+   "medianOutputTokensPerSecond": 56.4498174045232,
+   "medianTimeToFirstTokenSeconds": 2.78097646349992,
+   "medianTimeToFirstAnswerTokenSeconds": 2.78097646349992,
+   "medianEndToEndResponseTimeSeconds": 11.638401039685283
   },
   {
    "releaseDate": "2026-08-30",
@@ -157,9 +145,7 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 26.4103686249117,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -21.9,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 3,
    "cacheHitPrice": 0.03
@@ -172,17 +158,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 51.0377679093761,
+   "intelligenceIndex": 52.308219253291,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 40.86666666666667,
+   "omniscience": 42.36666666666667,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 10,
    "cacheHitPrice": 0.1,
    "cacheWritePrice": 2.5,
-   "medianOutputTokensPerSecond": 63.0020320124548,
-   "medianTimeToFirstTokenSeconds": 162.561560133,
-   "medianTimeToFirstAnswerTokenSeconds": 162.561560133,
-   "medianEndToEndResponseTimeSeconds": 170.49781209232023
+   "medianOutputTokensPerSecond": 76.9839497018347,
+   "medianTimeToFirstTokenSeconds": 144.080940482,
+   "medianTimeToFirstAnswerTokenSeconds": 144.080940482,
+   "medianEndToEndResponseTimeSeconds": 150.5758007994628
   },
   {
    "releaseDate": "2026-07-21",
@@ -193,16 +179,16 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 22.1685424839812,
+   "intelligenceIndex": 11.6563462044212,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 5.233333333333333,
+   "omniscience": 6.866666666666666,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 2.5,
    "cacheHitPrice": 0.03,
-   "medianOutputTokensPerSecond": 418.867572862498,
-   "medianTimeToFirstTokenSeconds": 8.305876763,
-   "medianTimeToFirstAnswerTokenSeconds": 8.305876763,
-   "medianEndToEndResponseTimeSeconds": 9.499571458875003
+   "medianOutputTokensPerSecond": 423.317454997959,
+   "medianTimeToFirstTokenSeconds": 6.219225547,
+   "medianTimeToFirstAnswerTokenSeconds": 6.219225547,
+   "medianEndToEndResponseTimeSeconds": 7.400372211510705
   },
   {
    "slug": "step-5",
@@ -212,17 +198,17 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 43.7343049141614,
+   "intelligenceIndex": 28.5283090216016,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 16.383333333333333,
+   "omniscience": 16.433333333333334,
    "price1mInputTokens": 1,
    "price1mOutputTokens": 2.7,
    "cacheHitPrice": 0.1,
-   "medianOutputTokensPerSecond": 205.574337320619,
-   "medianTimeToFirstTokenSeconds": 1.27222602999998,
-   "medianTimeToFirstAnswerTokenSeconds": 11.001066828259486,
-   "medianEndToEndResponseTimeSeconds": 13.433277027824362,
-   "medianReasoningTimeSeconds": 9.728840798259506
+   "medianOutputTokensPerSecond": 145.78017826135,
+   "medianTimeToFirstTokenSeconds": 0.876267628499988,
+   "medianTimeToFirstAnswerTokenSeconds": 14.595553911813928,
+   "medianEndToEndResponseTimeSeconds": 18.025375482642414,
+   "medianReasoningTimeSeconds": 13.71928628331394
   },
   {
    "slug": "qwen3-5-2b-non-reasoning",
@@ -232,9 +218,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 6.18559190112645,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -83.13333333333334
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2025-09-22",
@@ -245,15 +229,13 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 65536,
-   "intelligenceIndex": 6.00611816793457,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -69.26666666666667,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.25,
    "price1mOutputTokens": 0.97,
-   "medianOutputTokensPerSecond": 96.391693956205,
-   "medianTimeToFirstTokenSeconds": 1.94577645350001,
-   "medianTimeToFirstAnswerTokenSeconds": 1.94577645350001,
-   "medianEndToEndResponseTimeSeconds": 7.13294538350317
+   "medianOutputTokensPerSecond": 94.5720742062242,
+   "medianTimeToFirstTokenSeconds": 1.87465252450005,
+   "medianTimeToFirstAnswerTokenSeconds": 1.87465252450005,
+   "medianEndToEndResponseTimeSeconds": 7.161625494022726
   },
   {
    "releaseDate": "2026-08-25",
@@ -264,17 +246,9 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
-   "intelligenceIndex": 9.05588232376756,
+   "intelligenceIndex": 4.72268717901823,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -14.716666666666667,
-   "price1mInputTokens": 0.03,
-   "price1mOutputTokens": 0.12,
-   "cacheHitPrice": 0.0075,
-   "medianOutputTokensPerSecond": 39.7353115928451,
-   "medianTimeToFirstTokenSeconds": 0.778674530999979,
-   "medianTimeToFirstAnswerTokenSeconds": 51.11173899752169,
-   "medianEndToEndResponseTimeSeconds": 63.69500511415212,
-   "medianReasoningTimeSeconds": 50.33306446652171
+   "omniscience": -18.333333333333332
   },
   {
    "slug": "gpt-6-1-terra-non-reasoning",
@@ -284,17 +258,33 @@
    "isReasoning": false,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 33.4885115837089,
+   "intelligenceIndex": 30.415898867357,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 3.85,
+   "omniscience": -4.966666666666667,
    "price1mInputTokens": 1,
    "price1mOutputTokens": 5,
    "cacheHitPrice": 0.05,
    "cacheWritePrice": 1.25,
-   "medianOutputTokensPerSecond": 91.1112355441279,
-   "medianTimeToFirstTokenSeconds": 1.27227617800001,
-   "medianTimeToFirstAnswerTokenSeconds": 1.27227617800001,
-   "medianEndToEndResponseTimeSeconds": 6.7600735612089675
+   "medianOutputTokensPerSecond": 90.9419510388761,
+   "medianTimeToFirstTokenSeconds": 0.959280324500014,
+   "medianTimeToFirstAnswerTokenSeconds": 0.959280324500014,
+   "medianEndToEndResponseTimeSeconds": 6.457293004987358
+  },
+  {
+   "slug": "gemini-4-carbon-medium",
+   "name": "Gemini 4 Carbon (Medium)",
+   "shortName": "Gemini 4 Carbon (medium)",
+   "modelCreatorName": "Google",
+   "isReasoning": true,
+   "isOpenWeights": false,
+   "contextWindowTokens": 1000000,
+   "intelligenceIndex": 57.7087824022788,
+   "intelligenceIndexIsEstimated": false,
+   "omniscience": 46.766666666666666,
+   "price1mInputTokens": 4,
+   "price1mOutputTokens": 20,
+   "cacheHitPrice": 0.2,
+   "cacheWritePrice": 4
   },
   {
    "slug": "nova-2-0-pro-reasoning-medium",
@@ -304,17 +294,15 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 14.1554948903666,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -49.05,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 1.25,
    "price1mOutputTokens": 10,
    "cacheHitPrice": 0.312,
-   "medianOutputTokensPerSecond": 126.333623842518,
-   "medianTimeToFirstTokenSeconds": 13.8547446645,
-   "medianTimeToFirstAnswerTokenSeconds": 29.685842824821222,
-   "medianEndToEndResponseTimeSeconds": 33.64361736490153,
-   "medianReasoningTimeSeconds": 15.831098160321224
+   "medianOutputTokensPerSecond": 120.507174203216,
+   "medianTimeToFirstTokenSeconds": 13.3657022735,
+   "medianTimeToFirstAnswerTokenSeconds": 29.96222454052554,
+   "medianEndToEndResponseTimeSeconds": 34.11135510728192,
+   "medianReasoningTimeSeconds": 16.59652226702554
   },
   {
    "releaseDate": "2026-07-15",
@@ -325,17 +313,17 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 24.9847810999384,
+   "intelligenceIndex": 12.4781698715401,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 2,
+   "omniscience": -1.5,
    "price1mInputTokens": 1,
    "price1mOutputTokens": 4.05,
    "cacheHitPrice": 0.17,
-   "medianOutputTokensPerSecond": 203.98153939146,
-   "medianTimeToFirstTokenSeconds": 1.79928225250006,
-   "medianTimeToFirstAnswerTokenSeconds": 11.604091089449808,
-   "medianEndToEndResponseTimeSeconds": 14.055293298687245,
-   "medianReasoningTimeSeconds": 9.804808836949748
+   "medianOutputTokensPerSecond": 211.284249391202,
+   "medianTimeToFirstTokenSeconds": 1.71107684450003,
+   "medianTimeToFirstAnswerTokenSeconds": 11.176997781639612,
+   "medianEndToEndResponseTimeSeconds": 13.543478015924507,
+   "medianReasoningTimeSeconds": 9.465920937139582
   },
   {
    "releaseDate": "2026-02-16",
@@ -346,16 +334,14 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 18.4204249294815,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -30.75,
    "price1mInputTokens": 0.6,
    "price1mOutputTokens": 3.6,
-   "medianOutputTokensPerSecond": 57.9602918882799,
-   "medianTimeToFirstTokenSeconds": 2.26305896500003,
-   "medianTimeToFirstAnswerTokenSeconds": 57.23172624053937,
-   "medianEndToEndResponseTimeSeconds": 65.85832185816953,
-   "medianReasoningTimeSeconds": 54.968667275539346
+   "medianOutputTokensPerSecond": 56.8087026058205,
+   "medianTimeToFirstTokenSeconds": 2.22098524849998,
+   "medianTimeToFirstAnswerTokenSeconds": 58.30394180018805,
+   "medianEndToEndResponseTimeSeconds": 67.1054101855754,
+   "medianReasoningTimeSeconds": 56.08295655168807
   },
   {
    "releaseDate": "2026-08-25",
@@ -366,17 +352,8 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
-   "intelligenceIndex": 12.68315341158,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -12.916666666666666,
-   "price1mInputTokens": 0.16,
-   "price1mOutputTokens": 0.65,
-   "cacheHitPrice": 0.04,
-   "medianOutputTokensPerSecond": 38.8777018487947,
-   "medianTimeToFirstTokenSeconds": 0.937864267000009,
-   "medianTimeToFirstAnswerTokenSeconds": 52.38123424237845,
-   "medianEndToEndResponseTimeSeconds": 65.24207673622305,
-   "medianReasoningTimeSeconds": 51.44336997537844
+   "omniscience": -12.433333333333334
   },
   {
    "releaseDate": "2026-09-03",
@@ -387,9 +364,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 524288,
-   "intelligenceIndex": 20.5958819421354,
-   "intelligenceIndexIsEstimated": false,
-   "omniscience": -16.566666666666666
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-09-21",
@@ -400,17 +375,17 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 37.8843590141754,
+   "intelligenceIndex": 26.7276981444568,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -12.683333333333334,
+   "omniscience": -10.833333333333334,
    "price1mInputTokens": 0.14,
    "price1mOutputTokens": 0.28,
    "cacheHitPrice": 0.0028,
-   "medianOutputTokensPerSecond": 52.0916515557805,
-   "medianTimeToFirstTokenSeconds": 3.27292001299998,
-   "medianTimeToFirstAnswerTokenSeconds": 41.66678813327585,
-   "medianEndToEndResponseTimeSeconds": 51.265255163344825,
-   "medianReasoningTimeSeconds": 38.39386812027587
+   "medianOutputTokensPerSecond": 37.0909278625303,
+   "medianTimeToFirstTokenSeconds": 4.14053162300002,
+   "medianTimeToFirstAnswerTokenSeconds": 58.06207296088669,
+   "medianEndToEndResponseTimeSeconds": 71.54245829535836,
+   "medianReasoningTimeSeconds": 53.921541337886666
   },
   {
    "slug": "mistral-small-4-non-reasoning",
@@ -420,16 +395,14 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 8.99008610259603,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -48.516666666666666,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.15,
    "price1mOutputTokens": 0.6,
    "cacheHitPrice": 0.015,
-   "medianOutputTokensPerSecond": 159.890980004093,
-   "medianTimeToFirstTokenSeconds": 0.966191139999978,
-   "medianTimeToFirstAnswerTokenSeconds": 0.966191139999978,
-   "medianEndToEndResponseTimeSeconds": 4.093321888633833
+   "medianOutputTokensPerSecond": 151.784049144888,
+   "medianTimeToFirstTokenSeconds": 0.790521904000002,
+   "medianTimeToFirstAnswerTokenSeconds": 0.790521904000002,
+   "medianEndToEndResponseTimeSeconds": 4.084675689044415
   },
   {
    "slug": "solar-pro4",
@@ -439,12 +412,15 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 512000,
-   "intelligenceIndex": 26.5600314812231,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 0.25,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 1.2,
-   "cacheHitPrice": 0.06
+   "cacheHitPrice": 0.06,
+   "medianOutputTokensPerSecond": 100.526322940563,
+   "medianTimeToFirstTokenSeconds": 1.99894174099998,
+   "medianTimeToFirstAnswerTokenSeconds": 21.894228283834302,
+   "medianEndToEndResponseTimeSeconds": 26.868049919542877,
+   "medianReasoningTimeSeconds": 19.89528654283432
   },
   {
    "slug": "gpt-oss-20b-low",
@@ -454,16 +430,14 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
-   "intelligenceIndex": 9.95295342568922,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -58.55,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.07,
    "price1mOutputTokens": 0.3,
-   "medianOutputTokensPerSecond": 216.28621173771,
-   "medianTimeToFirstTokenSeconds": 0.974792891499938,
-   "medianTimeToFirstAnswerTokenSeconds": 10.221799364688332,
-   "medianEndToEndResponseTimeSeconds": 12.53355098298543,
-   "medianReasoningTimeSeconds": 9.247006473188394
+   "medianOutputTokensPerSecond": 245.026096892827,
+   "medianTimeToFirstTokenSeconds": 0.763319391000024,
+   "medianTimeToFirstAnswerTokenSeconds": 8.9257152556119,
+   "medianEndToEndResponseTimeSeconds": 10.966314221764868,
+   "medianReasoningTimeSeconds": 8.162395864611875
   },
   {
    "releaseDate": "2025-04-16",
@@ -474,16 +448,14 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 200000,
-   "intelligenceIndex": 20.200754789201,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -15.55,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 8,
    "cacheHitPrice": 0.5,
-   "medianOutputTokensPerSecond": 167.420579370991,
-   "medianTimeToFirstTokenSeconds": 6.57260637999997,
-   "medianTimeToFirstAnswerTokenSeconds": 6.57260637999997,
-   "medianEndToEndResponseTimeSeconds": 9.559097060408135
+   "medianOutputTokensPerSecond": 159.767696425884,
+   "medianTimeToFirstTokenSeconds": 6.77007003599995,
+   "medianTimeToFirstAnswerTokenSeconds": 6.77007003599995,
+   "medianEndToEndResponseTimeSeconds": 9.899613812278588
   },
   {
    "releaseDate": "2026-08-12",
@@ -494,9 +466,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 19.6904943371003,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -6.6
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-08-26",
@@ -507,17 +477,17 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 41.807466113455,
+   "intelligenceIndex": 27.753889160883,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 7.466666666666667,
+   "omniscience": 0.6666666666666666,
    "price1mInputTokens": 0.15,
    "price1mOutputTokens": 0.5,
    "cacheHitPrice": 0.03,
-   "medianOutputTokensPerSecond": 73.0108228419383,
-   "medianTimeToFirstTokenSeconds": 2.78058501950008,
-   "medianTimeToFirstAnswerTokenSeconds": 30.173784029595,
-   "medianEndToEndResponseTimeSeconds": 37.02208378211873,
-   "medianReasoningTimeSeconds": 27.39319901009492
+   "medianOutputTokensPerSecond": 75.8809680387574,
+   "medianTimeToFirstTokenSeconds": 1.467508815,
+   "medianTimeToFirstAnswerTokenSeconds": 27.824578996003336,
+   "medianEndToEndResponseTimeSeconds": 34.41384654125417,
+   "medianReasoningTimeSeconds": 26.357070181003337
   },
   {
    "slug": "gpt-6-luna-xhigh",
@@ -527,17 +497,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 34.5587320217785,
+   "intelligenceIndex": 23.3008728089378,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -1.8333333333333333,
+   "omniscience": -12.966666666666667,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.5,
    "cacheHitPrice": 0.01,
    "cacheWritePrice": 0.125,
-   "medianOutputTokensPerSecond": 123.93631004608,
-   "medianTimeToFirstTokenSeconds": 27.7665735690001,
-   "medianTimeToFirstAnswerTokenSeconds": 27.7665735690001,
-   "medianEndToEndResponseTimeSeconds": 31.80090378113969
+   "medianOutputTokensPerSecond": 127.480023649098,
+   "medianTimeToFirstTokenSeconds": 40.380784346,
+   "medianTimeToFirstAnswerTokenSeconds": 40.380784346,
+   "medianEndToEndResponseTimeSeconds": 44.30296749036701
   },
   {
    "releaseDate": "2026-06-09",
@@ -548,16 +518,14 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 9.91462776590372,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -48.583333333333336,
    "price1mInputTokens": 0,
    "price1mOutputTokens": 0,
-   "medianOutputTokensPerSecond": 66.2169965556802,
-   "medianTimeToFirstTokenSeconds": 0.468606491500011,
-   "medianTimeToFirstAnswerTokenSeconds": 30.672332181750107,
-   "medianEndToEndResponseTimeSeconds": 38.22326360431263,
-   "medianReasoningTimeSeconds": 30.203725690250096
+   "medianOutputTokensPerSecond": 87.3833830621998,
+   "medianTimeToFirstTokenSeconds": 0.39872811500004,
+   "medianTimeToFirstAnswerTokenSeconds": 23.28637482669113,
+   "medianEndToEndResponseTimeSeconds": 29.008286504613903,
+   "medianReasoningTimeSeconds": 22.88764671169109
   },
   {
    "slug": "gpt-6-astra-xhigh",
@@ -567,17 +535,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 52.3863277108782,
+   "intelligenceIndex": 55.2557468569681,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 43.416666666666664,
+   "omniscience": 43.666666666666664,
    "price1mInputTokens": 10,
    "price1mOutputTokens": 50,
    "cacheHitPrice": 1,
    "cacheWritePrice": 12.5,
-   "medianOutputTokensPerSecond": 68.1287852323258,
-   "medianTimeToFirstTokenSeconds": 181.2358947095,
-   "medianTimeToFirstAnswerTokenSeconds": 181.2358947095,
-   "medianEndToEndResponseTimeSeconds": 188.5749364712891
+   "medianOutputTokensPerSecond": 68.1910607960098,
+   "medianTimeToFirstTokenSeconds": 197.356908557,
+   "medianTimeToFirstAnswerTokenSeconds": 197.356908557,
+   "medianEndToEndResponseTimeSeconds": 204.6892479305687
   },
   {
    "releaseDate": "2025-11-26",
@@ -588,9 +556,7 @@
    "isReasoning": false,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 8.15087501101863,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -64.23333333333333
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2025-09-22",
@@ -601,9 +567,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 5.10657830942846,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -77.53333333333333
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "claude-haiku-5-5-high",
@@ -613,17 +577,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 37.8240211671094,
+   "intelligenceIndex": 29.624315467743,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 5.75,
+   "omniscience": 5.3,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.5,
    "cacheHitPrice": 0.01,
    "cacheWritePrice": 0.125,
-   "medianOutputTokensPerSecond": 185.040656364085,
-   "medianTimeToFirstTokenSeconds": 26.7709161535,
-   "medianTimeToFirstAnswerTokenSeconds": 26.7709161535,
-   "medianEndToEndResponseTimeSeconds": 29.47302502959587
+   "medianOutputTokensPerSecond": 180.598113498138,
+   "medianTimeToFirstTokenSeconds": 31.6940838625001,
+   "medianTimeToFirstAnswerTokenSeconds": 31.6940838625001,
+   "medianEndToEndResponseTimeSeconds": 34.462662062544005
   },
   {
    "slug": "grok-4-7-low",
@@ -633,16 +597,16 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 500000,
-   "intelligenceIndex": 42.2166560223448,
+   "intelligenceIndex": 30.882077602567,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 29.616666666666667,
+   "omniscience": 27.4,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 6,
    "cacheHitPrice": 0.5,
-   "medianOutputTokensPerSecond": 77.3030652388967,
-   "medianTimeToFirstTokenSeconds": 5.65993657200011,
-   "medianTimeToFirstAnswerTokenSeconds": 5.65993657200011,
-   "medianEndToEndResponseTimeSeconds": 12.127985393282998
+   "medianOutputTokensPerSecond": 70.1308429114783,
+   "medianTimeToFirstTokenSeconds": 6.11023402899991,
+   "medianTimeToFirstAnswerTokenSeconds": 6.11023402899991,
+   "medianEndToEndResponseTimeSeconds": 13.23976476387384
   },
   {
    "slug": "qwen3-5-9b-non-reasoning",
@@ -652,15 +616,13 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 13.2659955355465,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -70.7,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.17,
    "price1mOutputTokens": 0.25,
-   "medianOutputTokensPerSecond": 78.2966497848094,
-   "medianTimeToFirstTokenSeconds": 0.8491691965,
-   "medianTimeToFirstAnswerTokenSeconds": 0.8491691965,
-   "medianEndToEndResponseTimeSeconds": 7.235138473272385
+   "medianOutputTokensPerSecond": 100.565284327893,
+   "medianTimeToFirstTokenSeconds": 0.537127536499995,
+   "medianTimeToFirstAnswerTokenSeconds": 0.537127536499995,
+   "medianEndToEndResponseTimeSeconds": 5.509022195195042
   },
   {
    "releaseDate": "2026-02-24",
@@ -671,16 +633,14 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 15.5694009312969,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -41.5,
    "price1mInputTokens": 0.4,
    "price1mOutputTokens": 3.2,
-   "medianOutputTokensPerSecond": 131.158978951025,
-   "medianTimeToFirstTokenSeconds": 2.30850317599993,
-   "medianTimeToFirstAnswerTokenSeconds": 17.55717327083807,
-   "medianEndToEndResponseTimeSeconds": 21.369340794547604,
-   "medianReasoningTimeSeconds": 15.24867009483814
+   "medianOutputTokensPerSecond": 130.11651386046,
+   "medianTimeToFirstTokenSeconds": 2.31259415550003,
+   "medianTimeToFirstAnswerTokenSeconds": 17.683433264706775,
+   "medianEndToEndResponseTimeSeconds": 21.52614304200846,
+   "medianReasoningTimeSeconds": 15.370839109206743
   },
   {
    "releaseDate": "2025-08-27",
@@ -691,9 +651,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 6.65822068462287,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -48.583333333333336
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2025-12-15",
@@ -704,16 +662,14 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 6.8478519055181,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -69.3,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.05,
    "price1mOutputTokens": 0.2,
    "cacheHitPrice": 0.05,
-   "medianOutputTokensPerSecond": 284.111471222299,
-   "medianTimeToFirstTokenSeconds": 0.581308580000012,
-   "medianTimeToFirstAnswerTokenSeconds": 0.581308580000012,
-   "medianEndToEndResponseTimeSeconds": 2.3411812027030288
+   "medianOutputTokensPerSecond": 265.767140588028,
+   "medianTimeToFirstTokenSeconds": 0.519000507000015,
+   "medianTimeToFirstAnswerTokenSeconds": 0.519000507000015,
+   "medianEndToEndResponseTimeSeconds": 2.4003467068865616
   },
   {
    "releaseDate": "2026-09-21",
@@ -724,17 +680,17 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 46.3242065310383,
+   "intelligenceIndex": 29.8897833093321,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 8.383333333333333,
+   "omniscience": -4.466666666666667,
    "price1mInputTokens": 0.435,
    "price1mOutputTokens": 0.87,
    "cacheHitPrice": 0.0036,
-   "medianOutputTokensPerSecond": 55.3531128791294,
-   "medianTimeToFirstTokenSeconds": 3.21888118300001,
-   "medianTimeToFirstAnswerTokenSeconds": 39.35054381175326,
-   "medianEndToEndResponseTimeSeconds": 48.383459468941574,
-   "medianReasoningTimeSeconds": 36.131662628753254
+   "medianOutputTokensPerSecond": 43.6559735205528,
+   "medianTimeToFirstTokenSeconds": 3.44582818000003,
+   "medianTimeToFirstAnswerTokenSeconds": 49.25857357802488,
+   "medianEndToEndResponseTimeSeconds": 60.71175992753109,
+   "medianReasoningTimeSeconds": 45.81274539802485
   },
   {
    "slug": "claude-sonnet-5-5-high",
@@ -744,17 +700,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 46.7533528066958,
+   "intelligenceIndex": 41.115109087048,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 20.95,
+   "omniscience": 18.733333333333334,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 10,
    "cacheHitPrice": 0.1,
    "cacheWritePrice": 2.5,
-   "medianOutputTokensPerSecond": 105.973186311864,
-   "medianTimeToFirstTokenSeconds": 12.1451699195,
-   "medianTimeToFirstAnswerTokenSeconds": 12.1451699195,
-   "medianEndToEndResponseTimeSeconds": 16.86334455783324
+   "medianOutputTokensPerSecond": 107.12207623879,
+   "medianTimeToFirstTokenSeconds": 12.591280727,
+   "medianTimeToFirstAnswerTokenSeconds": 12.591280727,
+   "medianEndToEndResponseTimeSeconds": 17.2588526930757
   },
   {
    "releaseDate": "2025-09-11",
@@ -765,16 +721,14 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 9.64335007559183,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -59.5,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 1.1,
    "cacheHitPrice": 0.09,
-   "medianOutputTokensPerSecond": 132.757185266685,
-   "medianTimeToFirstTokenSeconds": 0.79614153649996,
-   "medianTimeToFirstAnswerTokenSeconds": 0.79614153649996,
-   "medianEndToEndResponseTimeSeconds": 4.562416024736443
+   "medianOutputTokensPerSecond": 179.930764497928,
+   "medianTimeToFirstTokenSeconds": 0.856803650000032,
+   "medianTimeToFirstAnswerTokenSeconds": 0.856803650000032,
+   "medianEndToEndResponseTimeSeconds": 3.6356502880120534
   },
   {
    "slug": "grok-4-7-high",
@@ -784,16 +738,16 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 500000,
-   "intelligenceIndex": 46.3321770885625,
+   "intelligenceIndex": 35.0122962959703,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 30.9,
+   "omniscience": 30,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 6,
    "cacheHitPrice": 0.5,
-   "medianOutputTokensPerSecond": 84.584027695921,
-   "medianTimeToFirstTokenSeconds": 48.611646584,
-   "medianTimeToFirstAnswerTokenSeconds": 48.611646584,
-   "medianEndToEndResponseTimeSeconds": 54.522928106292795
+   "medianOutputTokensPerSecond": 76.275849583434,
+   "medianTimeToFirstTokenSeconds": 43.188973533,
+   "medianTimeToFirstAnswerTokenSeconds": 43.188973533,
+   "medianEndToEndResponseTimeSeconds": 49.7441283130602
   },
   {
    "releaseDate": "2026-06-01",
@@ -804,18 +758,34 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 29.2202932236316,
+   "intelligenceIndex": 18.7289083859255,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 1.35,
+   "omniscience": -5.5,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 1.2,
    "cacheHitPrice": 0.06,
    "cacheWritePrice": 0.375,
-   "medianOutputTokensPerSecond": 108.632609563421,
-   "medianTimeToFirstTokenSeconds": 1.09475545999999,
-   "medianTimeToFirstAnswerTokenSeconds": 19.505433506285684,
-   "medianEndToEndResponseTimeSeconds": 24.108103017857104,
-   "medianReasoningTimeSeconds": 18.410678046285692
+   "medianOutputTokensPerSecond": 120.047141582049,
+   "medianTimeToFirstTokenSeconds": 0.707541318999972,
+   "medianTimeToFirstAnswerTokenSeconds": 17.367663114845097,
+   "medianEndToEndResponseTimeSeconds": 21.53269356380638,
+   "medianReasoningTimeSeconds": 16.660121795845125
+  },
+  {
+   "slug": "mistral-large-4-medium",
+   "name": "Mistral Large 4 (Medium)",
+   "shortName": "Mistral Large 4 (medium)",
+   "modelCreatorName": "Mistral",
+   "isReasoning": true,
+   "isOpenWeights": true,
+   "contextWindowTokens": 1000000,
+   "intelligenceIndex": 23.0777321742266,
+   "intelligenceIndexIsEstimated": false,
+   "omniscience": 3.2666666666666666,
+   "price1mInputTokens": 0.7,
+   "price1mOutputTokens": 2.1,
+   "cacheHitPrice": 0.07,
+   "cacheWritePrice": 0.7
   },
   {
    "releaseDate": "2026-08-11",
@@ -826,17 +796,17 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 12.8572306217144,
+   "intelligenceIndex": 5.5346663903388,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -17.716666666666665,
+   "omniscience": -15.7,
    "price1mInputTokens": 0.06,
    "price1mOutputTokens": 0.2,
    "cacheHitPrice": 0.035,
-   "medianOutputTokensPerSecond": 307.81390343934,
-   "medianTimeToFirstTokenSeconds": 0.603895906000005,
-   "medianTimeToFirstAnswerTokenSeconds": 7.101328210561694,
-   "medianEndToEndResponseTimeSeconds": 8.725686286702116,
-   "medianReasoningTimeSeconds": 6.497432304561689
+   "medianOutputTokensPerSecond": 294.744260955026,
+   "medianTimeToFirstTokenSeconds": 0.560218875500027,
+   "medianTimeToFirstAnswerTokenSeconds": 7.345762361638246,
+   "medianEndToEndResponseTimeSeconds": 9.042148233172801,
+   "medianReasoningTimeSeconds": 6.785543486138219
   },
   {
    "releaseDate": "2025-02-26",
@@ -847,8 +817,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 5.80520041934726,
-   "intelligenceIndexIsEstimated": true,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.08,
    "price1mOutputTokens": 0.32
   },
@@ -861,16 +830,14 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 11.1961650827156,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -53.46666666666667,
    "price1mInputTokens": 0.135,
    "price1mOutputTokens": 0.2,
-   "medianOutputTokensPerSecond": 59.7950420840649,
-   "medianTimeToFirstTokenSeconds": 2.00773116,
-   "medianTimeToFirstAnswerTokenSeconds": 35.4553202960396,
-   "medianEndToEndResponseTimeSeconds": 43.8172175800495,
-   "medianReasoningTimeSeconds": 33.4475891360396
+   "medianOutputTokensPerSecond": 62.5799092628307,
+   "medianTimeToFirstTokenSeconds": 1.511652518,
+   "medianTimeToFirstAnswerTokenSeconds": 33.47079121857173,
+   "medianEndToEndResponseTimeSeconds": 41.46057589371466,
+   "medianReasoningTimeSeconds": 31.95913870057173
   },
   {
    "releaseDate": "2025-08-18",
@@ -881,15 +848,13 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
-   "intelligenceIndex": 6.84412514839364,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -57.25,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.05,
    "price1mOutputTokens": 0.195,
-   "medianOutputTokensPerSecond": 172.268624473073,
-   "medianTimeToFirstTokenSeconds": 1.02547560399998,
-   "medianTimeToFirstAnswerTokenSeconds": 1.02547560399998,
-   "medianEndToEndResponseTimeSeconds": 3.9279193979838003
+   "medianOutputTokensPerSecond": 170.562749302287,
+   "medianTimeToFirstTokenSeconds": 1.00990871300005,
+   "medianTimeToFirstAnswerTokenSeconds": 1.00990871300005,
+   "medianEndToEndResponseTimeSeconds": 3.941381159623515
   },
   {
    "releaseDate": "2026-05-20",
@@ -900,16 +865,16 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 192000,
-   "intelligenceIndex": 13.1335002685349,
+   "intelligenceIndex": 6.24120025576958,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -4.016666666666667,
+   "omniscience": -2.6666666666666665,
    "price1mInputTokens": 0,
    "price1mOutputTokens": 0,
-   "medianOutputTokensPerSecond": 155.343274543252,
-   "medianTimeToFirstTokenSeconds": 0.527684261999994,
-   "medianTimeToFirstAnswerTokenSeconds": 13.402396771315246,
-   "medianEndToEndResponseTimeSeconds": 16.62107489864406,
-   "medianReasoningTimeSeconds": 12.874712509315252
+   "medianOutputTokensPerSecond": 153.854405253738,
+   "medianTimeToFirstTokenSeconds": 0.471783970500013,
+   "medianTimeToFirstAnswerTokenSeconds": 13.471086763953231,
+   "medianEndToEndResponseTimeSeconds": 16.720912462316537,
+   "medianReasoningTimeSeconds": 12.999302793453218
   },
   {
    "releaseDate": "2026-09-03",
@@ -920,17 +885,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 52.673669395513,
+   "intelligenceIndex": 56.8538559596797,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 43.4,
+   "omniscience": 42.43333333333333,
    "price1mInputTokens": 10,
    "price1mOutputTokens": 50,
    "cacheHitPrice": 1,
    "cacheWritePrice": 12.5,
-   "medianOutputTokensPerSecond": 65.5615112457435,
-   "medianTimeToFirstTokenSeconds": 380.891833283,
-   "medianTimeToFirstAnswerTokenSeconds": 380.891833283,
-   "medianEndToEndResponseTimeSeconds": 388.51825907001177
+   "medianOutputTokensPerSecond": 71.5533296028404,
+   "medianTimeToFirstTokenSeconds": 367.5696394405,
+   "medianTimeToFirstAnswerTokenSeconds": 367.5696394405,
+   "medianEndToEndResponseTimeSeconds": 374.55743445682236
   },
   {
    "releaseDate": "2026-09-22",
@@ -941,17 +906,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 57.6223698102963,
+   "intelligenceIndex": 58.4060336078904,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 46.416666666666664,
+   "omniscience": 48.13333333333333,
    "price1mInputTokens": 4,
    "price1mOutputTokens": 20,
    "cacheHitPrice": 0.2,
    "cacheWritePrice": 5,
-   "medianOutputTokensPerSecond": 98.1942040520029,
-   "medianTimeToFirstTokenSeconds": 712.324373755,
-   "medianTimeToFirstAnswerTokenSeconds": 712.324373755,
-   "medianEndToEndResponseTimeSeconds": 717.4163239859445
+   "medianOutputTokensPerSecond": 95.5293924557226,
+   "medianTimeToFirstTokenSeconds": 728.679488626,
+   "medianTimeToFirstAnswerTokenSeconds": 728.679488626,
+   "medianEndToEndResponseTimeSeconds": 733.9134798317092
   },
   {
    "releaseDate": "2025-07-15",
@@ -962,9 +927,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 131000,
-   "intelligenceIndex": 6.32621718534092,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -62.766666666666666
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-07-23",
@@ -975,9 +938,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
-   "intelligenceIndex": 10.841600440564,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -4.366666666666666
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "qwen3-5-4b-non-reasoning",
@@ -987,15 +948,13 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 10.812307683746,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -74.73333333333333,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.03,
    "price1mOutputTokens": 0.15,
-   "medianOutputTokensPerSecond": 18.6535407593315,
-   "medianTimeToFirstTokenSeconds": 0.827130073999797,
-   "medianTimeToFirstAnswerTokenSeconds": 0.827130073999797,
-   "medianEndToEndResponseTimeSeconds": 27.631692620650533
+   "medianOutputTokensPerSecond": 19.7220533759726,
+   "medianTimeToFirstTokenSeconds": 0.86553548650005,
+   "medianTimeToFirstAnswerTokenSeconds": 0.86553548650005,
+   "medianEndToEndResponseTimeSeconds": 26.217865209385323
   },
   {
    "slug": "qwen3-5-397b-a17b-non-reasoning",
@@ -1005,15 +964,13 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 21.4366547759392,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -37.9,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.6,
    "price1mOutputTokens": 3.6,
-   "medianOutputTokensPerSecond": 58.9565572586299,
-   "medianTimeToFirstTokenSeconds": 2.31664728300006,
-   "medianTimeToFirstAnswerTokenSeconds": 2.31664728300006,
-   "medianEndToEndResponseTimeSeconds": 10.797468132267193
+   "medianOutputTokensPerSecond": 58.7418227855133,
+   "medianTimeToFirstTokenSeconds": 2.246937081,
+   "medianTimeToFirstAnswerTokenSeconds": 2.246937081,
+   "medianEndToEndResponseTimeSeconds": 10.75876011083128
   },
   {
    "releaseDate": "2026-09-03",
@@ -1024,9 +981,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 524288,
-   "intelligenceIndex": 15.6103951330976,
-   "intelligenceIndexIsEstimated": false,
-   "omniscience": -28.616666666666667
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2025-11-20",
@@ -1037,9 +992,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 65536,
-   "intelligenceIndex": 5.61691854830355,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -71.8
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2025-12-26",
@@ -1050,9 +1003,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 11.3648115832519,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -53.28333333333333
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-05-26",
@@ -1063,9 +1014,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
-   "intelligenceIndex": 11.7380211033452,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -54.583333333333336
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2024-12-03",
@@ -1076,38 +1025,14 @@
    "isReasoning": false,
    "isOpenWeights": false,
    "contextWindowTokens": 130000,
-   "intelligenceIndex": 5.8765232381273,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -48.516666666666666,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.035,
    "price1mOutputTokens": 0.14,
    "cacheHitPrice": 0.00875,
-   "medianOutputTokensPerSecond": 304.151555016167,
-   "medianTimeToFirstTokenSeconds": 0.799046058500011,
-   "medianTimeToFirstAnswerTokenSeconds": 0.799046058500011,
-   "medianEndToEndResponseTimeSeconds": 2.442963348265052
-  },
-  {
-   "releaseDate": "2026-10-06",
-   "slug": "mistral-large-4",
-   "name": "Mistral Large 4 Preview",
-   "shortName": "Mistral Large 4 Preview",
-   "modelCreatorName": "Mistral",
-   "isReasoning": true,
-   "isOpenWeights": false,
-   "contextWindowTokens": 524288,
-   "intelligenceIndex": 38.3770408917494,
-   "intelligenceIndexIsEstimated": false,
-   "omniscience": -5.3,
-   "price1mInputTokens": 1.36,
-   "price1mOutputTokens": 4.18,
-   "cacheHitPrice": 0.14,
-   "cacheWritePrice": 1.36,
-   "medianOutputTokensPerSecond": 114.718363009541,
-   "medianTimeToFirstTokenSeconds": 1.54710851399996,
-   "medianTimeToFirstAnswerTokenSeconds": 18.981109030845396,
-   "medianEndToEndResponseTimeSeconds": 23.339609160056753,
-   "medianReasoningTimeSeconds": 17.434000516845437
+   "medianOutputTokensPerSecond": 274.434177285206,
+   "medianTimeToFirstTokenSeconds": 0.809877079499998,
+   "medianTimeToFirstAnswerTokenSeconds": 0.809877079499998,
+   "medianEndToEndResponseTimeSeconds": 2.631807587376845
   },
   {
    "slug": "exaone-4-5-33b-non-reasoning",
@@ -1127,16 +1052,16 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 20.1502427055595,
+   "intelligenceIndex": 10.0316676028892,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -7.95,
+   "omniscience": -7.266666666666667,
    "price1mInputTokens": 0.5,
    "price1mOutputTokens": 3,
    "cacheHitPrice": 0.1,
-   "medianOutputTokensPerSecond": 48.4677370700979,
-   "medianTimeToFirstTokenSeconds": 3.96413689949998,
-   "medianTimeToFirstAnswerTokenSeconds": 3.96413689949998,
-   "medianEndToEndResponseTimeSeconds": 14.280277702130403
+   "medianOutputTokensPerSecond": 45.8879043407442,
+   "medianTimeToFirstTokenSeconds": 3.95621690700003,
+   "medianTimeToFirstAnswerTokenSeconds": 3.95621690700003,
+   "medianEndToEndResponseTimeSeconds": 14.852334460924723
   },
   {
    "releaseDate": "2026-10-15",
@@ -1147,17 +1072,17 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1048576,
-   "intelligenceIndex": 38.8666662997805,
+   "intelligenceIndex": 24.6815868992913,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 24.65,
+   "omniscience": 25.8,
    "price1mInputTokens": 1.25,
    "price1mOutputTokens": 4.25,
    "cacheHitPrice": 0.15,
-   "medianOutputTokensPerSecond": 183.232990931486,
-   "medianTimeToFirstTokenSeconds": 0.768390898999996,
-   "medianTimeToFirstAnswerTokenSeconds": 11.683455865372972,
-   "medianEndToEndResponseTimeSeconds": 14.412222106966215,
-   "medianReasoningTimeSeconds": 10.915064966372976
+   "medianOutputTokensPerSecond": 193.18659818956,
+   "medianTimeToFirstTokenSeconds": 0.745404554499942,
+   "medianTimeToFirstAnswerTokenSeconds": 11.098089568589506,
+   "medianEndToEndResponseTimeSeconds": 13.686260822111898,
+   "medianReasoningTimeSeconds": 10.352685014089564
   },
   {
    "slug": "gpt-6-luna-medium",
@@ -1167,9 +1092,9 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 29.9251773515762,
+   "intelligenceIndex": 18.3042156192416,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -5.05,
+   "omniscience": -13.566666666666666,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.5,
    "cacheHitPrice": 0.01,
@@ -1184,9 +1109,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 131100,
-   "intelligenceIndex": 10.6061102858178,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -50.85
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2025-08-05",
@@ -1197,16 +1120,14 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
-   "intelligenceIndex": 8.9675171856126,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -63.05,
    "price1mInputTokens": 0.05,
    "price1mOutputTokens": 0.22,
-   "medianOutputTokensPerSecond": 189.714771741347,
-   "medianTimeToFirstTokenSeconds": 0.785551429000009,
-   "medianTimeToFirstAnswerTokenSeconds": 11.327693095895388,
-   "medianEndToEndResponseTimeSeconds": 13.963228512619231,
-   "medianReasoningTimeSeconds": 10.542141666895379
+   "medianOutputTokensPerSecond": 178.143124521857,
+   "medianTimeToFirstTokenSeconds": 0.698814421999998,
+   "medianTimeToFirstAnswerTokenSeconds": 11.925742238428933,
+   "medianEndToEndResponseTimeSeconds": 14.732474192536168,
+   "medianReasoningTimeSeconds": 11.226927816428935
   },
   {
    "releaseDate": "2025-12-12",
@@ -1217,9 +1138,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 65500,
-   "intelligenceIndex": 7.12364412279906,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -43.36666666666667
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-06-02",
@@ -1230,9 +1149,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262000,
-   "intelligenceIndex": 28.1990972887912,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -27.05
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "claude-fable-5-1-medium",
@@ -1242,17 +1159,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 48.9206162609523,
+   "intelligenceIndex": 42.971597828284,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 37.6,
+   "omniscience": 36.43333333333333,
    "price1mInputTokens": 10,
    "price1mOutputTokens": 50,
    "cacheHitPrice": 0.25,
    "cacheWritePrice": 12.5,
-   "medianOutputTokensPerSecond": 55.8454860037877,
-   "medianTimeToFirstTokenSeconds": 13.5617615895,
-   "medianTimeToFirstAnswerTokenSeconds": 13.5617615895,
-   "medianEndToEndResponseTimeSeconds": 22.515036702301195
+   "medianOutputTokensPerSecond": 57.5722984347305,
+   "medianTimeToFirstTokenSeconds": 12.8800166555001,
+   "medianTimeToFirstAnswerTokenSeconds": 12.8800166555001,
+   "medianEndToEndResponseTimeSeconds": 21.56474895895066
   },
   {
    "slug": "gpt-6-1-sol-high",
@@ -1262,17 +1179,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 50.2377777519769,
+   "intelligenceIndex": 50.2291231936536,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 41.45,
+   "omniscience": 41,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 10,
    "cacheHitPrice": 0.1,
    "cacheWritePrice": 2.5,
-   "medianOutputTokensPerSecond": 57.2115864538079,
-   "medianTimeToFirstTokenSeconds": 73.809673451,
-   "medianTimeToFirstAnswerTokenSeconds": 73.809673451,
-   "medianEndToEndResponseTimeSeconds": 82.54916191814284
+   "medianOutputTokensPerSecond": 66.449186177329,
+   "medianTimeToFirstTokenSeconds": 69.5795057465,
+   "medianTimeToFirstAnswerTokenSeconds": 69.5795057465,
+   "medianEndToEndResponseTimeSeconds": 77.10405237775113
   },
   {
    "releaseDate": "2025-03-13",
@@ -1283,15 +1200,13 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 6.9581988704518,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -48.266666666666666,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 2.5,
    "price1mOutputTokens": 10,
-   "medianOutputTokensPerSecond": 21.2837117487813,
-   "medianTimeToFirstTokenSeconds": 2.74709920250001,
-   "medianTimeToFirstAnswerTokenSeconds": 2.74709920250001,
-   "medianEndToEndResponseTimeSeconds": 26.23924220376152
+   "medianOutputTokensPerSecond": 15.1750144666826,
+   "medianTimeToFirstTokenSeconds": 2.05724821200005,
+   "medianTimeToFirstAnswerTokenSeconds": 2.05724821200005,
+   "medianEndToEndResponseTimeSeconds": 35.006145960847114
   },
   {
    "releaseDate": "2026-01-05",
@@ -1302,9 +1217,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 32000,
-   "intelligenceIndex": 4.83423948,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -84.41666666666667
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-04-15",
@@ -1315,9 +1228,7 @@
    "isReasoning": false,
    "isOpenWeights": false,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 12.2117782837313,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -64.1
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-09-01",
@@ -1328,17 +1239,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 53.3549259623252,
+   "intelligenceIndex": 49.0102124158081,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 43.45,
+   "omniscience": 46.266666666666666,
    "price1mInputTokens": 10,
    "price1mOutputTokens": 50,
    "cacheHitPrice": 0.25,
    "cacheWritePrice": 12.5,
-   "medianOutputTokensPerSecond": 69.7337324652502,
-   "medianTimeToFirstTokenSeconds": 244.0740194345,
-   "medianTimeToFirstAnswerTokenSeconds": 244.0740194345,
-   "medianEndToEndResponseTimeSeconds": 251.24415047902943
+   "medianOutputTokensPerSecond": 69.9351214003892,
+   "medianTimeToFirstTokenSeconds": 263.512527373,
+   "medianTimeToFirstAnswerTokenSeconds": 263.512527373,
+   "medianEndToEndResponseTimeSeconds": 270.66201092272354
   },
   {
    "releaseDate": "2025-12-11",
@@ -1349,9 +1260,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 36864,
-   "intelligenceIndex": 5.00251209304105,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -69.21666666666667
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-03-16",
@@ -1362,17 +1271,17 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 11.2675794141469,
+   "intelligenceIndex": 4.29716249600478,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -30.4,
+   "omniscience": -30.966666666666665,
    "price1mInputTokens": 0.15,
    "price1mOutputTokens": 0.6,
    "cacheHitPrice": 0.015,
-   "medianOutputTokensPerSecond": 174.583668875228,
-   "medianTimeToFirstTokenSeconds": 0.81368488199999,
-   "medianTimeToFirstAnswerTokenSeconds": 12.269510119750986,
-   "medianEndToEndResponseTimeSeconds": 15.133466429188735,
-   "medianReasoningTimeSeconds": 11.455825237750997
+   "medianOutputTokensPerSecond": 158.151441144767,
+   "medianTimeToFirstTokenSeconds": 0.752137763499974,
+   "medianTimeToFirstAnswerTokenSeconds": 13.398244466816456,
+   "medianEndToEndResponseTimeSeconds": 16.559771142645577,
+   "medianReasoningTimeSeconds": 12.646106703316482
   },
   {
    "slug": "qwen3-5-0-8b-non-reasoning",
@@ -1382,9 +1291,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 5.40008099703412,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -88.58333333333333
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "claude-haiku-5-5-xhigh",
@@ -1394,17 +1301,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 41.2489304677024,
+   "intelligenceIndex": 34.3387759486628,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 6.05,
+   "omniscience": 7.833333333333333,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.5,
    "cacheHitPrice": 0.01,
    "cacheWritePrice": 0.125,
-   "medianOutputTokensPerSecond": 195.218935149872,
-   "medianTimeToFirstTokenSeconds": 67.4157975779999,
-   "medianTimeToFirstAnswerTokenSeconds": 67.4157975779999,
-   "medianEndToEndResponseTimeSeconds": 69.97702453898165
+   "medianOutputTokensPerSecond": 200.354227500845,
+   "medianTimeToFirstTokenSeconds": 71.520051768,
+   "medianTimeToFirstAnswerTokenSeconds": 71.520051768,
+   "medianEndToEndResponseTimeSeconds": 74.01563175269432
   },
   {
    "slug": "claude-haiku-5-5-low",
@@ -1414,17 +1321,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 29.4523685891139,
+   "intelligenceIndex": 18.6180055310996,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 3.25,
+   "omniscience": 2.1666666666666665,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.5,
    "cacheHitPrice": 0.01,
    "cacheWritePrice": 0.125,
-   "medianOutputTokensPerSecond": 176.846842110383,
-   "medianTimeToFirstTokenSeconds": 8.62514944300005,
-   "medianTimeToFirstAnswerTokenSeconds": 8.62514944300005,
-   "medianEndToEndResponseTimeSeconds": 11.452454663909302
+   "medianOutputTokensPerSecond": 167.01587007009,
+   "medianTimeToFirstTokenSeconds": 8.83298010600002,
+   "medianTimeToFirstAnswerTokenSeconds": 8.83298010600002,
+   "medianEndToEndResponseTimeSeconds": 11.826707587048197
   },
   {
    "releaseDate": "2026-09-10",
@@ -1435,9 +1342,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 24.5693054077875,
-   "intelligenceIndexIsEstimated": false,
-   "omniscience": -4.533333333333333
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "minicpm-v4-6-1-3b",
@@ -1447,9 +1352,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 262000,
-   "intelligenceIndex": 5.69026588282761,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -82.86666666666666
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "claude-opus-5-5-low",
@@ -1459,17 +1362,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 42.3077781466168,
+   "intelligenceIndex": 34.502785007759,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 38.86666666666667,
+   "omniscience": 39.03333333333333,
    "price1mInputTokens": 4,
    "price1mOutputTokens": 20,
    "cacheHitPrice": 0.2,
    "cacheWritePrice": 5,
-   "medianOutputTokensPerSecond": 81.078383585905,
-   "medianTimeToFirstTokenSeconds": 10.3532899785,
-   "medianTimeToFirstAnswerTokenSeconds": 10.3532899785,
-   "medianEndToEndResponseTimeSeconds": 16.52016181148659
+   "medianOutputTokensPerSecond": 79.0454950583355,
+   "medianTimeToFirstTokenSeconds": 10.3270630005,
+   "medianTimeToFirstAnswerTokenSeconds": 10.3270630005,
+   "medianEndToEndResponseTimeSeconds": 16.65253416910993
   },
   {
    "slug": "exaone-4-0-32b-reasoning",
@@ -1479,9 +1382,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 131000,
-   "intelligenceIndex": 8.17836973273723,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -60.06666666666667
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-03-06",
@@ -1492,17 +1393,15 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 8.7905508357489,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -59.38333333333333,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.042,
    "price1mOutputTokens": 0.17,
    "cacheHitPrice": 0.026,
-   "medianOutputTokensPerSecond": 195.136404738124,
-   "medianTimeToFirstTokenSeconds": 1.62111341899999,
-   "medianTimeToFirstAnswerTokenSeconds": 11.87035421383799,
-   "medianEndToEndResponseTimeSeconds": 14.43266441254749,
-   "medianReasoningTimeSeconds": 10.249240794838
+   "medianOutputTokensPerSecond": 109.505485557058,
+   "medianTimeToFirstTokenSeconds": 1.63984853299999,
+   "medianTimeToFirstAnswerTokenSeconds": 19.9037737585349,
+   "medianEndToEndResponseTimeSeconds": 24.469755064918626,
+   "medianReasoningTimeSeconds": 18.26392522553491
   },
   {
    "releaseDate": "2024-07-23",
@@ -1513,9 +1412,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 7.2893092121128,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -17.1
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-07-09",
@@ -1526,9 +1423,7 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 33.9172581709394,
-   "intelligenceIndexIsEstimated": false,
-   "omniscience": 20.566666666666666
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2025-09-19",
@@ -1539,9 +1434,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 7.15340447175535,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -58.61666666666667
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-01-05",
@@ -1552,9 +1445,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 32000,
-   "intelligenceIndex": 5.20951181661378,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -72.1
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2025-09-02",
@@ -1565,9 +1456,27 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 65536,
-   "intelligenceIndex": 5.11462775284761,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -61.55
+   "intelligenceIndexIsEstimated": false
+  },
+  {
+   "releaseDate": "2026-10-25",
+   "slug": "nanbeige4-3-33b",
+   "name": "Nanbeige4.3-33B",
+   "shortName": "Nanbeige4.3-33B",
+   "modelCreatorName": "Nanbeige",
+   "isReasoning": true,
+   "isOpenWeights": true,
+   "contextWindowTokens": 524288,
+   "intelligenceIndex": 20.4071119588083,
+   "intelligenceIndexIsEstimated": false,
+   "omniscience": -4.4,
+   "price1mInputTokens": 0,
+   "price1mOutputTokens": 0,
+   "medianOutputTokensPerSecond": 159.455009809902,
+   "medianTimeToFirstTokenSeconds": 1.44873860000001,
+   "medianTimeToFirstAnswerTokenSeconds": 13.991461480794701,
+   "medianEndToEndResponseTimeSeconds": 17.127142200993376,
+   "medianReasoningTimeSeconds": 12.542722880794692
   },
   {
    "releaseDate": "2025-11-11",
@@ -1578,9 +1487,7 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 16.9467715940932,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -35.2
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-04-09",
@@ -1591,9 +1498,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 13.2058394009382,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -50.71666666666667
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "gemma-4-e4b-non-reasoning",
@@ -1603,15 +1508,13 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 7.45765296912625,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -40.983333333333334,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.02,
    "price1mOutputTokens": 0.1,
-   "medianOutputTokensPerSecond": 45.362437485314,
-   "medianTimeToFirstTokenSeconds": 0.78804696049994,
-   "medianTimeToFirstAnswerTokenSeconds": 0.78804696049994,
-   "medianEndToEndResponseTimeSeconds": 11.810382348933908
+   "medianOutputTokensPerSecond": 51.4938956664504,
+   "medianTimeToFirstTokenSeconds": 0.802238106500113,
+   "medianTimeToFirstAnswerTokenSeconds": 0.802238106500113,
+   "medianEndToEndResponseTimeSeconds": 10.512126890963605
   },
   {
    "slug": "ling-3-1-flash-1019",
@@ -1619,11 +1522,11 @@
    "shortName": "Ling 3.1 Flash 1019",
    "modelCreatorName": "InclusionAI",
    "isReasoning": true,
-   "isOpenWeights": false,
+   "isOpenWeights": true,
    "contextWindowTokens": 1048576,
-   "intelligenceIndex": 43.8973584978265,
+   "intelligenceIndex": 29.470119369837,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -0.31666666666666665,
+   "omniscience": -0.13333333333333333,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 0.9,
    "cacheHitPrice": 0.06
@@ -1637,9 +1540,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 524288,
-   "intelligenceIndex": 25.3037790731435,
-   "intelligenceIndexIsEstimated": false,
-   "omniscience": -10.95
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2025-10-28",
@@ -1650,9 +1551,26 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 32768,
-   "intelligenceIndex": 4.83423948,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -69.35
+   "intelligenceIndexIsEstimated": false
+  },
+  {
+   "slug": "deepseek-v4-1-flash-1017-non-reasoning",
+   "name": "DeepSeek V4.1 Flash 1017 (Non-reasoning)",
+   "shortName": "DeepSeek V4.1 Flash 1017 (non-reasoning)",
+   "modelCreatorName": "DeepSeek",
+   "isReasoning": false,
+   "isOpenWeights": true,
+   "contextWindowTokens": 1000000,
+   "intelligenceIndex": 18.5131594039446,
+   "intelligenceIndexIsEstimated": false,
+   "omniscience": 2.1,
+   "price1mInputTokens": 0.3,
+   "price1mOutputTokens": 1.2,
+   "cacheHitPrice": 0.006,
+   "medianOutputTokensPerSecond": 185.343550523838,
+   "medianTimeToFirstTokenSeconds": 1.38407709800003,
+   "medianTimeToFirstAnswerTokenSeconds": 1.38407709800003,
+   "medianEndToEndResponseTimeSeconds": 4.081770104240851
   },
   {
    "releaseDate": "2026-08-10",
@@ -1663,17 +1581,17 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
-   "intelligenceIndex": 17.4754176089465,
+   "intelligenceIndex": 6.34128724913462,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -32.85,
+   "omniscience": -32.233333333333334,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 1.2,
    "cacheHitPrice": 0.04,
-   "medianOutputTokensPerSecond": 105.378629799844,
-   "medianTimeToFirstTokenSeconds": 1.15313040800002,
-   "medianTimeToFirstAnswerTokenSeconds": 20.132310568140618,
-   "medianEndToEndResponseTimeSeconds": 24.877105608175768,
-   "medianReasoningTimeSeconds": 18.979180160140597
+   "medianOutputTokensPerSecond": 120.243313176569,
+   "medianTimeToFirstTokenSeconds": 1.14452565149998,
+   "medianTimeToFirstAnswerTokenSeconds": 17.777467202795542,
+   "medianEndToEndResponseTimeSeconds": 21.935702590619435,
+   "medianReasoningTimeSeconds": 16.632941551295563
   },
   {
    "releaseDate": "2026-09-21",
@@ -1684,16 +1602,16 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 500000,
-   "intelligenceIndex": 46.4465506302286,
+   "intelligenceIndex": 34.3350117067196,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 32.03333333333333,
+   "omniscience": 31.233333333333334,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 6,
    "cacheHitPrice": 0.5,
-   "medianOutputTokensPerSecond": 88.0851457850208,
-   "medianTimeToFirstTokenSeconds": 75.96252488,
-   "medianTimeToFirstAnswerTokenSeconds": 75.96252488,
-   "medianEndToEndResponseTimeSeconds": 81.63885084329343
+   "medianOutputTokensPerSecond": 80.4721449534734,
+   "medianTimeToFirstTokenSeconds": 101.980645912,
+   "medianTimeToFirstAnswerTokenSeconds": 101.980645912,
+   "medianEndToEndResponseTimeSeconds": 108.19397600639583
   },
   {
    "releaseDate": "2025-10-30",
@@ -1704,8 +1622,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 7.30037362771236,
-   "intelligenceIndexIsEstimated": true
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "solar-open-100b-reasoning",
@@ -1715,9 +1632,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 10.3644352600556,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -54.5
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-02-05",
@@ -1728,16 +1643,14 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 400000,
-   "intelligenceIndex": 32.5028174368983,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": 10.866666666666667,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 1.75,
    "price1mOutputTokens": 14,
    "cacheHitPrice": 0.175,
-   "medianOutputTokensPerSecond": 105.443242497974,
-   "medianTimeToFirstTokenSeconds": 56.789031016,
-   "medianTimeToFirstAnswerTokenSeconds": 56.789031016,
-   "medianEndToEndResponseTimeSeconds": 61.53091857706971
+   "medianOutputTokensPerSecond": 114.123233819841,
+   "medianTimeToFirstTokenSeconds": 64.6794977135,
+   "medianTimeToFirstAnswerTokenSeconds": 64.6794977135,
+   "medianEndToEndResponseTimeSeconds": 69.06072652436
   },
   {
    "releaseDate": "2026-01-20",
@@ -1748,9 +1661,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 32000,
-   "intelligenceIndex": 5.22188553175398,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -79.95
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2025-12-15",
@@ -1761,9 +1672,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 11.4956908518183,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -40.333333333333336
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "nvidia-nemotron-3-ultra-550b-a55b",
@@ -1773,17 +1682,17 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 22.9279123422858,
+   "intelligenceIndex": 11.7592726308177,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -0.4,
+   "omniscience": 3.433333333333333,
    "price1mInputTokens": 0.6,
    "price1mOutputTokens": 2.7,
    "cacheHitPrice": 0.12,
-   "medianOutputTokensPerSecond": 196.929805126179,
-   "medianTimeToFirstTokenSeconds": 1.18089715649996,
-   "medianTimeToFirstAnswerTokenSeconds": 12.73323682668009,
-   "medianEndToEndResponseTimeSeconds": 15.27221257836803,
-   "medianReasoningTimeSeconds": 11.55233967018013
+   "medianOutputTokensPerSecond": 161.32829045467,
+   "medianTimeToFirstTokenSeconds": 1.14950823450005,
+   "medianTimeToFirstAnswerTokenSeconds": 15.251188687372817,
+   "medianEndToEndResponseTimeSeconds": 18.35045911657562,
+   "medianReasoningTimeSeconds": 14.101680452872767
   },
   {
    "releaseDate": "2026-06-29",
@@ -1794,17 +1703,15 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 19.1123256610623,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -23.416666666666668,
    "price1mInputTokens": 0.75,
    "price1mOutputTokens": 2.95,
    "cacheHitPrice": 0.015,
-   "medianOutputTokensPerSecond": 71.1609792511351,
-   "medianTimeToFirstTokenSeconds": 2.561609299,
-   "medianTimeToFirstAnswerTokenSeconds": 30.666899881662935,
-   "medianEndToEndResponseTimeSeconds": 37.693222527328665,
-   "medianReasoningTimeSeconds": 28.105290582662935
+   "medianOutputTokensPerSecond": 77.2029483361599,
+   "medianTimeToFirstTokenSeconds": 2.65702571700013,
+   "medianTimeToFirstAnswerTokenSeconds": 28.56277210496872,
+   "medianEndToEndResponseTimeSeconds": 35.03920870196087,
+   "medianReasoningTimeSeconds": 25.905746387968588
   },
   {
    "releaseDate": "2026-03-02",
@@ -1815,9 +1722,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 6.94413664133259,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -60.18333333333333
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-02-10",
@@ -1828,9 +1733,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 32000,
-   "intelligenceIndex": 8.98704047108094,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -62.55
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2025-09-22",
@@ -1841,9 +1744,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 6.04930220974964,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -61.016666666666666
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2024-09-25",
@@ -1854,15 +1755,13 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 5.40802026647316,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -62.6,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.345,
    "price1mOutputTokens": 0.345,
-   "medianOutputTokensPerSecond": 28.9525322822195,
-   "medianTimeToFirstTokenSeconds": 1.34212227900002,
-   "medianTimeToFirstAnswerTokenSeconds": 1.34212227900002,
-   "medianEndToEndResponseTimeSeconds": 18.611768855201678
+   "medianOutputTokensPerSecond": 25.4286725186073,
+   "medianTimeToFirstTokenSeconds": 1.40391645999998,
+   "medianTimeToFirstAnswerTokenSeconds": 1.40391645999998,
+   "medianEndToEndResponseTimeSeconds": 21.066759639647977
   },
   {
    "releaseDate": "2026-01-28",
@@ -1873,9 +1772,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 11.4709079965186,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -70.06666666666666
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-10-23",
@@ -1896,16 +1793,14 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 13.3740793005281,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -54.983333333333334,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 2.5,
-   "medianOutputTokensPerSecond": 207.233113574632,
-   "medianTimeToFirstTokenSeconds": 16.575813902,
-   "medianTimeToFirstAnswerTokenSeconds": 26.226781189521496,
-   "medianEndToEndResponseTimeSeconds": 28.63952301140187,
-   "medianReasoningTimeSeconds": 9.650967287521494
+   "medianOutputTokensPerSecond": 181.420399674906,
+   "medianTimeToFirstTokenSeconds": 16.501547551,
+   "medianTimeToFirstAnswerTokenSeconds": 27.52566613735454,
+   "medianEndToEndResponseTimeSeconds": 30.28169578394317,
+   "medianReasoningTimeSeconds": 11.024118586354538
   },
   {
    "releaseDate": "2026-09-22",
@@ -1916,17 +1811,16 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1048576,
-   "intelligenceIndex": 24.0522018844171,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -10.816666666666666,
+   "omniscience": -11.633333333333333,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.4,
    "cacheHitPrice": 0.01,
-   "medianOutputTokensPerSecond": 120.102186373083,
-   "medianTimeToFirstTokenSeconds": 1.79666667199996,
-   "medianTimeToFirstAnswerTokenSeconds": 18.4491528622783,
-   "medianEndToEndResponseTimeSeconds": 22.612274409847885,
-   "medianReasoningTimeSeconds": 16.65248619027834
+   "medianOutputTokensPerSecond": 108.037717341613,
+   "medianTimeToFirstTokenSeconds": 2.08672245050002,
+   "medianTimeToFirstAnswerTokenSeconds": 20.59877591860544,
+   "medianEndToEndResponseTimeSeconds": 25.226789285631792,
+   "medianReasoningTimeSeconds": 18.51205346810542
   },
   {
    "slug": "gpt-6-luna-non-reasoning",
@@ -1936,17 +1830,17 @@
    "isReasoning": false,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 18.4678465935701,
+   "intelligenceIndex": 9.39244373619813,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -21.9,
+   "omniscience": -25.8,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.5,
    "cacheHitPrice": 0.01,
    "cacheWritePrice": 0.125,
-   "medianOutputTokensPerSecond": 120.962498834291,
-   "medianTimeToFirstTokenSeconds": 0.924659026499938,
-   "medianTimeToFirstAnswerTokenSeconds": 0.924659026499938,
-   "medianEndToEndResponseTimeSeconds": 5.058171518540635
+   "medianOutputTokensPerSecond": 111.539057841425,
+   "medianTimeToFirstTokenSeconds": 0.808549522500016,
+   "medianTimeToFirstAnswerTokenSeconds": 0.808549522500016,
+   "medianEndToEndResponseTimeSeconds": 5.291284177752794
   },
   {
    "releaseDate": "2026-09-07",
@@ -1957,9 +1851,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
-   "intelligenceIndex": 12.463354831996,
-   "intelligenceIndexIsEstimated": false,
-   "omniscience": -11.65
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-03-02",
@@ -1970,16 +1862,14 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 13.1248174602542,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -58.35,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.03,
    "price1mOutputTokens": 0.15,
-   "medianOutputTokensPerSecond": 18.1215855104531,
-   "medianTimeToFirstTokenSeconds": 0.937769189999983,
-   "medianTimeToFirstAnswerTokenSeconds": 111.30338807286964,
-   "medianEndToEndResponseTimeSeconds": 138.89479279358704,
-   "medianReasoningTimeSeconds": 110.36561888286965
+   "medianOutputTokensPerSecond": 17.7534835887624,
+   "medianTimeToFirstTokenSeconds": 0.816760999999971,
+   "medianTimeToFirstAnswerTokenSeconds": 113.4707080409041,
+   "medianEndToEndResponseTimeSeconds": 141.63419480113012,
+   "medianReasoningTimeSeconds": 112.65394704090413
   },
   {
    "slug": "qwen3-8-27b-medium",
@@ -1989,17 +1879,17 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 27.5508228231586,
+   "intelligenceIndex": 17.4831648632067,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -36.15,
+   "omniscience": -35.86666666666667,
    "price1mInputTokens": 0.5,
    "price1mOutputTokens": 3,
    "cacheHitPrice": 0.1,
-   "medianOutputTokensPerSecond": 46.1601050142138,
-   "medianTimeToFirstTokenSeconds": 3.91669125199996,
-   "medianTimeToFirstAnswerTokenSeconds": 47.244149007656105,
-   "medianEndToEndResponseTimeSeconds": 58.076013446570144,
-   "medianReasoningTimeSeconds": 43.32745775565615
+   "medianOutputTokensPerSecond": 51.0995018265123,
+   "medianTimeToFirstTokenSeconds": 4.08266181549994,
+   "medianTimeToFirstAnswerTokenSeconds": 43.221986632994074,
+   "medianEndToEndResponseTimeSeconds": 53.00681783736761,
+   "medianReasoningTimeSeconds": 39.139324817494135
   },
   {
    "releaseDate": "2026-10-23",
@@ -2010,17 +1900,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 55.0869210959395,
+   "intelligenceIndex": 46.0026236744189,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 29.516666666666666,
+   "omniscience": 29.866666666666667,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 10,
    "cacheHitPrice": 0.2,
-   "medianOutputTokensPerSecond": 47.9321207766006,
-   "medianTimeToFirstTokenSeconds": 2.96221307050001,
-   "medianTimeToFirstAnswerTokenSeconds": 44.687886118047615,
-   "medianEndToEndResponseTimeSeconds": 55.11930437993451,
-   "medianReasoningTimeSeconds": 41.7256730475476
+   "medianOutputTokensPerSecond": 30.8342819156493,
+   "medianTimeToFirstTokenSeconds": 3.42704832350006,
+   "medianTimeToFirstAnswerTokenSeconds": 68.28991769309421,
+   "medianEndToEndResponseTimeSeconds": 84.50563503549276,
+   "medianReasoningTimeSeconds": 64.86286936959415
   },
   {
    "slug": "motif-2-12-7b",
@@ -2030,9 +1920,7 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 9.18748556817538,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -61.68333333333333
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "qwen3-6-35b-a3b-non-reasoning",
@@ -2042,15 +1930,13 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 15.2320772647744,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -60.016666666666666,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.375,
    "price1mOutputTokens": 2.25,
-   "medianOutputTokensPerSecond": 146.032695463361,
-   "medianTimeToFirstTokenSeconds": 2.08936374650006,
-   "medianTimeToFirstAnswerTokenSeconds": 2.08936374650006,
-   "medianEndToEndResponseTimeSeconds": 5.513254529406604
+   "medianOutputTokensPerSecond": 147.128772486783,
+   "medianTimeToFirstTokenSeconds": 2.04601244599999,
+   "medianTimeToFirstAnswerTokenSeconds": 2.04601244599999,
+   "medianEndToEndResponseTimeSeconds": 5.444395994975201
   },
   {
    "releaseDate": "2025-12-02",
@@ -2061,16 +1947,14 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 4.83760020546443,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -64,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.1,
    "cacheHitPrice": 0.01,
-   "medianOutputTokensPerSecond": 202.634584150818,
-   "medianTimeToFirstTokenSeconds": 0.664269436000041,
-   "medianTimeToFirstAnswerTokenSeconds": 0.664269436000041,
-   "medianEndToEndResponseTimeSeconds": 3.1317653084117176
+   "medianOutputTokensPerSecond": 181.420411231176,
+   "medianTimeToFirstTokenSeconds": 0.779424022000001,
+   "medianTimeToFirstAnswerTokenSeconds": 0.779424022000001,
+   "medianEndToEndResponseTimeSeconds": 3.5354534930327404
   },
   {
    "releaseDate": "2026-10-16",
@@ -2081,17 +1965,17 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1048576,
-   "intelligenceIndex": 30.3334426348039,
+   "intelligenceIndex": 17.7307282547205,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 1.5,
+   "omniscience": 2.3333333333333335,
    "price1mInputTokens": 0.4,
    "price1mOutputTokens": 1.2,
    "cacheHitPrice": 0.04,
-   "medianOutputTokensPerSecond": 364.677638859467,
-   "medianTimeToFirstTokenSeconds": 0.60353247699991,
-   "medianTimeToFirstAnswerTokenSeconds": 6.087828158673786,
-   "medianEndToEndResponseTimeSeconds": 7.458902079092255,
-   "medianReasoningTimeSeconds": 5.484295681673876
+   "medianOutputTokensPerSecond": 361.16622823273,
+   "medianTimeToFirstTokenSeconds": 0.620279966500107,
+   "medianTimeToFirstAnswerTokenSeconds": 6.157896287346225,
+   "medianEndToEndResponseTimeSeconds": 7.542300367557755,
+   "medianReasoningTimeSeconds": 5.537616320846118
   },
   {
    "slug": "hermes-4-llama-3-1-70b-reasoning",
@@ -2101,9 +1985,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 7.90579275030455,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -49.36666666666667
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-09-11",
@@ -2114,9 +1996,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 22.5965828940594,
-   "intelligenceIndexIsEstimated": false,
-   "omniscience": -14.583333333333334
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-04-02",
@@ -2127,17 +2007,15 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 16.671930040086,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -50.833333333333336,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.34,
    "cacheHitPrice": 0.05,
-   "medianOutputTokensPerSecond": 95.2439513824052,
-   "medianTimeToFirstTokenSeconds": 0.919662637500011,
-   "medianTimeToFirstAnswerTokenSeconds": 21.918371437074953,
-   "medianEndToEndResponseTimeSeconds": 27.168048636968688,
-   "medianReasoningTimeSeconds": 20.998708799574942
+   "medianOutputTokensPerSecond": 111.935216168363,
+   "medianTimeToFirstTokenSeconds": 0.931406631000002,
+   "medianTimeToFirstAnswerTokenSeconds": 18.798884520994672,
+   "medianEndToEndResponseTimeSeconds": 23.26575399349334,
+   "medianReasoningTimeSeconds": 17.86747788999467
   },
   {
    "slug": "nvidia-nemotron-nano-12b-v2-vl-reasoning",
@@ -2147,9 +2025,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 7.47796854824097,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -64.23333333333333
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-03-30",
@@ -2160,15 +2036,13 @@
    "isReasoning": false,
    "isOpenWeights": false,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 12.4740069826994,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -65.06666666666666,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.8,
-   "medianOutputTokensPerSecond": 235.250124546538,
-   "medianTimeToFirstTokenSeconds": 1.79385809000001,
-   "medianTimeToFirstAnswerTokenSeconds": 1.79385809000001,
-   "medianEndToEndResponseTimeSeconds": 3.919255476988803
+   "medianOutputTokensPerSecond": 239.192292036678,
+   "medianTimeToFirstTokenSeconds": 1.83053843950001,
+   "medianTimeToFirstAnswerTokenSeconds": 1.83053843950001,
+   "medianEndToEndResponseTimeSeconds": 3.9209068027218876
   },
   {
    "releaseDate": "2026-09-22",
@@ -2179,17 +2053,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 38.1245186869738,
+   "intelligenceIndex": 27.7552004938153,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 0.65,
+   "omniscience": -8.266666666666667,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.5,
    "cacheHitPrice": 0.01,
    "cacheWritePrice": 0.125,
-   "medianOutputTokensPerSecond": 129.271739813822,
-   "medianTimeToFirstTokenSeconds": 93.764674284,
-   "medianTimeToFirstAnswerTokenSeconds": 93.764674284,
-   "medianEndToEndResponseTimeSeconds": 97.63249567110365
+   "medianOutputTokensPerSecond": 117.109410061136,
+   "medianTimeToFirstTokenSeconds": 112.812156098,
+   "medianTimeToFirstAnswerTokenSeconds": 112.812156098,
+   "medianEndToEndResponseTimeSeconds": 117.08166782843207
   },
   {
    "slug": "nova-2-0-lite-reasoning-low",
@@ -2199,16 +2073,14 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 11.8041280807831,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -54.1,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 2.5,
-   "medianOutputTokensPerSecond": 180.856661379668,
-   "medianTimeToFirstTokenSeconds": 10.1860387804999,
-   "medianTimeToFirstAnswerTokenSeconds": 21.244520037109233,
-   "medianEndToEndResponseTimeSeconds": 24.009140351261568,
-   "medianReasoningTimeSeconds": 11.058481256609335
+   "medianOutputTokensPerSecond": 180.804664910455,
+   "medianTimeToFirstTokenSeconds": 7.50141668300004,
+   "medianTimeToFirstAnswerTokenSeconds": 18.56307817824142,
+   "medianEndToEndResponseTimeSeconds": 21.328493552051764,
+   "medianReasoningTimeSeconds": 11.06166149524138
   },
   {
    "releaseDate": "2025-09-17",
@@ -2219,16 +2091,14 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 8.59366235978288,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -65.1,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.5,
    "price1mOutputTokens": 1.5,
-   "medianOutputTokensPerSecond": 77.1723632425534,
-   "medianTimeToFirstTokenSeconds": 1.45901630499999,
-   "medianTimeToFirstAnswerTokenSeconds": 27.37502970624809,
-   "medianEndToEndResponseTimeSeconds": 33.85403305656011,
-   "medianReasoningTimeSeconds": 25.916013401248097
+   "medianOutputTokensPerSecond": 74.0155755720895,
+   "medianTimeToFirstTokenSeconds": 1.50033637700002,
+   "medianTimeToFirstAnswerTokenSeconds": 28.521675933456553,
+   "medianEndToEndResponseTimeSeconds": 35.27701082257069,
+   "medianReasoningTimeSeconds": 27.02133955645653
   },
   {
    "slug": "gemma-4-26b-a4b-non-reasoning",
@@ -2238,16 +2108,14 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 13.1303772801787,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -62.31666666666667,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.115,
    "price1mOutputTokens": 0.4,
    "cacheHitPrice": 0.060000000000000005,
-   "medianOutputTokensPerSecond": 113.997326513393,
-   "medianTimeToFirstTokenSeconds": 0.925235555499995,
-   "medianTimeToFirstAnswerTokenSeconds": 0.925235555499995,
-   "medianEndToEndResponseTimeSeconds": 5.311303328249537
+   "medianOutputTokensPerSecond": 127.596948095261,
+   "medianTimeToFirstTokenSeconds": 0.92426041200001,
+   "medianTimeToFirstAnswerTokenSeconds": 0.92426041200001,
+   "medianEndToEndResponseTimeSeconds": 4.842849433633281
   },
   {
    "releaseDate": "2025-12-02",
@@ -2258,16 +2126,14 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 6.04436817215002,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -66.36666666666666,
    "price1mInputTokens": 0.2,
    "price1mOutputTokens": 0.2,
    "cacheHitPrice": 0.02,
-   "medianOutputTokensPerSecond": 73.1205117026578,
-   "medianTimeToFirstTokenSeconds": 1.08355004100008,
-   "medianTimeToFirstAnswerTokenSeconds": 1.08355004100008,
-   "medianEndToEndResponseTimeSeconds": 7.921576585907669
+   "medianOutputTokensPerSecond": 61.3226692984798,
+   "medianTimeToFirstTokenSeconds": 1.16961493299994,
+   "medianTimeToFirstAnswerTokenSeconds": 1.16961493299994,
+   "medianEndToEndResponseTimeSeconds": 9.32320651209963
   },
   {
    "releaseDate": "2026-07-30",
@@ -2278,17 +2144,17 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 25.6582584411942,
+   "intelligenceIndex": 12.9101620926084,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -8.933333333333334,
+   "omniscience": -9.466666666666667,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 1.2,
    "cacheHitPrice": 0.06,
-   "medianOutputTokensPerSecond": 224.225590386934,
-   "medianTimeToFirstTokenSeconds": 1.60493288199998,
-   "medianTimeToFirstAnswerTokenSeconds": 10.52452139350176,
-   "medianEndToEndResponseTimeSeconds": 12.754418521377204,
-   "medianReasoningTimeSeconds": 8.919588511501779
+   "medianOutputTokensPerSecond": 229.939178139005,
+   "medianTimeToFirstTokenSeconds": 1.58857716349997,
+   "medianTimeToFirstAnswerTokenSeconds": 10.286529448912336,
+   "medianEndToEndResponseTimeSeconds": 12.461017520265429,
+   "medianReasoningTimeSeconds": 8.697952285412367
   },
   {
    "slug": "gemini-3-8-flash-medium",
@@ -2298,9 +2164,9 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 39.7740187061926,
+   "intelligenceIndex": 29.978569475636,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 28.583333333333332,
+   "omniscience": 23.7,
    "price1mInputTokens": 0.75,
    "price1mOutputTokens": 3.75,
    "cacheHitPrice": 0.075,
@@ -2314,9 +2180,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 6.47543520107148,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -60.18333333333333
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-03-06",
@@ -2327,9 +2191,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 65536,
-   "intelligenceIndex": 6.55971145066503,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -71.51666666666667
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-09-08",
@@ -2340,16 +2202,10 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 260000,
-   "intelligenceIndex": 12.3408453757638,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -39.483333333333334,
-   "price1mInputTokens": 0.25,
+   "price1mInputTokens": 0.2,
    "price1mOutputTokens": 0.75,
-   "cacheHitPrice": 0.025,
-   "medianOutputTokensPerSecond": 714.089780946138,
-   "medianTimeToFirstTokenSeconds": 3.44098702999997,
-   "medianTimeToFirstAnswerTokenSeconds": 3.44098702999997,
-   "medianEndToEndResponseTimeSeconds": 4.141179097358113
+   "cacheHitPrice": 0.02
   },
   {
    "releaseDate": "2025-10-29",
@@ -2360,15 +2216,13 @@
    "isReasoning": false,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 8.73661367769335,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -59.81666666666667,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 2.5,
-   "medianOutputTokensPerSecond": 185.612779814932,
-   "medianTimeToFirstTokenSeconds": 0.95461733099998,
-   "medianTimeToFirstAnswerTokenSeconds": 0.95461733099998,
-   "medianEndToEndResponseTimeSeconds": 3.6483973632721787
+   "medianOutputTokensPerSecond": 172.908048831674,
+   "medianTimeToFirstTokenSeconds": 1.04832673150003,
+   "medianTimeToFirstAnswerTokenSeconds": 1.04832673150003,
+   "medianEndToEndResponseTimeSeconds": 3.9400371138590957
   },
   {
    "slug": "nvidia-nemotron-3-nano-30b-a3b-reasoning",
@@ -2378,17 +2232,15 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 8.8961440122188,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -51.56666666666667,
    "price1mInputTokens": 0.05,
    "price1mOutputTokens": 0.2,
    "cacheHitPrice": 0.05,
-   "medianOutputTokensPerSecond": 267.222889724241,
-   "medianTimeToFirstTokenSeconds": 0.937143578999894,
-   "medianTimeToFirstAnswerTokenSeconds": 8.421532367938925,
-   "medianEndToEndResponseTimeSeconds": 10.292629565173682,
-   "medianReasoningTimeSeconds": 7.484388788939031
+   "medianOutputTokensPerSecond": 241.91219295187,
+   "medianTimeToFirstTokenSeconds": 0.709328545500071,
+   "medianTimeToFirstAnswerTokenSeconds": 8.97679111361425,
+   "medianEndToEndResponseTimeSeconds": 11.043656755642795,
+   "medianReasoningTimeSeconds": 8.26746256811418
   },
   {
    "releaseDate": "2026-08-21",
@@ -2399,17 +2251,15 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 34.8390628035969,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -17.633333333333333,
    "price1mInputTokens": 0.44,
    "price1mOutputTokens": 1.32,
    "cacheHitPrice": 0.014,
-   "medianOutputTokensPerSecond": 181.166597565061,
-   "medianTimeToFirstTokenSeconds": 1.65532359199995,
-   "medianTimeToFirstAnswerTokenSeconds": 12.694886220435112,
-   "medianEndToEndResponseTimeSeconds": 15.454776877543901,
-   "medianReasoningTimeSeconds": 11.039562628435162
+   "medianOutputTokensPerSecond": 159.67934364017,
+   "medianTimeToFirstTokenSeconds": 1.56738878900001,
+   "medianTimeToFirstAnswerTokenSeconds": 14.092490373253181,
+   "medianEndToEndResponseTimeSeconds": 17.223765769316476,
+   "medianReasoningTimeSeconds": 12.525101584253171
   },
   {
    "releaseDate": "2026-05-25",
@@ -2420,9 +2270,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 8.79664321370212,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -14.616666666666667
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2025-07-07",
@@ -2433,9 +2281,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 6.0710365237197,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -54.916666666666664
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-10-07",
@@ -2446,17 +2292,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 43.3950199670746,
+   "intelligenceIndex": 36.2345435880142,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 10.666666666666666,
+   "omniscience": 12.3,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.5,
    "cacheHitPrice": 0.01,
    "cacheWritePrice": 0.125,
-   "medianOutputTokensPerSecond": 234.364067604643,
-   "medianTimeToFirstTokenSeconds": 352.5430250185,
-   "medianTimeToFirstAnswerTokenSeconds": 352.5430250185,
-   "medianEndToEndResponseTimeSeconds": 354.6764578655671
+   "medianOutputTokensPerSecond": 235.379056046412,
+   "medianTimeToFirstTokenSeconds": 370.077087912,
+   "medianTimeToFirstAnswerTokenSeconds": 370.077087912,
+   "medianEndToEndResponseTimeSeconds": 372.20132108889493
   },
   {
    "slug": "gpt-6-luna-high",
@@ -2466,17 +2312,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 32.9282054150837,
+   "intelligenceIndex": 21.3790170864582,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -5.5,
+   "omniscience": -12.8,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.5,
    "cacheHitPrice": 0.01,
    "cacheWritePrice": 0.125,
-   "medianOutputTokensPerSecond": 119.931185020994,
-   "medianTimeToFirstTokenSeconds": 17.272913476,
-   "medianTimeToFirstAnswerTokenSeconds": 17.272913476,
-   "medianEndToEndResponseTimeSeconds": 21.44197092267223
+   "medianOutputTokensPerSecond": 119.05775606758,
+   "medianTimeToFirstTokenSeconds": 29.016549337,
+   "medianTimeToFirstAnswerTokenSeconds": 29.016549337,
+   "medianEndToEndResponseTimeSeconds": 33.21619173338607
   },
   {
    "releaseDate": "2026-10-15",
@@ -2487,9 +2333,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 21.4072054842003,
-   "intelligenceIndexIsEstimated": false,
-   "omniscience": -19.166666666666668
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-02-11",
@@ -2500,9 +2344,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 8.4012282586083,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -42.5
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "qwen3-8-27b-low",
@@ -2512,17 +2354,17 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 26.2047978189896,
+   "intelligenceIndex": 15.6850612405479,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -26.666666666666668,
+   "omniscience": -21.466666666666665,
    "price1mInputTokens": 0.5,
    "price1mOutputTokens": 3,
    "cacheHitPrice": 0.1,
-   "medianOutputTokensPerSecond": 46.0929765394283,
-   "medianTimeToFirstTokenSeconds": 3.943641985,
-   "medianTimeToFirstAnswerTokenSeconds": 47.33420059405802,
-   "medianEndToEndResponseTimeSeconds": 58.18184024632252,
-   "medianReasoningTimeSeconds": 43.39055860905802
+   "medianOutputTokensPerSecond": 48.2211812458691,
+   "medianTimeToFirstTokenSeconds": 3.92650542300001,
+   "medianTimeToFirstAnswerTokenSeconds": 45.40205513636029,
+   "medianEndToEndResponseTimeSeconds": 55.770942564700356,
+   "medianReasoningTimeSeconds": 41.47554971336028
   },
   {
    "releaseDate": "2026-08-12",
@@ -2533,9 +2375,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1048576,
-   "intelligenceIndex": 24.7365297627523,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -1.7666666666666666
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-08-06",
@@ -2546,16 +2386,15 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 11.0636233769305,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -19.35,
+   "omniscience": -15.866666666666667,
    "price1mInputTokens": 0,
    "price1mOutputTokens": 0,
-   "medianOutputTokensPerSecond": 57.7624634120546,
-   "medianTimeToFirstTokenSeconds": 2.57761210449999,
-   "medianTimeToFirstAnswerTokenSeconds": 37.20217417922991,
-   "medianEndToEndResponseTimeSeconds": 45.858314697912384,
-   "medianReasoningTimeSeconds": 34.624562074729916
+   "medianOutputTokensPerSecond": 57.293067564309,
+   "medianTimeToFirstTokenSeconds": 2.66465965499998,
+   "medianTimeToFirstAnswerTokenSeconds": 37.572896986769415,
+   "medianEndToEndResponseTimeSeconds": 46.299956319711775,
+   "medianReasoningTimeSeconds": 34.908237331769435
   },
   {
    "releaseDate": "2026-07-24",
@@ -2566,15 +2405,14 @@
    "isReasoning": false,
    "isOpenWeights": false,
    "contextWindowTokens": 131072,
-   "intelligenceIndex": 6.3469533538601,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -71.58333333333333,
    "price1mInputTokens": 0.2,
    "price1mOutputTokens": 0.7,
-   "medianOutputTokensPerSecond": 1521.14869772469,
-   "medianTimeToFirstTokenSeconds": 0.560225153499914,
-   "medianTimeToFirstAnswerTokenSeconds": 0.560225153499914,
-   "medianEndToEndResponseTimeSeconds": 0.8889241168214432
+   "cacheHitPrice": 0.02,
+   "medianOutputTokensPerSecond": 1689.85860806856,
+   "medianTimeToFirstTokenSeconds": 0.540361861500031,
+   "medianTimeToFirstAnswerTokenSeconds": 0.540361861500031,
+   "medianEndToEndResponseTimeSeconds": 0.8362446043594941
   },
   {
    "releaseDate": "2026-02-17",
@@ -2585,9 +2423,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 8192,
-   "intelligenceIndex": 4.83423948,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -84.3,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0,
    "price1mOutputTokens": 0
   },
@@ -2600,9 +2436,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 21.4612645385074,
-   "intelligenceIndexIsEstimated": false,
-   "omniscience": -8.233333333333333
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2025-07-15",
@@ -2613,9 +2447,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 64000,
-   "intelligenceIndex": 5.22938457197929,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -82.15
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "hermes-4-llama-3-1-405b-reasoning",
@@ -2625,16 +2457,14 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 7.49497809925135,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -36.016666666666666,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 1,
    "price1mOutputTokens": 3,
-   "medianOutputTokensPerSecond": 42.3748308507593,
-   "medianTimeToFirstTokenSeconds": 2.34311392500001,
-   "medianTimeToFirstAnswerTokenSeconds": 49.54094244362789,
-   "medianEndToEndResponseTimeSeconds": 61.34039957328486,
-   "medianReasoningTimeSeconds": 47.19782851862788
+   "medianOutputTokensPerSecond": 41.4292106541602,
+   "medianTimeToFirstTokenSeconds": 2.30842488249997,
+   "medianTimeToFirstAnswerTokenSeconds": 50.5835420865292,
+   "medianEndToEndResponseTimeSeconds": 62.6523213875365,
+   "medianReasoningTimeSeconds": 48.27511720402923
   },
   {
    "releaseDate": "2026-08-13",
@@ -2645,17 +2475,17 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 35.9967791278402,
+   "intelligenceIndex": 23.0632981493003,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 0.8333333333333334,
+   "omniscience": -6.366666666666666,
    "price1mInputTokens": 1.32,
    "price1mOutputTokens": 3.96,
    "cacheHitPrice": 0.044,
-   "medianOutputTokensPerSecond": 98.0185397716678,
-   "medianTimeToFirstTokenSeconds": 1.76277444899989,
-   "medianTimeToFirstAnswerTokenSeconds": 22.16707760082157,
-   "medianEndToEndResponseTimeSeconds": 27.268153388776987,
-   "medianReasoningTimeSeconds": 20.40430315182168
+   "medianOutputTokensPerSecond": 93.5371541819527,
+   "medianTimeToFirstTokenSeconds": 1.793188195,
+   "medianTimeToFirstAnswerTokenSeconds": 23.175065989886825,
+   "medianEndToEndResponseTimeSeconds": 28.520535438608533,
+   "medianReasoningTimeSeconds": 21.381877794886826
   },
   {
    "releaseDate": "2025-09-18",
@@ -2666,9 +2496,7 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 11.8254509953707,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -26.733333333333334
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-04-16",
@@ -2679,16 +2507,14 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 18.2289900189843,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -22.183333333333334,
    "price1mInputTokens": 0.375,
    "price1mOutputTokens": 2.25,
-   "medianOutputTokensPerSecond": 132.123089581066,
-   "medianTimeToFirstTokenSeconds": 2.06975242099997,
-   "medianTimeToFirstAnswerTokenSeconds": 42.902887773090114,
-   "medianEndToEndResponseTimeSeconds": 46.68723766670366,
-   "medianReasoningTimeSeconds": 40.833135352090146
+   "medianOutputTokensPerSecond": 133.473142532539,
+   "medianTimeToFirstTokenSeconds": 2.04455730599997,
+   "medianTimeToFirstAnswerTokenSeconds": 42.46467402487299,
+   "medianEndToEndResponseTimeSeconds": 46.210746009939996,
+   "medianReasoningTimeSeconds": 40.42011671887302
   },
   {
    "releaseDate": "2025-09-02",
@@ -2699,15 +2525,13 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 65536,
-   "intelligenceIndex": 4.83423948,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -77.21666666666667,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.2,
-   "medianOutputTokensPerSecond": 141.306349240416,
-   "medianTimeToFirstTokenSeconds": 3.52574762100005,
-   "medianTimeToFirstAnswerTokenSeconds": 3.52574762100005,
-   "medianEndToEndResponseTimeSeconds": 7.064159041914401
+   "medianOutputTokensPerSecond": 145.817630196183,
+   "medianTimeToFirstTokenSeconds": 3.03013864500002,
+   "medianTimeToFirstAnswerTokenSeconds": 3.03013864500002,
+   "medianEndToEndResponseTimeSeconds": 6.459079297288088
   },
   {
    "releaseDate": "2026-09-02",
@@ -2718,17 +2542,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 40.9262321765904,
+   "intelligenceIndex": 30.5468119957291,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 29.55,
+   "omniscience": 23.266666666666666,
    "price1mInputTokens": 0.75,
    "price1mOutputTokens": 3.75,
    "cacheHitPrice": 0.075,
    "cacheWritePrice": 0.75,
-   "medianOutputTokensPerSecond": 132.165507312336,
-   "medianTimeToFirstTokenSeconds": 28.666618041,
-   "medianTimeToFirstAnswerTokenSeconds": 28.666618041,
-   "medianEndToEndResponseTimeSeconds": 32.44975337008697
+   "medianOutputTokensPerSecond": 130.74604237303,
+   "medianTimeToFirstTokenSeconds": 24.890338168,
+   "medianTimeToFirstAnswerTokenSeconds": 24.890338168,
+   "medianEndToEndResponseTimeSeconds": 28.714545699830722
   },
   {
    "releaseDate": "2026-04-29",
@@ -2739,17 +2563,15 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 10.2506761710987,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -57.43333333333333,
-   "price1mInputTokens": 0.4,
-   "price1mOutputTokens": 1.365,
-   "cacheHitPrice": 0.2,
-   "medianOutputTokensPerSecond": 230.6304670347,
-   "medianTimeToFirstTokenSeconds": 0.736485712000004,
-   "medianTimeToFirstAnswerTokenSeconds": 9.408366863327187,
-   "medianEndToEndResponseTimeSeconds": 11.576337151158983,
-   "medianReasoningTimeSeconds": 8.671881151327183
+   "intelligenceIndexIsEstimated": false,
+   "price1mInputTokens": 0.5,
+   "price1mOutputTokens": 0.9,
+   "cacheHitPrice": 0.1,
+   "medianOutputTokensPerSecond": 217.403127956321,
+   "medianTimeToFirstTokenSeconds": 0.856126988500023,
+   "medianTimeToFirstAnswerTokenSeconds": 10.05562664060174,
+   "medianEndToEndResponseTimeSeconds": 12.35550155362717,
+   "medianReasoningTimeSeconds": 9.199499652101718
   },
   {
    "releaseDate": "2026-06-12",
@@ -2760,17 +2582,15 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 25.8121062401836,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -10.216666666666667,
    "price1mInputTokens": 0.95,
    "price1mOutputTokens": 4,
    "cacheHitPrice": 0.19,
-   "medianOutputTokensPerSecond": 83.0549732768502,
-   "medianTimeToFirstTokenSeconds": 2.65326725350002,
-   "medianTimeToFirstAnswerTokenSeconds": 29.49091359852974,
-   "medianEndToEndResponseTimeSeconds": 35.51102269342201,
-   "medianReasoningTimeSeconds": 26.83764634502972
+   "medianOutputTokensPerSecond": 45.8087523266099,
+   "medianTimeToFirstTokenSeconds": 2.83834759949996,
+   "medianTimeToFirstAnswerTokenSeconds": 51.49717122577004,
+   "medianEndToEndResponseTimeSeconds": 62.41211596024067,
+   "medianReasoningTimeSeconds": 48.65882362627008
   },
   {
    "releaseDate": "2026-08-12",
@@ -2781,17 +2601,16 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262000,
-   "intelligenceIndex": 39.9461723105325,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 4.316666666666666,
+   "omniscience": 7.766666666666667,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 6,
    "cacheHitPrice": 0.25,
-   "medianOutputTokensPerSecond": 40.51040399997,
-   "medianTimeToFirstTokenSeconds": 3.12280479200006,
-   "medianTimeToFirstAnswerTokenSeconds": 52.492838228385466,
-   "medianEndToEndResponseTimeSeconds": 64.83534658748181,
-   "medianReasoningTimeSeconds": 49.370033436385405
+   "medianOutputTokensPerSecond": 38.2978663711164,
+   "medianTimeToFirstTokenSeconds": 3.04105430550004,
+   "medianTimeToFirstAnswerTokenSeconds": 55.263284667355556,
+   "medianEndToEndResponseTimeSeconds": 68.31884225781943,
+   "medianReasoningTimeSeconds": 52.222230361855516
   },
   {
    "releaseDate": "2025-11-20",
@@ -2802,9 +2621,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 65536,
-   "intelligenceIndex": 5.24099718758815,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -77.06666666666666
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "jt-4-1-flash-236b-a21b-non-reasoning",
@@ -2814,9 +2631,28 @@
    "isReasoning": false,
    "isOpenWeights": false,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 27.2926268381758,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -8.783333333333333
+   "intelligenceIndexIsEstimated": false
+  },
+  {
+   "releaseDate": "2026-10-28",
+   "slug": "gemini-4-carbon",
+   "name": "Gemini 4 Carbon (High)",
+   "shortName": "Gemini 4 Carbon (high)",
+   "modelCreatorName": "Google",
+   "isReasoning": true,
+   "isOpenWeights": false,
+   "contextWindowTokens": 1000000,
+   "intelligenceIndex": 59.425738829526,
+   "intelligenceIndexIsEstimated": false,
+   "omniscience": 53.5,
+   "price1mInputTokens": 4,
+   "price1mOutputTokens": 20,
+   "cacheHitPrice": 0.2,
+   "cacheWritePrice": 4,
+   "medianOutputTokensPerSecond": 94.6248042744194,
+   "medianTimeToFirstTokenSeconds": 137.574520929,
+   "medianTimeToFirstAnswerTokenSeconds": 137.574520929,
+   "medianEndToEndResponseTimeSeconds": 142.85854771070893
   },
   {
    "releaseDate": "2025-04-05",
@@ -2827,16 +2663,14 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 9.29902687437199,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -41.85,
    "price1mInputTokens": 0.25,
    "price1mOutputTokens": 0.9199999999999999,
    "cacheHitPrice": 0.22,
-   "medianOutputTokensPerSecond": 51.6570266105589,
-   "medianTimeToFirstTokenSeconds": 1.00854411900002,
-   "medianTimeToFirstAnswerTokenSeconds": 1.00854411900002,
-   "medianEndToEndResponseTimeSeconds": 10.687769440455087
+   "medianOutputTokensPerSecond": 59.9882470883475,
+   "medianTimeToFirstTokenSeconds": 0.975182748000066,
+   "medianTimeToFirstAnswerTokenSeconds": 0.975182748000066,
+   "medianEndToEndResponseTimeSeconds": 9.310148749984197
   },
   {
    "releaseDate": "2026-09-22",
@@ -2862,9 +2696,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 65536,
-   "intelligenceIndex": 6.49671923993574,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -52.36666666666667
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2025-12-02",
@@ -2875,16 +2707,14 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 5.47767370454416,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -68.95,
    "price1mInputTokens": 0.15,
    "price1mOutputTokens": 0.15,
    "cacheHitPrice": 0.015,
-   "medianOutputTokensPerSecond": 110.640767360278,
-   "medianTimeToFirstTokenSeconds": 0.833935821000068,
-   "medianTimeToFirstAnswerTokenSeconds": 0.833935821000068,
-   "medianEndToEndResponseTimeSeconds": 5.353065721571499
+   "medianOutputTokensPerSecond": 91.0644874310927,
+   "medianTimeToFirstTokenSeconds": 0.860542140999996,
+   "medianTimeToFirstAnswerTokenSeconds": 0.860542140999996,
+   "medianEndToEndResponseTimeSeconds": 6.351156694541995
   },
   {
    "slug": "claude-sonnet-5-5-xhigh",
@@ -2894,17 +2724,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 51.8955544183089,
+   "intelligenceIndex": 49.5740327787242,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 23.5,
+   "omniscience": 20.6,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 10,
    "cacheHitPrice": 0.1,
    "cacheWritePrice": 2.5,
-   "medianOutputTokensPerSecond": 109.902020336107,
-   "medianTimeToFirstTokenSeconds": 30.411955443,
-   "medianTimeToFirstAnswerTokenSeconds": 30.411955443,
-   "medianEndToEndResponseTimeSeconds": 34.96146234442801
+   "medianOutputTokensPerSecond": 108.046174225648,
+   "medianTimeToFirstTokenSeconds": 32.9367031120001,
+   "medianTimeToFirstAnswerTokenSeconds": 32.9367031120001,
+   "medianEndToEndResponseTimeSeconds": 37.564354239709445
   },
   {
    "releaseDate": "2024-12-06",
@@ -2915,16 +2745,14 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 7.66380859299009,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -54.166666666666664,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.6,
    "price1mOutputTokens": 0.71,
    "cacheHitPrice": 0.6,
-   "medianOutputTokensPerSecond": 89.1458041438029,
-   "medianTimeToFirstTokenSeconds": 1.84854121400001,
-   "medianTimeToFirstAnswerTokenSeconds": 1.84854121400001,
-   "medianEndToEndResponseTimeSeconds": 7.457330150307543
+   "medianOutputTokensPerSecond": 91.0860403735276,
+   "medianTimeToFirstTokenSeconds": 1.77065000300002,
+   "medianTimeToFirstAnswerTokenSeconds": 1.77065000300002,
+   "medianEndToEndResponseTimeSeconds": 7.259965357466953
   },
   {
    "releaseDate": "2026-03-19",
@@ -2935,9 +2763,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 11.6708359406601,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -51.46666666666667
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2025-02-18",
@@ -2948,8 +2774,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 6.43857605749744,
-   "intelligenceIndexIsEstimated": true
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-08-26",
@@ -2960,17 +2785,16 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 39.8223021864741,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -9.716666666666667,
+   "omniscience": -12.233333333333333,
    "price1mInputTokens": 0.15,
    "price1mOutputTokens": 0.47,
    "cacheHitPrice": 0.016,
-   "medianOutputTokensPerSecond": 52.4100596885691,
-   "medianTimeToFirstTokenSeconds": 2.06269447649993,
-   "medianTimeToFirstAnswerTokenSeconds": 40.223307379526446,
-   "medianEndToEndResponseTimeSeconds": 49.76346060528308,
-   "medianReasoningTimeSeconds": 38.16061290302652
+   "medianOutputTokensPerSecond": 52.1418352931317,
+   "medianTimeToFirstTokenSeconds": 2.38580599850002,
+   "medianTimeToFirstAnswerTokenSeconds": 40.742722067072826,
+   "medianEndToEndResponseTimeSeconds": 50.33195108421603,
+   "medianReasoningTimeSeconds": 38.35691606857281
   },
   {
    "slug": "claude-fable-5-1-xhigh",
@@ -2980,17 +2804,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 53.2032587538944,
+   "intelligenceIndex": 49.6716384248632,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 42.38333333333333,
+   "omniscience": 44.333333333333336,
    "price1mInputTokens": 10,
    "price1mOutputTokens": 50,
    "cacheHitPrice": 0.25,
    "cacheWritePrice": 12.5,
-   "medianOutputTokensPerSecond": 62.4841807571648,
-   "medianTimeToFirstTokenSeconds": 103.4356028715,
-   "medianTimeToFirstAnswerTokenSeconds": 103.4356028715,
-   "medianEndToEndResponseTimeSeconds": 111.43762824722147
+   "medianOutputTokensPerSecond": 62.3458905882748,
+   "medianTimeToFirstTokenSeconds": 73.482591952,
+   "medianTimeToFirstAnswerTokenSeconds": 73.482591952,
+   "medianEndToEndResponseTimeSeconds": 81.50236671633762
   },
   {
    "releaseDate": "2024-09-25",
@@ -3001,8 +2825,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 6.4088295766243,
-   "intelligenceIndexIsEstimated": true
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "claude-fable-5-1-high",
@@ -3012,17 +2835,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 51.1515708852237,
+   "intelligenceIndex": 47.024988245604,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 40.8,
+   "omniscience": 39.93333333333333,
    "price1mInputTokens": 10,
    "price1mOutputTokens": 50,
    "cacheHitPrice": 0.25,
    "cacheWritePrice": 12.5,
-   "medianOutputTokensPerSecond": 58.2971054167841,
-   "medianTimeToFirstTokenSeconds": 19.8373141814999,
-   "medianTimeToFirstAnswerTokenSeconds": 19.8373141814999,
-   "medianEndToEndResponseTimeSeconds": 28.414069346706555
+   "medianOutputTokensPerSecond": 57.6028352558684,
+   "medianTimeToFirstTokenSeconds": 17.047461533,
+   "medianTimeToFirstAnswerTokenSeconds": 17.047461533,
+   "medianEndToEndResponseTimeSeconds": 25.72758982493267
   },
   {
    "releaseDate": "2026-09-03",
@@ -3033,9 +2856,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
-   "intelligenceIndex": 3.04760621054014,
-   "intelligenceIndexIsEstimated": false,
-   "omniscience": -72.81666666666666
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-03-16",
@@ -3046,12 +2867,12 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262000,
-   "intelligenceIndex": 4.76910061591993,
+   "intelligenceIndex": 1.81584603785463,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -70.53333333333333
+   "omniscience": -71.16666666666667
   },
   {
-   "releaseDate": "2024-02-26",
+   "releaseDate": "2025-02-26",
    "slug": "phi-4-mini",
    "name": "Phi-4 Mini Instruct",
    "shortName": "Phi-4 Mini",
@@ -3059,15 +2880,13 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 6.32860508899613,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -61.083333333333336,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.075,
    "price1mOutputTokens": 0.3,
-   "medianOutputTokensPerSecond": 45.5401902189924,
-   "medianTimeToFirstTokenSeconds": 0.860190597500008,
-   "medianTimeToFirstAnswerTokenSeconds": 0.860190597500008,
-   "medianEndToEndResponseTimeSeconds": 11.839503542738354
+   "medianOutputTokensPerSecond": 44.1967653374968,
+   "medianTimeToFirstTokenSeconds": 0.842700513000011,
+   "medianTimeToFirstAnswerTokenSeconds": 0.842700513000011,
+   "medianEndToEndResponseTimeSeconds": 12.155745623470958
   },
   {
    "slug": "nova-2-0-pro",
@@ -3077,15 +2896,13 @@
    "isReasoning": false,
    "isOpenWeights": false,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 9.95904965562327,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -49.5,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 1.25,
    "price1mOutputTokens": 10,
-   "medianOutputTokensPerSecond": 120.717738710425,
-   "medianTimeToFirstTokenSeconds": 1.06510080150002,
-   "medianTimeToFirstAnswerTokenSeconds": 1.06510080150002,
-   "medianEndToEndResponseTimeSeconds": 5.206994158195417
+   "medianOutputTokensPerSecond": 122.22167594305,
+   "medianTimeToFirstTokenSeconds": 1.095609446,
+   "medianTimeToFirstAnswerTokenSeconds": 1.095609446,
+   "medianEndToEndResponseTimeSeconds": 5.186536821541621
   },
   {
    "slug": "gpt-6-1-sol-medium",
@@ -3095,17 +2912,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 47.7833271274065,
+   "intelligenceIndex": 46.1468797067114,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 39.95,
+   "omniscience": 40.166666666666664,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 10,
    "cacheHitPrice": 0.1,
    "cacheWritePrice": 2.5,
-   "medianOutputTokensPerSecond": 52.2212626243775,
-   "medianTimeToFirstTokenSeconds": 4.36143921950003,
-   "medianTimeToFirstAnswerTokenSeconds": 4.36143921950003,
-   "medianEndToEndResponseTimeSeconds": 13.936083241350893
+   "medianOutputTokensPerSecond": 62.5606897406558,
+   "medianTimeToFirstTokenSeconds": 8.14014780349993,
+   "medianTimeToFirstAnswerTokenSeconds": 8.14014780349993,
+   "medianEndToEndResponseTimeSeconds": 16.132387052663276
   },
   {
    "releaseDate": "2025-12-05",
@@ -3116,9 +2933,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 512000,
-   "intelligenceIndex": 9.87390600007694,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -55.583333333333336
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "gpt-6-astra-low",
@@ -3128,17 +2943,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 45.7819243120341,
+   "intelligenceIndex": 43.0349823228524,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 40.55,
+   "omniscience": 40.3,
    "price1mInputTokens": 10,
    "price1mOutputTokens": 50,
    "cacheHitPrice": 1,
    "cacheWritePrice": 12.5,
-   "medianOutputTokensPerSecond": 50.0438242221669,
-   "medianTimeToFirstTokenSeconds": 2.66435005549999,
-   "medianTimeToFirstAnswerTokenSeconds": 2.66435005549999,
-   "medianEndToEndResponseTimeSeconds": 12.65559288658893
+   "medianOutputTokensPerSecond": 56.6646212484613,
+   "medianTimeToFirstTokenSeconds": 2.55393467850001,
+   "medianTimeToFirstAnswerTokenSeconds": 2.55393467850001,
+   "medianEndToEndResponseTimeSeconds": 11.377782592485268
   },
   {
    "releaseDate": "2026-02-05",
@@ -3160,9 +2975,7 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 14.2551784975475,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -45.61666666666667
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-10-01",
@@ -3173,17 +2986,15 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 41.0906200397391,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 2.216666666666667,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 0.9,
    "cacheHitPrice": 0.06,
-   "medianOutputTokensPerSecond": 213.088613107923,
-   "medianTimeToFirstTokenSeconds": 1.74304941799997,
-   "medianTimeToFirstAnswerTokenSeconds": 11.12881607549405,
-   "medianEndToEndResponseTimeSeconds": 13.47525773986757,
-   "medianReasoningTimeSeconds": 9.38576665749408
+   "medianOutputTokensPerSecond": 217.08430534338,
+   "medianTimeToFirstTokenSeconds": 1.80432153499999,
+   "medianTimeToFirstAnswerTokenSeconds": 11.01733210633741,
+   "medianEndToEndResponseTimeSeconds": 13.320584749171761,
+   "medianReasoningTimeSeconds": 9.213010571337419
   },
   {
    "releaseDate": "2025-10-28",
@@ -3194,9 +3005,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 32768,
-   "intelligenceIndex": 4.83423948,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -80.91666666666667
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-03-02",
@@ -3207,9 +3016,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 6.12847840160203,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -54.516666666666666
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2025-11-25",
@@ -3220,9 +3027,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 13.401396407375,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -59.36666666666667
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-06-01",
@@ -3233,17 +3038,15 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 25.1622215821984,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 1.0833333333333333,
    "price1mInputTokens": 0.4,
    "price1mOutputTokens": 1.6,
    "cacheHitPrice": 0.08,
-   "medianOutputTokensPerSecond": 56.8487739735713,
-   "medianTimeToFirstTokenSeconds": 2.30047843749999,
-   "medianTimeToFirstAnswerTokenSeconds": 37.48153618431771,
-   "medianEndToEndResponseTimeSeconds": 46.27680062102214,
-   "medianReasoningTimeSeconds": 35.18105774681772
+   "medianOutputTokensPerSecond": 57.1032283992178,
+   "medianTimeToFirstTokenSeconds": 2.368008105,
+   "medianTimeToFirstAnswerTokenSeconds": 37.39229755528608,
+   "medianEndToEndResponseTimeSeconds": 46.14836991785759,
+   "medianReasoningTimeSeconds": 35.024289450286076
   },
   {
    "releaseDate": "2025-03-13",
@@ -3254,8 +3057,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 32000,
-   "intelligenceIndex": 6.07426212371414,
-   "intelligenceIndexIsEstimated": true
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2025-10-28",
@@ -3266,15 +3068,13 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 5.82045753777258,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -72.23333333333333,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.2,
    "price1mOutputTokens": 0.6,
-   "medianOutputTokensPerSecond": 202.028258300379,
-   "medianTimeToFirstTokenSeconds": 1.03015273400001,
-   "medianTimeToFirstAnswerTokenSeconds": 1.03015273400001,
-   "medianEndToEndResponseTimeSeconds": 3.5050540384333315
+   "medianOutputTokensPerSecond": 193.486187865624,
+   "medianTimeToFirstTokenSeconds": 1.0312067575,
+   "medianTimeToFirstAnswerTokenSeconds": 1.0312067575,
+   "medianEndToEndResponseTimeSeconds": 3.615370544670429
   },
   {
    "slug": "step-3-vl-10b",
@@ -3284,9 +3084,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 65536,
-   "intelligenceIndex": 7.69391371030502,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -59
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2025-04-05",
@@ -3297,15 +3095,13 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 10000000,
-   "intelligenceIndex": 6.45126865234633,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -52.15,
    "price1mInputTokens": 0.18,
    "price1mOutputTokens": 0.66,
-   "medianOutputTokensPerSecond": 88.560193647145,
-   "medianTimeToFirstTokenSeconds": 0.828712053999993,
-   "medianTimeToFirstAnswerTokenSeconds": 0.828712053999993,
-   "medianEndToEndResponseTimeSeconds": 6.474589500837746
+   "medianOutputTokensPerSecond": 111.778678275065,
+   "medianTimeToFirstTokenSeconds": 0.831989894000003,
+   "medianTimeToFirstAnswerTokenSeconds": 0.831989894000003,
+   "medianEndToEndResponseTimeSeconds": 5.305114891681581
   },
   {
    "releaseDate": "2026-08-25",
@@ -3316,17 +3112,16 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
-   "intelligenceIndex": 11.0812712267815,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -17.166666666666668,
+   "omniscience": -16.666666666666668,
    "price1mInputTokens": 0.06,
    "price1mOutputTokens": 0.25,
    "cacheHitPrice": 0.015,
-   "medianOutputTokensPerSecond": 39.7201917047987,
-   "medianTimeToFirstTokenSeconds": 0.900397671999997,
-   "medianTimeToFirstAnswerTokenSeconds": 51.2526219226794,
-   "medianEndToEndResponseTimeSeconds": 63.84067798534925,
-   "medianReasoningTimeSeconds": 50.352224250679406
+   "medianOutputTokensPerSecond": 61.0743275907637,
+   "medianTimeToFirstTokenSeconds": 0.911392137000007,
+   "medianTimeToFirstAnswerTokenSeconds": 33.65837567157536,
+   "medianEndToEndResponseTimeSeconds": 41.845121555219194,
+   "medianReasoningTimeSeconds": 32.74698353457535
   },
   {
    "releaseDate": "2025-06-30",
@@ -3337,9 +3132,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
-   "intelligenceIndex": 7.50448042633837,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -35.13333333333333
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "claude-haiku-5-5-medium",
@@ -3349,17 +3142,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 34.4646519474657,
+   "intelligenceIndex": 24.5513254343023,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 4.466666666666667,
+   "omniscience": 4.166666666666667,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.5,
    "cacheHitPrice": 0.01,
    "cacheWritePrice": 0.125,
-   "medianOutputTokensPerSecond": 174.168762959998,
-   "medianTimeToFirstTokenSeconds": 12.881511745,
-   "medianTimeToFirstAnswerTokenSeconds": 12.881511745,
-   "medianEndToEndResponseTimeSeconds": 15.75229058905045
+   "medianOutputTokensPerSecond": 172.267307230615,
+   "medianTimeToFirstTokenSeconds": 13.7650371729999,
+   "medianTimeToFirstAnswerTokenSeconds": 13.7650371729999,
+   "medianEndToEndResponseTimeSeconds": 16.6675031605285
   },
   {
    "releaseDate": "2024-09-25",
@@ -3370,8 +3163,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 4096,
-   "intelligenceIndex": 5.56262049746202,
-   "intelligenceIndexIsEstimated": true
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-08-14",
@@ -3382,17 +3174,17 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 33.6762858057476,
+   "intelligenceIndex": 20.1068756031705,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -9.983333333333333,
+   "omniscience": -6.366666666666666,
    "price1mInputTokens": 0.5,
    "price1mOutputTokens": 3,
    "cacheHitPrice": 0.1,
-   "medianOutputTokensPerSecond": 43.6647158417403,
-   "medianTimeToFirstTokenSeconds": 3.87555073499999,
-   "medianTimeToFirstAnswerTokenSeconds": 49.679123744586484,
-   "medianEndToEndResponseTimeSeconds": 61.13001699698311,
-   "medianReasoningTimeSeconds": 45.80357300958649
+   "medianOutputTokensPerSecond": 41.1060539303921,
+   "medianTimeToFirstTokenSeconds": 4.00940060449994,
+   "medianTimeToFirstAnswerTokenSeconds": 52.664034381479524,
+   "medianEndToEndResponseTimeSeconds": 64.82769282572443,
+   "medianReasoningTimeSeconds": 48.65463377697959
   },
   {
    "releaseDate": "2026-08-12",
@@ -3403,9 +3195,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 33.566562209723,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": 10.183333333333334
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-04-02",
@@ -3416,9 +3206,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 7.77445525187484,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -23.583333333333332
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-10-26",
@@ -3429,17 +3217,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 48.1061836463044,
+   "intelligenceIndex": 50.9765188577015,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 29.783333333333335,
+   "omniscience": 29.566666666666666,
    "price1mInputTokens": 1,
    "price1mOutputTokens": 5,
    "cacheHitPrice": 0.05,
    "cacheWritePrice": 1.25,
-   "medianOutputTokensPerSecond": 90.8995414899747,
-   "medianTimeToFirstTokenSeconds": 189.330941815,
-   "medianTimeToFirstAnswerTokenSeconds": 189.330941815,
-   "medianEndToEndResponseTimeSeconds": 194.83151961555077
+   "medianOutputTokensPerSecond": 106.778718262753,
+   "medianTimeToFirstTokenSeconds": 264.32581858,
+   "medianTimeToFirstAnswerTokenSeconds": 264.32581858,
+   "medianEndToEndResponseTimeSeconds": 269.0083996048971
   },
   {
    "releaseDate": "2026-08-03",
@@ -3450,17 +3238,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 983616,
-   "intelligenceIndex": 45.4152084980521,
+   "intelligenceIndex": 33.5545627367888,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 11.983333333333333,
+   "omniscience": 10.466666666666667,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 6,
    "cacheHitPrice": 0.25,
-   "medianOutputTokensPerSecond": 40.8366841315233,
-   "medianTimeToFirstTokenSeconds": 2.86196760100006,
-   "medianTimeToFirstAnswerTokenSeconds": 51.83754048440487,
-   "medianEndToEndResponseTimeSeconds": 64.08143370525607,
-   "medianReasoningTimeSeconds": 48.97557288340481
+   "medianOutputTokensPerSecond": 39.5127950871991,
+   "medianTimeToFirstTokenSeconds": 2.89710141500006,
+   "medianTimeToFirstAnswerTokenSeconds": 53.51361678897665,
+   "medianEndToEndResponseTimeSeconds": 66.1677456324708,
+   "medianReasoningTimeSeconds": 50.61651537397659
   },
   {
    "releaseDate": "2026-09-28",
@@ -3471,17 +3259,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 56.0001286580794,
+   "intelligenceIndex": 54.24133407109,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 32.3,
+   "omniscience": 30.466666666666665,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 10,
    "cacheHitPrice": 0.1,
    "cacheWritePrice": 2.5,
-   "medianOutputTokensPerSecond": 141.181666405751,
-   "medianTimeToFirstTokenSeconds": 461.940688824,
-   "medianTimeToFirstAnswerTokenSeconds": 461.940688824,
-   "medianEndToEndResponseTimeSeconds": 465.482225149
+   "medianOutputTokensPerSecond": 136.807590705413,
+   "medianTimeToFirstTokenSeconds": 514.90744377,
+   "medianTimeToFirstAnswerTokenSeconds": 514.90744377,
+   "medianEndToEndResponseTimeSeconds": 518.5622117358846
   },
   {
    "releaseDate": "2026-07-06",
@@ -3492,17 +3280,15 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 25.2972775731571,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -18.466666666666665,
    "price1mInputTokens": 0.136,
    "price1mOutputTokens": 0.5549999999999999,
    "cacheHitPrice": 0.034,
-   "medianOutputTokensPerSecond": 84.1067441729575,
-   "medianTimeToFirstTokenSeconds": 2.72603081299997,
-   "medianTimeToFirstAnswerTokenSeconds": 26.505336737471264,
-   "medianEndToEndResponseTimeSeconds": 32.45016321858909,
-   "medianReasoningTimeSeconds": 23.779305924471295
+   "medianOutputTokensPerSecond": 96.6370362621371,
+   "medianTimeToFirstTokenSeconds": 2.75246665499992,
+   "medianTimeToFirstAnswerTokenSeconds": 23.448465594524627,
+   "medianEndToEndResponseTimeSeconds": 28.622465329405802,
+   "medianReasoningTimeSeconds": 20.695998939524706
   },
   {
    "releaseDate": "2026-09-29",
@@ -3513,17 +3299,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 51.8332597011541,
+   "intelligenceIndex": 54.5087338138148,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 41.53333333333333,
+   "omniscience": 42.03333333333333,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 10,
    "cacheHitPrice": 0.1,
    "cacheWritePrice": 2.5,
-   "medianOutputTokensPerSecond": 69.2471147059942,
-   "medianTimeToFirstTokenSeconds": 366.861142047,
-   "medianTimeToFirstAnswerTokenSeconds": 366.861142047,
-   "medianEndToEndResponseTimeSeconds": 374.08165949560237
+   "medianOutputTokensPerSecond": 86.6532754396548,
+   "medianTimeToFirstTokenSeconds": 331.44517755,
+   "medianTimeToFirstAnswerTokenSeconds": 331.44517755,
+   "medianEndToEndResponseTimeSeconds": 337.2152998848239
   },
   {
    "slug": "nova-2-0-omni-reasoning-low",
@@ -3533,9 +3319,7 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 11.1140626232787,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -50.31666666666667
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2025-07-07",
@@ -3546,9 +3330,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 258000,
-   "intelligenceIndex": 5.21767706986744,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -73.11666666666666
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-04-01",
@@ -3559,17 +3341,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 512000,
-   "intelligenceIndex": 10.8242425924218,
-   "intelligenceIndexIsEstimated": false,
-   "omniscience": -44.06666666666667,
-   "price1mInputTokens": 0.25,
-   "price1mOutputTokens": 0.8,
-   "cacheHitPrice": 0.06,
-   "medianOutputTokensPerSecond": 347.312576824234,
-   "medianTimeToFirstTokenSeconds": 1.16346640699998,
-   "medianTimeToFirstAnswerTokenSeconds": 6.9219679225156385,
-   "medianEndToEndResponseTimeSeconds": 8.361593301394553,
-   "medianReasoningTimeSeconds": 5.7585015155156585
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2025-02-13",
@@ -3580,8 +3352,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 5.08032603461277,
-   "intelligenceIndexIsEstimated": true
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "qwen3-omni-30b-a3b-reasoning",
@@ -3591,16 +3362,14 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 65536,
-   "intelligenceIndex": 7.76082961984319,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -61.4,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.25,
    "price1mOutputTokens": 0.97,
-   "medianOutputTokensPerSecond": 102.623266663707,
-   "medianTimeToFirstTokenSeconds": 1.89242325599995,
-   "medianTimeToFirstAnswerTokenSeconds": 21.381181166561625,
-   "medianEndToEndResponseTimeSeconds": 26.253370644202043,
-   "medianReasoningTimeSeconds": 19.488757910561674
+   "medianOutputTokensPerSecond": 97.4053291884927,
+   "medianTimeToFirstTokenSeconds": 1.87619452800002,
+   "medianTimeToFirstAnswerTokenSeconds": 22.408951992735087,
+   "medianEndToEndResponseTimeSeconds": 27.542141358918855,
+   "medianReasoningTimeSeconds": 20.532757464735067
   },
   {
    "releaseDate": "2026-09-03",
@@ -3611,16 +3380,16 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 524288,
-   "intelligenceIndex": 30.5015302696723,
+   "intelligenceIndex": 17.7702731734027,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -2.966666666666667,
+   "omniscience": -5,
    "price1mInputTokens": 0,
    "price1mOutputTokens": 0,
-   "medianOutputTokensPerSecond": 1062.49786526665,
-   "medianTimeToFirstTokenSeconds": 2.34863611100002,
-   "medianTimeToFirstAnswerTokenSeconds": 4.23099283413383,
-   "medianEndToEndResponseTimeSeconds": 4.701582014917283,
-   "medianReasoningTimeSeconds": 1.8823567231338103
+   "medianOutputTokensPerSecond": 720.295461157322,
+   "medianTimeToFirstTokenSeconds": 2.37830557999996,
+   "medianTimeToFirstAnswerTokenSeconds": 5.154943928916577,
+   "medianEndToEndResponseTimeSeconds": 5.849103516145732,
+   "medianReasoningTimeSeconds": 2.776638348916617
   },
   {
    "slug": "claude-sonnet-5-5-low",
@@ -3630,17 +3399,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 35.8681594577587,
+   "intelligenceIndex": 25.299704549789,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 19.366666666666667,
+   "omniscience": 20.266666666666666,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 10,
    "cacheHitPrice": 0.1,
    "cacheWritePrice": 2.5,
-   "medianOutputTokensPerSecond": 108.154774654071,
-   "medianTimeToFirstTokenSeconds": 1.256555028,
-   "medianTimeToFirstAnswerTokenSeconds": 1.256555028,
-   "medianEndToEndResponseTimeSeconds": 5.879559436258732
+   "medianOutputTokensPerSecond": 105.783287872628,
+   "medianTimeToFirstTokenSeconds": 1.15332550149998,
+   "medianTimeToFirstAnswerTokenSeconds": 1.15332550149998,
+   "medianEndToEndResponseTimeSeconds": 5.879970041061297
   },
   {
    "releaseDate": "2026-02-19",
@@ -3651,16 +3420,14 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 29.7185656132261,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 31.883333333333333,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 12,
    "cacheHitPrice": 0.2,
-   "medianOutputTokensPerSecond": 134.198172523326,
-   "medianTimeToFirstTokenSeconds": 24.5600304585,
-   "medianTimeToFirstAnswerTokenSeconds": 24.5600304585,
-   "medianEndToEndResponseTimeSeconds": 28.285863609566878
+   "medianOutputTokensPerSecond": 143.159101799936,
+   "medianTimeToFirstTokenSeconds": 17.6689249065,
+   "medianTimeToFirstAnswerTokenSeconds": 17.6689249065,
+   "medianEndToEndResponseTimeSeconds": 21.161542516652005
   },
   {
    "slug": "gpt-6-luna-low",
@@ -3670,17 +3437,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 21.5261980080866,
+   "intelligenceIndex": 9.66610812336462,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -9.166666666666666,
+   "omniscience": -18.1,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.5,
    "cacheHitPrice": 0.01,
    "cacheWritePrice": 0.125,
-   "medianOutputTokensPerSecond": 118.996792918219,
-   "medianTimeToFirstTokenSeconds": 3.0603624945,
-   "medianTimeToFirstAnswerTokenSeconds": 3.0603624945,
-   "medianEndToEndResponseTimeSeconds": 7.26215640623699
+   "medianOutputTokensPerSecond": 120.631510365411,
+   "medianTimeToFirstTokenSeconds": 2.81399962450001,
+   "medianTimeToFirstAnswerTokenSeconds": 2.81399962450001,
+   "medianEndToEndResponseTimeSeconds": 6.9588536388899875
   },
   {
    "releaseDate": "2026-08-20",
@@ -3691,9 +3458,22 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
-   "intelligenceIndex": 21.8316172646825,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": 3.7666666666666666
+   "intelligenceIndexIsEstimated": false
+  },
+  {
+   "slug": "deepseek-v4-1-flash-1017-high",
+   "name": "DeepSeek V4.1 Flash 1017 (High)",
+   "shortName": "DeepSeek V4.1 Flash 1017 (high)",
+   "modelCreatorName": "DeepSeek",
+   "isReasoning": true,
+   "isOpenWeights": true,
+   "contextWindowTokens": 1000000,
+   "intelligenceIndex": 28.5437391540402,
+   "intelligenceIndexIsEstimated": false,
+   "omniscience": 1.5333333333333334,
+   "price1mInputTokens": 0.3,
+   "price1mOutputTokens": 1.2,
+   "cacheHitPrice": 0.006
   },
   {
    "releaseDate": "2026-06-10",
@@ -3704,9 +3484,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 9.51014305662543,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -59.233333333333334
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-06-25",
@@ -3717,17 +3495,15 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 400000,
-   "intelligenceIndex": 26.0135173401368,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 3.7,
    "price1mInputTokens": 5,
    "price1mOutputTokens": 30,
    "cacheHitPrice": 0.5,
-   "medianOutputTokensPerSecond": 158.381428271678,
-   "medianTimeToFirstTokenSeconds": 0.895464330999999,
-   "medianTimeToFirstAnswerTokenSeconds": 13.523207506603391,
-   "medianEndToEndResponseTimeSeconds": 16.680143300504238,
-   "medianReasoningTimeSeconds": 12.627743175603392
+   "medianOutputTokensPerSecond": 154.1850079204,
+   "medianTimeToFirstTokenSeconds": 0.881376879000015,
+   "medianTimeToFirstAnswerTokenSeconds": 13.85280663715475,
+   "medianEndToEndResponseTimeSeconds": 17.09566407669343,
+   "medianReasoningTimeSeconds": 12.971429758154734
   },
   {
    "slug": "gpt-6-1-terra-medium",
@@ -3737,17 +3513,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 41.318827405477,
+   "intelligenceIndex": 38.1152076677975,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 27.1,
+   "omniscience": 26.6,
    "price1mInputTokens": 1,
    "price1mOutputTokens": 5,
    "cacheHitPrice": 0.05,
    "cacheWritePrice": 1.25,
-   "medianOutputTokensPerSecond": 90.9499392316153,
-   "medianTimeToFirstTokenSeconds": 1.453494073,
-   "medianTimeToFirstAnswerTokenSeconds": 1.453494073,
-   "medianEndToEndResponseTimeSeconds": 6.951023859432159
+   "medianOutputTokensPerSecond": 90.9163239292786,
+   "medianTimeToFirstTokenSeconds": 4.89561480950002,
+   "medianTimeToFirstAnswerTokenSeconds": 4.89561480950002,
+   "medianEndToEndResponseTimeSeconds": 10.39517724659258
   },
   {
    "releaseDate": "2026-01-04",
@@ -3758,9 +3534,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 7.82776928077145,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -61.3
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "qwen3-next-80b-a3b-reasoning",
@@ -3770,9 +3544,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 11.1973684395653,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -51.416666666666664
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "gpt-6-1-terra-low",
@@ -3782,17 +3554,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 36.2133370409149,
+   "intelligenceIndex": 29.2169280792131,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 23.716666666666665,
+   "omniscience": 22.933333333333334,
    "price1mInputTokens": 1,
    "price1mOutputTokens": 5,
    "cacheHitPrice": 0.05,
    "cacheWritePrice": 1.25,
-   "medianOutputTokensPerSecond": 91.0750122238457,
-   "medianTimeToFirstTokenSeconds": 1.28494403100001,
-   "medianTimeToFirstAnswerTokenSeconds": 1.28494403100001,
-   "medianEndToEndResponseTimeSeconds": 6.774924079216655
+   "medianOutputTokensPerSecond": 90.938407519845,
+   "medianTimeToFirstTokenSeconds": 1.43220868650002,
+   "medianTimeToFirstAnswerTokenSeconds": 1.43220868650002,
+   "medianEndToEndResponseTimeSeconds": 6.930435603338076
   },
   {
    "slug": "gpt-oss-120b-low",
@@ -3802,17 +3574,15 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
-   "intelligenceIndex": 10.2105650347196,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -53.5,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.125,
    "price1mOutputTokens": 0.595,
    "cacheHitPrice": 0.125,
-   "medianOutputTokensPerSecond": 274.218208523067,
-   "medianTimeToFirstTokenSeconds": 0.772554038999999,
-   "medianTimeToFirstAnswerTokenSeconds": 8.066015734238817,
-   "medianEndToEndResponseTimeSeconds": 9.889381158048522,
-   "medianReasoningTimeSeconds": 7.293461695238818
+   "medianOutputTokensPerSecond": 257.834134495028,
+   "medianTimeToFirstTokenSeconds": 0.736963610499998,
+   "medianTimeToFirstAnswerTokenSeconds": 8.493888440941978,
+   "medianEndToEndResponseTimeSeconds": 10.433119648552474,
+   "medianReasoningTimeSeconds": 7.756924830441981
   },
   {
    "slug": "glm-5-3-low",
@@ -3822,17 +3592,17 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 34.2990078159643,
+   "intelligenceIndex": 23.0579373025379,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -8.4,
+   "omniscience": -11.166666666666666,
    "price1mInputTokens": 1.4,
    "price1mOutputTokens": 4.4,
    "cacheHitPrice": 0.26,
-   "medianOutputTokensPerSecond": 92.0667472714021,
-   "medianTimeToFirstTokenSeconds": 2.78562842299999,
-   "medianTimeToFirstAnswerTokenSeconds": 24.508998252763085,
-   "medianEndToEndResponseTimeSeconds": 29.93984071020386,
-   "medianReasoningTimeSeconds": 21.723369829763094
+   "medianOutputTokensPerSecond": 80.4042971702806,
+   "medianTimeToFirstTokenSeconds": 1.63484585699996,
+   "medianTimeToFirstAnswerTokenSeconds": 26.509138281500487,
+   "medianEndToEndResponseTimeSeconds": 32.727711387625625,
+   "medianReasoningTimeSeconds": 24.874292424500528
   },
   {
    "releaseDate": "2026-04-02",
@@ -3843,16 +3613,15 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 14.6689500745828,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -47.93333333333333,
+   "omniscience": -48.53333333333333,
    "price1mInputTokens": 0,
    "price1mOutputTokens": 0,
-   "medianOutputTokensPerSecond": 35.2106007645888,
-   "medianTimeToFirstTokenSeconds": 1.09103300900003,
-   "medianTimeToFirstAnswerTokenSeconds": 50.394366729618916,
-   "medianEndToEndResponseTimeSeconds": 64.5946356583686,
-   "medianReasoningTimeSeconds": 49.30333372061889
+   "medianOutputTokensPerSecond": 35.0274777782619,
+   "medianTimeToFirstTokenSeconds": 1.08212682850004,
+   "medianTimeToFirstAnswerTokenSeconds": 50.64321743826596,
+   "medianEndToEndResponseTimeSeconds": 64.91772510236905,
+   "medianReasoningTimeSeconds": 49.56109060976592
   },
   {
    "releaseDate": "2026-08-18",
@@ -3863,17 +3632,17 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 44.777392385614,
+   "intelligenceIndex": 31.653381843882,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 14.3,
+   "omniscience": 6.033333333333333,
    "price1mInputTokens": 1.4,
    "price1mOutputTokens": 4.4,
    "cacheHitPrice": 0.26,
-   "medianOutputTokensPerSecond": 94.2747021919952,
-   "medianTimeToFirstTokenSeconds": 2.38506173699999,
-   "medianTimeToFirstAnswerTokenSeconds": 23.59966070679465,
-   "medianEndToEndResponseTimeSeconds": 28.903310449243317,
-   "medianReasoningTimeSeconds": 21.21459896979466
+   "medianOutputTokensPerSecond": 88.9741843342523,
+   "medianTimeToFirstTokenSeconds": 1.432242352,
+   "medianTimeToFirstAnswerTokenSeconds": 23.910672640121923,
+   "medianEndToEndResponseTimeSeconds": 29.5302802121524,
+   "medianReasoningTimeSeconds": 22.478430288121924
   },
   {
    "slug": "llama-3-1-nemotron-ultra-253b-v1-reasoning",
@@ -3883,9 +3652,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 7.52746905624501,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -44.86666666666667
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "gemma-4-31b-non-reasoning",
@@ -3895,16 +3662,14 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 13.9198819005287,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -51.68333333333333,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.16499999999999998,
    "price1mOutputTokens": 0.4,
    "cacheHitPrice": 0.14,
-   "medianOutputTokensPerSecond": 55.0113175661239,
-   "medianTimeToFirstTokenSeconds": 1.836662549,
-   "medianTimeToFirstAnswerTokenSeconds": 1.836662549,
-   "medianEndToEndResponseTimeSeconds": 10.925701352678848
+   "medianOutputTokensPerSecond": 61.6056942389675,
+   "medianTimeToFirstTokenSeconds": 1.76333069500004,
+   "medianTimeToFirstAnswerTokenSeconds": 1.76333069500004,
+   "medianEndToEndResponseTimeSeconds": 9.879463565129026
   },
   {
    "slug": "minicpm5-1b-non-reasoning",
@@ -3914,9 +3679,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 8.69473818567247,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -0.8
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-09-30",
@@ -3927,16 +3690,16 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 52.5605655745982,
+   "intelligenceIndex": 50.4121935905389,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 42.35,
-   "price1mInputTokens": 2,
-   "price1mOutputTokens": 10,
-   "cacheHitPrice": 0.1,
-   "medianOutputTokensPerSecond": 79.0163707595538,
-   "medianTimeToFirstTokenSeconds": 52.3845013774999,
-   "medianTimeToFirstAnswerTokenSeconds": 52.3845013774999,
-   "medianEndToEndResponseTimeSeconds": 58.71230402388436
+   "omniscience": 46.1,
+   "price1mInputTokens": 4,
+   "price1mOutputTokens": 20,
+   "cacheHitPrice": 0.2,
+   "medianOutputTokensPerSecond": 83.2883200602061,
+   "medianTimeToFirstTokenSeconds": 40.471191687,
+   "medianTimeToFirstAnswerTokenSeconds": 40.471191687,
+   "medianEndToEndResponseTimeSeconds": 46.474434394243566
   },
   {
    "releaseDate": "2025-08-27",
@@ -3947,15 +3710,13 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 7.41221110231024,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -33.28333333333333,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 1,
    "price1mOutputTokens": 3,
-   "medianOutputTokensPerSecond": 43.4282206168152,
-   "medianTimeToFirstTokenSeconds": 2.27610623449999,
-   "medianTimeToFirstAnswerTokenSeconds": 2.27610623449999,
-   "medianEndToEndResponseTimeSeconds": 13.789357132152526
+   "medianOutputTokensPerSecond": 43.1101442954417,
+   "medianTimeToFirstTokenSeconds": 2.32027282850001,
+   "medianTimeToFirstAnswerTokenSeconds": 2.32027282850001,
+   "medianEndToEndResponseTimeSeconds": 13.918471075608824
   },
   {
    "releaseDate": "2026-10-19",
@@ -3964,19 +3725,19 @@
    "shortName": "MiniMax-M3.1-Flash",
    "modelCreatorName": "MiniMax",
    "isReasoning": true,
-   "isOpenWeights": false,
+   "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 42.7057475126235,
+   "intelligenceIndex": 28.9095214290458,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 15.55,
+   "omniscience": -6.4,
    "price1mInputTokens": 0.15,
    "price1mOutputTokens": 0.6,
    "cacheHitPrice": 0.015,
-   "medianOutputTokensPerSecond": 121.410336696103,
-   "medianTimeToFirstTokenSeconds": 1.04214084249999,
-   "medianTimeToFirstAnswerTokenSeconds": 17.51520281090647,
-   "medianEndToEndResponseTimeSeconds": 21.63346830300809,
-   "medianReasoningTimeSeconds": 16.47306196840648
+   "medianOutputTokensPerSecond": 135.942802529148,
+   "medianTimeToFirstTokenSeconds": 0.903627819000008,
+   "medianTimeToFirstAnswerTokenSeconds": 15.615697621821475,
+   "medianEndToEndResponseTimeSeconds": 19.29371507252684,
+   "medianReasoningTimeSeconds": 14.712069802821468
   },
   {
    "slug": "deepseek-v4-pro-non-reasoning",
@@ -3986,16 +3747,15 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 20.3605101726847,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -12.383333333333333,
+   "omniscience": -19.066666666666666,
    "price1mInputTokens": 1.32,
    "price1mOutputTokens": 3.96,
    "cacheHitPrice": 0.044,
-   "medianOutputTokensPerSecond": 104.432570436301,
-   "medianTimeToFirstTokenSeconds": 1.785594049,
-   "medianTimeToFirstAnswerTokenSeconds": 1.785594049,
-   "medianEndToEndResponseTimeSeconds": 6.573372401204561
+   "medianOutputTokensPerSecond": 95.9089911698572,
+   "medianTimeToFirstTokenSeconds": 1.74079487049999,
+   "medianTimeToFirstAnswerTokenSeconds": 1.74079487049999,
+   "medianEndToEndResponseTimeSeconds": 6.954070434148528
   },
   {
    "slug": "exaone-4-0-1-2b-reasoning",
@@ -4005,9 +3765,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 64000,
-   "intelligenceIndex": 5.27138994054015,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -79.81666666666666
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-04-03",
@@ -4018,16 +3776,14 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 8.90908441839731,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -19.7,
    "price1mInputTokens": 0.02,
    "price1mOutputTokens": 0.1,
-   "medianOutputTokensPerSecond": 46.8271691493793,
-   "medianTimeToFirstTokenSeconds": 1.14813801899999,
-   "medianTimeToFirstAnswerTokenSeconds": 43.85838585866702,
-   "medianEndToEndResponseTimeSeconds": 54.53594781858378,
-   "medianReasoningTimeSeconds": 42.71024783966703
+   "medianOutputTokensPerSecond": 50.1015820331585,
+   "medianTimeToFirstTokenSeconds": 0.871803796000024,
+   "medianTimeToFirstAnswerTokenSeconds": 40.790702937275626,
+   "medianEndToEndResponseTimeSeconds": 50.770427722594526,
+   "medianReasoningTimeSeconds": 39.9188991412756
   },
   {
    "slug": "k2-v2-low",
@@ -4037,9 +3793,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 512000,
-   "intelligenceIndex": 7.31130007284626,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -47.28333333333333
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2025-10-28",
@@ -4050,9 +3804,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 5.1945517329943,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -72.26666666666667
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2025-03-10",
@@ -4063,16 +3815,14 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 5.64602230491152,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -65.13333333333334,
-   "price1mInputTokens": 0.2,
-   "price1mOutputTokens": 0.8,
-   "medianOutputTokensPerSecond": 89.2495118463907,
-   "medianTimeToFirstTokenSeconds": 1.39807091550006,
-   "medianTimeToFirstAnswerTokenSeconds": 23.80715706761531,
-   "medianEndToEndResponseTimeSeconds": 29.409428605644123,
-   "medianReasoningTimeSeconds": 22.40908615211525
+   "intelligenceIndexIsEstimated": false,
+   "price1mInputTokens": 0.1,
+   "price1mOutputTokens": 0.2,
+   "medianOutputTokensPerSecond": 90.5683154726659,
+   "medianTimeToFirstTokenSeconds": 1.43473455600002,
+   "medianTimeToFirstAnswerTokenSeconds": 23.517512507231903,
+   "medianEndToEndResponseTimeSeconds": 29.038206995039875,
+   "medianReasoningTimeSeconds": 22.082777951231883
   },
   {
    "releaseDate": "2026-04-29",
@@ -4083,17 +3833,16 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 14.1889227802691,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -36.8,
+   "omniscience": -38.7,
    "price1mInputTokens": 1.5,
    "price1mOutputTokens": 7.5,
    "cacheHitPrice": 0.15,
-   "medianOutputTokensPerSecond": 166.343379133862,
-   "medianTimeToFirstTokenSeconds": 2.26033361750001,
-   "medianTimeToFirstAnswerTokenSeconds": 14.283655558017607,
-   "medianEndToEndResponseTimeSeconds": 17.289486043147008,
-   "medianReasoningTimeSeconds": 12.023321940517597
+   "medianOutputTokensPerSecond": 177.28055434862,
+   "medianTimeToFirstTokenSeconds": 2.44444505800004,
+   "medianTimeToFirstAnswerTokenSeconds": 13.725998228614708,
+   "medianEndToEndResponseTimeSeconds": 16.546386521268374,
+   "medianReasoningTimeSeconds": 11.281553170614668
   },
   {
    "slug": "k2-v2-medium",
@@ -4103,9 +3852,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 512000,
-   "intelligenceIndex": 9.01595166538807,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -49
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2025-12-11",
@@ -4116,9 +3863,7 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 11.0361387091137,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -59.18333333333333
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "claude-opus-5-5-xhigh",
@@ -4128,17 +3873,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 55.9873505840139,
+   "intelligenceIndex": 56.9947060170507,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 42.65,
+   "omniscience": 43.13333333333333,
    "price1mInputTokens": 4,
    "price1mOutputTokens": 20,
    "cacheHitPrice": 0.2,
    "cacheWritePrice": 5,
-   "medianOutputTokensPerSecond": 81.9114283811215,
-   "medianTimeToFirstTokenSeconds": 121.6675661905,
-   "medianTimeToFirstAnswerTokenSeconds": 121.6675661905,
-   "medianEndToEndResponseTimeSeconds": 127.77172051770297
+   "medianOutputTokensPerSecond": 82.1628063329991,
+   "medianTimeToFirstTokenSeconds": 128.762213329,
+   "medianTimeToFirstAnswerTokenSeconds": 128.762213329,
+   "medianEndToEndResponseTimeSeconds": 134.84769193319397
   },
   {
    "slug": "gpt-6-astra-high",
@@ -4148,17 +3893,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 50.9191471636152,
+   "intelligenceIndex": 54.849838322506,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 43.733333333333334,
+   "omniscience": 44.56666666666667,
    "price1mInputTokens": 10,
    "price1mOutputTokens": 50,
    "cacheHitPrice": 1,
    "cacheWritePrice": 12.5,
-   "medianOutputTokensPerSecond": 60.4236744038761,
-   "medianTimeToFirstTokenSeconds": 85.4072276765,
-   "medianTimeToFirstAnswerTokenSeconds": 85.4072276765,
-   "medianEndToEndResponseTimeSeconds": 93.68212993845059
+   "medianOutputTokensPerSecond": 61.6735918512802,
+   "medianTimeToFirstTokenSeconds": 95.6809663575,
+   "medianTimeToFirstAnswerTokenSeconds": 95.6809663575,
+   "medianEndToEndResponseTimeSeconds": 103.78816402495062
   },
   {
    "releaseDate": "2026-08-04",
@@ -4169,9 +3914,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndex": 8.38708534765242,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -10.95
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-05-28",
@@ -4182,9 +3925,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 32768,
-   "intelligenceIndex": 7.21643567343487,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -33.2
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-10-15",
@@ -4195,17 +3936,17 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 26.4910658661689,
+   "intelligenceIndex": 13.6203422723141,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -4.216666666666667,
-   "price1mInputTokens": 0.225,
-   "price1mOutputTokens": 0.575,
+   "omniscience": -2.8666666666666667,
+   "price1mInputTokens": 0.2,
+   "price1mOutputTokens": 0.5,
    "cacheHitPrice": 0.05,
-   "medianOutputTokensPerSecond": 448.685595228286,
-   "medianTimeToFirstTokenSeconds": 0.760525553000008,
-   "medianTimeToFirstAnswerTokenSeconds": 5.217989802509563,
-   "medianEndToEndResponseTimeSeconds": 6.332355864886952,
-   "medianReasoningTimeSeconds": 4.457464249509555
+   "medianOutputTokensPerSecond": 479.24273621774,
+   "medianTimeToFirstTokenSeconds": 0.714245038000058,
+   "medianTimeToFirstAnswerTokenSeconds": 4.887495561908503,
+   "medianEndToEndResponseTimeSeconds": 5.930808192885614,
+   "medianReasoningTimeSeconds": 4.173250523908445
   },
   {
    "releaseDate": "2026-04-23",
@@ -4227,9 +3968,7 @@
    "isReasoning": false,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 9.15908119897819,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -35.38333333333333
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "gpt-6-1-sol-low",
@@ -4239,17 +3978,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 42.0835618555848,
+   "intelligenceIndex": 34.502924431456,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 37.63333333333333,
+   "omniscience": 38,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 10,
    "cacheHitPrice": 0.1,
    "cacheWritePrice": 2.5,
-   "medianOutputTokensPerSecond": 49.7482266525352,
-   "medianTimeToFirstTokenSeconds": 2.85684650799988,
-   "medianTimeToFirstAnswerTokenSeconds": 2.85684650799988,
-   "medianEndToEndResponseTimeSeconds": 12.907456020017927
+   "medianOutputTokensPerSecond": 61.0426089732534,
+   "medianTimeToFirstTokenSeconds": 2.477400583,
+   "medianTimeToFirstAnswerTokenSeconds": 2.477400583,
+   "medianEndToEndResponseTimeSeconds": 10.668400417543136
   },
   {
    "slug": "gpt-6-1-terra-xhigh",
@@ -4259,17 +3998,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 45.3640518262171,
+   "intelligenceIndex": 44.950051789066,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 28.7,
+   "omniscience": 28.933333333333334,
    "price1mInputTokens": 1,
    "price1mOutputTokens": 5,
    "cacheHitPrice": 0.05,
    "cacheWritePrice": 1.25,
-   "medianOutputTokensPerSecond": 90.8966863741863,
-   "medianTimeToFirstTokenSeconds": 21.6721806,
-   "medianTimeToFirstAnswerTokenSeconds": 21.6721806,
-   "medianEndToEndResponseTimeSeconds": 27.172931176777844
+   "medianOutputTokensPerSecond": 101.361017983949,
+   "medianTimeToFirstTokenSeconds": 68.8322850254999,
+   "medianTimeToFirstAnswerTokenSeconds": 68.8322850254999,
+   "medianEndToEndResponseTimeSeconds": 73.76514787499474
   },
   {
    "slug": "gpt-6-astra-medium",
@@ -4279,17 +4018,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 49.5704363034369,
+   "intelligenceIndex": 51.4548393864113,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 42.21666666666667,
+   "omniscience": 41.4,
    "price1mInputTokens": 10,
    "price1mOutputTokens": 50,
    "cacheHitPrice": 1,
    "cacheWritePrice": 12.5,
-   "medianOutputTokensPerSecond": 58.7910857980265,
-   "medianTimeToFirstTokenSeconds": 6.38765412249995,
-   "medianTimeToFirstAnswerTokenSeconds": 6.38765412249995,
-   "medianEndToEndResponseTimeSeconds": 14.892344811794619
+   "medianOutputTokensPerSecond": 56.6097407460613,
+   "medianTimeToFirstTokenSeconds": 5.08529383749999,
+   "medianTimeToFirstAnswerTokenSeconds": 5.08529383749999,
+   "medianEndToEndResponseTimeSeconds": 13.917696060341616
   },
   {
    "releaseDate": "2026-10-12",
@@ -4300,9 +4039,9 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 55.8021199855616,
+   "intelligenceIndex": 49.7272123627021,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 30.15
+   "omniscience": 30.6
   },
   {
    "slug": "gpt-6-1-terra-high",
@@ -4312,17 +4051,34 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 43.8688591051329,
+   "intelligenceIndex": 42.3344508712563,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 28.383333333333333,
+   "omniscience": 27.766666666666666,
    "price1mInputTokens": 1,
    "price1mOutputTokens": 5,
    "cacheHitPrice": 0.05,
    "cacheWritePrice": 1.25,
-   "medianOutputTokensPerSecond": 90.9454099588895,
-   "medianTimeToFirstTokenSeconds": 5.66456241899999,
-   "medianTimeToFirstAnswerTokenSeconds": 5.66456241899999,
-   "medianEndToEndResponseTimeSeconds": 11.162365993979943
+   "medianOutputTokensPerSecond": 96.130791969186,
+   "medianTimeToFirstTokenSeconds": 20.702116446,
+   "medianTimeToFirstAnswerTokenSeconds": 20.702116446,
+   "medianEndToEndResponseTimeSeconds": 25.90336351530815
+  },
+  {
+   "releaseDate": "2026-10-29",
+   "slug": "mistral-large-4",
+   "name": "Mistral Large 4 (High)",
+   "shortName": "Mistral Large 4 (high)",
+   "modelCreatorName": "Mistral",
+   "isReasoning": true,
+   "isOpenWeights": true,
+   "contextWindowTokens": 1000000,
+   "intelligenceIndex": 26.0249946754784,
+   "intelligenceIndexIsEstimated": false,
+   "omniscience": 5.133333333333334,
+   "price1mInputTokens": 0.7,
+   "price1mOutputTokens": 2.1,
+   "cacheHitPrice": 0.07,
+   "cacheWritePrice": 0.7
   },
   {
    "slug": "cogito-v2-1-reasoning",
@@ -4332,8 +4088,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false,
-   "omniscience": -25.783333333333335
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "claude-opus-5-5-medium",
@@ -4343,17 +4098,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 51.2434931792768,
+   "intelligenceIndex": 48.0581024960691,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 40.31666666666667,
+   "omniscience": 39.766666666666666,
    "price1mInputTokens": 4,
    "price1mOutputTokens": 20,
    "cacheHitPrice": 0.2,
    "cacheWritePrice": 5,
-   "medianOutputTokensPerSecond": 82.1998423168555,
-   "medianTimeToFirstTokenSeconds": 19.2551141435,
-   "medianTimeToFirstAnswerTokenSeconds": 19.2551141435,
-   "medianEndToEndResponseTimeSeconds": 25.337850872758573
+   "medianOutputTokensPerSecond": 79.8152646658465,
+   "medianTimeToFirstTokenSeconds": 19.8485451035,
+   "medianTimeToFirstAnswerTokenSeconds": 19.8485451035,
+   "medianEndToEndResponseTimeSeconds": 26.11301095590672
   },
   {
    "releaseDate": "2026-05-08",
@@ -4364,16 +4119,15 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 16.6172363768618,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -37.7,
+   "omniscience": -36.03333333333333,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 2.5,
-   "medianOutputTokensPerSecond": 121.829616221319,
-   "medianTimeToFirstTokenSeconds": 3.69837852100005,
-   "medianTimeToFirstAnswerTokenSeconds": 20.11474805438794,
-   "medianEndToEndResponseTimeSeconds": 24.21884043773491,
-   "medianReasoningTimeSeconds": 16.416369533387886
+   "medianOutputTokensPerSecond": 125.380379433447,
+   "medianTimeToFirstTokenSeconds": 3.94601817799998,
+   "medianTimeToFirstAnswerTokenSeconds": 19.897477322065,
+   "medianEndToEndResponseTimeSeconds": 23.885342108081257,
+   "medianReasoningTimeSeconds": 15.95145914406502
   },
   {
    "releaseDate": "2024-12-12",
@@ -4384,15 +4138,13 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 16000,
-   "intelligenceIndex": 5.92257028113751,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -55.7,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.125,
    "price1mOutputTokens": 0.5,
-   "medianOutputTokensPerSecond": 41.9474287857314,
-   "medianTimeToFirstTokenSeconds": 2.44947581749998,
-   "medianTimeToFirstAnswerTokenSeconds": 2.44947581749998,
-   "medianEndToEndResponseTimeSeconds": 14.369157535156944
+   "medianOutputTokensPerSecond": 41.3134628832033,
+   "medianTimeToFirstTokenSeconds": 2.45519588449997,
+   "medianTimeToFirstAnswerTokenSeconds": 2.45519588449997,
+   "medianEndToEndResponseTimeSeconds": 14.55778823831797
   },
   {
    "releaseDate": "2025-08-05",
@@ -4403,17 +4155,15 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
-   "intelligenceIndex": 11.6028431512592,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -49.25,
    "price1mInputTokens": 0.15,
    "price1mOutputTokens": 0.6,
    "cacheHitPrice": 0.1,
-   "medianOutputTokensPerSecond": 242.300907543024,
-   "medianTimeToFirstTokenSeconds": 0.771817914999929,
-   "medianTimeToFirstAnswerTokenSeconds": 9.02601729163607,
-   "medianEndToEndResponseTimeSeconds": 11.089567135795106,
-   "medianReasoningTimeSeconds": 8.25419937663614
+   "medianOutputTokensPerSecond": 217.46725869619,
+   "medianTimeToFirstTokenSeconds": 0.748126855999999,
+   "medianTimeToFirstAnswerTokenSeconds": 9.944913590660024,
+   "medianEndToEndResponseTimeSeconds": 12.24411027432503,
+   "medianReasoningTimeSeconds": 9.196786734660025
   },
   {
    "releaseDate": "2026-10-17",
@@ -4424,17 +4174,17 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 45.0965048681912,
+   "intelligenceIndex": 32.4896393532027,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 4.7,
+   "omniscience": 0.9,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 1.2,
    "cacheHitPrice": 0.006,
-   "medianOutputTokensPerSecond": 169.042429369676,
-   "medianTimeToFirstTokenSeconds": 1.16624786699995,
-   "medianTimeToFirstAnswerTokenSeconds": 12.997596999034926,
-   "medianEndToEndResponseTimeSeconds": 15.95543428204367,
-   "medianReasoningTimeSeconds": 11.831349132034976
+   "medianOutputTokensPerSecond": 170.462089292569,
+   "medianTimeToFirstTokenSeconds": 1.27729528449998,
+   "medianTimeToFirstAnswerTokenSeconds": 13.010109356532983,
+   "medianEndToEndResponseTimeSeconds": 15.943312874541235,
+   "medianReasoningTimeSeconds": 11.732814072033003
   },
   {
    "slug": "nvidia-nemotron-nano-9b-v2-reasoning",
@@ -4444,16 +4194,14 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
-   "intelligenceIndex": 7.42882284148722,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -41.55,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.04,
    "price1mOutputTokens": 0.16,
-   "medianOutputTokensPerSecond": 211.885116317591,
-   "medianTimeToFirstTokenSeconds": 0.545735296999965,
-   "medianTimeToFirstAnswerTokenSeconds": 9.984812636449488,
-   "medianEndToEndResponseTimeSeconds": 12.34458197131187,
-   "medianReasoningTimeSeconds": 9.439077339449524
+   "medianOutputTokensPerSecond": 219.609011831468,
+   "medianTimeToFirstTokenSeconds": 0.537781693999989,
+   "medianTimeToFirstAnswerTokenSeconds": 9.644876085621936,
+   "medianEndToEndResponseTimeSeconds": 11.921649683527423,
+   "medianReasoningTimeSeconds": 9.107094391621947
   },
   {
    "slug": "claude-opus-5-5-high",
@@ -4463,17 +4211,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 53.5831959822067,
+   "intelligenceIndex": 51.6859958227294,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 40.63333333333333,
+   "omniscience": 42.36666666666667,
    "price1mInputTokens": 4,
    "price1mOutputTokens": 20,
    "cacheHitPrice": 0.2,
    "cacheWritePrice": 5,
-   "medianOutputTokensPerSecond": 80.0439275789259,
-   "medianTimeToFirstTokenSeconds": 34.763395099,
-   "medianTimeToFirstAnswerTokenSeconds": 34.763395099,
-   "medianEndToEndResponseTimeSeconds": 41.0099651402687
+   "medianOutputTokensPerSecond": 79.5521909252707,
+   "medianTimeToFirstTokenSeconds": 47.5034453215,
+   "medianTimeToFirstAnswerTokenSeconds": 47.5034453215,
+   "medianEndToEndResponseTimeSeconds": 53.78862734080714
   },
   {
    "releaseDate": "2026-08-26",
@@ -4484,17 +4232,10 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 35.2413300369053,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -10.533333333333333,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.3,
-   "cacheHitPrice": 0.01,
-   "medianOutputTokensPerSecond": 108.029858150558,
-   "medianTimeToFirstTokenSeconds": 1.37555235000006,
-   "medianTimeToFirstAnswerTokenSeconds": 19.888952573229638,
-   "medianEndToEndResponseTimeSeconds": 24.51730262903703,
-   "medianReasoningTimeSeconds": 18.513400223229578
+   "cacheHitPrice": 0.01
   },
   {
    "slug": "nova-2-0-pro-reasoning-low",
@@ -4504,16 +4245,14 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 12.7754507441167,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -46.53333333333333,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 1.25,
    "price1mOutputTokens": 10,
-   "medianOutputTokensPerSecond": 123.495311375806,
-   "medianTimeToFirstTokenSeconds": 9.83269844850001,
-   "medianTimeToFirstAnswerTokenSeconds": 26.02764526647144,
-   "medianEndToEndResponseTimeSeconds": 30.07638197096429,
-   "medianReasoningTimeSeconds": 16.194946817971427
+   "medianOutputTokensPerSecond": 117.681089861195,
+   "medianTimeToFirstTokenSeconds": 9.93196302950004,
+   "medianTimeToFirstAnswerTokenSeconds": 26.927046966596496,
+   "medianEndToEndResponseTimeSeconds": 31.175817950870613,
+   "medianReasoningTimeSeconds": 16.995083937096457
   },
   {
    "slug": "gemini-3-8-flash-low",
@@ -4523,9 +4262,9 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 33.4548106699132,
+   "intelligenceIndex": 22.348302237854,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 21.35,
+   "omniscience": 13.033333333333333,
    "price1mInputTokens": 0.75,
    "price1mOutputTokens": 3.75,
    "cacheHitPrice": 0.075,
@@ -4540,9 +4279,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262000,
-   "intelligenceIndex": 5.66829948484426,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -57.71666666666667
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-08-10",
@@ -4553,17 +4290,15 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 26.7372536607816,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -2.6,
    "price1mInputTokens": 0.11,
    "price1mOutputTokens": 0.33,
    "cacheHitPrice": 0.0099,
-   "medianOutputTokensPerSecond": 163.971217330968,
-   "medianTimeToFirstTokenSeconds": 1.26366896850003,
-   "medianTimeToFirstAnswerTokenSeconds": 13.460931589067739,
-   "medianEndToEndResponseTimeSeconds": 16.510247244209665,
-   "medianReasoningTimeSeconds": 12.19726262056771
+   "medianOutputTokensPerSecond": 178.442811700671,
+   "medianTimeToFirstTokenSeconds": 1.31431307749995,
+   "medianTimeToFirstAnswerTokenSeconds": 12.52238574200661,
+   "medianEndToEndResponseTimeSeconds": 15.324403908133275,
+   "medianReasoningTimeSeconds": 11.20807266450666
   },
   {
    "releaseDate": "2026-02-25",
@@ -4574,9 +4309,7 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 32768,
-   "intelligenceIndex": 5.94753271655266,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -58.1
+   "intelligenceIndexIsEstimated": false
   },
   {
    "slug": "nova-2-0-lite-reasoning-medium",
@@ -4586,16 +4319,14 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 12.4823794919822,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -56.96666666666667,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 2.5,
-   "medianOutputTokensPerSecond": 191.178434219622,
-   "medianTimeToFirstTokenSeconds": 17.8852991165001,
-   "medianTimeToFirstAnswerTokenSeconds": 28.34673012551464,
-   "medianEndToEndResponseTimeSeconds": 30.962087877768276,
-   "medianReasoningTimeSeconds": 10.46143100901454
+   "medianOutputTokensPerSecond": 189.198791295389,
+   "medianTimeToFirstTokenSeconds": 17.2604896165,
+   "medianTimeToFirstAnswerTokenSeconds": 27.831381672979763,
+   "medianEndToEndResponseTimeSeconds": 30.474104687099704,
+   "medianReasoningTimeSeconds": 10.570892056479764
   },
   {
    "releaseDate": "2026-03-27",
@@ -4606,9 +4337,7 @@
    "isReasoning": false,
    "isOpenWeights": false,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 21.7045082420985,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -22.466666666666665
+   "intelligenceIndexIsEstimated": false
   },
   {
    "releaseDate": "2026-02-03",
@@ -4619,16 +4348,14 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndex": 9.23682203219174,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": -62.4,
    "price1mInputTokens": 0.31,
    "price1mOutputTokens": 1,
    "cacheHitPrice": 0.28500000000000003,
-   "medianOutputTokensPerSecond": 92.0678033762614,
-   "medianTimeToFirstTokenSeconds": 0.899789962999989,
-   "medianTimeToFirstAnswerTokenSeconds": 0.899789962999989,
-   "medianEndToEndResponseTimeSeconds": 6.330570123536752
+   "medianOutputTokensPerSecond": 79.722230009968,
+   "medianTimeToFirstTokenSeconds": 0.913789597499985,
+   "medianTimeToFirstAnswerTokenSeconds": 0.913789597499985,
+   "medianEndToEndResponseTimeSeconds": 7.185565988319496
   },
   {
    "releaseDate": "2026-06-03",
@@ -4639,16 +4366,14 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndex": 14.1847516647736,
-   "intelligenceIndexIsEstimated": true,
-   "omniscience": -52.71666666666667,
+   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.3,
-   "medianOutputTokensPerSecond": 111.525079658232,
-   "medianTimeToFirstTokenSeconds": 2.23196002399998,
-   "medianTimeToFirstAnswerTokenSeconds": 20.16514604932262,
-   "medianEndToEndResponseTimeSeconds": 24.64844255565328,
-   "medianReasoningTimeSeconds": 17.933186025322637
+   "medianOutputTokensPerSecond": 117.926112056278,
+   "medianTimeToFirstTokenSeconds": 2.27455834749997,
+   "medianTimeToFirstAnswerTokenSeconds": 19.234330573735477,
+   "medianEndToEndResponseTimeSeconds": 23.474273630294356,
+   "medianReasoningTimeSeconds": 16.959772226235508
   },
   {
    "releaseDate": "2026-10-12",
@@ -4659,17 +4384,17 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1048576,
-   "intelligenceIndex": 52.393894697293,
+   "intelligenceIndex": 43.3248225998431,
    "intelligenceIndexIsEstimated": false,
-   "omniscience": 25.483333333333334,
+   "omniscience": 25.1,
    "price1mInputTokens": 4,
    "price1mOutputTokens": 20,
    "cacheHitPrice": 0.2,
-   "medianOutputTokensPerSecond": 194.728389645131,
-   "medianTimeToFirstTokenSeconds": 34.0801011815,
-   "medianTimeToFirstAnswerTokenSeconds": 44.350817247322546,
-   "medianEndToEndResponseTimeSeconds": 46.91849626377818,
-   "medianReasoningTimeSeconds": 10.270716065822548
+   "medianOutputTokensPerSecond": 191.854153024369,
+   "medianTimeToFirstTokenSeconds": 26.3703580625001,
+   "medianTimeToFirstAnswerTokenSeconds": 36.79494344922333,
+   "medianEndToEndResponseTimeSeconds": 39.40108979590414,
+   "medianReasoningTimeSeconds": 10.424585386723233
   }
  ]
 }

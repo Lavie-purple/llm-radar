@@ -5,7 +5,7 @@
   "note": "无官方 API。LiveBench 2.0 数据取自站点静态文件 data/<release>/{table.csv,categories.json,cost.csv}，release 列表解自站点 JS bundle；旧版（v1）release 只能从 GitHub 仓库 raw 获取（主站已下架旧文件）。",
   "metricNote": "Cost per successful task = (Σcost ÷ Σquestions ÷ score) × 100；Overall = 各类别分的加权平均（权重见 categories.json 的 _overall_weights，缺省 ×1）。"
  },
- "fetchedAt": "2026-10-27T07:12:57+08:00",
+ "fetchedAt": "2026-11-02T21:15:13+08:00",
  "release": "20261025",
  "format": "v2",
  "availableReleases": [
@@ -66,15 +66,15 @@
    },
    "tasks": {
     "data_analysis": 80.3,
-    "reasoning": 91.7,
-    "coding": 97.7,
-    "design": 83.4,
-    "research": 82.0,
     "browser": 89.8,
-    "long_agentic": 77.9
+    "reasoning": 91.7,
+    "research": 82.0,
+    "long_agentic": 77.9,
+    "design": 83.4,
+    "coding": 97.7
    },
-   "costPerTask": 5.916451,
-   "costPerSuccessfulTask": 6.9042
+   "costPerTask": 6.346396,
+   "costPerSuccessfulTask": 7.4059
   },
   {
    "model": "claude-haiku-5.5",
@@ -90,12 +90,12 @@
    },
    "tasks": {
     "data_analysis": 53.1,
-    "reasoning": 82.4,
-    "coding": 91.4,
-    "design": 83.1,
-    "research": 81.9,
     "browser": 69.5,
-    "long_agentic": 40.0
+    "reasoning": 82.4,
+    "research": 81.9,
+    "long_agentic": 40.0,
+    "design": 83.1,
+    "coding": 91.4
    },
    "costPerTask": 0.632335,
    "costPerSuccessfulTask": 0.9053
@@ -114,15 +114,15 @@
    },
    "tasks": {
     "data_analysis": 80.3,
-    "reasoning": 92.2,
-    "coding": 96.3,
-    "design": 86.9,
-    "research": 85.0,
     "browser": 88.4,
-    "long_agentic": 72.8
+    "reasoning": 92.2,
+    "research": 85.0,
+    "long_agentic": 72.8,
+    "design": 86.9,
+    "coding": 96.3
    },
-   "costPerTask": 3.653093,
-   "costPerSuccessfulTask": 4.2905
+   "costPerTask": 4.103949,
+   "costPerSuccessfulTask": 4.82
   },
   {
    "model": "claude-sonnet-5.5",
@@ -138,21 +138,21 @@
    },
    "tasks": {
     "data_analysis": 59.5,
-    "reasoning": 91.6,
-    "coding": 94.7,
-    "design": 85.0,
-    "research": 83.6,
     "browser": 89.3,
-    "long_agentic": 63.4
+    "reasoning": 91.6,
+    "research": 83.6,
+    "long_agentic": 63.4,
+    "design": 85.0,
+    "coding": 94.7
    },
-   "costPerTask": 2.976096,
-   "costPerSuccessfulTask": 3.7183
+   "costPerTask": 3.313937,
+   "costPerSuccessfulTask": 4.1404
   },
   {
    "model": "deepseek-v4.1-flash-1017",
-   "overall": 74.022,
+   "overall": 72.867,
    "categories": {
-    "Long Agentic": 40.9,
+    "Long Agentic": 35.7,
     "Reasoning": 89.1,
     "Coding": 96.0,
     "Browser": 67.2,
@@ -162,15 +162,15 @@
    },
    "tasks": {
     "data_analysis": 79.5,
-    "reasoning": 89.1,
-    "coding": 96.0,
-    "design": 83.4,
-    "research": 79.5,
     "browser": 67.2,
-    "long_agentic": 40.9
+    "reasoning": 89.1,
+    "research": 79.5,
+    "long_agentic": 35.7,
+    "design": 83.4,
+    "coding": 96.0
    },
-   "costPerTask": 0.13387,
-   "costPerSuccessfulTask": 0.1809
+   "costPerTask": 0.134631,
+   "costPerSuccessfulTask": 0.1848
   },
   {
    "model": "gemini-3.8-flash",
@@ -186,15 +186,15 @@
    },
    "tasks": {
     "data_analysis": 54.0,
-    "reasoning": 89.3,
-    "coding": 82.2,
-    "design": 72.7,
-    "research": 79.1,
     "browser": 45.1,
-    "long_agentic": 16.5
+    "reasoning": 89.3,
+    "research": 79.1,
+    "long_agentic": 16.5,
+    "design": 72.7,
+    "coding": 82.2
    },
-   "costPerTask": 0.982297,
-   "costPerSuccessfulTask": 1.6591
+   "costPerTask": 0.984037,
+   "costPerSuccessfulTask": 1.6621
   },
   {
    "model": "gemini-4-argon",
@@ -210,15 +210,15 @@
    },
    "tasks": {
     "data_analysis": 85.2,
-    "reasoning": 95.1,
-    "coding": 89.7,
-    "design": 73.7,
-    "research": 83.1,
     "browser": 82.8,
-    "long_agentic": 61.2
+    "reasoning": 95.1,
+    "research": 83.1,
+    "long_agentic": 61.2,
+    "design": 73.7,
+    "coding": 89.7
    },
-   "costPerTask": 1.643808,
-   "costPerSuccessfulTask": 2.0729
+   "costPerTask": 1.519626,
+   "costPerSuccessfulTask": 1.9163
   },
   {
    "model": "gemma-4-31b",
@@ -234,12 +234,12 @@
    },
    "tasks": {
     "data_analysis": 53.3,
-    "reasoning": 68.3,
-    "coding": 49.0,
-    "design": 58.4,
-    "research": 44.4,
     "browser": 0.0,
-    "long_agentic": 10.7
+    "reasoning": 68.3,
+    "research": 44.4,
+    "long_agentic": 10.7,
+    "design": 58.4,
+    "coding": 49.0
    },
    "costPerTask": 0.067559,
    "costPerSuccessfulTask": 0.1745
@@ -258,15 +258,15 @@
    },
    "tasks": {
     "data_analysis": 76.4,
-    "reasoning": 77.6,
-    "coding": 80.6,
-    "design": 77.2,
-    "research": 70.1,
     "browser": 59.8,
-    "long_agentic": 19.0
+    "reasoning": 77.6,
+    "research": 70.1,
+    "long_agentic": 19.0,
+    "design": 77.2,
+    "coding": 80.6
    },
-   "costPerTask": 0.109844,
-   "costPerSuccessfulTask": 0.177
+   "costPerTask": 0.101325,
+   "costPerSuccessfulTask": 0.1633
   },
   {
    "model": "gpt-5.6-terra",
@@ -282,15 +282,15 @@
    },
    "tasks": {
     "data_analysis": 79.3,
-    "reasoning": 90.6,
-    "coding": 86.2,
-    "design": 76.0,
-    "research": 60.4,
     "browser": 70.3,
-    "long_agentic": 33.1
+    "reasoning": 90.6,
+    "research": 60.4,
+    "long_agentic": 33.1,
+    "design": 76.0,
+    "coding": 86.2
    },
-   "costPerTask": 1.326696,
-   "costPerSuccessfulTask": 1.9571
+   "costPerTask": 1.299101,
+   "costPerSuccessfulTask": 1.9164
   },
   {
    "model": "gpt-6-astra",
@@ -306,15 +306,15 @@
    },
    "tasks": {
     "data_analysis": 83.0,
-    "reasoning": 92.7,
-    "coding": 93.7,
-    "design": 82.0,
-    "research": 85.2,
     "browser": 91.3,
-    "long_agentic": 77.5
+    "reasoning": 92.7,
+    "research": 85.2,
+    "long_agentic": 77.5,
+    "design": 82.0,
+    "coding": 93.7
    },
-   "costPerTask": 3.895206,
-   "costPerSuccessfulTask": 4.5484
+   "costPerTask": 4.134454,
+   "costPerSuccessfulTask": 4.8278
   },
   {
    "model": "gpt-6-luna",
@@ -330,15 +330,15 @@
    },
    "tasks": {
     "data_analysis": 73.4,
-    "reasoning": 81.8,
-    "coding": 84.5,
-    "design": 82.5,
-    "research": 43.5,
     "browser": 70.3,
-    "long_agentic": 30.9
+    "reasoning": 81.8,
+    "research": 43.5,
+    "long_agentic": 30.9,
+    "design": 82.5,
+    "coding": 84.5
    },
-   "costPerTask": 0.085776,
-   "costPerSuccessfulTask": 0.1328
+   "costPerTask": 0.080053,
+   "costPerSuccessfulTask": 0.1239
   },
   {
    "model": "gpt-6.1-sol",
@@ -354,23 +354,23 @@
    },
    "tasks": {
     "data_analysis": 82.7,
-    "reasoning": 92.6,
-    "coding": 96.0,
-    "design": 82.1,
-    "research": 83.5,
     "browser": 93.3,
-    "long_agentic": 68.7
+    "reasoning": 92.6,
+    "research": 83.5,
+    "long_agentic": 68.7,
+    "design": 82.1,
+    "coding": 96.0
    },
-   "costPerTask": 0.639676,
-   "costPerSuccessfulTask": 0.7609
+   "costPerTask": 0.688237,
+   "costPerSuccessfulTask": 0.8186
   },
   {
    "model": "gpt-6.1-terra",
-   "overall": 77.206,
+   "overall": 77.789,
    "categories": {
     "Long Agentic": 48.6,
     "Reasoning": 88.7,
-    "Coding": 90.8,
+    "Coding": 94.3,
     "Browser": 93.1,
     "Data Analysis": 82.3,
     "Research": 73.9,
@@ -378,15 +378,15 @@
    },
    "tasks": {
     "data_analysis": 82.3,
-    "reasoning": 88.7,
-    "coding": 90.8,
-    "design": 82.3,
-    "research": 73.9,
     "browser": 93.1,
-    "long_agentic": 48.6
+    "reasoning": 88.7,
+    "research": 73.9,
+    "long_agentic": 48.6,
+    "design": 82.3,
+    "coding": 94.3
    },
    "costPerTask": 0.517657,
-   "costPerSuccessfulTask": 0.6705
+   "costPerSuccessfulTask": 0.6655
   },
   {
    "model": "grok-4.6",
@@ -402,12 +402,12 @@
    },
    "tasks": {
     "data_analysis": 75.3,
-    "reasoning": 91.2,
-    "coding": 89.1,
-    "design": 79.8,
-    "research": 84.5,
     "browser": 49.4,
-    "long_agentic": 28.0
+    "reasoning": 91.2,
+    "research": 84.5,
+    "long_agentic": 28.0,
+    "design": 79.8,
+    "coding": 89.1
    },
    "costPerTask": 0.963493,
    "costPerSuccessfulTask": 1.4221
@@ -426,12 +426,12 @@
    },
    "tasks": {
     "data_analysis": 76.9,
-    "reasoning": 82.7,
-    "coding": 84.5,
-    "design": 78.0,
-    "research": 86.4,
     "browser": 49.3,
-    "long_agentic": 46.1
+    "reasoning": 82.7,
+    "research": 86.4,
+    "long_agentic": 46.1,
+    "design": 78.0,
+    "coding": 84.5
    },
    "costPerTask": 2.04299,
    "costPerSuccessfulTask": 2.9128
@@ -450,12 +450,12 @@
    },
    "tasks": {
     "data_analysis": 72.8,
-    "reasoning": 78.3,
-    "coding": 64.0,
-    "design": 58.3,
-    "research": 59.9,
     "browser": 12.0,
-    "long_agentic": 8.5
+    "reasoning": 78.3,
+    "research": 59.9,
+    "long_agentic": 8.5,
+    "design": 58.3,
+    "coding": 64.0
    },
    "costPerTask": 0.843911,
    "costPerSuccessfulTask": 1.7936
@@ -474,12 +474,12 @@
    },
    "tasks": {
     "data_analysis": 79.1,
-    "reasoning": 91.1,
-    "coding": 81.8,
-    "design": 77.8,
-    "research": 77.9,
     "browser": 75.9,
-    "long_agentic": 39.1
+    "reasoning": 91.1,
+    "research": 77.9,
+    "long_agentic": 39.1,
+    "design": 77.8,
+    "coding": 81.8
    },
    "costPerTask": 0.744498,
    "costPerSuccessfulTask": 1.0443
@@ -498,15 +498,15 @@
    },
    "tasks": {
     "data_analysis": 78.7,
-    "reasoning": 90.7,
-    "coding": 59.3,
-    "design": 77.2,
-    "research": 79.0,
     "browser": 75.2,
-    "long_agentic": 26.4
+    "reasoning": 90.7,
+    "research": 79.0,
+    "long_agentic": 26.4,
+    "design": 77.2,
+    "coding": 59.3
    },
-   "costPerTask": 1.413406,
-   "costPerSuccessfulTask": 2.1889
+   "costPerTask": 1.348957,
+   "costPerSuccessfulTask": 2.0891
   },
   {
    "model": "mimo-v2.6-pro",
@@ -522,12 +522,12 @@
    },
    "tasks": {
     "data_analysis": 72.3,
-    "reasoning": 79.6,
-    "coding": 81.5,
-    "design": 78.5,
-    "research": 76.7,
     "browser": 77.3,
-    "long_agentic": 35.2
+    "reasoning": 79.6,
+    "research": 76.7,
+    "long_agentic": 35.2,
+    "design": 78.5,
+    "coding": 81.5
    },
    "costPerTask": 0.125349,
    "costPerSuccessfulTask": 0.1831
@@ -546,15 +546,39 @@
    },
    "tasks": {
     "data_analysis": 71.4,
-    "reasoning": 82.9,
-    "coding": 83.9,
-    "design": 74.0,
-    "research": 72.7,
     "browser": 80.6,
-    "long_agentic": 28.8
+    "reasoning": 82.9,
+    "research": 72.7,
+    "long_agentic": 28.8,
+    "design": 74.0,
+    "coding": 83.9
    },
    "costPerTask": 0.102565,
    "costPerSuccessfulTask": 0.1533
+  },
+  {
+   "model": "mistral-large-4-0",
+   "overall": 63.494,
+   "categories": {
+    "Long Agentic": 27.5,
+    "Reasoning": 85.2,
+    "Coding": 95.4,
+    "Browser": 17.4,
+    "Data Analysis": 76.6,
+    "Research": 79.7,
+    "Design": 76.3
+   },
+   "tasks": {
+    "data_analysis": 76.6,
+    "browser": 17.4,
+    "reasoning": 85.2,
+    "research": 79.7,
+    "long_agentic": 27.5,
+    "design": 76.3,
+    "coding": 95.4
+   },
+   "costPerTask": 0.309,
+   "costPerSuccessfulTask": 0.4867
   },
   {
    "model": "mistral-large-4",
@@ -570,12 +594,12 @@
    },
    "tasks": {
     "data_analysis": 76.5,
-    "reasoning": 83.9,
-    "coding": 60.0,
-    "design": 65.6,
-    "research": 28.1,
     "browser": 0.6,
-    "long_agentic": 8.8
+    "reasoning": 83.9,
+    "research": 28.1,
+    "long_agentic": 8.8,
+    "design": 65.6,
+    "coding": 60.0
    },
    "costPerTask": 0.711267,
    "costPerSuccessfulTask": 1.6202
@@ -594,12 +618,12 @@
    },
    "tasks": {
     "data_analysis": 79.6,
-    "reasoning": 89.7,
-    "coding": 90.2,
-    "design": 74.8,
-    "research": 68.6,
     "browser": 30.9,
-    "long_agentic": 25.5
+    "reasoning": 89.7,
+    "research": 68.6,
+    "long_agentic": 25.5,
+    "design": 74.8,
+    "coding": 90.2
    },
    "costPerTask": 0.864806,
    "costPerSuccessfulTask": 1.372
@@ -618,12 +642,12 @@
    },
    "tasks": {
     "data_analysis": 60.2,
-    "reasoning": 73.7,
-    "coding": 73.6,
-    "design": 60.3,
-    "research": 80.3,
     "browser": 26.2,
-    "long_agentic": 11.7
+    "reasoning": 73.7,
+    "research": 80.3,
+    "long_agentic": 11.7,
+    "design": 60.3,
+    "coding": 73.6
    },
    "costPerTask": 0.482976,
    "costPerSuccessfulTask": 0.9355
@@ -642,12 +666,12 @@
    },
    "tasks": {
     "data_analysis": 81.6,
-    "reasoning": 90.6,
-    "coding": 86.2,
-    "design": 75.1,
-    "research": 88.0,
     "browser": 60.0,
-    "long_agentic": 52.6
+    "reasoning": 90.6,
+    "research": 88.0,
+    "long_agentic": 52.6,
+    "design": 75.1,
+    "coding": 86.2
    },
    "costPerTask": 1.494106,
    "costPerSuccessfulTask": 2.015
@@ -666,12 +690,12 @@
    },
    "tasks": {
     "data_analysis": 65.7,
-    "reasoning": 71.7,
-    "coding": 61.3,
-    "design": 57.1,
-    "research": 70.9,
     "browser": 18.0,
-    "long_agentic": 7.3
+    "reasoning": 71.7,
+    "research": 70.9,
+    "long_agentic": 7.3,
+    "design": 57.1,
+    "coding": 61.3
    },
    "costPerTask": 0.07238,
    "costPerSuccessfulTask": 0.1557
@@ -690,12 +714,12 @@
    },
    "tasks": {
     "data_analysis": 64.6,
-    "reasoning": 74.6,
-    "coding": 71.3,
-    "design": 62.8,
-    "research": 66.7,
     "browser": 21.6,
-    "long_agentic": 11.7
+    "reasoning": 74.6,
+    "research": 66.7,
+    "long_agentic": 11.7,
+    "design": 62.8,
+    "coding": 71.3
    },
    "costPerTask": 0.148832,
    "costPerSuccessfulTask": 0.2963
@@ -714,12 +738,12 @@
    },
    "tasks": {
     "data_analysis": 76.6,
-    "reasoning": 80.0,
-    "coding": 86.8,
-    "design": 75.9,
-    "research": 59.4,
     "browser": 24.2,
-    "long_agentic": 20.6
+    "reasoning": 80.0,
+    "research": 59.4,
+    "long_agentic": 20.6,
+    "design": 75.9,
+    "coding": 86.8
    },
    "costPerTask": 0.487934,
    "costPerSuccessfulTask": 0.8357
@@ -738,15 +762,15 @@
    },
    "tasks": {
     "data_analysis": 78.4,
-    "reasoning": 88.2,
-    "coding": 60.3,
-    "design": 78.6,
-    "research": 69.9,
     "browser": 49.4,
-    "long_agentic": 29.9
+    "reasoning": 88.2,
+    "research": 69.9,
+    "long_agentic": 29.9,
+    "design": 78.6,
+    "coding": 60.3
    },
-   "costPerTask": 1.142449,
-   "costPerSuccessfulTask": 1.8558
+   "costPerTask": 1.157238,
+   "costPerSuccessfulTask": 1.8798
   },
   {
    "model": "smaug-nemotron-3.5-nvfp4",
@@ -762,12 +786,12 @@
    },
    "tasks": {
     "data_analysis": 65.1,
-    "reasoning": 75.1,
-    "coding": 72.2,
-    "design": 62.7,
-    "research": 67.8,
     "browser": 25.6,
-    "long_agentic": 8.4
+    "reasoning": 75.1,
+    "research": 67.8,
+    "long_agentic": 8.4,
+    "design": 62.7,
+    "coding": 72.2
    },
    "costPerTask": 0.074053,
    "costPerSuccessfulTask": 0.1472
@@ -786,20 +810,20 @@
    },
    "tasks": {
     "data_analysis": 63.5,
-    "reasoning": 83.8,
-    "coding": 85.6,
-    "design": 76.9,
-    "research": 72.8,
     "browser": 24.8,
-    "long_agentic": 19.4
+    "reasoning": 83.8,
+    "research": 72.8,
+    "long_agentic": 19.4,
+    "design": 76.9,
+    "coding": 85.6
    },
    "costPerTask": 0.729511,
    "costPerSuccessfulTask": 1.2448
   }
  ],
  "stats": {
-  "modelCount": 31,
-  "withCost": 31,
-  "withOverall": 31
+  "modelCount": 32,
+  "withCost": 32,
+  "withOverall": 32
  }
 }
