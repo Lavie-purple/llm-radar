@@ -61,7 +61,7 @@ python tools/run_all.py --no-snapshot --no-selftest --no-health   # 只抓取与
 - **Python 侧零第三方依赖。** `tools/*.py` 只 import 标准库（`urllib` / `json` / `statistics` /
   `csv` …），不需要 `pip install` 任何东西。开发环境为 Python 3.13。
 - **`selftest.js` 只用 Node 内置模块**（`fs` / `path` / `vm`），开箱即跑。
-- **`visual_check.js` 与 `check_deploy.js` 需要装包**，它们都要跑真实浏览器：
+- **`visual_check.js` / `mobile_check.js` / `check_deploy.js` 需要装包**，它们都要跑真实浏览器：
   ```bash
   npm i playwright && npx playwright install chromium
   ```
@@ -218,9 +218,10 @@ llm-radar/
 | `health.py` | 抓取量体检 |
 | `snapshot.py` | 快照存档 + 变更 diff |
 | `selftest.js` | DOM 桩冒烟测试，**236 条断言** |
-| `visual_check.js` | 真实浏览器量 DOM，**148 项检查** |
+| `visual_check.js` | 真实浏览器量 DOM（桌面 ≥1680），**148 项检查** |
+| `mobile_check.js` | 真实浏览器量 DOM（375 手机 + 1680 桌面回归），**41 项检查** |
 | `check_deploy.js` | 线上部署核验：本地 vs 线上逐字节比对 + 线上真渲染（**38 项**，带 `GITHUB_TOKEN` 53 项），**推完跑一次** |
-| `falsify.py` | 证伪工具，**17 条用例**（+1 条联网用例），验证上面各层守卫真的会红 |
+| `falsify.py` | 证伪工具，**23 条用例**（+1 条联网用例），验证上面各层守卫真的会红 |
 | `verify_lmarena.py` | LMArena 数据的独立一致性校验（名次连续性、分数降序等 6 类断言） |
 | `stat_app.py` | 统计当前快照规模（含「新」标识的各窗口亮标数）—— **本文档里的所有规模数字都出自它** |
 | `make_preview.py` / `make_report.py` | 生成人工核对用的 HTML 预览 / 管道总览页 |
@@ -232,18 +233,22 @@ llm-radar/
 
 改完代码**不要靠看**。这个项目有四层，每一层都能独立抓 bug。
 前三层证明「我这份源码是对的」，第四层证明**「线上跑的就是这一份」**。
+其中第二层（真浏览器量 DOM）拆成桌面与手机两个脚本 —— `visual_check.js` 只在 ≥1680 跑，
+手机断点（≤720）的回归它一条都看不见。
 
 ```bash
 node tools/selftest.js          # 236 条断言：数据管道 + 前端逻辑（纯内置模块）
-node tools/visual_check.js      # 148 项检查：需先起 8758 端口 + 已装 playwright
-python tools/falsify.py         # 17 条证伪用例（退出码 0=全红通过 / 1=有用例失效 / 2=开跑前体检不过）
+node tools/visual_check.js      # 148 项检查：桌面 ≥1680，需先起 8758 端口 + 已装 playwright
+node tools/mobile_check.js      # 41 项检查：375 手机 + 1680 桌面回归，同样需 8758
+python tools/falsify.py         # 23 条证伪用例（退出码 0=全红通过 / 1=有用例失效 / 2=开跑前体检不过）
 node tools/check_deploy.js      # 线上部署核验：推完跑一次，本地 vs 线上逐字节比对 + 线上真渲染
 node tools/check_deploy.js --wait=120   # 推完立刻跑：等线上追平 + 部署跑完（整轮 120s 预算）
 FALSIFY_NET=1 python tools/falsify.py   # 连联网用例一起证伪（含 check_deploy）
 ```
 
-起服务：`python -m http.server 8758 -d .`（`visual_check.js` 会打开真实 Chromium 逐项量 DOM。
-`check_deploy.js` **不用**先起服务 —— 它自己起一个随机端口的静态服务做本地渲染对照）
+起服务：`python -m http.server 8758 -d .`（`visual_check.js` 与 `mobile_check.js` 都会打开
+真实 Chromium 逐项量 DOM。`check_deploy.js` **不用**先起服务 —— 它自己起一个随机端口的
+静态服务做本地渲染对照）
 
 **为什么是四层**
 
@@ -261,7 +266,17 @@ FALSIFY_NET=1 python tools/falsify.py   # 连联网用例一起证伪（含 chec
    > **这个项目里的两个真 bug 都是"看着正常、量出来才现原形"** ——
    > 所以「截图看着没问题」不构成通过依据。
 
-3. **`falsify.py`（17 条）** —— **证伪**：把被守卫保护的那行代码真的拆掉，看守卫是否变红。
+   **`mobile_check.js`（41 项）** 是第二层的手机半边：在 375×812、`isMobile + hasTouch`
+   下量 DOM，另开一个 1680 上下文做**桌面回归**（确认手机规则没漏到宽屏）。
+   它守的不是「好看」，是四条会让信息直接消失的事实：
+   ① 两根 sticky 列之和 > 容器宽 → 初始可见数据格 **0 个**（整屏只有模型名和价格）；
+   ② `max-height:none` → 表头 sticky 没有可依附的滚动容器；
+   ③ 触屏没有 hover → 名次的来源/原始分（tooltip）完全够不着，等于违反硬规则 3；
+   ④ 31px 高的格子点不中。
+   点按 tooltip 用**合成 `click`（不派发 `mouseover`）**来测，否则 Playwright 的
+   `tap()` 会补发兼容鼠标事件，把「只剩 hover」的回归伪装成通过。
+
+3. **`falsify.py`（23 条）** —— **证伪**：把被守卫保护的那行代码真的拆掉，看守卫是否变红。
    锚点直接绑在源码字符串上，**「锚点失效」和「拆了还全绿」都算失败**（退出码 1），
    防止过期用例长期假装通过。
 
@@ -283,11 +298,13 @@ FALSIFY_NET=1 python tools/falsify.py   # 连联网用例一起证伪（含 chec
    「徽章不再用 llm-stats 源色」报「仍然全绿」，但单独跑、以及连跑它前面那条再跑它，
    **两次都精确变红**。所以判定必须三分：`变红` / `仍然全绿（假守卫）` /
    **`没跑完（结论不作数）`**。做法是要求被测工具打出**末尾必定出现**的收尾汇总
-   （`selftest.js` 的 `／ FAIL `、`visual_check.js` 的 `截图目录：`），打不出来就不给结论。
+   （`selftest.js` 的 `／ FAIL `、`visual_check.js` 的 `截图目录：`、
+   `mobile_check.js` 的 `手机端核验：`），打不出来就不给结论。
    顺带修掉一个 Windows 坑：`subprocess(..., text=True)` 默认按本地编码解码，
    而 node 输出的是 UTF-8 —— 必须显式 `encoding='utf-8', errors='replace'`。
 
-   ⚠️ **靶子不止 `radar.js` / `radar.css` —— `tools/visual_check.js` 自己也是靶子。**
+   ⚠️ **靶子不止 `radar.js` / `radar.css` —— `tools/visual_check.js` 自己也是靶子，
+   手机适配又新增了 `mobile_check.js` 的 6 条用例。**
    守卫也会写出没信息量的产物，同样要被证伪。实测：`shot('17-newbadge')` 原先是整屏截图，
    与 `06-trend-pending` / `14-flash` 拍出来的 PNG **md5 完全相同**（都是「矩阵停在顶部」那一屏），
    等于什么也没记录 —— 而「靠形状传意」的元素（17px 宽的徽章）恰恰只能靠特写肉眼看。
@@ -417,14 +434,45 @@ FALSIFY_NET=1 python tools/falsify.py   # 连联网用例一起证伪（含 chec
   **不能**写成复合选择器 `closest('[data-cell], [data-model]')` —— 后者在桩里永远返回 `null`，
   测试会莫名其妙全红（真实浏览器里两者等价）。
 
+- **手机端：首列写 `width:148px` 不生效，是 `.mname` 的 min-content 在撑。**
+  `.mname` 是 `flex:1; white-space:nowrap` 的 flex 项 —— `min-width:0` 只管「能不能收缩」，
+  管不到**表格 auto 布局算 min-content 时把整串长名字当成这一列的最小宽度**。
+  实测：写 148px 量出来 228px；隐藏 `.mname` 立刻变 148px；
+  改成 `flex:1 1 0; width:0; min-width:0` 后落到 148px，名字仍由 flex-grow 撑到 116px 并正常 ellipsis。
+
+- **手机端：两行 sticky 表头的偏移要「量」，不能写死。**
+  分组行在窄列下被内容撑到 45px（桌面是 26px），写死 `top:26px` 会让两行压字 23px；
+  而量 `thead tr.grp th` 又会取到 `rowspan=2` 的角格（85px），把子类列头顶进 tbody、中间露出一排数字。
+  正解是量 **`thead tr.grp` 这个 `<tr>` 本身**，把高度写进 `--grph`，CSS 用 `top:var(--grph)`；
+  字体晚到 / 窗口变化还要重算。守卫断言也必须是 **`grp.bottom == sub.top`**（既无重叠也无缝隙），
+  只写「不重叠」会漏掉拉开空档那次事故。
+
+- **手机端：sticky 顶栏会盖住表格内部的表头。**
+  嵌套滚动容器里表头钉的是「容器顶」而非「视口顶」，页面一滚，103px 高的 sticky 顶栏
+  正好压在它上面 —— 列头等于白钉。手机上把 `.topbar` 改成 `position:static` 即可。
+  守卫用 `elementFromPoint` 直接问「表头坐标上到底是谁」，比量 `top` 更贴近用户所见。
+
+- **手机端：触屏没有 hover，而「这个名次来自哪个源」只在 tooltip 里。**
+  `radar.js` 用 `pointer:coarse` 判定加了一条点按分支（点格子弹、再点收、点别处收、
+  表格自身滚动也收），并把气泡夹在视口内；`scroll` 监听要用 **capture** 才接得到
+  `.tablewrap` 自己的滚动（scroll 不冒泡）。这条不补，硬规则 3 在手机上就是空的。
+
+- **守卫的指标选错，全绿也是假的（这轮连踩两次）。**
+  ① 数「可见数据格」时数了全表 118 行 → 236 个，任何 `≥2` 都假绿；必须只数第一行。
+  ② 「两行表头不重叠」只写了 `grp.bottom <= sub.top`，漏掉「中间露出一条数据」；
+  正确性质是两者**相等**。③ 横滑后断言「≥3 格」是拍脑袋：列头文字长短不一，
+  auto 布局下有些列被撑到 65px，206px 可见带里 legitimately 只放 2 格 ——
+  改成「首个可见列从 #0 变成 ≥#3」，守的才是「能滑到别的维度」这件事。
+
 **开发循环**
 
 ```bash
 # 改前端逻辑或数据
 node tools/selftest.js
 
-# 改样式（先起 8758 端口）
+# 改样式（先起 8758 端口）—— 手机断点也要跑
 node tools/visual_check.js
+node tools/mobile_check.js
 
 # 写完任何守卫后 —— 必须证明它会在被拆时变红
 python tools/falsify.py

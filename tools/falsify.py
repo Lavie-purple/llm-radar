@@ -1,7 +1,7 @@
 """守卫证伪器 —— 「没见过它变红的守卫不算守卫」。
 
-本项目有多条测试层（selftest.js 的 DOM 桩、visual_check.js 的真浏览器、
-check_deploy.js 的线上部署核验）。新写一条断言之后，必须把**它守护的那段代码拆掉**，
+本项目有多条测试层（selftest.js 的 DOM 桩、visual_check.js 的真浏览器桌面布局、
+mobile_check.js 的手机视口、check_deploy.js 的线上部署核验）。新写一条断言之后，必须把**它守护的那段代码拆掉**，
 确认断言真的变红。这件事以前每轮手工做，这里把它机械化了。
 
 用法：
@@ -90,6 +90,26 @@ CASES = [
      'visual_check.js'),
     ('徽章特写不裁剪（退化成与别的截图 md5 相同的整屏图）',
      VC, '        width: b.width + pad * 2,', '        width: 1680,', 'visual_check.js'),
+
+    # ── 手机端适配（tools/mobile_check.js，2026-11-06）────────────────
+    ('首列不瘦身（两根 sticky 列又吃掉整屏，数据格 0 个）',
+     CSS, 'table.matrix, table.dtable { --colmodel: 148px; }',
+     'table.matrix, table.dtable { --colmodel: 270px; }', 'mobile_check.js'),
+    ('模型名 flex base 不归零（min-content 把首列顶回 228px）',
+     CSS, '.mbtn .mname { flex: 1 1 0; width: 0; min-width: 0; font-size: 11.5px; }',
+     '.mbtn .mname { flex: 1 1 auto; width: auto; min-width: 0; font-size: 11.5px; }',
+     'mobile_check.js'),
+    ('价格列重新横向 sticky（手机又只剩模型名和价格）',
+     CSS, 'position: static; left: auto; z-index: auto; width: 84px; font-size: 9.5px;',
+     'position: sticky; left: 148px; z-index: 2; width: 84px; font-size: 9.5px;',
+     'mobile_check.js'),
+    ('触屏点格子不出 tooltip（名次来源在手机上够不着）',
+     JS, 'if (coarsePointer()) {', 'if (false) {', 'mobile_check.js'),
+    ('表头偏移量到 rowspan 角格（两行表头中间露出一排数据）',
+     JS, "var g = t.querySelector('thead tr.grp');",
+     "var g = t.querySelector('thead tr.grp th');", 'mobile_check.js'),
+    ('手机顶栏重新 sticky（盖住表格内部的表头）',
+     CSS, '.topbar { position: static; }', '.topbar { position: sticky; }', 'mobile_check.js'),
 ]
 
 # 需要联网 + 真浏览器的用例，默认不跑（每次推完手动开一次就够）。
@@ -117,6 +137,7 @@ SUMMARY = {
     'selftest.js': '／ FAIL ',
     'visual_check.js': '截图目录：',
     'check_deploy.js': '线上核验：',
+    'mobile_check.js': '手机端核验：',
 }
 
 
@@ -199,7 +220,7 @@ def main():
     print()
     print('还原后复跑：')
     ok_all = True
-    for t in ['selftest.js', 'visual_check.js']:
+    for t in ['selftest.js', 'visual_check.js', 'mobile_check.js']:
         bad, done, rc, _out = run(t)
         if bad or not done:
             ok_all = False

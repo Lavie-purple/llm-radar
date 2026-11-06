@@ -54,6 +54,12 @@
   var RAIL_MQ = (window.matchMedia ? window.matchMedia('(min-width: 2560px)') : null);
   function railOn() { return !!(RAIL_MQ && RAIL_MQ.matches); }
 
+  /* 触屏没有 hover：格子里的「原始分 / 来自哪个源」全在 tooltip 上，
+     只绑 mouseover 等于在手机上把「每个名次都能追溯来源」这条硬规则丢了。
+     用 pointer:coarse 判定而不是看宽度 —— 大屏触屏一样需要点按分支。 */
+  var COARSE_MQ = (window.matchMedia ? window.matchMedia('(pointer: coarse)') : null);
+  function coarsePointer() { return !!(COARSE_MQ && COARSE_MQ.matches); }
+
   /* ── 工具 ───────────────────────────────────────────── */
   var $ = function (id) { return document.getElementById(id); };
 
@@ -64,7 +70,24 @@
     if (!t || !w) return;
     var width = w.clientWidth || w.getBoundingClientRect().width;
     if (width > 0) t.style.setProperty('--cardw', Math.round(width) + 'px');
+    setHeaderOffset(t);
   }
+
+  /* 两行表头都 sticky 时，第二行的 top 必须等于第一行的实际高度。
+     手机窄列下分组行会被撑到 45px，而桌面写死的是 26px —— 差出来的 19~23px
+     就是两行表头互相压字。这里量出来交给 CSS 变量，CSS 只消费、不再猜。
+     ⚠️ 字体晚到 / 窗口变化都会改这个高度，所以下面另有两处重算挂钩。 */
+  function setHeaderOffset(t) {
+    if (!t || typeof t.querySelector !== 'function') return;   // DOM 桩没有 querySelector
+    /* ⚠️ 必须量 tr 本身，不能量 `thead tr.grp th`：那一行的第一个 th 是
+       rowspan=2 的「模型」格，高 85px（跨两行），而分组行只有 45px。
+       量错会把子类列头顶到 tbody 数字区，中间露出一条数据（截图实测）。 */
+    var g = t.querySelector('thead tr.grp');
+    if (!g || !g.getBoundingClientRect) return;
+    var h = g.getBoundingClientRect().height;
+    if (h > 0) t.style.setProperty('--grph', Math.round(h) + 'px');
+  }
+  function reheader() { setHeaderOffset($('matrix')); setHeaderOffset($('dtable')); }
   var esc = function (s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
       return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c];
@@ -1089,8 +1112,12 @@
     var nx = x + 16, ny = y + 16;
     if (nx + r.width > window.innerWidth - 12) nx = x - r.width - 16;
     if (ny + r.height > window.innerHeight - 12) ny = y - r.height - 16;
-    tip.style.left = Math.max(8, nx) + 'px';
-    tip.style.top = Math.max(8, ny) + 'px';
+    /* 翻转之后仍可能越界（窄视口 + 长提示）。最后夹一次，保证整个气泡在视口内：
+       触屏点按没有「鼠标移开」事件，气泡跑出屏幕就等于这条信息丢了。 */
+    var mx = Math.max(8, window.innerWidth - r.width - 8);
+    var my = Math.max(8, window.innerHeight - r.height - 8);
+    tip.style.left = Math.min(Math.max(8, nx), mx) + 'px';
+    tip.style.top = Math.min(Math.max(8, ny), my) + 'px';
   }
   function showTip(html, x, y) {
     tip.innerHTML = html;
@@ -1171,6 +1198,23 @@
 
   /* ── 事件 ───────────────────────────────────────────── */
   document.addEventListener('click', function (e) {
+    /* 触屏：点格子 = 看这个名次的来源与原始分（没有 hover 这回事）。
+       再点同一格收起；点别处一律收起，免得气泡赖在表格上挡住数字。
+       只接管格子 —— 模型名那一下仍然归下面的 [data-toggle] 展开卡片。 */
+    var tcell = e.target.closest ? e.target.closest('[data-cell]') : null;
+    if (coarsePointer()) {
+      if (tcell) {
+        var thtml = tipHTML(tcell);
+        if (thtml) {
+          var tkey = tcell.dataset.cell;
+          if (!tip.hidden && tip.dataset.key === tkey) { hideTip(); return; }
+          tip.dataset.key = tkey;
+          showTip(thtml, e.clientX, e.clientY);
+          return;
+        }
+      }
+      hideTip();
+    }
     var tab = e.target.closest('[data-view]');
     if (tab) {
       state.view = tab.dataset.view;
@@ -1249,7 +1293,9 @@
   document.addEventListener('mouseout', function (e) {
     if (!tipNode(e)) hideTip();
   });
-  window.addEventListener('scroll', hideTip, { passive: true });
+  /* capture 才能接到 .tablewrap 自己的滚动（scroll 不冒泡）——
+     手指横滑表格时 tooltip 必须跟着收，否则它停在原地指向别的格子。 */
+  document.addEventListener('scroll', hideTip, { passive: true, capture: true });
 
   /* ── 页脚 ───────────────────────────────────────────── */
   function renderFooter() {
@@ -1296,6 +1342,11 @@
     var onRailChange = function () { renderAll(); };
     if (RAIL_MQ.addEventListener) RAIL_MQ.addEventListener('change', onRailChange);
     else if (RAIL_MQ.addListener) RAIL_MQ.addListener(onRailChange);
+  }
+  /* 分组行高度会随字体晚到 / 视口变化而变，表头偏移要跟着重算 */
+  if (window.addEventListener) window.addEventListener('resize', reheader);
+  if (document.fonts && document.fonts.ready && document.fonts.ready.then) {
+    document.fonts.ready.then(reheader);
   }
 
   renderFreshness();

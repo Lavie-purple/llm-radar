@@ -641,7 +641,137 @@ table.dtable tbody tr:hover td.modelcell { background: var(--color-surface-2); }
   background: var(--color-faint); opacity: 0.4; vertical-align: 1px;
 }
 
+/* 窄屏也要保留表头的 sticky —— 它只在「有纵向滚动的容器」里才生效。
+   以前这里写 max-height:none，结果 118 行表格整条铺进文档流，
+   sticky 表头完全没有可依附的滚动容器，滑两屏就不知道每列是什么了。 */
 @media (max-width: 900px) {
   .viewhead-meta { align-items: flex-start; }
-  .tablewrap { max-height: none; }
+  .tablewrap { max-height: 70vh; }
+}
+
+/* 表头下的横向滑动提示：默认不显示，只有手机端打开（见文件末尾的 720 分支）。 */
+.swipehint { display: none; }
+
+/* ══════════════════════════════════════════════════════════════════
+   手机端（≤720px）
+   ──────────────────────────────────────────────────────────────────
+   不是「把字号调小」就完事。真浏览器量出来的三个硬事实（375×812）：
+     · 两根 sticky 列 = 模型 276 + 价格 94 = 370px，容器只有 349px
+       → scrollLeft=0 时可见数据格 **0 个**，整屏只有模型名和价格；
+     · 表前装饰 175+176+242+241 = 834px，第一个格子在 y=1561；
+     · .tablewrap 高 3796px 且 max-height:none → 表头 sticky 失效。
+   另外触屏没有 hover，而「这个名次来自哪个源」只在 tooltip 里 ——
+   不做点按分支，手机端就等于把「每个名次可追溯」这条硬规则丢了
+   （radar.js 里对应 tap 分支；这里只管版式）。
+   全部规则都关在 720 断点里，桌面 / 超宽屏一列都不动。
+   ══════════════════════════════════════════════════════════════════ */
+@media (max-width: 720px) {
+  .wrap { width: calc(100% - 20px); }
+
+  /* 顶栏 / 基准条：四源状态允许折成两行，但说明文字让给页脚「数据口径」 */
+  /* 顶栏在手机上不钉住。103px 高的 sticky 顶栏会盖住表格内部的表头：
+     嵌套滚动容器里表头钉的是「容器顶」而不是「视口顶」，页面一滚，
+     表头刚好落到顶栏底下 —— 列头等于白钉。让顶栏随页面滚走即可。 */
+  .topbar { position: static; }
+  .topbar-in { padding: 7px 0 5px; gap: 3px; }
+  .brand-mark { font-size: 1rem; }
+  .brand-sub { display: none; }
+  .topbar-right { gap: 6px; }
+  .freshness { gap: 3px 10px; }
+  .fresh { font-size: 10px; }
+  .fresh i { width: 6px; height: 6px; }
+  .genstamp { font-size: 10px; }
+  .srccard { min-width: 138px; padding: 7px 9px; }
+  .srccard p { display: none; }
+  .srccard-h b { font-size: 11px; }
+  .srccard-h em { font-size: 9px; }
+
+  /* 变更条：14 个 chip 在 237px 宽里会折出 473px 高，把表整个顶出首屏。
+     改成单行横滑 —— 内容一条不删，只是换了个方向取。 */
+  .chbar { gap: 8px; padding: 8px 10px; }
+  .chbar h3 { font-size: 11px; }
+  .chbar .chlist { flex-wrap: nowrap; overflow-x: auto; width: 100%; scrollbar-width: none; }
+  .chbar .chlist::-webkit-scrollbar { display: none; }
+  .chip { flex: none; font-size: 10px; }
+  .chbar .chnote { font-size: 10px; line-height: 1.45; }
+
+  /* 控制条：七个视图标签改成单行横滑，别叠三行把表挤到屏外 */
+  .controls { margin: 12px 0 10px; padding-bottom: 10px; gap: 10px; }
+  .viewtabs { flex-wrap: nowrap; overflow-x: auto; width: 100%; scrollbar-width: none; }
+  .viewtabs::-webkit-scrollbar { display: none; }
+  .viewtabs button { flex: none; min-height: 40px; padding: 8px 12px; }
+  .filters { width: 100%; gap: 8px 10px; }
+  .seg button { min-height: 40px; padding: 8px 12px; font-size: 11px; }
+  .seg-sm button { min-height: 36px; }
+  .search { flex: 1 1 130px; }
+  .search input { width: 100%; min-height: 40px; }
+  .covtoggle { min-height: 40px; }
+
+  /* 视图头：长说明在手机上太贵（241px）。读法在页脚完整保留，内容不丢 */
+  .viewhead { gap: 10px; margin-bottom: 8px; }
+  .viewhead h2 { font-size: 1.15rem; }
+  .viewhead .lead { display: none; }
+  .viewhead-meta { gap: 6px; }
+  .legend { font-size: 9.5px; gap: 7px; }
+  .sortrow { gap: 8px; justify-content: flex-start; }
+
+  .swipehint {
+    display: flex; align-items: center; gap: 6px;
+    margin: 0 0 8px; padding: 6px 10px;
+    font-size: 10.5px; line-height: 1.5; color: var(--color-muted);
+    background: var(--color-surface); border: 1px dashed var(--color-border-2);
+    border-radius: var(--radius-sm);
+  }
+  .swipehint b { color: var(--color-text); font-weight: 600; }
+
+  /* 表：内部纵向滚动（sticky 表头的可依附容器） */
+  .tablewrap { max-height: 70vh; -webkit-overflow-scrolling: touch; }
+  table.matrix, table.dtable { --colmodel: 148px; }
+
+  /* 价格列只保留「竖向 sticky」，横向不再钉住。
+     两根 sticky 一起吃掉 242px 时，手机上一格数据都露不出来；
+     放开横向钉住后，横滑时它就正常滚走，成本仍在展开卡片里完整可查。 */
+  /* 第二行表头的 sticky 偏移 = 第一行的**实际**高度（JS 量完写进 --grph）。
+     写死 26px 会翻车：手机上分组行被内容撑到 45px，两行 sticky 当场重叠 23px
+     （2026-11-06 表头特写实测）。CSS 不再猜这个数。 */
+  table.matrix th.pricehead {
+    position: sticky; top: 0; left: auto; z-index: 3; width: 84px;
+  }
+  table.matrix td.pricecell {
+    position: static; left: auto; z-index: auto; width: 84px; font-size: 9.5px;
+  }
+  table.matrix thead tr.sub th { top: var(--grph, 26px); height: 40px; }
+  table.matrix th.corner { left: 0; }
+
+  /* 首列瘦身后，覆盖数 / 开源标记让给名字（展开卡片里两样都在） */
+  .mbtn { min-width: 0; min-height: 42px; padding: 4px 8px; gap: 6px; }
+  .mbtn .cov, .mbtn .badge-open { display: none; }
+  /* ⚠️ 首列 width:148px 一开始完全没生效（实测仍是 228px）。
+     根因：.mname 是 flex 项、white-space:nowrap 且没写 flex-basis，
+     min-width:0 只管「能不能收缩」，管不到表格 auto 布局算 min-content 时
+     把整串长名字当成这一列的最小宽度。把 flex base size 归零
+     （flex:1 1 0 + width:0 + min-width:0）后，列宽才真的落到 148px，
+     名字照常由 flex-grow 撑到 116px 并 ellipsis。
+     隔离实验：隐藏 .mname → 148px；只加 min-width:0 → 仍 228px。 */
+  .mbtn .mname { flex: 1 1 0; width: 0; min-width: 0; font-size: 11.5px; }
+  table.matrix td.modelcell, table.matrix th.corner,
+  table.dtable td.modelcell, table.dtable th.corner {
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.45);
+  }
+
+  /* 触摸目标：31px 高的格子在手机上点不中 */
+  td.cell { width: 48px; height: 42px; }
+  .cellbtn { font-size: 12.5px; padding: 0 4px 0 2px; }
+
+  /* 展开卡片：--cardw 本来就是容器宽，别再让 1200px 兜底撑破 */
+  .mcard-in { padding: 12px; }
+  .mcard-grid { gap: 12px; }
+  .celltable { font-size: 11px; }
+  .celltable .scname { white-space: normal; }
+
+  /* 触屏 tooltip：窄视口里别顶出屏幕 */
+  .tip { max-width: min(340px, calc(100vw - 20px)); font-size: 11px; }
+
+  .footer-grid { gap: 20px; }
+  .footer-lead { font-size: 13px; }
 }
