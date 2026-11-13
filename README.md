@@ -161,7 +161,7 @@ tools/run_all.py
 node tools/check_deploy.js --wait=120   # 等 Pages 追平 + 部署任务跑完，再逐字节比对 + 线上真渲染
 ```
 
-**六处设计上的保守**（都是被真实故障教出来的）：
+**七处设计上的保守**（都是被真实故障教出来的）：
 
 - **抓取器全绿 ≠ 抓全了。** 源站改版最典型的症状恰恰是「HTTP 200 + 解析无异常 + 结果为空」。
   所以第 2 步单独体检：与最近几次的**中位数**比（不用上次值，避免单次抖动误报；趋势性塌缩才该报警），
@@ -188,6 +188,14 @@ node tools/check_deploy.js --wait=120   # 等 Pages 追平 + 部署任务跑完�
   留档**并把条数写进 `stats.unrankedRows`（不静默），合成层的 `build_lmarena()` 明确跳过并打印，
   排序前还有一句点名到子类的报警器。`check_unranked.py` 用注入夹具守着它 —— 不依赖当天源站
   是否恰好又出现无名次记录（活跃路径不执行的守卫全绿也是假的）。
+- **「本地与线上一致」不等于「内容正确」。** 管道顺序是 `build_app.py → snapshot.py`，
+  前者读 `changes.json` 时拿到的永远是**上一轮**的变更报告 —— 2026-11-14 实测源数据已是
+  11-14、页面却显示基线 10-27→11-02（新增 29 / 掉出 6 / 变动 70），而 `check_deploy.js`
+  的本地/线上渲染对照全绿：**两边是同一份旧内容**。不能把 `snapshot.py` 挪到合成前面 ——
+  那样一旦合成失败，快照与变更报告已更新、`app.json` 却还是旧版，「体检不过就不覆盖」
+  的护栏就没了。现在由 `snapshot.py` 成功后 `sync_changes_to_app()` 回写页面数据，
+  `check_unranked.py` 核对 `APP.changes` 与 `changes.json` 的基线和计数一致
+  （修正后：基线 11-02→11-14、新增 63 / 掉出 34 / 变动 163）。
 
 ---
 
@@ -225,11 +233,11 @@ llm-radar/
 | `health.py` | 抓取量体检 |
 | `snapshot.py` | 快照存档 + 变更 diff |
 | `selftest.js` | DOM 桩冒烟测试，**236 条断言** |
-| `check_unranked.py` | 数据层守卫：注入「源站没给名次」的夹具，断言无名次行不进源索引、产物里每个 rank 都是整数（7 项） |
+| `check_unranked.py` | 数据层守卫（10 项）：注入「源站没给名次」的夹具断言无名次行不进源索引、产物里每个 rank 都是整数；另核对页面内嵌 `APP.changes` 与 `changes.json` 同一基线 |
 | `visual_check.js` | 真实浏览器量 DOM（桌面 ≥1680），**148 项检查** |
 | `mobile_check.js` | 真实浏览器量 DOM（375 手机 + 1680 桌面回归），**41 项检查** |
 | `check_deploy.js` | 线上部署核验：本地 vs 线上逐字节比对 + 线上真渲染（**38 项**，带 `GITHUB_TOKEN` 53 项），**推完跑一次** |
-| `falsify.py` | 证伪工具，**24 条用例**（+1 条联网用例），验证上面各层守卫真的会红 |
+| `falsify.py` | 证伪工具，**25 条用例**（+1 条联网用例），验证上面各层守卫真的会红 |
 | `verify_lmarena.py` | LMArena 数据的独立一致性校验（名次连续性、分数降序等 6 类断言） |
 | `stat_app.py` | 统计当前快照规模（含「新」标识的各窗口亮标数）—— **本文档里的所有规模数字都出自它** |
 | `make_preview.py` / `make_report.py` | 生成人工核对用的 HTML 预览 / 管道总览页 |
@@ -248,10 +256,10 @@ llm-radar/
 
 ```bash
 node tools/selftest.js          # 236 条断言：数据管道 + 前端逻辑（纯内置模块）
-python tools/check_unranked.py  # 7 项：无名次行不进源索引 + 产物 rank 全是整数
+python tools/check_unranked.py  # 10 项：无名次行不进源索引 + 产物 rank 全是整数 + 变更报告不慢一轮
 node tools/visual_check.js      # 148 项检查：桌面 ≥1680，需先起 8758 端口 + 已装 playwright
 node tools/mobile_check.js      # 41 项检查：375 手机 + 1680 桌面回归，同样需 8758
-python tools/falsify.py         # 24 条证伪用例（退出码 0=全红通过 / 1=有用例失效 / 2=开跑前体检不过）
+python tools/falsify.py         # 25 条证伪用例（退出码 0=全红通过 / 1=有用例失效 / 2=开跑前体检不过）
 node tools/check_deploy.js      # 线上部署核验：推完跑一次，本地 vs 线上逐字节比对 + 线上真渲染
 node tools/check_deploy.js --wait=120   # 推完立刻跑：等线上追平 + 部署跑完（整轮 120s 预算）
 FALSIFY_NET=1 python tools/falsify.py   # 连联网用例一起证伪（含 check_deploy）
@@ -287,7 +295,7 @@ FALSIFY_NET=1 python tools/falsify.py   # 连联网用例一起证伪（含 chec
    点按 tooltip 用**合成 `click`（不派发 `mouseover`）**来测，否则 Playwright 的
    `tap()` 会补发兼容鼠标事件，把「只剩 hover」的回归伪装成通过。
 
-3. **`falsify.py`（24 条）** —— **证伪**：把被守卫保护的那行代码真的拆掉，看守卫是否变红。
+3. **`falsify.py`（25 条）** —— **证伪**：把被守卫保护的那行代码真的拆掉，看守卫是否变红。
    锚点直接绑在源码字符串上，**「锚点失效」和「拆了还全绿」都算失败**（退出码 1），
    防止过期用例长期假装通过。
 
@@ -317,8 +325,9 @@ FALSIFY_NET=1 python tools/falsify.py   # 连联网用例一起证伪（含 chec
    Python 子进程还要给 `PYTHONIOENCODING=utf-8`，否则中文收尾汇总会乱码成「没跑完」。
 
    ⚠️ **靶子不止 `radar.js` / `radar.css` —— `tools/visual_check.js` 自己也是靶子，
-   手机适配又新增了 `mobile_check.js` 的 6 条用例，2026-11-14 再加 1 条数据层用例
-   （靶子 `tools/build_app.py`，跑 `check_unranked.py` 判定「拆了会不会变红」）。**
+   手机适配又新增了 `mobile_check.js` 的 6 条用例，2026-11-14 再加 2 条数据层用例
+   （靶子 `tools/build_app.py` 与 `tools/snapshot.py`，跑 `check_unranked.py` 判定
+   「拆了会不会变红」）。**
    为了跑得动 Python 守卫，`run()` 现在按后缀选解释器（`.py` 用 `sys.executable`）。
    守卫也会写出没信息量的产物，同样要被证伪。实测：`shot('17-newbadge')` 原先是整屏截图，
    与 `06-trend-pending` / `14-flash` 拍出来的 PNG **md5 完全相同**（都是「矩阵停在顶部」那一屏），
@@ -472,12 +481,14 @@ FALSIFY_NET=1 python tools/falsify.py   # 连联网用例一起证伪（含 chec
   表格自身滚动也收），并把气泡夹在视口内；`scroll` 监听要用 **capture** 才接得到
   `.tablewrap` 自己的滚动（scroll 不冒泡）。这条不补，硬规则 3 在手机上就是空的。
 
-- **守卫的指标选错，全绿也是假的（这轮连踩两次）。**
+- **守卫的指标选错，全绿也是假的（反复踩）。**
   ① 数「可见数据格」时数了全表 118 行 → 236 个，任何 `≥2` 都假绿；必须只数第一行。
   ② 「两行表头不重叠」只写了 `grp.bottom <= sub.top`，漏掉「中间露出一条数据」；
   正确性质是两者**相等**。③ 横滑后断言「≥3 格」是拍脑袋：列头文字长短不一，
   auto 布局下有些列被撑到 65px，206px 可见带里 legitimately 只放 2 格 ——
   改成「首个可见列从 #0 变成 ≥#3」，守的才是「能滑到别的维度」这件事。
+  ④ `check_deploy.js` 的「本地与线上渲染一致」是**同义反复** —— 两边都显示旧变更条时照样全绿；
+  真正要守的是「页面内嵌 changes 与当天 changes.json 同一基线」，已加进 `check_unranked.py`。
 
 **开发循环**
 

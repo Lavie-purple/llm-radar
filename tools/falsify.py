@@ -40,6 +40,8 @@ VC = os.path.join(ROOT, 'tools', 'visual_check.js')
 CD = os.path.join(ROOT, 'tools', 'check_deploy.js')
 # 数据层也是靶子：源站会给「预览版」算 Elo 但不给名次，合成层必须挡住它。
 BA = os.path.join(ROOT, 'tools', 'build_app.py')
+# 变更报告慢一轮（build_app 读的是上一轮 changes.json）也是数据层问题。
+SA = os.path.join(ROOT, 'tools', 'snapshot.py')
 NODE = os.environ.get('NODE_BIN') or 'node'
 NET = os.environ.get('FALSIFY_NET') == '1'
 
@@ -122,6 +124,8 @@ CASES = [
          "                unranked.append((b, r.get('model'), r.get('score')))\n"
          "                continue\n",
      '', 'check_unranked.py'),
+    ('变更报告不回写页面（页面「自上次以来」永远慢一轮）',
+     SA, '    sync_changes_to_app(payload)\n', '', 'check_unranked.py'),
 ]
 
 # 需要联网 + 真浏览器的用例，默认不跑（每次推完手动开一次就够）。
@@ -172,7 +176,8 @@ def run(tool):
 
 
 def main():
-    orig = {JS: read(JS), CSS: read(CSS), VC: read(VC), CD: read(CD), BA: read(BA)}
+    orig = {JS: read(JS), CSS: read(CSS), VC: read(VC), CD: read(CD),
+            BA: read(BA), SA: read(SA)}
 
     # ⚠️ 这个脚本会**真的改源码**再还原。被 Ctrl-C / SIGTERM 打断时（无 TTY 环境里
     # 超时杀进程也算），`finally` 不保证执行 —— 于是替换留在源码里没人还原。

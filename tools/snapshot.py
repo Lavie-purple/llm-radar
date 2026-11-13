@@ -42,6 +42,30 @@ def load(path):
         return json.load(f)
 
 
+def sync_changes_to_app(payload):
+    """把刚算出的变更报告回写进 app.json / app.json.js。
+
+    ⚠️ 管道顺序是 build_app.py → snapshot.py：build_app 读 changes.json 时拿到的
+    还是**上一轮**的报告，页面「自上次以来」因此永远慢一轮（2026-11-14 实测：
+    源数据已是 11-14，页面却显示基线 10-27→11-02、新增 29/掉出 6）。
+    不能简单把 snapshot.py 挪到 build_app.py 前面 —— 那样一旦合成失败，快照与
+    变更报告已经更新、app.json 却还是旧版，「体检不过就不覆盖」的护栏就没了。
+    在 snapshot **成功之后**回写，两个约束都保住。
+    """
+    app_path = os.path.join(DATA, "app.json")
+    app = load(app_path)
+    if app is None:
+        print("⚠ app.json 不存在，跳过变更回写", file=sys.stderr)
+        return
+    app["changes"] = payload
+    s = json.dumps(app, ensure_ascii=False, separators=(',', ':'))
+    with open(app_path, "w", encoding="utf-8") as f:
+        f.write(s)
+    with open(os.path.join(DATA, "app.json.js"), "w", encoding="utf-8") as f:
+        f.write("window.APP=" + s + ";")
+    print(f"变更报告已回写页面数据（基线 {payload.get('previous')} → {payload.get('current')}）")
+
+
 def snapshot(tag=None):
     """把当前 data/*.json 存档到 snapshots/<tag>/。
 
@@ -189,6 +213,7 @@ def main():
         }
         with open(CHANGES, "w", encoding="utf-8") as f:
             json.dump(payload, f, ensure_ascii=False, indent=1)
+        sync_changes_to_app(payload)
         print("只有一份快照，写空变更报告。")
         return 0
 
@@ -223,6 +248,7 @@ def main():
 
     with open(CHANGES, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=1)
+    sync_changes_to_app(payload)
 
     print(f"\n变更报告 {prev_tag} -> {cur_tag}")
     print(f"  新增 {total['added']} / 掉出 {total['removed']} / 名次变动 {total['moved']}")

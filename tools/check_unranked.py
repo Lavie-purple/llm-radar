@@ -10,6 +10,11 @@
 源站是否恰好又出现无名次行 —— 活跃路径在「没有无名次行」时根本不执行，
 那种守卫全绿也是假的。同时扫一遍 app.json，守住产物里每一个 rank 都是整数。
 
+后来又加了一项产物一致性：页面内嵌的 APP.changes 必须与当天 changes.json
+同一基线。管道顺序是 build_app → snapshot，前者读到的永远是上一轮变更报告
+（2026-11-14 实测页面显示「基线 10-27→11-02」而数据已是 11-14），
+靠 snapshot.py 的 sync_changes_to_app() 回写修正。
+
 收尾汇总「无名次核验：」是 falsify.py 判定「跑完了没」用的，别删。
 """
 import copy
@@ -17,6 +22,7 @@ import importlib.util
 import io
 import json
 import os
+import re
 import sys
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
@@ -94,6 +100,22 @@ def main():
     src = io.open(os.path.join(TOOLS, 'build_app.py'), encoding='utf-8').read()
     check('数据层错误：子类' in src,
           '合成层保留了无名次的显式报错（不是只靠 TypeError）')
+
+    # ⑤ 变更报告不能慢一轮：APP.changes 必须与当天 changes.json 同一基线、同一计数
+    ch = load(os.path.join(ROOT, 'data', 'changes.json'))
+    ach = app.get('changes') or {}
+    check(ach.get('current') == ch.get('current') and ach.get('previous') == ch.get('previous'),
+          '页面内嵌变更报告与 changes.json 同一基线（不是上一轮）',
+          'APP=%s→%s / 文件=%s→%s' % (ach.get('previous'), ach.get('current'),
+                                     ch.get('previous'), ch.get('current')))
+    check(ach.get('summary') == ch.get('summary'),
+          '页面内嵌的变更计数也同步',
+          '%s / %s' % (ach.get('summary'), ch.get('summary')))
+    snap_src = io.open(os.path.join(TOOLS, 'snapshot.py'), encoding='utf-8').read()
+    calls = len(re.findall(r'^\s+sync_changes_to_app\(payload\)$', snap_src, re.M))
+    check(calls >= 2,
+          'snapshot.py 两个分支都保留了变更回写调用（别静默掉）',
+          '%d 处' % calls)
 
     print()
     print('无名次核验：%d 项 ／ FAIL %d' % (total, fails))

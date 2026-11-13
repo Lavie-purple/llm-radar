@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-14T00:45:08+08:00",
+ "generatedAt": "2026-11-14T00:59:58+08:00",
  "current": "2026-11-14",
  "previous": "2026-11-02",
  "hasBaseline": true,
@@ -67,27 +67,27 @@
        "delta": 7
       },
       {
-       "model": "GPT-6 Sol (Max)",
-       "from": 11,
-       "to": 17,
-       "delta": 6
-      },
-      {
        "model": "Muse Spark 1.3 (Max)",
        "from": 20,
        "to": 26,
        "delta": 6
       },
       {
-       "model": "Claude Fable 5 (High)",
-       "from": 10,
-       "to": 15,
-       "delta": 5
+       "model": "GPT-6 Sol (Max)",
+       "from": 11,
+       "to": 17,
+       "delta": 6
       },
       {
        "model": "Gemini 3.8 Flash (High)",
        "from": 19,
        "to": 24,
+       "delta": 5
+      },
+      {
+       "model": "Claude Fable 5 (High)",
+       "from": 10,
+       "to": 15,
        "delta": 5
       },
       {
@@ -103,21 +103,21 @@
        "delta": 4
       },
       {
-       "model": "Muse Wonder Full (Max)",
-       "from": 9,
-       "to": 12,
-       "delta": 3
-      },
-      {
        "model": "GPT-6.1 Sol (Max)",
        "from": 6,
        "to": 9,
        "delta": 3
       },
       {
-       "model": "Claude Fable 5.1 (Max)",
-       "from": 4,
-       "to": 6,
+       "model": "Muse Wonder Full (Max)",
+       "from": 9,
+       "to": 12,
+       "delta": 3
+      },
+      {
+       "model": "GPT-6.1 Terra (Max)",
+       "from": 8,
+       "to": 10,
        "delta": 2
       }
      ]
@@ -149,27 +149,15 @@
        "delta": 4
       },
       {
+       "model": "Grok 4.7 (xHigh)",
+       "from": 21,
+       "to": 24,
+       "delta": 3
+      },
+      {
        "model": "MiMo-V2.6-Pro",
        "from": 25,
        "to": 28,
-       "delta": 3
-      },
-      {
-       "model": "Claude Opus 5 (High)",
-       "from": 17,
-       "to": 20,
-       "delta": 3
-      },
-      {
-       "model": "Kimi K3.1 Pro (Max)",
-       "from": 9,
-       "to": 12,
-       "delta": 3
-      },
-      {
-       "model": "Hy4 preview",
-       "from": 23,
-       "to": 26,
        "delta": 3
       },
       {
@@ -179,9 +167,9 @@
        "delta": 3
       },
       {
-       "model": "Grok 4.7 (xHigh)",
-       "from": 21,
-       "to": 24,
+       "model": "Kimi K3.1 Pro (Max)",
+       "from": 9,
+       "to": 12,
        "delta": 3
       },
       {
@@ -189,6 +177,30 @@
        "from": 2,
        "to": 5,
        "delta": 3
+      },
+      {
+       "model": "Claude Opus 5 (High)",
+       "from": 17,
+       "to": 20,
+       "delta": 3
+      },
+      {
+       "model": "Hy4 preview",
+       "from": 23,
+       "to": 26,
+       "delta": 3
+      },
+      {
+       "model": "Qwen3.8-Max (0902)",
+       "from": 13,
+       "to": 15,
+       "delta": 2
+      },
+      {
+       "model": "Muse Spark 1.3 (Max)",
+       "from": 19,
+       "to": 21,
+       "delta": 2
       },
       {
        "model": "Qwen3.8-Max",
@@ -212,18 +224,6 @@
        "model": "DeepSeek-V4.1-Flash-20261017 (Max)",
        "from": 16,
        "to": 18,
-       "delta": 2
-      },
-      {
-       "model": "Muse Spark 1.3 (Max)",
-       "from": 19,
-       "to": 21,
-       "delta": 2
-      },
-      {
-       "model": "Qwen3.8-Max (0902)",
-       "from": 13,
-       "to": 15,
        "delta": 2
       }
      ]
@@ -251,18 +251,6 @@
        "delta": 4
       },
       {
-       "model": "Muse Spark 1.1",
-       "from": 18,
-       "to": 21,
-       "delta": 3
-      },
-      {
-       "model": "Gemini 3.5 Flash (Medium)",
-       "from": 20,
-       "to": 23,
-       "delta": 3
-      },
-      {
        "model": "GPT-5.6 Luna (xHigh)",
        "from": 23,
        "to": 26,
@@ -275,21 +263,21 @@
        "delta": 3
       },
       {
-       "model": "Claude Opus 4.5 (20251101)",
-       "from": 21,
-       "to": 19,
-       "delta": -2
+       "model": "Muse Spark 1.1",
+       "from": 18,
+       "to": 21,
+       "delta": 3
+      },
+      {
+       "model": "Gemini 3.5 Flash (Medium)",
+       "from": 20,
+       "to": 23,
+       "delta": 3
       },
       {
        "model": "Claude Opus 4.8 (High)",
        "from": 12,
        "to": 14,
-       "delta": 2
-      },
-      {
-       "model": "GPT-5.6 Sol (xHigh)",
-       "from": 10,
-       "to": 12,
        "delta": 2
       },
       {
@@ -299,22 +287,16 @@
        "delta": 2
       },
       {
-       "model": "Muse Spark",
-       "from": 29,
-       "to": 30,
-       "delta": 1
+       "model": "GPT-5.6 Sol (xHigh)",
+       "from": 10,
+       "to": 12,
+       "delta": 2
       },
       {
-       "model": "GPT-5.4",
-       "from": 14,
-       "to": 15,
-       "delta": 1
-      },
-      {
-       "model": "Gemini 3.6 Flash (High)",
-       "from": 24,
-       "to": 25,
-       "delta": 1
+       "model": "Claude Opus 4.5 (20251101)",
+       "from": 21,
+       "to": 19,
+       "delta": -2
       },
       {
        "model": "Claude Opus 4.7 (High)",
@@ -323,10 +305,28 @@
        "delta": -1
       },
       {
+       "model": "Claude Opus 4.7",
+       "from": 6,
+       "to": 7,
+       "delta": 1
+      },
+      {
        "model": "GPT-5.5 (High)",
        "from": 9,
        "to": 8,
        "delta": -1
+      },
+      {
+       "model": "Claude Sonnet 4.6",
+       "from": 11,
+       "to": 10,
+       "delta": -1
+      },
+      {
+       "model": "GPT-5.4",
+       "from": 14,
+       "to": 15,
+       "delta": 1
       }
      ]
     },
@@ -343,39 +343,9 @@
      ],
      "moved": [
       {
-       "model": "Gemini 3.1 Flash-Lite Image (nano-banana-2-lite)",
-       "from": 26,
-       "to": 29,
-       "delta": 3
-      },
-      {
-       "model": "Ideogram 4.5",
-       "from": 22,
-       "to": 25,
-       "delta": 3
-      },
-      {
-       "model": "UNI-1.1",
-       "from": 25,
-       "to": 28,
-       "delta": 3
-      },
-      {
-       "model": "UNI-1.1 Max",
-       "from": 23,
-       "to": 26,
-       "delta": 3
-      },
-      {
        "model": "Grok Imagine Image (Quality, 20260519)",
        "from": 12,
        "to": 15,
-       "delta": 3
-      },
-      {
-       "model": "MAI-Image-2.5",
-       "from": 10,
-       "to": 13,
        "delta": 3
       },
       {
@@ -385,15 +355,45 @@
        "delta": 3
       },
       {
+       "model": "UNI-1.1",
+       "from": 25,
+       "to": 28,
+       "delta": 3
+      },
+      {
+       "model": "Gemini 3.1 Flash-Lite Image (nano-banana-2-lite)",
+       "from": 26,
+       "to": 29,
+       "delta": 3
+      },
+      {
+       "model": "MAI-Image-2.5",
+       "from": 10,
+       "to": 13,
+       "delta": 3
+      },
+      {
+       "model": "UNI-1.1 Max",
+       "from": 23,
+       "to": 26,
+       "delta": 3
+      },
+      {
        "model": "Grok Imagine Image",
        "from": 24,
        "to": 27,
        "delta": 3
       },
       {
-       "model": "Reve 2.1",
-       "from": 18,
-       "to": 20,
+       "model": "Ideogram 4.5",
+       "from": 22,
+       "to": 25,
+       "delta": 3
+      },
+      {
+       "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+       "from": 14,
+       "to": 16,
        "delta": 2
       },
       {
@@ -403,33 +403,33 @@
        "delta": 2
       },
       {
-       "model": "Grok Imagine Image 2.0",
-       "from": 5,
-       "to": 7,
+       "model": "Qwen-Image-2.1",
+       "from": 20,
+       "to": 22,
        "delta": 2
       },
       {
-       "model": "Gemini Nano Banana 2.1",
-       "from": 7,
-       "to": 9,
-       "delta": 2
-      },
-      {
-       "model": "MAI-Image-2.6",
-       "from": 6,
-       "to": 8,
-       "delta": 2
-      },
-      {
-       "model": "Grok Imagine Image 2.0 (20260801)",
-       "from": 8,
-       "to": 10,
+       "model": "Reve 2.1",
+       "from": 18,
+       "to": 20,
        "delta": 2
       },
       {
        "model": "Krea 3 Ultra",
        "from": 9,
        "to": 11,
+       "delta": 2
+      },
+      {
+       "model": "Gemini 3 Pro Image Preview (nano-banana-pro)",
+       "from": 17,
+       "to": 19,
+       "delta": 2
+      },
+      {
+       "model": "Grok Imagine Image 2.0 (20260801)",
+       "from": 8,
+       "to": 10,
        "delta": 2
       }
      ]
@@ -445,27 +445,27 @@
      ],
      "moved": [
       {
-       "model": "Kling 2.5 Turbo (1080p)",
-       "from": 27,
-       "to": 29,
+       "model": "Veo 3.1 (Audio, 1080p)",
+       "from": 14,
+       "to": 16,
        "delta": 2
       },
       {
-       "model": "Wan 2.5 Preview",
-       "from": 22,
-       "to": 24,
+       "model": "Dreamina Seedance 2.5 (720p)",
+       "from": 4,
+       "to": 2,
+       "delta": -2
+      },
+      {
+       "model": "Seedance 1.0 Pro",
+       "from": 28,
+       "to": 30,
        "delta": 2
       },
       {
-       "model": "Kling 2.6 Pro",
-       "from": 26,
-       "to": 28,
-       "delta": 2
-      },
-      {
-       "model": "MiniMax H3",
-       "from": 1,
-       "to": 3,
+       "model": "gemini-omni-flash",
+       "from": 6,
+       "to": 8,
        "delta": 2
       },
       {
@@ -475,51 +475,9 @@
        "delta": 2
       },
       {
-       "model": "Seedance 1.0 Pro",
-       "from": 28,
-       "to": 30,
-       "delta": 2
-      },
-      {
-       "model": "HiDream-O1-Video-1.0",
-       "from": 7,
-       "to": 9,
-       "delta": 2
-      },
-      {
-       "model": "Veo 3.1 (Audio)",
-       "from": 13,
-       "to": 15,
-       "delta": 2
-      },
-      {
-       "model": "FLUX 3 Video (20260811)",
-       "from": 9,
-       "to": 11,
-       "delta": 2
-      },
-      {
-       "model": "HappyHorse 1.0",
-       "from": 10,
-       "to": 12,
-       "delta": 2
-      },
-      {
-       "model": "Veo 3.1 Fast (Audio)",
-       "from": 15,
-       "to": 17,
-       "delta": 2
-      },
-      {
-       "model": "Veo 3.1 (Audio, 1080p)",
-       "from": 14,
-       "to": 16,
-       "delta": 2
-      },
-      {
-       "model": "Wan 2.7",
-       "from": 11,
-       "to": 13,
+       "model": "Veo 3 Fast (Audio)",
+       "from": 21,
+       "to": 23,
        "delta": 2
       },
       {
@@ -529,9 +487,51 @@
        "delta": 2
       },
       {
-       "model": "Grok Imagine Video (480p)",
-       "from": 16,
-       "to": 18,
+       "model": "Wan 2.6",
+       "from": 23,
+       "to": 25,
+       "delta": 2
+      },
+      {
+       "model": "Veo 3 (Audio)",
+       "from": 20,
+       "to": 22,
+       "delta": 2
+      },
+      {
+       "model": "Wan 3.0",
+       "from": 3,
+       "to": 5,
+       "delta": 2
+      },
+      {
+       "model": "Grok Imagine Video 1.5 (720p)",
+       "from": 8,
+       "to": 10,
+       "delta": 2
+      },
+      {
+       "model": "Grok Imagine Video (720p)",
+       "from": 12,
+       "to": 14,
+       "delta": 2
+      },
+      {
+       "model": "Vidu Q3 Pro",
+       "from": 18,
+       "to": 20,
+       "delta": 2
+      },
+      {
+       "model": "Veo 3.1 Fast (Audio)",
+       "from": 15,
+       "to": 17,
+       "delta": 2
+      },
+      {
+       "model": "Seedance 1.5 Pro",
+       "from": 24,
+       "to": 26,
        "delta": 2
       }
      ]
@@ -563,9 +563,9 @@
        "delta": 2
       },
       {
-       "model": "Gemini 3.6 Flash (High)",
-       "from": 29,
-       "to": 30,
+       "model": "Step 5 Preview (High)",
+       "from": 28,
+       "to": 29,
        "delta": 1
       },
       {
@@ -575,15 +575,39 @@
        "delta": 1
       },
       {
+       "model": "Claude Opus 4.7",
+       "from": 26,
+       "to": 27,
+       "delta": 1
+      },
+      {
+       "model": "Grok 4.7 (xHigh)",
+       "from": 20,
+       "to": 21,
+       "delta": 1
+      },
+      {
        "model": "GLM-5.3-Flash",
        "from": 22,
        "to": 23,
        "delta": 1
       },
       {
-       "model": "GPT-6 Luna (Max)",
-       "from": 25,
-       "to": 26,
+       "model": "Qwen3.8-Max (0902)",
+       "from": 9,
+       "to": 8,
+       "delta": -1
+      },
+      {
+       "model": "DeepSeek-V4.1-Flash-20260910 (Max)",
+       "from": 13,
+       "to": 12,
+       "delta": -1
+      },
+      {
+       "model": "Gemini 3.6 Flash (High)",
+       "from": 29,
+       "to": 30,
        "delta": 1
       },
       {
@@ -593,21 +617,9 @@
        "delta": 1
       },
       {
-       "model": "Claude Fable 5.1 (Max)",
-       "from": 4,
-       "to": 3,
-       "delta": -1
-      },
-      {
-       "model": "Step 5 Preview (High)",
-       "from": 28,
-       "to": 29,
-       "delta": 1
-      },
-      {
-       "model": "Gemini 3.7 Flash (High)",
-       "from": 15,
-       "to": 16,
+       "model": "GPT-6 Astra (Max)",
+       "from": 3,
+       "to": 4,
        "delta": 1
       },
       {
@@ -617,21 +629,9 @@
        "delta": 1
       },
       {
-       "model": "DeepSeek-V4.1-Flash-20260910 (Max)",
-       "from": 13,
-       "to": 12,
-       "delta": -1
-      },
-      {
        "model": "Qwen3.8-27B",
        "from": 24,
        "to": 25,
-       "delta": 1
-      },
-      {
-       "model": "Claude Opus 4.7",
-       "from": 26,
-       "to": 27,
        "delta": 1
       }
      ]
@@ -641,28 +641,16 @@
      "removed": [],
      "moved": [
       {
-       "model": "Qwen3.8-Max",
-       "from": 2,
-       "to": 1,
-       "delta": -1
-      },
-      {
        "model": "Claude Sonnet 5 (Search)",
        "from": 23,
        "to": 24,
        "delta": 1
       },
       {
-       "model": "Claude Opus 5 (High)",
-       "from": 6,
-       "to": 5,
+       "model": "Grok 4.20 Beta 1",
+       "from": 24,
+       "to": 23,
        "delta": -1
-      },
-      {
-       "model": "Claude Fable 5.1 (High)",
-       "from": 5,
-       "to": 6,
-       "delta": 1
       },
       {
        "model": "GPT-5.6 Sol (xHigh)",
@@ -671,9 +659,21 @@
        "delta": 1
       },
       {
-       "model": "Grok 4.20 Beta 1",
-       "from": 24,
-       "to": 23,
+       "model": "Claude Fable 5.1 (High)",
+       "from": 5,
+       "to": 6,
+       "delta": 1
+      },
+      {
+       "model": "Qwen3.8-Max",
+       "from": 2,
+       "to": 1,
+       "delta": -1
+      },
+      {
+       "model": "Claude Opus 5 (High)",
+       "from": 6,
+       "to": 5,
        "delta": -1
       }
      ]
@@ -687,12 +687,6 @@
      ],
      "moved": [
       {
-       "model": "Claude Opus 5 (Max)",
-       "from": 15,
-       "to": 18,
-       "delta": 3
-      },
-      {
        "model": "GPT-5.5 (High)",
        "from": 26,
        "to": 29,
@@ -705,10 +699,10 @@
        "delta": 3
       },
       {
-       "model": "Muse Spark 1.1",
-       "from": 16,
-       "to": 14,
-       "delta": -2
+       "model": "Claude Opus 5 (Max)",
+       "from": 15,
+       "to": 18,
+       "delta": 3
       },
       {
        "model": "Gemini 3.6 Flash (High)",
@@ -717,16 +711,40 @@
        "delta": 2
       },
       {
+       "model": "GLM-5.3 (Max)",
+       "from": 28,
+       "to": 26,
+       "delta": -2
+      },
+      {
+       "model": "Muse Spark 1.1",
+       "from": 16,
+       "to": 14,
+       "delta": -2
+      },
+      {
        "model": "Claude Fable 5.1 (Max)",
        "from": 5,
        "to": 7,
        "delta": 2
       },
       {
-       "model": "GLM-5.3 (Max)",
-       "from": 28,
-       "to": 26,
-       "delta": -2
+       "model": "MiMo-V2.6-Pro",
+       "from": 29,
+       "to": 30,
+       "delta": 1
+      },
+      {
+       "model": "Gemini 3.8 Flash (High)",
+       "from": 10,
+       "to": 9,
+       "delta": -1
+      },
+      {
+       "model": "Claude Opus 4.6",
+       "from": 9,
+       "to": 10,
+       "delta": 1
       },
       {
        "model": "Claude Fable 5 (High)",
@@ -739,12 +757,6 @@
        "from": 18,
        "to": 17,
        "delta": -1
-      },
-      {
-       "model": "MiMo-V2.6-Pro",
-       "from": 29,
-       "to": 30,
-       "delta": 1
       },
       {
        "model": "Qwen3.8-Max",
@@ -763,18 +775,6 @@
        "from": 4,
        "to": 3,
        "delta": -1
-      },
-      {
-       "model": "Claude Opus 4.6",
-       "from": 9,
-       "to": 10,
-       "delta": 1
-      },
-      {
-       "model": "Claude Opus 5 (High)",
-       "from": 14,
-       "to": 15,
-       "delta": 1
       }
      ]
     },
@@ -797,27 +797,27 @@
        "delta": 4
       },
       {
-       "model": "MAI-Image-2",
-       "from": 23,
-       "to": 26,
-       "delta": 3
-      },
-      {
-       "model": "Cosmos3-Super-Text2Image (Agentic)",
-       "from": 27,
-       "to": 30,
-       "delta": 3
-      },
-      {
        "model": "UNI-1.1",
        "from": 24,
        "to": 27,
        "delta": 3
       },
       {
+       "model": "MAI-Image-2",
+       "from": 23,
+       "to": 26,
+       "delta": 3
+      },
+      {
        "model": "UNI-1.1 Max",
        "from": 22,
        "to": 25,
+       "delta": 3
+      },
+      {
+       "model": "Qwen-Image-2.0-Pro (2026-06-22)",
+       "from": 21,
+       "to": 24,
        "delta": 3
       },
       {
@@ -833,15 +833,27 @@
        "delta": 3
       },
       {
-       "model": "Qwen-Image-2.0-Pro (2026-06-22)",
-       "from": 21,
-       "to": 24,
+       "model": "Cosmos3-Super-Text2Image (Agentic)",
+       "from": 27,
+       "to": 30,
        "delta": 3
       },
       {
-       "model": "Reve 2.1",
-       "from": 7,
-       "to": 9,
+       "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+       "from": 11,
+       "to": 13,
+       "delta": 2
+      },
+      {
+       "model": "Qwen-Image-3.0-Pro",
+       "from": 12,
+       "to": 14,
+       "delta": 2
+      },
+      {
+       "model": "Gemini 3 Pro Image (nano-banana-pro, 2K)",
+       "from": 16,
+       "to": 18,
        "delta": 2
       },
       {
@@ -851,33 +863,21 @@
        "delta": 2
       },
       {
-       "model": "Grok Imagine Image 2.0",
-       "from": 6,
-       "to": 8,
+       "model": "Recraft V4.1 Utility Pro",
+       "from": 26,
+       "to": 28,
        "delta": 2
       },
       {
-       "model": "Gemini Nano Banana 2.1",
-       "from": 5,
-       "to": 7,
+       "model": "Qwen-Image-2.1",
+       "from": 19,
+       "to": 21,
        "delta": 2
       },
       {
-       "model": "MAI-Image-2.6",
-       "from": 4,
-       "to": 6,
-       "delta": 2
-      },
-      {
-       "model": "Grok Imagine Image 2.0 (20260801)",
-       "from": 8,
-       "to": 10,
-       "delta": 2
-      },
-      {
-       "model": "Qwen-Image-3.0-Pro",
-       "from": 12,
-       "to": 14,
+       "model": "Reve 2.1",
+       "from": 7,
+       "to": 9,
        "delta": 2
       }
      ]
@@ -899,51 +899,9 @@
        "delta": 3
       },
       {
-       "model": "Kling 2.5 Turbo (1080p)",
-       "from": 28,
-       "to": 30,
-       "delta": 2
-      },
-      {
-       "model": "Wan 2.5 Preview",
-       "from": 25,
-       "to": 27,
-       "delta": 2
-      },
-      {
-       "model": "Sora 2",
-       "from": 17,
-       "to": 19,
-       "delta": 2
-      },
-      {
        "model": "Veo 3",
        "from": 23,
        "to": 25,
-       "delta": 2
-      },
-      {
-       "model": "Veo 3.1 (Audio)",
-       "from": 12,
-       "to": 14,
-       "delta": 2
-      },
-      {
-       "model": "HappyHorse 1.0",
-       "from": 10,
-       "to": 12,
-       "delta": 2
-      },
-      {
-       "model": "Veo 3.1 Fast (Audio)",
-       "from": 14,
-       "to": 16,
-       "delta": 2
-      },
-      {
-       "model": "Veo 3.1 (Audio, 1080p)",
-       "from": 13,
-       "to": 15,
        "delta": 2
       },
       {
@@ -953,9 +911,15 @@
        "delta": 2
       },
       {
-       "model": "Wan 2.7",
-       "from": 20,
-       "to": 22,
+       "model": "Veo 3.1 (Audio, 1080p)",
+       "from": 13,
+       "to": 15,
+       "delta": 2
+      },
+      {
+       "model": "Veo 3 Fast (Audio)",
+       "from": 16,
+       "to": 18,
        "delta": 2
       },
       {
@@ -965,9 +929,27 @@
        "delta": 2
       },
       {
-       "model": "Veo 3 Fast",
-       "from": 24,
-       "to": 26,
+       "model": "Wan 2.6",
+       "from": 21,
+       "to": 23,
+       "delta": 2
+      },
+      {
+       "model": "Veo 3 (Audio)",
+       "from": 19,
+       "to": 21,
+       "delta": 2
+      },
+      {
+       "model": "Sora 2",
+       "from": 17,
+       "to": 19,
+       "delta": 2
+      },
+      {
+       "model": "Wan 3.0",
+       "from": 6,
+       "to": 8,
        "delta": 2
       },
       {
@@ -977,9 +959,27 @@
        "delta": 2
       },
       {
-       "model": "Wan 3.0",
-       "from": 6,
-       "to": 8,
+       "model": "Veo 3.1 Fast (Audio)",
+       "from": 14,
+       "to": 16,
+       "delta": 2
+      },
+      {
+       "model": "Seedance 1.5 Pro",
+       "from": 22,
+       "to": 24,
+       "delta": 2
+      },
+      {
+       "model": "Veo 3 Fast",
+       "from": 24,
+       "to": 26,
+       "delta": 2
+      },
+      {
+       "model": "HappyHorse 1.0",
+       "from": 10,
+       "to": 12,
        "delta": 2
       }
      ]
@@ -998,21 +998,15 @@
        "delta": 3
       },
       {
-       "model": "Kling O1 Pro",
-       "from": 9,
-       "to": 11,
-       "delta": 2
-      },
-      {
-       "model": "HappyHorse 1.0",
-       "from": 6,
-       "to": 8,
-       "delta": 2
-      },
-      {
        "model": "MiniMax H3",
        "from": 3,
        "to": 5,
+       "delta": 2
+      },
+      {
+       "model": "Kling O1 Pro",
+       "from": 9,
+       "to": 11,
        "delta": 2
       },
       {
@@ -1022,15 +1016,21 @@
        "delta": 2
       },
       {
-       "model": "Dreamina Seedance 2.0 (720p)",
-       "from": 5,
-       "to": 6,
-       "delta": 1
+       "model": "HappyHorse 1.0",
+       "from": 6,
+       "to": 8,
+       "delta": 2
       },
       {
        "model": "Kling O3 Pro",
        "from": 8,
        "to": 9,
+       "delta": 1
+      },
+      {
+       "model": "Dreamina Seedance 2.0 (720p)",
+       "from": 5,
+       "to": 6,
        "delta": 1
       }
      ]
@@ -1040,16 +1040,16 @@
      "removed": [],
      "moved": [
       {
-       "model": "Claude Opus 5 (High)",
-       "from": 15,
-       "to": 19,
-       "delta": 4
-      },
-      {
        "model": "Claude Opus 5.5 (High)",
        "from": 10,
        "to": 6,
        "delta": -4
+      },
+      {
+       "model": "Claude Opus 5 (High)",
+       "from": 15,
+       "to": 19,
+       "delta": 4
       },
       {
        "model": "GPT-5.5 (High)",
@@ -1070,15 +1070,21 @@
        "delta": -3
       },
       {
-       "model": "Muse Spark 1.1",
-       "from": 27,
-       "to": 29,
-       "delta": 2
+       "model": "Claude Opus 4.7",
+       "from": 4,
+       "to": 2,
+       "delta": -2
       },
       {
        "model": "Muse Spark 1.2 (xHigh)",
        "from": 11,
        "to": 9,
+       "delta": -2
+      },
+      {
+       "model": "Claude Opus 4.8 (High)",
+       "from": 20,
+       "to": 18,
        "delta": -2
       },
       {
@@ -1094,21 +1100,21 @@
        "delta": 2
       },
       {
-       "model": "Claude Fable 5.1 (Max)",
-       "from": 17,
-       "to": 15,
-       "delta": -2
-      },
-      {
-       "model": "Claude Opus 4.8 (High)",
-       "from": 20,
-       "to": 18,
-       "delta": -2
-      },
-      {
        "model": "GPT-5.6 Sol (xHigh)",
        "from": 18,
        "to": 16,
+       "delta": -2
+      },
+      {
+       "model": "Muse Spark 1.1",
+       "from": 27,
+       "to": 29,
+       "delta": 2
+      },
+      {
+       "model": "Claude Fable 5.1 (Max)",
+       "from": 17,
+       "to": 15,
        "delta": -2
       },
       {
@@ -1118,15 +1124,9 @@
        "delta": 2
       },
       {
-       "model": "Claude Opus 4.7",
-       "from": 4,
-       "to": 2,
-       "delta": -2
-      },
-      {
-       "model": "Muse Spark 1.3 (xHigh)",
-       "from": 16,
-       "to": 17,
+       "model": "Gemini 3.5 Flash (High)",
+       "from": 24,
+       "to": 25,
        "delta": 1
       }
      ]
