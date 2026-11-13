@@ -228,6 +228,11 @@ def main():
         "stats": {
             "boardCount": len(boards),
             "totalRows": total,
+            # 源站会给「预览版 / 票数不足」的记录算 Elo 但不给正式名次
+            # （2026-11-14 code 榜首次出现）。保留在源数据里留档，由 build_app.py
+            # 跳过；写进 stats 是为了让 health / 守卫能看见，不做静默改版。
+            "unrankedRows": sum(1 for b in boards.values() for r in b['rows']
+                                if not isinstance(r.get('rank'), int)),
         },
     }
 
@@ -238,6 +243,13 @@ def main():
 
     size = os.path.getsize(out_path)
     print(f"\n{len(boards)}/{len(BOARDS)} 榜，{total} 行 -> {out_path} ({size/1024:.0f} KB)")
+    unranked = [(route, r.get('model')) for route, b in boards.items()
+                for r in b['rows'] if not isinstance(r.get('rank'), int)]
+    if unranked:
+        print(f"⚠ {len(unranked)} 条记录源站未给正式名次（预览/未定榜），"
+              f"源数据保留、合成时跳过：")
+        for route, name in unranked[:8]:
+            print(f"    {route:<18} {name}")
     if errors:
         print(f"失败 {len(errors)} 个：", file=sys.stderr)
         for e in errors:

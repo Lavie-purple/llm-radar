@@ -1,478 +1,1133 @@
 {
- "generatedAt": "2026-11-02T21:15:17+08:00",
- "current": "2026-11-02",
- "previous": "2026-10-27",
+ "generatedAt": "2026-11-14T00:45:08+08:00",
+ "current": "2026-11-14",
+ "previous": "2026-11-02",
  "hasBaseline": true,
  "sources": {
   "lmarena": {
    "boards": {
     "agent": {
      "added": [
-      "GPT-6.1 Terra (Max)",
-      "Gemini 4 Carbon (High)"
+      "Claude Fable 5.2 (Max)",
+      "Claude Opus 5.5 (High)",
+      "Claude Sonnet 5.5 (High)",
+      "GPT-6.1 Sol (Medium)",
+      "GPT-6.1 Terra (Medium)",
+      "Gemini 4 Hydrogen (High)",
+      "Hy4",
+      "Inkling 2 Small",
+      "Muse Ember (Max)"
      ],
      "removed": [
-      "GPT-5.6 Terra (xHigh)",
-      "Qwen3.8-Max"
+      "Claude Haiku 5.5 (High)",
+      "DeepSeek-V4.1-Flash-20260910 (Max)",
+      "GLM-5.2 (Max)",
+      "GLM-5.3 (Max)",
+      "GPT-6 Luna (Max)",
+      "Grok 4.6 (xHigh)",
+      "Hy4 preview",
+      "Kimi K3 (Max)",
+      "MiMo-V2.6-Flash"
      ],
      "moved": [
       {
-       "model": "MiMo-V2.6-Flash",
-       "from": 22,
-       "to": 28,
-       "delta": 6
+       "model": "Muse Wonder (Max)",
+       "from": 15,
+       "to": 30,
+       "delta": 15
+      },
+      {
+       "model": "Claude Sonnet 5 (High)",
+       "from": 16,
+       "to": 29,
+       "delta": 13
       },
       {
        "model": "DeepSeek-V4.1-Flash-20261017 (Max)",
+       "from": 18,
+       "to": 27,
+       "delta": 9
+      },
+      {
+       "model": "MiMo-V2.6-Pro",
+       "from": 17,
+       "to": 25,
+       "delta": 8
+      },
+      {
+       "model": "Kimi K3.1 Pro (Max)",
        "from": 13,
-       "to": 18,
-       "delta": 5
+       "to": 20,
+       "delta": 7
       },
       {
-       "model": "Claude Haiku 5.5 (High)",
-       "from": 27,
-       "to": 24,
-       "delta": -3
-      },
-      {
-       "model": "Hy4 preview",
-       "from": 23,
-       "to": 26,
-       "delta": 3
+       "model": "GPT-5.6 Sol (xHigh)",
+       "from": 14,
+       "to": 21,
+       "delta": 7
       },
       {
        "model": "GPT-6 Sol (Max)",
-       "from": 8,
-       "to": 11,
-       "delta": 3
+       "from": 11,
+       "to": 17,
+       "delta": 6
       },
       {
-       "model": "GLM-5.3 (Max)",
-       "from": 26,
-       "to": 29,
-       "delta": 3
+       "model": "Muse Spark 1.3 (Max)",
+       "from": 20,
+       "to": 26,
+       "delta": 6
+      },
+      {
+       "model": "Claude Fable 5 (High)",
+       "from": 10,
+       "to": 15,
+       "delta": 5
+      },
+      {
+       "model": "Gemini 3.8 Flash (High)",
+       "from": 19,
+       "to": 24,
+       "delta": 5
       },
       {
        "model": "Claude Opus 5 (Max)",
+       "from": 12,
+       "to": 16,
+       "delta": 4
+      },
+      {
+       "model": "Gemini 4 Argon (High)",
+       "from": 7,
+       "to": 11,
+       "delta": 4
+      },
+      {
+       "model": "Muse Wonder Full (Max)",
        "from": 9,
        "to": 12,
        "delta": 3
       },
       {
-       "model": "GPT-5.6 Sol (xHigh)",
-       "from": 12,
-       "to": 14,
-       "delta": 2
-      },
-      {
-       "model": "Grok 4.7 (xHigh)",
-       "from": 19,
-       "to": 21,
-       "delta": 2
-      },
-      {
-       "model": "GPT-6 Astra (Max)",
-       "from": 3,
-       "to": 5,
-       "delta": 2
-      },
-      {
-       "model": "GPT-6 Luna (Max)",
-       "from": 20,
-       "to": 22,
-       "delta": 2
-      },
-      {
-       "model": "Claude Sonnet 5 (High)",
-       "from": 14,
-       "to": 16,
-       "delta": 2
-      },
-      {
-       "model": "Muse Spark 1.3 (Max)",
-       "from": 18,
-       "to": 20,
-       "delta": 2
-      },
-      {
-       "model": "Muse Wonder Full (Max)",
-       "from": 7,
+       "model": "GPT-6.1 Sol (Max)",
+       "from": 6,
        "to": 9,
-       "delta": 2
+       "delta": 3
       },
       {
-       "model": "Kimi K3 (Max)",
-       "from": 25,
-       "to": 27,
+       "model": "Claude Fable 5.1 (Max)",
+       "from": 4,
+       "to": 6,
        "delta": 2
       }
      ]
     },
     "code": {
      "added": [
-      "GPT-6.1 Terra (Max)",
-      "Gemini 4 Carbon (High)"
+      "Claude Fable 5.2 (xHigh)",
+      "Ernie 5.5 Flash Preview",
+      "Gemini 4 Hydrogen (High)",
+      "Inkling 2 Small"
      ],
      "removed": [
-      "GLM-5.3-Flash",
-      "GPT-5.6 Sol (xHigh, Codex Harness)"
+      "DeepSeek-V4.1-Flash-20260910 (Max)",
+      "GLM-5.3 (Max)",
+      "Grok 4.6 (High)",
+      "Muse Spark 1.3 (xHigh)"
      ],
      "moved": [
       {
-       "model": "Muse Spark 1.3 (Max)",
-       "from": 16,
-       "to": 19,
+       "model": "Qwen3.8-Flash-Next",
+       "from": 24,
+       "to": 29,
+       "delta": 5
+      },
+      {
+       "model": "GPT-6 Sol (Max)",
+       "from": 12,
+       "to": 16,
+       "delta": 4
+      },
+      {
+       "model": "MiMo-V2.6-Pro",
+       "from": 25,
+       "to": 28,
+       "delta": 3
+      },
+      {
+       "model": "Claude Opus 5 (High)",
+       "from": 17,
+       "to": 20,
+       "delta": 3
+      },
+      {
+       "model": "Kimi K3.1 Pro (Max)",
+       "from": 9,
+       "to": 12,
+       "delta": 3
+      },
+      {
+       "model": "Hy4 preview",
+       "from": 23,
+       "to": 26,
+       "delta": 3
+      },
+      {
+       "model": "MiMo-V2.6-Flash",
+       "from": 22,
+       "to": 25,
        "delta": 3
       },
       {
        "model": "Grok 4.7 (xHigh)",
-       "from": 19,
-       "to": 21,
+       "from": 21,
+       "to": 24,
+       "delta": 3
+      },
+      {
+       "model": "GPT-6 Astra (Max)",
+       "from": 2,
+       "to": 5,
+       "delta": 3
+      },
+      {
+       "model": "Qwen3.8-Max",
+       "from": 15,
+       "to": 17,
        "delta": 2
       },
       {
        "model": "Muse Wonder (Max)",
-       "from": 18,
-       "to": 20,
-       "delta": 2
-      },
-      {
-       "model": "Muse Spark 1.3 (xHigh)",
-       "from": 26,
-       "to": 28,
-       "delta": 2
-      },
-      {
-       "model": "Qwen3.8-Max",
-       "from": 13,
-       "to": 15,
-       "delta": 2
-      },
-      {
-       "model": "MiMo-V2.6-Pro",
-       "from": 23,
-       "to": 25,
-       "delta": 2
-      },
-      {
-       "model": "MiMo-V2.6-Flash",
        "from": 20,
        "to": 22,
        "delta": 2
       },
       {
-       "model": "Claude Fable 5 (High)",
-       "from": 24,
-       "to": 26,
-       "delta": 2
-      },
-      {
-       "model": "DeepSeek-V4.1-Flash-20261017 (Max)",
-       "from": 14,
-       "to": 16,
-       "delta": 2
-      },
-      {
-       "model": "Claude Opus 5 (High)",
-       "from": 15,
-       "to": 17,
-       "delta": 2
-      },
-      {
-       "model": "Qwen3.8-Flash-Next",
-       "from": 22,
-       "to": 24,
-       "delta": 2
-      },
-      {
-       "model": "Hy4 preview",
-       "from": 21,
-       "to": 23,
-       "delta": 2
-      },
-      {
-       "model": "GPT-6 Sol (Max)",
-       "from": 10,
-       "to": 12,
-       "delta": 2
-      },
-      {
-       "model": "GLM-5.3 (Max)",
-       "from": 25,
-       "to": 27,
-       "delta": 2
-      },
-      {
-       "model": "DeepSeek-V4.1-Flash-20260910 (Max)",
-       "from": 27,
-       "to": 29,
-       "delta": 2
-      }
-     ]
-    },
-    "image-edit": {
-     "added": [
-      "MAI-Image-2.7-Preview"
-     ],
-     "removed": [
-      "Wan 2.7 Image"
-     ],
-     "moved": [
-      {
-       "model": "Seedream 5.0 Pro",
+       "model": "Gemini 4 Argon (High)",
        "from": 11,
        "to": 13,
        "delta": 2
       },
       {
-       "model": "Gemini Nano Banana 2.1",
-       "from": 5,
-       "to": 7,
-       "delta": 2
-      },
-      {
-       "model": "ChatGPT Image Latest (High Fidelity, 20251216)",
-       "from": 15,
-       "to": 16,
-       "delta": 1
-      },
-      {
-       "model": "MAI-Image-2.5",
-       "from": 9,
-       "to": 10,
-       "delta": 1
-      },
-      {
-       "model": "UNI-1.1",
-       "from": 24,
-       "to": 25,
-       "delta": 1
-      },
-      {
-       "model": "Muse Image",
-       "from": 10,
-       "to": 11,
-       "delta": 1
-      },
-      {
-       "model": "GPT-Image-2 (Medium)",
-       "from": 3,
-       "to": 4,
-       "delta": 1
-      },
-      {
-       "model": "UNI-1.1 Max",
-       "from": 22,
-       "to": 23,
-       "delta": 1
-      },
-      {
-       "model": "Gemini 3.1 Flash-Lite Image (nano-banana-2-lite)",
-       "from": 25,
-       "to": 26,
-       "delta": 1
-      },
-      {
-       "model": "Grok Imagine Image 2.0 (20260801)",
-       "from": 7,
-       "to": 8,
-       "delta": 1
-      },
-      {
-       "model": "Wan 2.7 Image Pro",
-       "from": 28,
-       "to": 29,
-       "delta": 1
-      },
-      {
-       "model": "Reve 2.1",
-       "from": 17,
-       "to": 18,
-       "delta": 1
-      },
-      {
-       "model": "Seedream 4.5",
-       "from": 26,
-       "to": 27,
-       "delta": 1
-      },
-      {
-       "model": "Ideogram 4.5",
-       "from": 21,
-       "to": 22,
-       "delta": 1
-      },
-      {
-       "model": "Gemini 3 Pro Image Preview (nano-banana-pro)",
+       "model": "DeepSeek-V4.1-Flash-20261017 (Max)",
        "from": 16,
-       "to": 17,
-       "delta": 1
-      }
-     ]
-    },
-    "text": {
-     "added": [
-      "Gemini 4 Carbon (High)"
-     ],
-     "removed": [
-      "Claude Sonnet 5.5 (xHigh)"
-     ],
-     "moved": [
-      {
-       "model": "Claude Fable 5 (High)",
-       "from": 4,
-       "to": 6,
-       "delta": 2
-      },
-      {
-       "model": "GLM-5.3 (Max)",
-       "from": 26,
-       "to": 28,
-       "delta": 2
-      },
-      {
-       "model": "Claude Opus 5 (Max)",
-       "from": 13,
-       "to": 15,
-       "delta": 2
-      },
-      {
-       "model": "GPT-5.5 (High)",
-       "from": 24,
-       "to": 26,
-       "delta": 2
-      },
-      {
-       "model": "GPT-5.6 Sol (xHigh)",
-       "from": 21,
-       "to": 22,
-       "delta": 1
-      },
-      {
-       "model": "Claude Opus 5.5 (High)",
-       "from": 2,
-       "to": 3,
-       "delta": 1
-      },
-      {
-       "model": "Gemini 3.7 Flash (High)",
-       "from": 16,
-       "to": 17,
-       "delta": 1
-      },
-      {
-       "model": "Muse Spark",
-       "from": 17,
        "to": 18,
-       "delta": 1
-      },
-      {
-       "model": "Claude Opus 4.6",
-       "from": 8,
-       "to": 9,
-       "delta": 1
-      },
-      {
-       "model": "Muse Wonder (Max)",
-       "from": 3,
-       "to": 4,
-       "delta": 1
-      },
-      {
-       "model": "Claude Opus 4.6 (High)",
-       "from": 6,
-       "to": 7,
-       "delta": 1
-      },
-      {
-       "model": "Claude Opus 4.7",
-       "from": 11,
-       "to": 12,
-       "delta": 1
-      },
-      {
-       "model": "Qwen3.8-Max",
-       "from": 23,
-       "to": 24,
-       "delta": 1
-      },
-      {
-       "model": "MiMo-V2.6-Pro",
-       "from": 28,
-       "to": 29,
-       "delta": 1
+       "delta": 2
       },
       {
        "model": "Muse Spark 1.3 (Max)",
-       "from": 10,
-       "to": 11,
-       "delta": 1
+       "from": 19,
+       "to": 21,
+       "delta": 2
+      },
+      {
+       "model": "Qwen3.8-Max (0902)",
+       "from": 13,
+       "to": 15,
+       "delta": 2
       }
      ]
     },
-    "text-to-image": {
-     "added": [],
-     "removed": [],
+    "document": {
+     "added": [
+      "Gemini 3.7 Flash (High)",
+      "Gemini 3.8 Flash (High)"
+     ],
+     "removed": [
+      "Grok 4.6 (High)",
+      "Qwen3.7-Plus"
+     ],
      "moved": [
       {
-       "model": "Seedream 5.0 Pro",
+       "model": "Claude Sonnet 5 (High)",
+       "from": 17,
+       "to": 24,
+       "delta": 7
+      },
+      {
+       "model": "GPT-5.6 Terra (xHigh)",
+       "from": 13,
+       "to": 17,
+       "delta": 4
+      },
+      {
+       "model": "Muse Spark 1.1",
+       "from": 18,
+       "to": 21,
+       "delta": 3
+      },
+      {
+       "model": "Gemini 3.5 Flash (Medium)",
+       "from": 20,
+       "to": 23,
+       "delta": 3
+      },
+      {
+       "model": "GPT-5.6 Luna (xHigh)",
+       "from": 23,
+       "to": 26,
+       "delta": 3
+      },
+      {
+       "model": "GPT-5.5",
+       "from": 8,
+       "to": 11,
+       "delta": 3
+      },
+      {
+       "model": "Claude Opus 4.5 (20251101)",
+       "from": 21,
+       "to": 19,
+       "delta": -2
+      },
+      {
+       "model": "Claude Opus 4.8 (High)",
        "from": 12,
        "to": 14,
        "delta": 2
       },
       {
-       "model": "Grok Imagine Image 2.0",
-       "from": 4,
+       "model": "GPT-5.6 Sol (xHigh)",
+       "from": 10,
+       "to": 12,
+       "delta": 2
+      },
+      {
+       "model": "GPT-6 Astra (Max)",
+       "from": 16,
+       "to": 18,
+       "delta": 2
+      },
+      {
+       "model": "Muse Spark",
+       "from": 29,
+       "to": 30,
+       "delta": 1
+      },
+      {
+       "model": "GPT-5.4",
+       "from": 14,
+       "to": 15,
+       "delta": 1
+      },
+      {
+       "model": "Gemini 3.6 Flash (High)",
+       "from": 24,
+       "to": 25,
+       "delta": 1
+      },
+      {
+       "model": "Claude Opus 4.7 (High)",
+       "from": 7,
        "to": 6,
+       "delta": -1
+      },
+      {
+       "model": "GPT-5.5 (High)",
+       "from": 9,
+       "to": 8,
+       "delta": -1
+      }
+     ]
+    },
+    "image-edit": {
+     "added": [
+      "GPT-Image-2.6 Flare (Medium)",
+      "GPT-Image-2.6 Sunburst (Medium)",
+      "MiniMax H3-Image"
+     ],
+     "removed": [
+      "HunyuanImage 3.0 Instruct",
+      "Seedream 4.5",
+      "Wan 2.7 Image Pro"
+     ],
+     "moved": [
+      {
+       "model": "Gemini 3.1 Flash-Lite Image (nano-banana-2-lite)",
+       "from": 26,
+       "to": 29,
+       "delta": 3
+      },
+      {
+       "model": "Ideogram 4.5",
+       "from": 22,
+       "to": 25,
+       "delta": 3
+      },
+      {
+       "model": "UNI-1.1",
+       "from": 25,
+       "to": 28,
+       "delta": 3
+      },
+      {
+       "model": "UNI-1.1 Max",
+       "from": 23,
+       "to": 26,
+       "delta": 3
+      },
+      {
+       "model": "Grok Imagine Image (Quality, 20260519)",
+       "from": 12,
+       "to": 15,
+       "delta": 3
+      },
+      {
+       "model": "MAI-Image-2.5",
+       "from": 10,
+       "to": 13,
+       "delta": 3
+      },
+      {
+       "model": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
+       "from": 15,
+       "to": 18,
+       "delta": 3
+      },
+      {
+       "model": "Grok Imagine Image",
+       "from": 24,
+       "to": 27,
+       "delta": 3
+      },
+      {
+       "model": "Reve 2.1",
+       "from": 18,
+       "to": 20,
+       "delta": 2
+      },
+      {
+       "model": "GPT-Image-1.5 (High Fidelity)",
+       "from": 19,
+       "to": 21,
+       "delta": 2
+      },
+      {
+       "model": "Grok Imagine Image 2.0",
+       "from": 5,
+       "to": 7,
+       "delta": 2
+      },
+      {
+       "model": "Gemini Nano Banana 2.1",
+       "from": 7,
+       "to": 9,
        "delta": 2
       },
       {
        "model": "MAI-Image-2.6",
-       "from": 5,
-       "to": 4,
-       "delta": -1
+       "from": 6,
+       "to": 8,
+       "delta": 2
       },
       {
-       "model": "Grok Imagine Image Pro",
-       "from": 28,
+       "model": "Grok Imagine Image 2.0 (20260801)",
+       "from": 8,
+       "to": 10,
+       "delta": 2
+      },
+      {
+       "model": "Krea 3 Ultra",
+       "from": 9,
+       "to": 11,
+       "delta": 2
+      }
+     ]
+    },
+    "image-to-video": {
+     "added": [
+      "Gemini Omni 1.2 Flash",
+      "SkyReels V4"
+     ],
+     "removed": [
+      "Hailuo 2.3",
+      "Veo 3"
+     ],
+     "moved": [
+      {
+       "model": "Kling 2.5 Turbo (1080p)",
+       "from": 27,
        "to": 29,
+       "delta": 2
+      },
+      {
+       "model": "Wan 2.5 Preview",
+       "from": 22,
+       "to": 24,
+       "delta": 2
+      },
+      {
+       "model": "Kling 2.6 Pro",
+       "from": 26,
+       "to": 28,
+       "delta": 2
+      },
+      {
+       "model": "MiniMax H3",
+       "from": 1,
+       "to": 3,
+       "delta": 2
+      },
+      {
+       "model": "Kling 3.0 Pro",
+       "from": 19,
+       "to": 21,
+       "delta": 2
+      },
+      {
+       "model": "Seedance 1.0 Pro",
+       "from": 28,
+       "to": 30,
+       "delta": 2
+      },
+      {
+       "model": "HiDream-O1-Video-1.0",
+       "from": 7,
+       "to": 9,
+       "delta": 2
+      },
+      {
+       "model": "Veo 3.1 (Audio)",
+       "from": 13,
+       "to": 15,
+       "delta": 2
+      },
+      {
+       "model": "FLUX 3 Video (20260811)",
+       "from": 9,
+       "to": 11,
+       "delta": 2
+      },
+      {
+       "model": "HappyHorse 1.0",
+       "from": 10,
+       "to": 12,
+       "delta": 2
+      },
+      {
+       "model": "Veo 3.1 Fast (Audio)",
+       "from": 15,
+       "to": 17,
+       "delta": 2
+      },
+      {
+       "model": "Veo 3.1 (Audio, 1080p)",
+       "from": 14,
+       "to": 16,
+       "delta": 2
+      },
+      {
+       "model": "Wan 2.7",
+       "from": 11,
+       "to": 13,
+       "delta": 2
+      },
+      {
+       "model": "Veo 3.1 Fast (Audio, 1080p)",
+       "from": 17,
+       "to": 19,
+       "delta": 2
+      },
+      {
+       "model": "Grok Imagine Video (480p)",
+       "from": 16,
+       "to": 18,
+       "delta": 2
+      }
+     ]
+    },
+    "image-to-webdev": {
+     "added": [
+      "DeepSeek-V4.1-Flash-20261017 (Max)"
+     ],
+     "removed": [
+      "Claude Opus 4.6 (High)"
+     ],
+     "moved": [
+      {
+       "model": "GPT-5.6 Sol (xHigh, Codex Harness)",
+       "from": 12,
+       "to": 15,
+       "delta": 3
+      },
+      {
+       "model": "MiMo-V2.6-Pro",
+       "from": 16,
+       "to": 18,
+       "delta": 2
+      },
+      {
+       "model": "MiMo-V2.6-Flash",
+       "from": 18,
+       "to": 20,
+       "delta": 2
+      },
+      {
+       "model": "Gemini 3.6 Flash (High)",
+       "from": 29,
+       "to": 30,
        "delta": 1
       },
       {
-       "model": "UNI-1.1",
+       "model": "Claude Opus 4.7 (High)",
        "from": 23,
        "to": 24,
        "delta": 1
       },
       {
-       "model": "MAI-Image-2.5",
-       "from": 14,
-       "to": 13,
+       "model": "GLM-5.3-Flash",
+       "from": 22,
+       "to": 23,
+       "delta": 1
+      },
+      {
+       "model": "GPT-6 Luna (Max)",
+       "from": 25,
+       "to": 26,
+       "delta": 1
+      },
+      {
+       "model": "Kimi K3 (Max)",
+       "from": 21,
+       "to": 22,
+       "delta": 1
+      },
+      {
+       "model": "Claude Fable 5.1 (Max)",
+       "from": 4,
+       "to": 3,
        "delta": -1
       },
       {
-       "model": "Qwen-Image-3.0-Pro",
+       "model": "Step 5 Preview (High)",
+       "from": 28,
+       "to": 29,
+       "delta": 1
+      },
+      {
+       "model": "Gemini 3.7 Flash (High)",
+       "from": 15,
+       "to": 16,
+       "delta": 1
+      },
+      {
+       "model": "Muse Spark 1.3 (Max)",
+       "from": 8,
+       "to": 9,
+       "delta": 1
+      },
+      {
+       "model": "DeepSeek-V4.1-Flash-20260910 (Max)",
        "from": 13,
        "to": 12,
        "delta": -1
       },
       {
-       "model": "MAI-Image-2",
+       "model": "Qwen3.8-27B",
        "from": 24,
-       "to": 23,
+       "to": 25,
+       "delta": 1
+      },
+      {
+       "model": "Claude Opus 4.7",
+       "from": 26,
+       "to": 27,
+       "delta": 1
+      }
+     ]
+    },
+    "search": {
+     "added": [],
+     "removed": [],
+     "moved": [
+      {
+       "model": "Qwen3.8-Max",
+       "from": 2,
+       "to": 1,
        "delta": -1
       },
       {
-       "model": "Gemini Nano Banana 2.1",
+       "model": "Claude Sonnet 5 (Search)",
+       "from": 23,
+       "to": 24,
+       "delta": 1
+      },
+      {
+       "model": "Claude Opus 5 (High)",
        "from": 6,
        "to": 5,
        "delta": -1
       },
       {
-       "model": "FLUX.2 [max]",
-       "from": 29,
-       "to": 28,
+       "model": "Claude Fable 5.1 (High)",
+       "from": 5,
+       "to": 6,
+       "delta": 1
+      },
+      {
+       "model": "GPT-5.6 Sol (xHigh)",
+       "from": 1,
+       "to": 2,
+       "delta": 1
+      },
+      {
+       "model": "Grok 4.20 Beta 1",
+       "from": 24,
+       "to": 23,
        "delta": -1
+      }
+     ]
+    },
+    "text": {
+     "added": [
+      "Kimi K3.1 Pro (Max)"
+     ],
+     "removed": [
+      "Gemini 3.5 Flash (High)"
+     ],
+     "moved": [
+      {
+       "model": "Claude Opus 5 (Max)",
+       "from": 15,
+       "to": 18,
+       "delta": 3
+      },
+      {
+       "model": "GPT-5.5 (High)",
+       "from": 26,
+       "to": 29,
+       "delta": 3
+      },
+      {
+       "model": "Claude Opus 4.8 (High)",
+       "from": 25,
+       "to": 28,
+       "delta": 3
+      },
+      {
+       "model": "Muse Spark 1.1",
+       "from": 16,
+       "to": 14,
+       "delta": -2
+      },
+      {
+       "model": "Gemini 3.6 Flash (High)",
+       "from": 23,
+       "to": 25,
+       "delta": 2
+      },
+      {
+       "model": "Claude Fable 5.1 (Max)",
+       "from": 5,
+       "to": 7,
+       "delta": 2
+      },
+      {
+       "model": "GLM-5.3 (Max)",
+       "from": 28,
+       "to": 26,
+       "delta": -2
+      },
+      {
+       "model": "Claude Fable 5 (High)",
+       "from": 6,
+       "to": 5,
+       "delta": -1
+      },
+      {
+       "model": "Muse Spark",
+       "from": 18,
+       "to": 17,
+       "delta": -1
+      },
+      {
+       "model": "MiMo-V2.6-Pro",
+       "from": 29,
+       "to": 30,
+       "delta": 1
+      },
+      {
+       "model": "Qwen3.8-Max",
+       "from": 24,
+       "to": 23,
+       "delta": -1
+      },
+      {
+       "model": "Claude Opus 4.6 (High)",
+       "from": 7,
+       "to": 6,
+       "delta": -1
+      },
+      {
+       "model": "Muse Wonder (Max)",
+       "from": 4,
+       "to": 3,
+       "delta": -1
+      },
+      {
+       "model": "Claude Opus 4.6",
+       "from": 9,
+       "to": 10,
+       "delta": 1
+      },
+      {
+       "model": "Claude Opus 5 (High)",
+       "from": 14,
+       "to": 15,
+       "delta": 1
+      }
+     ]
+    },
+    "text-to-image": {
+     "added": [
+      "GPT-Image-2.6 Flare (Medium)",
+      "GPT-Image-2.6 Sunburst (Medium)",
+      "MiniMax H3-Image"
+     ],
+     "removed": [
+      "FLUX.2 [flex]",
+      "FLUX.2 [max]",
+      "Grok Imagine Image Pro"
+     ],
+     "moved": [
+      {
+       "model": "Grok Imagine Image",
+       "from": 25,
+       "to": 29,
+       "delta": 4
+      },
+      {
+       "model": "MAI-Image-2",
+       "from": 23,
+       "to": 26,
+       "delta": 3
+      },
+      {
+       "model": "Cosmos3-Super-Text2Image (Agentic)",
+       "from": 27,
+       "to": 30,
+       "delta": 3
+      },
+      {
+       "model": "UNI-1.1",
+       "from": 24,
+       "to": 27,
+       "delta": 3
+      },
+      {
+       "model": "UNI-1.1 Max",
+       "from": 22,
+       "to": 25,
+       "delta": 3
+      },
+      {
+       "model": "Muse Image",
+       "from": 9,
+       "to": 12,
+       "delta": 3
+      },
+      {
+       "model": "Seedream 5.0 Pro",
+       "from": 14,
+       "to": 17,
+       "delta": 3
+      },
+      {
+       "model": "Qwen-Image-2.0-Pro (2026-06-22)",
+       "from": 21,
+       "to": 24,
+       "delta": 3
+      },
+      {
+       "model": "Reve 2.1",
+       "from": 7,
+       "to": 9,
+       "delta": 2
+      },
+      {
+       "model": "GPT-Image-1.5 (High Fidelity)",
+       "from": 17,
+       "to": 19,
+       "delta": 2
+      },
+      {
+       "model": "Grok Imagine Image 2.0",
+       "from": 6,
+       "to": 8,
+       "delta": 2
+      },
+      {
+       "model": "Gemini Nano Banana 2.1",
+       "from": 5,
+       "to": 7,
+       "delta": 2
+      },
+      {
+       "model": "MAI-Image-2.6",
+       "from": 4,
+       "to": 6,
+       "delta": 2
+      },
+      {
+       "model": "Grok Imagine Image 2.0 (20260801)",
+       "from": 8,
+       "to": 10,
+       "delta": 2
+      },
+      {
+       "model": "Qwen-Image-3.0-Pro",
+       "from": 12,
+       "to": 14,
+       "delta": 2
+      }
+     ]
+    },
+    "text-to-video": {
+     "added": [
+      "Gemini Omni 1.2 Flash",
+      "SkyReels V4"
+     ],
+     "removed": [
+      "Kling 2.6 Pro",
+      "P-Video"
+     ],
+     "moved": [
+      {
+       "model": "MiniMax H3",
+       "from": 8,
+       "to": 11,
+       "delta": 3
+      },
+      {
+       "model": "Kling 2.5 Turbo (1080p)",
+       "from": 28,
+       "to": 30,
+       "delta": 2
+      },
+      {
+       "model": "Wan 2.5 Preview",
+       "from": 25,
+       "to": 27,
+       "delta": 2
+      },
+      {
+       "model": "Sora 2",
+       "from": 17,
+       "to": 19,
+       "delta": 2
+      },
+      {
+       "model": "Veo 3",
+       "from": 23,
+       "to": 25,
+       "delta": 2
+      },
+      {
+       "model": "Veo 3.1 (Audio)",
+       "from": 12,
+       "to": 14,
+       "delta": 2
+      },
+      {
+       "model": "HappyHorse 1.0",
+       "from": 10,
+       "to": 12,
+       "delta": 2
+      },
+      {
+       "model": "Veo 3.1 Fast (Audio)",
+       "from": 14,
+       "to": 16,
+       "delta": 2
+      },
+      {
+       "model": "Veo 3.1 (Audio, 1080p)",
+       "from": 13,
+       "to": 15,
+       "delta": 2
+      },
+      {
+       "model": "Sora 2 Pro",
+       "from": 11,
+       "to": 13,
+       "delta": 2
+      },
+      {
+       "model": "Wan 2.7",
+       "from": 20,
+       "to": 22,
+       "delta": 2
+      },
+      {
+       "model": "Veo 3.1 Fast (Audio, 1080p)",
+       "from": 15,
+       "to": 17,
+       "delta": 2
+      },
+      {
+       "model": "Veo 3 Fast",
+       "from": 24,
+       "to": 26,
+       "delta": 2
+      },
+      {
+       "model": "Grok Imagine Video (720p)",
+       "from": 18,
+       "to": 20,
+       "delta": 2
+      },
+      {
+       "model": "Wan 3.0",
+       "from": 6,
+       "to": 8,
+       "delta": 2
+      }
+     ]
+    },
+    "video-edit": {
+     "added": [
+      "Gemini Omni 1.2 Flash",
+      "SkyReels V4"
+     ],
+     "removed": [],
+     "moved": [
+      {
+       "model": "Grok Imagine Video",
+       "from": 7,
+       "to": 10,
+       "delta": 3
+      },
+      {
+       "model": "Kling O1 Pro",
+       "from": 9,
+       "to": 11,
+       "delta": 2
+      },
+      {
+       "model": "HappyHorse 1.0",
+       "from": 6,
+       "to": 8,
+       "delta": 2
+      },
+      {
+       "model": "MiniMax H3",
+       "from": 3,
+       "to": 5,
+       "delta": 2
+      },
+      {
+       "model": "Runway Gen-4 Aleph",
+       "from": 10,
+       "to": 12,
+       "delta": 2
+      },
+      {
+       "model": "Dreamina Seedance 2.0 (720p)",
+       "from": 5,
+       "to": 6,
+       "delta": 1
+      },
+      {
+       "model": "Kling O3 Pro",
+       "from": 8,
+       "to": 9,
+       "delta": 1
+      }
+     ]
+    },
+    "vision": {
+     "added": [],
+     "removed": [],
+     "moved": [
+      {
+       "model": "Claude Opus 5 (High)",
+       "from": 15,
+       "to": 19,
+       "delta": 4
+      },
+      {
+       "model": "Claude Opus 5.5 (High)",
+       "from": 10,
+       "to": 6,
+       "delta": -4
+      },
+      {
+       "model": "GPT-5.5 (High)",
+       "from": 25,
+       "to": 22,
+       "delta": -3
+      },
+      {
+       "model": "GPT-6.1 Sol (Max)",
+       "from": 9,
+       "to": 12,
+       "delta": 3
+      },
+      {
+       "model": "Grok 4.5",
+       "from": 29,
+       "to": 26,
+       "delta": -3
+      },
+      {
+       "model": "Muse Spark 1.1",
+       "from": 27,
+       "to": 29,
+       "delta": 2
+      },
+      {
+       "model": "Muse Spark 1.2 (xHigh)",
+       "from": 11,
+       "to": 9,
+       "delta": -2
+      },
+      {
+       "model": "Gemini 3.6 Flash (High)",
+       "from": 26,
+       "to": 28,
+       "delta": 2
+      },
+      {
+       "model": "Claude Opus 4.6",
+       "from": 8,
+       "to": 10,
+       "delta": 2
+      },
+      {
+       "model": "Claude Fable 5.1 (Max)",
+       "from": 17,
+       "to": 15,
+       "delta": -2
+      },
+      {
+       "model": "Claude Opus 4.8 (High)",
+       "from": 20,
+       "to": 18,
+       "delta": -2
+      },
+      {
+       "model": "GPT-5.6 Sol (xHigh)",
+       "from": 18,
+       "to": 16,
+       "delta": -2
+      },
+      {
+       "model": "Gemini 3.7 Flash (High)",
+       "from": 6,
+       "to": 8,
+       "delta": 2
+      },
+      {
+       "model": "Claude Opus 4.7",
+       "from": 4,
+       "to": 2,
+       "delta": -2
+      },
+      {
+       "model": "Muse Spark 1.3 (xHigh)",
+       "from": 16,
+       "to": 17,
+       "delta": 1
       }
      ]
     }
@@ -480,170 +1135,75 @@
   },
   "aa": {
    "added": [
-    "deepseek-v4-1-flash-1017-high",
-    "deepseek-v4-1-flash-1017-non-reasoning",
-    "gemini-4-carbon",
-    "gemini-4-carbon-medium",
-    "mistral-large-4-medium",
-    "nanbeige4-3-33b"
+    "agnes-2-5-pro-theta",
+    "claude-fable-5-2",
+    "claude-fable-5-2-high",
+    "claude-fable-5-2-low",
+    "claude-fable-5-2-medium",
+    "claude-fable-5-2-xhigh",
+    "gemini-4-carbon-low",
+    "gemini-4-hydrogen",
+    "gemini-4-hydrogen-high",
+    "gemini-4-hydrogen-low",
+    "gemini-4-hydrogen-medium",
+    "inkling-2-small",
+    "k-exaone-2-0",
+    "muse-ember",
+    "muse-ember-xhigh",
+    "muse-wonder-high",
+    "tencent-hy4"
    ],
-   "removed": [],
-   "shifted": [
-    {
-     "model": "muse-glimmer",
-     "from": 17.475,
-     "to": 6.341,
-     "pct": -63.7
-    },
-    {
-     "model": "nvidia-nemotron-3-nano-4b",
-     "from": 4.769,
-     "to": 1.816,
-     "pct": -61.9
-    },
-    {
-     "model": "mistral-small-4",
-     "from": 11.268,
-     "to": 4.297,
-     "pct": -61.9
-    },
-    {
-     "model": "nemotron-3-5-lightning",
-     "from": 12.857,
-     "to": 5.535,
-     "pct": -57.0
-    },
-    {
-     "model": "gpt-6-luna-low",
-     "from": 21.526,
-     "to": 9.666,
-     "pct": -55.1
-    },
-    {
-     "model": "command-a-plus",
-     "from": 13.134,
-     "to": 6.241,
-     "pct": -52.5
-    },
-    {
-     "model": "qwen3-8-27b-non-reasoning",
-     "from": 20.15,
-     "to": 10.032,
-     "pct": -50.2
-    },
-    {
-     "model": "inkling",
-     "from": 24.985,
-     "to": 12.478,
-     "pct": -50.1
-    },
-    {
-     "model": "inkling-small",
-     "from": 25.658,
-     "to": 12.91,
-     "pct": -49.7
-    },
-    {
-     "model": "gpt-6-luna-non-reasoning",
-     "from": 18.468,
-     "to": 9.392,
-     "pct": -49.1
-    },
-    {
-     "model": "nvidia-nemotron-3-ultra-550b-a55b",
-     "from": 22.928,
-     "to": 11.759,
-     "pct": -48.7
-    },
-    {
-     "model": "nemotron-3-5-super-vl",
-     "from": 26.491,
-     "to": 13.62,
-     "pct": -48.6
-    },
-    {
-     "model": "granite-4-2-3b",
-     "from": 9.056,
-     "to": 4.723,
-     "pct": -47.8
-    },
-    {
-     "model": "gemini-3-5-flash-lite",
-     "from": 22.169,
-     "to": 11.656,
-     "pct": -47.4
-    },
-    {
-     "model": "k2-horizon-375b-a23b",
-     "from": 30.502,
-     "to": 17.77,
-     "pct": -41.7
-    },
-    {
-     "model": "reflection-beam",
-     "from": 30.333,
-     "to": 17.731,
-     "pct": -41.5
-    },
-    {
-     "model": "qwen3-8-27b",
-     "from": 33.676,
-     "to": 20.107,
-     "pct": -40.3
-    },
-    {
-     "model": "qwen3-8-27b-low",
-     "from": 26.205,
-     "to": 15.685,
-     "pct": -40.1
-    },
-    {
-     "model": "gpt-6-luna-medium",
-     "from": 29.925,
-     "to": 18.304,
-     "pct": -38.8
-    },
-    {
-     "model": "claude-haiku-5-5-low",
-     "from": 29.452,
-     "to": 18.618,
-     "pct": -36.8
-    }
-   ]
+   "removed": [
+    "claude-fable-5-1",
+    "claude-fable-5-1-high",
+    "claude-fable-5-1-low",
+    "claude-fable-5-1-medium",
+    "claude-fable-5-1-xhigh",
+    "jt-4-1-flash-236b-a21b-non-reasoning",
+    "k-exaone-2-0-0803"
+   ],
+   "shifted": []
   },
   "llmstats": {
    "added": [
-    "embed-v5.0-fast",
-    "embed-v5.0-pro",
-    "gemini-3.8-live",
-    "gemini-4-carbon",
-    "gpt-6.1-terra",
-    "jev",
-    "k2-horizon-0.9b",
-    "k2-horizon-3.7b",
-    "k2-horizon-32b",
-    "k2-horizon-375b-a23b",
-    "k2-horizon-7b",
-    "k2-horizon-mova-36b-a4b",
-    "kimi-k3.1-pro",
-    "particle-1",
-    "qwen3.8-max-0902",
-    "swe-2"
+    "claude-fable-5-2",
+    "claude-mythos-5-2",
+    "ernie-5.5-flash-preview",
+    "glm-5.3-flashx-legal",
+    "gpt-6-astra-law",
+    "gpt-6-cyber",
+    "gpt-6-rosalind",
+    "inkling-2-small",
+    "lfm3-1.7b",
+    "lfm3-vl-2b",
+    "longcat-2.5",
+    "muse-ember-1.0",
+    "qwen4-max-preview",
+    "swe-2-flash"
    ],
    "removed": [],
    "shifted": []
   },
   "livebench": {
    "added": [
-    "mistral-large-4-0"
+    "claude-fable-5.2",
+    "gemini-4-carbon",
+    "gemini-4-hydrogen"
    ],
    "removed": [],
-   "shifted": []
+   "shifted": [
+    {
+     "model": "gemma-4-31b",
+     "from": 38.722,
+     "to": 32.433,
+     "pct": -16.2
+    }
+   ]
   }
  },
  "summary": {
-  "added": 29,
-  "removed": 6,
-  "moved": 70
+  "added": 63,
+  "removed": 34,
+  "moved": 163
  }
 }

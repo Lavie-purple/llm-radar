@@ -5,14 +5,14 @@
   "note": "解析自页面内嵌 RSC payload，未使用官方 API（免 key）。Intelligence Index 版本请以站方标注为准。",
   "licenseNote": "isOpenWeights 字段区分开放权重与闭源；官方另有 Openness Index。"
  },
- "fetchedAt": "2026-11-02T21:14:42+08:00",
- "count": 278,
+ "fetchedAt": "2026-11-14T00:44:48+08:00",
+ "count": 288,
  "coverage": {
-  "intelligenceIndex": 89,
-  "omniscience": 99,
+  "intelligenceIndex": 111,
+  "omniscience": 117,
   "gdpval": 0,
-  "price": 173,
-  "speed": 159
+  "price": 177,
+  "speed": 0
  },
  "models": [
   {
@@ -23,8 +23,7 @@
    "modelCreatorName": "China Mobile",
    "isReasoning": false,
    "isOpenWeights": false,
-   "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 256000
   },
   {
    "releaseDate": "2026-03-30",
@@ -35,13 +34,8 @@
    "isReasoning": false,
    "isOpenWeights": false,
    "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.4,
-   "price1mOutputTokens": 4.8,
-   "medianOutputTokensPerSecond": 131.164075532196,
-   "medianTimeToFirstTokenSeconds": 2.06942810749995,
-   "medianTimeToFirstAnswerTokenSeconds": 2.06942810749995,
-   "medianEndToEndResponseTimeSeconds": 5.881447503597994
+   "price1mOutputTokens": 4.8
   },
   {
    "slug": "nova-2-0-omni-reasoning-medium",
@@ -50,8 +44,7 @@
    "modelCreatorName": "Amazon",
    "isReasoning": true,
    "isOpenWeights": false,
-   "contextWindowTokens": 1000000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 1000000
   },
   {
    "slug": "qwen3-5-122b-a10b-non-reasoning",
@@ -61,13 +54,8 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.4,
-   "price1mOutputTokens": 3.2,
-   "medianOutputTokensPerSecond": 142.500131772669,
-   "medianTimeToFirstTokenSeconds": 2.31444516299999,
-   "medianTimeToFirstAnswerTokenSeconds": 2.31444516299999,
-   "medianEndToEndResponseTimeSeconds": 5.823213848194274
+   "price1mOutputTokens": 3.2
   },
   {
    "slug": "gemma-4-12b-non-reasoning",
@@ -76,34 +64,22 @@
    "modelCreatorName": "Google",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false,
-   "price1mInputTokens": 0.1,
-   "price1mOutputTokens": 0.3,
-   "medianOutputTokensPerSecond": 117.387283929563,
-   "medianTimeToFirstTokenSeconds": 2.19692912250008,
-   "medianTimeToFirstAnswerTokenSeconds": 2.19692912250008,
-   "medianEndToEndResponseTimeSeconds": 6.456334257898049
+   "contextWindowTokens": 262144
   },
   {
    "slug": "claude-sonnet-5-5-medium",
    "name": "Claude Sonnet 5.5 (Medium, Default Fallback)",
-   "shortName": "Claude Sonnet 5.5 (medium with fallback)",
+   "shortName": "Claude Sonnet 5.5 (medium)",
    "modelCreatorName": "Anthropic",
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 30.3195522148431,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 30.8195522148431,
    "omniscience": 18.633333333333333,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 10,
    "cacheHitPrice": 0.1,
-   "cacheWritePrice": 2.5,
-   "medianOutputTokensPerSecond": 103.780416071292,
-   "medianTimeToFirstTokenSeconds": 1.21981564999999,
-   "medianTimeToFirstAnswerTokenSeconds": 1.21981564999999,
-   "medianEndToEndResponseTimeSeconds": 6.037680319732329
+   "cacheWritePrice": 2.5
   },
   {
    "releaseDate": "2025-08-14",
@@ -113,28 +89,7 @@
    "modelCreatorName": "Google",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 32000,
-   "intelligenceIndexIsEstimated": false
-  },
-  {
-   "slug": "claude-fable-5-1-low",
-   "name": "Claude Fable 5.1 (Low, Default Fallback)",
-   "shortName": "Claude Fable 5.1 (low with fallback)",
-   "modelCreatorName": "Anthropic",
-   "isReasoning": true,
-   "isOpenWeights": false,
-   "contextWindowTokens": 1000000,
-   "intelligenceIndex": 38.483648810734,
-   "intelligenceIndexIsEstimated": false,
-   "omniscience": 33.93333333333333,
-   "price1mInputTokens": 10,
-   "price1mOutputTokens": 50,
-   "cacheHitPrice": 0.25,
-   "cacheWritePrice": 12.5,
-   "medianOutputTokensPerSecond": 56.4498174045232,
-   "medianTimeToFirstTokenSeconds": 2.78097646349992,
-   "medianTimeToFirstAnswerTokenSeconds": 2.78097646349992,
-   "medianEndToEndResponseTimeSeconds": 11.638401039685283
+   "contextWindowTokens": 32000
   },
   {
    "releaseDate": "2026-08-30",
@@ -145,7 +100,8 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 13.6712884627289,
+   "omniscience": -27.866666666666667,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 3,
    "cacheHitPrice": 0.03
@@ -158,17 +114,12 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 52.308219253291,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 52.458219253291,
    "omniscience": 42.36666666666667,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 10,
    "cacheHitPrice": 0.1,
-   "cacheWritePrice": 2.5,
-   "medianOutputTokensPerSecond": 76.9839497018347,
-   "medianTimeToFirstTokenSeconds": 144.080940482,
-   "medianTimeToFirstAnswerTokenSeconds": 144.080940482,
-   "medianEndToEndResponseTimeSeconds": 150.5758007994628
+   "cacheWritePrice": 2.5
   },
   {
    "releaseDate": "2026-07-21",
@@ -180,15 +131,10 @@
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
    "intelligenceIndex": 11.6563462044212,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": 6.866666666666666,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 2.5,
-   "cacheHitPrice": 0.03,
-   "medianOutputTokensPerSecond": 423.317454997959,
-   "medianTimeToFirstTokenSeconds": 6.219225547,
-   "medianTimeToFirstAnswerTokenSeconds": 6.219225547,
-   "medianEndToEndResponseTimeSeconds": 7.400372211510705
+   "cacheHitPrice": 0.03
   },
   {
    "slug": "step-5",
@@ -199,16 +145,10 @@
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
    "intelligenceIndex": 28.5283090216016,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": 16.433333333333334,
    "price1mInputTokens": 1,
    "price1mOutputTokens": 2.7,
-   "cacheHitPrice": 0.1,
-   "medianOutputTokensPerSecond": 145.78017826135,
-   "medianTimeToFirstTokenSeconds": 0.876267628499988,
-   "medianTimeToFirstAnswerTokenSeconds": 14.595553911813928,
-   "medianEndToEndResponseTimeSeconds": 18.025375482642414,
-   "medianReasoningTimeSeconds": 13.71928628331394
+   "cacheHitPrice": 0.1
   },
   {
    "slug": "qwen3-5-2b-non-reasoning",
@@ -217,8 +157,7 @@
    "modelCreatorName": "Alibaba",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 262144
   },
   {
    "releaseDate": "2025-09-22",
@@ -229,13 +168,8 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 65536,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.25,
-   "price1mOutputTokens": 0.97,
-   "medianOutputTokensPerSecond": 94.5720742062242,
-   "medianTimeToFirstTokenSeconds": 1.87465252450005,
-   "medianTimeToFirstAnswerTokenSeconds": 1.87465252450005,
-   "medianEndToEndResponseTimeSeconds": 7.161625494022726
+   "price1mOutputTokens": 0.97
   },
   {
    "releaseDate": "2026-08-25",
@@ -247,8 +181,22 @@
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
    "intelligenceIndex": 4.72268717901823,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": -18.333333333333332
+  },
+  {
+   "slug": "claude-fable-5-2-medium",
+   "name": "Claude Fable 5.2 (Medium, Default Fallback)",
+   "shortName": "Claude Fable 5.2 (medium)",
+   "modelCreatorName": "Anthropic",
+   "isReasoning": true,
+   "isOpenWeights": false,
+   "contextWindowTokens": 1000000,
+   "intelligenceIndex": 56.4083157101519,
+   "omniscience": 63.5,
+   "price1mInputTokens": 8,
+   "price1mOutputTokens": 40,
+   "cacheHitPrice": 0.2,
+   "cacheWritePrice": 10
   },
   {
    "slug": "gpt-6-1-terra-non-reasoning",
@@ -258,17 +206,12 @@
    "isReasoning": false,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 30.415898867357,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 30.515898867357,
    "omniscience": -4.966666666666667,
    "price1mInputTokens": 1,
    "price1mOutputTokens": 5,
    "cacheHitPrice": 0.05,
-   "cacheWritePrice": 1.25,
-   "medianOutputTokensPerSecond": 90.9419510388761,
-   "medianTimeToFirstTokenSeconds": 0.959280324500014,
-   "medianTimeToFirstAnswerTokenSeconds": 0.959280324500014,
-   "medianEndToEndResponseTimeSeconds": 6.457293004987358
+   "cacheWritePrice": 1.25
   },
   {
    "slug": "gemini-4-carbon-medium",
@@ -278,12 +221,11 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 57.7087824022788,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 58.2587824022788,
    "omniscience": 46.766666666666666,
-   "price1mInputTokens": 4,
-   "price1mOutputTokens": 20,
-   "cacheHitPrice": 0.2,
+   "price1mInputTokens": 2,
+   "price1mOutputTokens": 10,
+   "cacheHitPrice": 0.1,
    "cacheWritePrice": 4
   },
   {
@@ -294,15 +236,9 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 1.25,
    "price1mOutputTokens": 10,
-   "cacheHitPrice": 0.312,
-   "medianOutputTokensPerSecond": 120.507174203216,
-   "medianTimeToFirstTokenSeconds": 13.3657022735,
-   "medianTimeToFirstAnswerTokenSeconds": 29.96222454052554,
-   "medianEndToEndResponseTimeSeconds": 34.11135510728192,
-   "medianReasoningTimeSeconds": 16.59652226702554
+   "cacheHitPrice": 0.312
   },
   {
    "releaseDate": "2026-07-15",
@@ -314,16 +250,10 @@
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
    "intelligenceIndex": 12.4781698715401,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": -1.5,
    "price1mInputTokens": 1,
    "price1mOutputTokens": 4.05,
-   "cacheHitPrice": 0.17,
-   "medianOutputTokensPerSecond": 211.284249391202,
-   "medianTimeToFirstTokenSeconds": 1.71107684450003,
-   "medianTimeToFirstAnswerTokenSeconds": 11.176997781639612,
-   "medianEndToEndResponseTimeSeconds": 13.543478015924507,
-   "medianReasoningTimeSeconds": 9.465920937139582
+   "cacheHitPrice": 0.17
   },
   {
    "releaseDate": "2026-02-16",
@@ -334,14 +264,8 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.6,
-   "price1mOutputTokens": 3.6,
-   "medianOutputTokensPerSecond": 56.8087026058205,
-   "medianTimeToFirstTokenSeconds": 2.22098524849998,
-   "medianTimeToFirstAnswerTokenSeconds": 58.30394180018805,
-   "medianEndToEndResponseTimeSeconds": 67.1054101855754,
-   "medianReasoningTimeSeconds": 56.08295655168807
+   "price1mOutputTokens": 3.6
   },
   {
    "releaseDate": "2026-08-25",
@@ -352,7 +276,6 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": -12.433333333333334
   },
   {
@@ -363,8 +286,7 @@
    "modelCreatorName": "Institute of Foundation Models",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 524288,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 524288
   },
   {
    "releaseDate": "2026-09-21",
@@ -376,16 +298,10 @@
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
    "intelligenceIndex": 26.7276981444568,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": -10.833333333333334,
    "price1mInputTokens": 0.14,
    "price1mOutputTokens": 0.28,
-   "cacheHitPrice": 0.0028,
-   "medianOutputTokensPerSecond": 37.0909278625303,
-   "medianTimeToFirstTokenSeconds": 4.14053162300002,
-   "medianTimeToFirstAnswerTokenSeconds": 58.06207296088669,
-   "medianEndToEndResponseTimeSeconds": 71.54245829535836,
-   "medianReasoningTimeSeconds": 53.921541337886666
+   "cacheHitPrice": 0.0028
   },
   {
    "slug": "mistral-small-4-non-reasoning",
@@ -395,14 +311,9 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.15,
    "price1mOutputTokens": 0.6,
-   "cacheHitPrice": 0.015,
-   "medianOutputTokensPerSecond": 151.784049144888,
-   "medianTimeToFirstTokenSeconds": 0.790521904000002,
-   "medianTimeToFirstAnswerTokenSeconds": 0.790521904000002,
-   "medianEndToEndResponseTimeSeconds": 4.084675689044415
+   "cacheHitPrice": 0.015
   },
   {
    "slug": "solar-pro4",
@@ -412,15 +323,11 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 512000,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 14.1589437644357,
+   "omniscience": 1.3666666666666667,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 1.2,
-   "cacheHitPrice": 0.06,
-   "medianOutputTokensPerSecond": 100.526322940563,
-   "medianTimeToFirstTokenSeconds": 1.99894174099998,
-   "medianTimeToFirstAnswerTokenSeconds": 21.894228283834302,
-   "medianEndToEndResponseTimeSeconds": 26.868049919542877,
-   "medianReasoningTimeSeconds": 19.89528654283432
+   "cacheHitPrice": 0.06
   },
   {
    "slug": "gpt-oss-20b-low",
@@ -430,14 +337,8 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.07,
-   "price1mOutputTokens": 0.3,
-   "medianOutputTokensPerSecond": 245.026096892827,
-   "medianTimeToFirstTokenSeconds": 0.763319391000024,
-   "medianTimeToFirstAnswerTokenSeconds": 8.9257152556119,
-   "medianEndToEndResponseTimeSeconds": 10.966314221764868,
-   "medianReasoningTimeSeconds": 8.162395864611875
+   "price1mOutputTokens": 0.3
   },
   {
    "releaseDate": "2025-04-16",
@@ -448,25 +349,21 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 200000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 8,
-   "cacheHitPrice": 0.5,
-   "medianOutputTokensPerSecond": 159.767696425884,
-   "medianTimeToFirstTokenSeconds": 6.77007003599995,
-   "medianTimeToFirstAnswerTokenSeconds": 6.77007003599995,
-   "medianEndToEndResponseTimeSeconds": 9.899613812278588
+   "cacheHitPrice": 0.5
   },
   {
    "releaseDate": "2026-08-12",
-   "slug": "k-exaone-2-0-0803",
-   "name": "K-EXAONE 2.0 0803",
+   "slug": "k-exaone-2-0",
+   "name": "K-EXAONE 2.0",
    "shortName": "K-EXAONE 2.0",
    "modelCreatorName": "LG AI Research",
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false
+   "intelligenceIndex": 7.56357436827474,
+   "omniscience": -11.466666666666667
   },
   {
    "releaseDate": "2026-08-26",
@@ -477,17 +374,11 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 27.753889160883,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 27.803889160883,
    "omniscience": 0.6666666666666666,
    "price1mInputTokens": 0.15,
    "price1mOutputTokens": 0.5,
-   "cacheHitPrice": 0.03,
-   "medianOutputTokensPerSecond": 75.8809680387574,
-   "medianTimeToFirstTokenSeconds": 1.467508815,
-   "medianTimeToFirstAnswerTokenSeconds": 27.824578996003336,
-   "medianEndToEndResponseTimeSeconds": 34.41384654125417,
-   "medianReasoningTimeSeconds": 26.357070181003337
+   "cacheHitPrice": 0.03
   },
   {
    "slug": "gpt-6-luna-xhigh",
@@ -497,17 +388,12 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 23.3008728089378,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 23.4508728089378,
    "omniscience": -12.966666666666667,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.5,
    "cacheHitPrice": 0.01,
-   "cacheWritePrice": 0.125,
-   "medianOutputTokensPerSecond": 127.480023649098,
-   "medianTimeToFirstTokenSeconds": 40.380784346,
-   "medianTimeToFirstAnswerTokenSeconds": 40.380784346,
-   "medianEndToEndResponseTimeSeconds": 44.30296749036701
+   "cacheWritePrice": 0.125
   },
   {
    "releaseDate": "2026-06-09",
@@ -518,14 +404,10 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 3.42470262148493,
+   "omniscience": -49.8,
    "price1mInputTokens": 0,
-   "price1mOutputTokens": 0,
-   "medianOutputTokensPerSecond": 87.3833830621998,
-   "medianTimeToFirstTokenSeconds": 0.39872811500004,
-   "medianTimeToFirstAnswerTokenSeconds": 23.28637482669113,
-   "medianEndToEndResponseTimeSeconds": 29.008286504613903,
-   "medianReasoningTimeSeconds": 22.88764671169109
+   "price1mOutputTokens": 0
   },
   {
    "slug": "gpt-6-astra-xhigh",
@@ -535,17 +417,12 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 55.2557468569681,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 55.3057468569681,
    "omniscience": 43.666666666666664,
    "price1mInputTokens": 10,
    "price1mOutputTokens": 50,
    "cacheHitPrice": 1,
-   "cacheWritePrice": 12.5,
-   "medianOutputTokensPerSecond": 68.1910607960098,
-   "medianTimeToFirstTokenSeconds": 197.356908557,
-   "medianTimeToFirstAnswerTokenSeconds": 197.356908557,
-   "medianEndToEndResponseTimeSeconds": 204.6892479305687
+   "cacheWritePrice": 12.5
   },
   {
    "releaseDate": "2025-11-26",
@@ -555,8 +432,7 @@
    "modelCreatorName": "Amazon",
    "isReasoning": false,
    "isOpenWeights": false,
-   "contextWindowTokens": 1000000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 1000000
   },
   {
    "releaseDate": "2025-09-22",
@@ -566,8 +442,7 @@
    "modelCreatorName": "IBM",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
   },
   {
    "slug": "claude-haiku-5-5-high",
@@ -577,17 +452,12 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 29.624315467743,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 29.874315467743,
    "omniscience": 5.3,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.5,
    "cacheHitPrice": 0.01,
-   "cacheWritePrice": 0.125,
-   "medianOutputTokensPerSecond": 180.598113498138,
-   "medianTimeToFirstTokenSeconds": 31.6940838625001,
-   "medianTimeToFirstAnswerTokenSeconds": 31.6940838625001,
-   "medianEndToEndResponseTimeSeconds": 34.462662062544005
+   "cacheWritePrice": 0.125
   },
   {
    "slug": "grok-4-7-low",
@@ -597,16 +467,11 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 500000,
-   "intelligenceIndex": 30.882077602567,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 31.132077602567,
    "omniscience": 27.4,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 6,
-   "cacheHitPrice": 0.5,
-   "medianOutputTokensPerSecond": 70.1308429114783,
-   "medianTimeToFirstTokenSeconds": 6.11023402899991,
-   "medianTimeToFirstAnswerTokenSeconds": 6.11023402899991,
-   "medianEndToEndResponseTimeSeconds": 13.23976476387384
+   "cacheHitPrice": 0.5
   },
   {
    "slug": "qwen3-5-9b-non-reasoning",
@@ -616,13 +481,8 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.17,
-   "price1mOutputTokens": 0.25,
-   "medianOutputTokensPerSecond": 100.565284327893,
-   "medianTimeToFirstTokenSeconds": 0.537127536499995,
-   "medianTimeToFirstAnswerTokenSeconds": 0.537127536499995,
-   "medianEndToEndResponseTimeSeconds": 5.509022195195042
+   "price1mOutputTokens": 0.25
   },
   {
    "releaseDate": "2026-02-24",
@@ -633,14 +493,8 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.4,
-   "price1mOutputTokens": 3.2,
-   "medianOutputTokensPerSecond": 130.11651386046,
-   "medianTimeToFirstTokenSeconds": 2.31259415550003,
-   "medianTimeToFirstAnswerTokenSeconds": 17.683433264706775,
-   "medianEndToEndResponseTimeSeconds": 21.52614304200846,
-   "medianReasoningTimeSeconds": 15.370839109206743
+   "price1mOutputTokens": 3.2
   },
   {
    "releaseDate": "2025-08-27",
@@ -650,8 +504,7 @@
    "modelCreatorName": "Nous Research",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
   },
   {
    "releaseDate": "2025-12-15",
@@ -662,14 +515,9 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.05,
    "price1mOutputTokens": 0.2,
-   "cacheHitPrice": 0.05,
-   "medianOutputTokensPerSecond": 265.767140588028,
-   "medianTimeToFirstTokenSeconds": 0.519000507000015,
-   "medianTimeToFirstAnswerTokenSeconds": 0.519000507000015,
-   "medianEndToEndResponseTimeSeconds": 2.4003467068865616
+   "cacheHitPrice": 0.05
   },
   {
    "releaseDate": "2026-09-21",
@@ -681,36 +529,25 @@
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
    "intelligenceIndex": 29.8897833093321,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": -4.466666666666667,
    "price1mInputTokens": 0.435,
    "price1mOutputTokens": 0.87,
-   "cacheHitPrice": 0.0036,
-   "medianOutputTokensPerSecond": 43.6559735205528,
-   "medianTimeToFirstTokenSeconds": 3.44582818000003,
-   "medianTimeToFirstAnswerTokenSeconds": 49.25857357802488,
-   "medianEndToEndResponseTimeSeconds": 60.71175992753109,
-   "medianReasoningTimeSeconds": 45.81274539802485
+   "cacheHitPrice": 0.0036
   },
   {
    "slug": "claude-sonnet-5-5-high",
    "name": "Claude Sonnet 5.5 (High, Default Fallback)",
-   "shortName": "Claude Sonnet 5.5 (high with fallback)",
+   "shortName": "Claude Sonnet 5.5 (high)",
    "modelCreatorName": "Anthropic",
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 41.115109087048,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 41.515109087048,
    "omniscience": 18.733333333333334,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 10,
    "cacheHitPrice": 0.1,
-   "cacheWritePrice": 2.5,
-   "medianOutputTokensPerSecond": 107.12207623879,
-   "medianTimeToFirstTokenSeconds": 12.591280727,
-   "medianTimeToFirstAnswerTokenSeconds": 12.591280727,
-   "medianEndToEndResponseTimeSeconds": 17.2588526930757
+   "cacheWritePrice": 2.5
   },
   {
    "releaseDate": "2025-09-11",
@@ -721,14 +558,9 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 1.1,
-   "cacheHitPrice": 0.09,
-   "medianOutputTokensPerSecond": 179.930764497928,
-   "medianTimeToFirstTokenSeconds": 0.856803650000032,
-   "medianTimeToFirstAnswerTokenSeconds": 0.856803650000032,
-   "medianEndToEndResponseTimeSeconds": 3.6356502880120534
+   "cacheHitPrice": 0.09
   },
   {
    "slug": "grok-4-7-high",
@@ -738,16 +570,11 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 500000,
-   "intelligenceIndex": 35.0122962959703,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 35.2122962959703,
    "omniscience": 30,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 6,
-   "cacheHitPrice": 0.5,
-   "medianOutputTokensPerSecond": 76.275849583434,
-   "medianTimeToFirstTokenSeconds": 43.188973533,
-   "medianTimeToFirstAnswerTokenSeconds": 43.188973533,
-   "medianEndToEndResponseTimeSeconds": 49.7441283130602
+   "cacheHitPrice": 0.5
   },
   {
    "releaseDate": "2026-06-01",
@@ -758,18 +585,12 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 18.7289083859255,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 18.8789083859255,
    "omniscience": -5.5,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 1.2,
    "cacheHitPrice": 0.06,
-   "cacheWritePrice": 0.375,
-   "medianOutputTokensPerSecond": 120.047141582049,
-   "medianTimeToFirstTokenSeconds": 0.707541318999972,
-   "medianTimeToFirstAnswerTokenSeconds": 17.367663114845097,
-   "medianEndToEndResponseTimeSeconds": 21.53269356380638,
-   "medianReasoningTimeSeconds": 16.660121795845125
+   "cacheWritePrice": 0.375
   },
   {
    "slug": "mistral-large-4-medium",
@@ -779,8 +600,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 23.0777321742266,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 23.1277321742266,
    "omniscience": 3.2666666666666666,
    "price1mInputTokens": 0.7,
    "price1mOutputTokens": 2.1,
@@ -797,16 +617,10 @@
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
    "intelligenceIndex": 5.5346663903388,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": -15.7,
    "price1mInputTokens": 0.06,
    "price1mOutputTokens": 0.2,
-   "cacheHitPrice": 0.035,
-   "medianOutputTokensPerSecond": 294.744260955026,
-   "medianTimeToFirstTokenSeconds": 0.560218875500027,
-   "medianTimeToFirstAnswerTokenSeconds": 7.345762361638246,
-   "medianEndToEndResponseTimeSeconds": 9.042148233172801,
-   "medianReasoningTimeSeconds": 6.785543486138219
+   "cacheHitPrice": 0.04
   },
   {
    "releaseDate": "2025-02-26",
@@ -817,7 +631,6 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.08,
    "price1mOutputTokens": 0.32
   },
@@ -830,14 +643,8 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.135,
-   "price1mOutputTokens": 0.2,
-   "medianOutputTokensPerSecond": 62.5799092628307,
-   "medianTimeToFirstTokenSeconds": 1.511652518,
-   "medianTimeToFirstAnswerTokenSeconds": 33.47079121857173,
-   "medianEndToEndResponseTimeSeconds": 41.46057589371466,
-   "medianReasoningTimeSeconds": 31.95913870057173
+   "price1mOutputTokens": 0.2
   },
   {
    "releaseDate": "2025-08-18",
@@ -848,13 +655,8 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.05,
-   "price1mOutputTokens": 0.195,
-   "medianOutputTokensPerSecond": 170.562749302287,
-   "medianTimeToFirstTokenSeconds": 1.00990871300005,
-   "medianTimeToFirstAnswerTokenSeconds": 1.00990871300005,
-   "medianEndToEndResponseTimeSeconds": 3.941381159623515
+   "price1mOutputTokens": 0.195
   },
   {
    "releaseDate": "2026-05-20",
@@ -866,15 +668,9 @@
    "isOpenWeights": true,
    "contextWindowTokens": 192000,
    "intelligenceIndex": 6.24120025576958,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": -2.6666666666666665,
    "price1mInputTokens": 0,
-   "price1mOutputTokens": 0,
-   "medianOutputTokensPerSecond": 153.854405253738,
-   "medianTimeToFirstTokenSeconds": 0.471783970500013,
-   "medianTimeToFirstAnswerTokenSeconds": 13.471086763953231,
-   "medianEndToEndResponseTimeSeconds": 16.720912462316537,
-   "medianReasoningTimeSeconds": 12.999302793453218
+   "price1mOutputTokens": 0
   },
   {
    "releaseDate": "2026-09-03",
@@ -886,37 +682,27 @@
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
    "intelligenceIndex": 56.8538559596797,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": 42.43333333333333,
    "price1mInputTokens": 10,
    "price1mOutputTokens": 50,
    "cacheHitPrice": 1,
-   "cacheWritePrice": 12.5,
-   "medianOutputTokensPerSecond": 71.5533296028404,
-   "medianTimeToFirstTokenSeconds": 367.5696394405,
-   "medianTimeToFirstAnswerTokenSeconds": 367.5696394405,
-   "medianEndToEndResponseTimeSeconds": 374.55743445682236
+   "cacheWritePrice": 12.5
   },
   {
    "releaseDate": "2026-09-22",
    "slug": "claude-opus-5-5",
    "name": "Claude Opus 5.5 (Max, Default Fallback)",
-   "shortName": "Claude Opus 5.5 (max with fallback)",
+   "shortName": "Claude Opus 5.5 (max)",
    "modelCreatorName": "Anthropic",
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 58.4060336078904,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 59.1060336078904,
    "omniscience": 48.13333333333333,
    "price1mInputTokens": 4,
    "price1mOutputTokens": 20,
    "cacheHitPrice": 0.2,
-   "cacheWritePrice": 5,
-   "medianOutputTokensPerSecond": 95.5293924557226,
-   "medianTimeToFirstTokenSeconds": 728.679488626,
-   "medianTimeToFirstAnswerTokenSeconds": 728.679488626,
-   "medianEndToEndResponseTimeSeconds": 733.9134798317092
+   "cacheWritePrice": 5
   },
   {
    "releaseDate": "2025-07-15",
@@ -926,8 +712,7 @@
    "modelCreatorName": "LG AI Research",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 131000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 131000
   },
   {
    "releaseDate": "2026-07-23",
@@ -937,8 +722,7 @@
    "modelCreatorName": "AI9Stars",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 131072,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 131072
   },
   {
    "slug": "qwen3-5-4b-non-reasoning",
@@ -948,13 +732,8 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.03,
-   "price1mOutputTokens": 0.15,
-   "medianOutputTokensPerSecond": 19.7220533759726,
-   "medianTimeToFirstTokenSeconds": 0.86553548650005,
-   "medianTimeToFirstAnswerTokenSeconds": 0.86553548650005,
-   "medianEndToEndResponseTimeSeconds": 26.217865209385323
+   "price1mOutputTokens": 0.15
   },
   {
    "slug": "qwen3-5-397b-a17b-non-reasoning",
@@ -964,13 +743,8 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.6,
-   "price1mOutputTokens": 3.6,
-   "medianOutputTokensPerSecond": 58.7418227855133,
-   "medianTimeToFirstTokenSeconds": 2.246937081,
-   "medianTimeToFirstAnswerTokenSeconds": 2.246937081,
-   "medianEndToEndResponseTimeSeconds": 10.75876011083128
+   "price1mOutputTokens": 3.6
   },
   {
    "releaseDate": "2026-09-03",
@@ -980,8 +754,7 @@
    "modelCreatorName": "Institute of Foundation Models",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 524288,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 524288
   },
   {
    "releaseDate": "2025-11-20",
@@ -991,8 +764,7 @@
    "modelCreatorName": "Allen Institute for AI",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 65536,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 65536
   },
   {
    "releaseDate": "2025-12-26",
@@ -1002,8 +774,7 @@
    "modelCreatorName": "Naver",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
   },
   {
    "releaseDate": "2026-05-26",
@@ -1013,8 +784,7 @@
    "modelCreatorName": "Multiverse Computing",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 131072,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 131072
   },
   {
    "releaseDate": "2024-12-03",
@@ -1025,14 +795,9 @@
    "isReasoning": false,
    "isOpenWeights": false,
    "contextWindowTokens": 130000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.035,
    "price1mOutputTokens": 0.14,
-   "cacheHitPrice": 0.00875,
-   "medianOutputTokensPerSecond": 274.434177285206,
-   "medianTimeToFirstTokenSeconds": 0.809877079499998,
-   "medianTimeToFirstAnswerTokenSeconds": 0.809877079499998,
-   "medianEndToEndResponseTimeSeconds": 2.631807587376845
+   "cacheHitPrice": 0.00875
   },
   {
    "slug": "exaone-4-5-33b-non-reasoning",
@@ -1041,8 +806,7 @@
    "modelCreatorName": "LG AI Research",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 262144
   },
   {
    "slug": "qwen3-8-27b-non-reasoning",
@@ -1053,15 +817,10 @@
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
    "intelligenceIndex": 10.0316676028892,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": -7.266666666666667,
    "price1mInputTokens": 0.5,
    "price1mOutputTokens": 3,
-   "cacheHitPrice": 0.1,
-   "medianOutputTokensPerSecond": 45.8879043407442,
-   "medianTimeToFirstTokenSeconds": 3.95621690700003,
-   "medianTimeToFirstAnswerTokenSeconds": 3.95621690700003,
-   "medianEndToEndResponseTimeSeconds": 14.852334460924723
+   "cacheHitPrice": 0.1
   },
   {
    "releaseDate": "2026-10-15",
@@ -1072,17 +831,11 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1048576,
-   "intelligenceIndex": 24.6815868992913,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 24.8815868992913,
    "omniscience": 25.8,
    "price1mInputTokens": 1.25,
    "price1mOutputTokens": 4.25,
-   "cacheHitPrice": 0.15,
-   "medianOutputTokensPerSecond": 193.18659818956,
-   "medianTimeToFirstTokenSeconds": 0.745404554499942,
-   "medianTimeToFirstAnswerTokenSeconds": 11.098089568589506,
-   "medianEndToEndResponseTimeSeconds": 13.686260822111898,
-   "medianReasoningTimeSeconds": 10.352685014089564
+   "cacheHitPrice": 0.15
   },
   {
    "slug": "gpt-6-luna-medium",
@@ -1092,8 +845,7 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 18.3042156192416,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 18.4542156192416,
    "omniscience": -13.566666666666666,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.5,
@@ -1108,8 +860,7 @@
    "modelCreatorName": "Prime Intellect",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 131100,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 131100
   },
   {
    "releaseDate": "2025-08-05",
@@ -1120,14 +871,22 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.05,
-   "price1mOutputTokens": 0.22,
-   "medianOutputTokensPerSecond": 178.143124521857,
-   "medianTimeToFirstTokenSeconds": 0.698814421999998,
-   "medianTimeToFirstAnswerTokenSeconds": 11.925742238428933,
-   "medianEndToEndResponseTimeSeconds": 14.732474192536168,
-   "medianReasoningTimeSeconds": 11.226927816428935
+   "price1mOutputTokens": 0.22
+  },
+  {
+   "slug": "muse-wonder-high",
+   "name": "Muse Wonder (High)",
+   "shortName": "Muse Wonder (high)",
+   "modelCreatorName": "Meta",
+   "isReasoning": true,
+   "isOpenWeights": false,
+   "contextWindowTokens": 1048576,
+   "intelligenceIndex": 40.5266079185604,
+   "omniscience": 24.5,
+   "price1mInputTokens": 4,
+   "price1mOutputTokens": 20,
+   "cacheHitPrice": 0.2
   },
   {
    "releaseDate": "2025-12-12",
@@ -1137,8 +896,7 @@
    "modelCreatorName": "Allen Institute for AI",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 65500,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 65500
   },
   {
    "releaseDate": "2026-06-02",
@@ -1148,28 +906,7 @@
    "modelCreatorName": "Nex AGI",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 262000,
-   "intelligenceIndexIsEstimated": false
-  },
-  {
-   "slug": "claude-fable-5-1-medium",
-   "name": "Claude Fable 5.1 (Medium, Default Fallback)",
-   "shortName": "Claude Fable 5.1 (medium with fallback)",
-   "modelCreatorName": "Anthropic",
-   "isReasoning": true,
-   "isOpenWeights": false,
-   "contextWindowTokens": 1000000,
-   "intelligenceIndex": 42.971597828284,
-   "intelligenceIndexIsEstimated": false,
-   "omniscience": 36.43333333333333,
-   "price1mInputTokens": 10,
-   "price1mOutputTokens": 50,
-   "cacheHitPrice": 0.25,
-   "cacheWritePrice": 12.5,
-   "medianOutputTokensPerSecond": 57.5722984347305,
-   "medianTimeToFirstTokenSeconds": 12.8800166555001,
-   "medianTimeToFirstAnswerTokenSeconds": 12.8800166555001,
-   "medianEndToEndResponseTimeSeconds": 21.56474895895066
+   "contextWindowTokens": 262000
   },
   {
    "slug": "gpt-6-1-sol-high",
@@ -1179,17 +916,12 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 50.2291231936536,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 50.3291231936536,
    "omniscience": 41,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 10,
    "cacheHitPrice": 0.1,
-   "cacheWritePrice": 2.5,
-   "medianOutputTokensPerSecond": 66.449186177329,
-   "medianTimeToFirstTokenSeconds": 69.5795057465,
-   "medianTimeToFirstAnswerTokenSeconds": 69.5795057465,
-   "medianEndToEndResponseTimeSeconds": 77.10405237775113
+   "cacheWritePrice": 2.5
   },
   {
    "releaseDate": "2025-03-13",
@@ -1200,13 +932,8 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 2.5,
-   "price1mOutputTokens": 10,
-   "medianOutputTokensPerSecond": 15.1750144666826,
-   "medianTimeToFirstTokenSeconds": 2.05724821200005,
-   "medianTimeToFirstAnswerTokenSeconds": 2.05724821200005,
-   "medianEndToEndResponseTimeSeconds": 35.006145960847114
+   "price1mOutputTokens": 10
   },
   {
    "releaseDate": "2026-01-05",
@@ -1216,8 +943,7 @@
    "modelCreatorName": "Liquid AI",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 32000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 32000
   },
   {
    "releaseDate": "2026-04-15",
@@ -1227,29 +953,7 @@
    "modelCreatorName": "China Mobile",
    "isReasoning": false,
    "isOpenWeights": false,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
-  },
-  {
-   "releaseDate": "2026-09-01",
-   "slug": "claude-fable-5-1",
-   "name": "Claude Fable 5.1 (Max, Default Fallback)",
-   "shortName": "Claude Fable 5.1 (max with fallback)",
-   "modelCreatorName": "Anthropic",
-   "isReasoning": true,
-   "isOpenWeights": false,
-   "contextWindowTokens": 1000000,
-   "intelligenceIndex": 49.0102124158081,
-   "intelligenceIndexIsEstimated": false,
-   "omniscience": 46.266666666666666,
-   "price1mInputTokens": 10,
-   "price1mOutputTokens": 50,
-   "cacheHitPrice": 0.25,
-   "cacheWritePrice": 12.5,
-   "medianOutputTokensPerSecond": 69.9351214003892,
-   "medianTimeToFirstTokenSeconds": 263.512527373,
-   "medianTimeToFirstAnswerTokenSeconds": 263.512527373,
-   "medianEndToEndResponseTimeSeconds": 270.66201092272354
+   "contextWindowTokens": 128000
   },
   {
    "releaseDate": "2025-12-11",
@@ -1259,8 +963,7 @@
    "modelCreatorName": "Allen Institute for AI",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 36864,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 36864
   },
   {
    "releaseDate": "2026-03-16",
@@ -1272,16 +975,10 @@
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
    "intelligenceIndex": 4.29716249600478,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": -30.966666666666665,
    "price1mInputTokens": 0.15,
    "price1mOutputTokens": 0.6,
-   "cacheHitPrice": 0.015,
-   "medianOutputTokensPerSecond": 158.151441144767,
-   "medianTimeToFirstTokenSeconds": 0.752137763499974,
-   "medianTimeToFirstAnswerTokenSeconds": 13.398244466816456,
-   "medianEndToEndResponseTimeSeconds": 16.559771142645577,
-   "medianReasoningTimeSeconds": 12.646106703316482
+   "cacheHitPrice": 0.015
   },
   {
    "slug": "qwen3-5-0-8b-non-reasoning",
@@ -1290,8 +987,7 @@
    "modelCreatorName": "Alibaba",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 262144
   },
   {
    "slug": "claude-haiku-5-5-xhigh",
@@ -1301,17 +997,12 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 34.3387759486628,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 34.6387759486628,
    "omniscience": 7.833333333333333,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.5,
    "cacheHitPrice": 0.01,
-   "cacheWritePrice": 0.125,
-   "medianOutputTokensPerSecond": 200.354227500845,
-   "medianTimeToFirstTokenSeconds": 71.520051768,
-   "medianTimeToFirstAnswerTokenSeconds": 71.520051768,
-   "medianEndToEndResponseTimeSeconds": 74.01563175269432
+   "cacheWritePrice": 0.125
   },
   {
    "slug": "claude-haiku-5-5-low",
@@ -1322,16 +1013,11 @@
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
    "intelligenceIndex": 18.6180055310996,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": 2.1666666666666665,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.5,
    "cacheHitPrice": 0.01,
-   "cacheWritePrice": 0.125,
-   "medianOutputTokensPerSecond": 167.01587007009,
-   "medianTimeToFirstTokenSeconds": 8.83298010600002,
-   "medianTimeToFirstAnswerTokenSeconds": 8.83298010600002,
-   "medianEndToEndResponseTimeSeconds": 11.826707587048197
+   "cacheWritePrice": 0.125
   },
   {
    "releaseDate": "2026-09-10",
@@ -1341,8 +1027,7 @@
    "modelCreatorName": "InclusionAI",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 262144
   },
   {
    "slug": "minicpm-v4-6-1-3b",
@@ -1351,28 +1036,22 @@
    "modelCreatorName": "OpenBMB",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 262000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 262000
   },
   {
    "slug": "claude-opus-5-5-low",
    "name": "Claude Opus 5.5 (Low, Default Fallback)",
-   "shortName": "Claude Opus 5.5 (low with fallback)",
+   "shortName": "Claude Opus 5.5 (low)",
    "modelCreatorName": "Anthropic",
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 34.502785007759,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 34.752785007759,
    "omniscience": 39.03333333333333,
    "price1mInputTokens": 4,
    "price1mOutputTokens": 20,
    "cacheHitPrice": 0.2,
-   "cacheWritePrice": 5,
-   "medianOutputTokensPerSecond": 79.0454950583355,
-   "medianTimeToFirstTokenSeconds": 10.3270630005,
-   "medianTimeToFirstAnswerTokenSeconds": 10.3270630005,
-   "medianEndToEndResponseTimeSeconds": 16.65253416910993
+   "cacheWritePrice": 5
   },
   {
    "slug": "exaone-4-0-32b-reasoning",
@@ -1381,8 +1060,7 @@
    "modelCreatorName": "LG AI Research",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 131000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 131000
   },
   {
    "releaseDate": "2026-03-06",
@@ -1393,15 +1071,9 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.042,
    "price1mOutputTokens": 0.17,
-   "cacheHitPrice": 0.026,
-   "medianOutputTokensPerSecond": 109.505485557058,
-   "medianTimeToFirstTokenSeconds": 1.63984853299999,
-   "medianTimeToFirstAnswerTokenSeconds": 19.9037737585349,
-   "medianEndToEndResponseTimeSeconds": 24.469755064918626,
-   "medianReasoningTimeSeconds": 18.26392522553491
+   "cacheHitPrice": 0.026
   },
   {
    "releaseDate": "2024-07-23",
@@ -1411,19 +1083,7 @@
    "modelCreatorName": "Meta",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
-  },
-  {
-   "releaseDate": "2026-07-09",
-   "slug": "jt-4-1-flash-236b-a21b",
-   "name": "JT-4.1 Flash 236B A21B (Reasoning)",
-   "shortName": "JT-4.1 Flash 236B A21B",
-   "modelCreatorName": "China Mobile",
-   "isReasoning": true,
-   "isOpenWeights": false,
-   "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
   },
   {
    "releaseDate": "2025-09-19",
@@ -1433,8 +1093,7 @@
    "modelCreatorName": "InclusionAI",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
   },
   {
    "releaseDate": "2026-01-05",
@@ -1444,8 +1103,7 @@
    "modelCreatorName": "Liquid AI",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 32000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 32000
   },
   {
    "releaseDate": "2025-09-02",
@@ -1455,8 +1113,7 @@
    "modelCreatorName": "Swiss AI Initiative",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 65536,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 65536
   },
   {
    "releaseDate": "2026-10-25",
@@ -1468,15 +1125,7 @@
    "isOpenWeights": true,
    "contextWindowTokens": 524288,
    "intelligenceIndex": 20.4071119588083,
-   "intelligenceIndexIsEstimated": false,
-   "omniscience": -4.4,
-   "price1mInputTokens": 0,
-   "price1mOutputTokens": 0,
-   "medianOutputTokensPerSecond": 159.455009809902,
-   "medianTimeToFirstTokenSeconds": 1.44873860000001,
-   "medianTimeToFirstAnswerTokenSeconds": 13.991461480794701,
-   "medianEndToEndResponseTimeSeconds": 17.127142200993376,
-   "medianReasoningTimeSeconds": 12.542722880794692
+   "omniscience": -4.4
   },
   {
    "releaseDate": "2025-11-11",
@@ -1486,8 +1135,7 @@
    "modelCreatorName": "ByteDance Seed",
    "isReasoning": true,
    "isOpenWeights": false,
-   "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 256000
   },
   {
    "releaseDate": "2026-04-09",
@@ -1497,8 +1145,7 @@
    "modelCreatorName": "LG AI Research",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 262144
   },
   {
    "slug": "gemma-4-e4b-non-reasoning",
@@ -1508,13 +1155,8 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.02,
-   "price1mOutputTokens": 0.1,
-   "medianOutputTokensPerSecond": 51.4938956664504,
-   "medianTimeToFirstTokenSeconds": 0.802238106500113,
-   "medianTimeToFirstAnswerTokenSeconds": 0.802238106500113,
-   "medianEndToEndResponseTimeSeconds": 10.512126890963605
+   "price1mOutputTokens": 0.1
   },
   {
    "slug": "ling-3-1-flash-1019",
@@ -1524,8 +1166,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1048576,
-   "intelligenceIndex": 29.470119369837,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 29.570119369837,
    "omniscience": -0.13333333333333333,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 0.9,
@@ -1539,8 +1180,7 @@
    "modelCreatorName": "Institute of Foundation Models",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 524288,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 524288
   },
   {
    "releaseDate": "2025-10-28",
@@ -1550,8 +1190,7 @@
    "modelCreatorName": "IBM",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 32768,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 32768
   },
   {
    "slug": "deepseek-v4-1-flash-1017-non-reasoning",
@@ -1562,15 +1201,10 @@
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
    "intelligenceIndex": 18.5131594039446,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": 2.1,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 1.2,
-   "cacheHitPrice": 0.006,
-   "medianOutputTokensPerSecond": 185.343550523838,
-   "medianTimeToFirstTokenSeconds": 1.38407709800003,
-   "medianTimeToFirstAnswerTokenSeconds": 1.38407709800003,
-   "medianEndToEndResponseTimeSeconds": 4.081770104240851
+   "cacheHitPrice": 0.006
   },
   {
    "releaseDate": "2026-08-10",
@@ -1582,16 +1216,26 @@
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
    "intelligenceIndex": 6.34128724913462,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": -32.233333333333334,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 1.2,
-   "cacheHitPrice": 0.04,
-   "medianOutputTokensPerSecond": 120.243313176569,
-   "medianTimeToFirstTokenSeconds": 1.14452565149998,
-   "medianTimeToFirstAnswerTokenSeconds": 17.777467202795542,
-   "medianEndToEndResponseTimeSeconds": 21.935702590619435,
-   "medianReasoningTimeSeconds": 16.632941551295563
+   "cacheHitPrice": 0.04
+  },
+  {
+   "releaseDate": "2026-11-09",
+   "slug": "claude-fable-5-2",
+   "name": "Claude Fable 5.2 (Max, Default Fallback)",
+   "shortName": "Claude Fable 5.2 (max)",
+   "modelCreatorName": "Anthropic",
+   "isReasoning": true,
+   "isOpenWeights": false,
+   "contextWindowTokens": 1000000,
+   "intelligenceIndex": 64.563595756626,
+   "omniscience": 66.76666666666667,
+   "price1mInputTokens": 8,
+   "price1mOutputTokens": 40,
+   "cacheHitPrice": 0.2,
+   "cacheWritePrice": 10
   },
   {
    "releaseDate": "2026-09-21",
@@ -1602,16 +1246,11 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 500000,
-   "intelligenceIndex": 34.3350117067196,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 35.4850117067196,
    "omniscience": 31.233333333333334,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 6,
-   "cacheHitPrice": 0.5,
-   "medianOutputTokensPerSecond": 80.4721449534734,
-   "medianTimeToFirstTokenSeconds": 101.980645912,
-   "medianTimeToFirstAnswerTokenSeconds": 101.980645912,
-   "medianEndToEndResponseTimeSeconds": 108.19397600639583
+   "cacheHitPrice": 0.5
   },
   {
    "releaseDate": "2025-10-30",
@@ -1621,8 +1260,7 @@
    "modelCreatorName": "Kimi",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 1000000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 1000000
   },
   {
    "slug": "solar-open-100b-reasoning",
@@ -1631,8 +1269,7 @@
    "modelCreatorName": "Upstage",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
   },
   {
    "releaseDate": "2026-02-05",
@@ -1643,14 +1280,9 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 400000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 1.75,
    "price1mOutputTokens": 14,
-   "cacheHitPrice": 0.175,
-   "medianOutputTokensPerSecond": 114.123233819841,
-   "medianTimeToFirstTokenSeconds": 64.6794977135,
-   "medianTimeToFirstAnswerTokenSeconds": 64.6794977135,
-   "medianEndToEndResponseTimeSeconds": 69.06072652436
+   "cacheHitPrice": 0.175
   },
   {
    "releaseDate": "2026-01-20",
@@ -1660,8 +1292,7 @@
    "modelCreatorName": "Liquid AI",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 32000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 32000
   },
   {
    "releaseDate": "2025-12-15",
@@ -1671,8 +1302,7 @@
    "modelCreatorName": "Institute of Foundation Models",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 262144
   },
   {
    "slug": "nvidia-nemotron-3-ultra-550b-a55b",
@@ -1683,16 +1313,10 @@
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
    "intelligenceIndex": 11.7592726308177,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": 3.433333333333333,
    "price1mInputTokens": 0.6,
    "price1mOutputTokens": 2.7,
-   "cacheHitPrice": 0.12,
-   "medianOutputTokensPerSecond": 161.32829045467,
-   "medianTimeToFirstTokenSeconds": 1.14950823450005,
-   "medianTimeToFirstAnswerTokenSeconds": 15.251188687372817,
-   "medianEndToEndResponseTimeSeconds": 18.35045911657562,
-   "medianReasoningTimeSeconds": 14.101680452872767
+   "cacheHitPrice": 0.12
   },
   {
    "releaseDate": "2026-06-29",
@@ -1703,15 +1327,9 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.75,
    "price1mOutputTokens": 2.95,
-   "cacheHitPrice": 0.015,
-   "medianOutputTokensPerSecond": 77.2029483361599,
-   "medianTimeToFirstTokenSeconds": 2.65702571700013,
-   "medianTimeToFirstAnswerTokenSeconds": 28.56277210496872,
-   "medianEndToEndResponseTimeSeconds": 35.03920870196087,
-   "medianReasoningTimeSeconds": 25.905746387968588
+   "cacheHitPrice": 0.015
   },
   {
    "releaseDate": "2026-03-02",
@@ -1721,8 +1339,7 @@
    "modelCreatorName": "Alibaba",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 262144
   },
   {
    "releaseDate": "2026-02-10",
@@ -1732,8 +1349,7 @@
    "modelCreatorName": "Trillion Labs",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 32000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 32000
   },
   {
    "releaseDate": "2025-09-22",
@@ -1743,8 +1359,7 @@
    "modelCreatorName": "IBM",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
   },
   {
    "releaseDate": "2024-09-25",
@@ -1755,13 +1370,8 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.345,
-   "price1mOutputTokens": 0.345,
-   "medianOutputTokensPerSecond": 25.4286725186073,
-   "medianTimeToFirstTokenSeconds": 1.40391645999998,
-   "medianTimeToFirstAnswerTokenSeconds": 1.40391645999998,
-   "medianEndToEndResponseTimeSeconds": 21.066759639647977
+   "price1mOutputTokens": 0.345
   },
   {
    "releaseDate": "2026-01-28",
@@ -1771,8 +1381,7 @@
    "modelCreatorName": "LongCat",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 256000
   },
   {
    "releaseDate": "2026-10-23",
@@ -1782,8 +1391,7 @@
    "modelCreatorName": "NVIDIA",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 131072,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 131072
   },
   {
    "slug": "nova-2-0-lite-reasoning",
@@ -1793,14 +1401,8 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.3,
-   "price1mOutputTokens": 2.5,
-   "medianOutputTokensPerSecond": 181.420399674906,
-   "medianTimeToFirstTokenSeconds": 16.501547551,
-   "medianTimeToFirstAnswerTokenSeconds": 27.52566613735454,
-   "medianEndToEndResponseTimeSeconds": 30.28169578394317,
-   "medianReasoningTimeSeconds": 11.024118586354538
+   "price1mOutputTokens": 2.5
   },
   {
    "releaseDate": "2026-09-22",
@@ -1811,16 +1413,10 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1048576,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": -11.633333333333333,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.4,
-   "cacheHitPrice": 0.01,
-   "medianOutputTokensPerSecond": 108.037717341613,
-   "medianTimeToFirstTokenSeconds": 2.08672245050002,
-   "medianTimeToFirstAnswerTokenSeconds": 20.59877591860544,
-   "medianEndToEndResponseTimeSeconds": 25.226789285631792,
-   "medianReasoningTimeSeconds": 18.51205346810542
+   "cacheHitPrice": 0.01
   },
   {
    "slug": "gpt-6-luna-non-reasoning",
@@ -1830,17 +1426,12 @@
    "isReasoning": false,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 9.39244373619813,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 9.44244373619813,
    "omniscience": -25.8,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.5,
    "cacheHitPrice": 0.01,
-   "cacheWritePrice": 0.125,
-   "medianOutputTokensPerSecond": 111.539057841425,
-   "medianTimeToFirstTokenSeconds": 0.808549522500016,
-   "medianTimeToFirstAnswerTokenSeconds": 0.808549522500016,
-   "medianEndToEndResponseTimeSeconds": 5.291284177752794
+   "cacheWritePrice": 0.125
   },
   {
    "releaseDate": "2026-09-07",
@@ -1850,8 +1441,7 @@
    "modelCreatorName": "OpenBMB",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 131072,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 131072
   },
   {
    "releaseDate": "2026-03-02",
@@ -1862,14 +1452,8 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.03,
-   "price1mOutputTokens": 0.15,
-   "medianOutputTokensPerSecond": 17.7534835887624,
-   "medianTimeToFirstTokenSeconds": 0.816760999999971,
-   "medianTimeToFirstAnswerTokenSeconds": 113.4707080409041,
-   "medianEndToEndResponseTimeSeconds": 141.63419480113012,
-   "medianReasoningTimeSeconds": 112.65394704090413
+   "price1mOutputTokens": 0.15
   },
   {
    "slug": "qwen3-8-27b-medium",
@@ -1880,16 +1464,10 @@
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
    "intelligenceIndex": 17.4831648632067,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": -35.86666666666667,
    "price1mInputTokens": 0.5,
    "price1mOutputTokens": 3,
-   "cacheHitPrice": 0.1,
-   "medianOutputTokensPerSecond": 51.0995018265123,
-   "medianTimeToFirstTokenSeconds": 4.08266181549994,
-   "medianTimeToFirstAnswerTokenSeconds": 43.221986632994074,
-   "medianEndToEndResponseTimeSeconds": 53.00681783736761,
-   "medianReasoningTimeSeconds": 39.139324817494135
+   "cacheHitPrice": 0.1
   },
   {
    "releaseDate": "2026-10-23",
@@ -1898,19 +1476,13 @@
    "shortName": "Kimi K3.1 Pro",
    "modelCreatorName": "Kimi",
    "isReasoning": true,
-   "isOpenWeights": false,
+   "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 46.0026236744189,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 46.4526236744189,
    "omniscience": 29.866666666666667,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 10,
-   "cacheHitPrice": 0.2,
-   "medianOutputTokensPerSecond": 30.8342819156493,
-   "medianTimeToFirstTokenSeconds": 3.42704832350006,
-   "medianTimeToFirstAnswerTokenSeconds": 68.28991769309421,
-   "medianEndToEndResponseTimeSeconds": 84.50563503549276,
-   "medianReasoningTimeSeconds": 64.86286936959415
+   "cacheHitPrice": 0.2
   },
   {
    "slug": "motif-2-12-7b",
@@ -1919,8 +1491,7 @@
    "modelCreatorName": "Motif Technologies",
    "isReasoning": true,
    "isOpenWeights": false,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
   },
   {
    "slug": "qwen3-6-35b-a3b-non-reasoning",
@@ -1930,13 +1501,8 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.375,
-   "price1mOutputTokens": 2.25,
-   "medianOutputTokensPerSecond": 147.128772486783,
-   "medianTimeToFirstTokenSeconds": 2.04601244599999,
-   "medianTimeToFirstAnswerTokenSeconds": 2.04601244599999,
-   "medianEndToEndResponseTimeSeconds": 5.444395994975201
+   "price1mOutputTokens": 2.25
   },
   {
    "releaseDate": "2025-12-02",
@@ -1947,14 +1513,9 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.1,
-   "cacheHitPrice": 0.01,
-   "medianOutputTokensPerSecond": 181.420411231176,
-   "medianTimeToFirstTokenSeconds": 0.779424022000001,
-   "medianTimeToFirstAnswerTokenSeconds": 0.779424022000001,
-   "medianEndToEndResponseTimeSeconds": 3.5354534930327404
+   "cacheHitPrice": 0.01
   },
   {
    "releaseDate": "2026-10-16",
@@ -1966,16 +1527,10 @@
    "isOpenWeights": true,
    "contextWindowTokens": 1048576,
    "intelligenceIndex": 17.7307282547205,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": 2.3333333333333335,
    "price1mInputTokens": 0.4,
    "price1mOutputTokens": 1.2,
-   "cacheHitPrice": 0.04,
-   "medianOutputTokensPerSecond": 361.16622823273,
-   "medianTimeToFirstTokenSeconds": 0.620279966500107,
-   "medianTimeToFirstAnswerTokenSeconds": 6.157896287346225,
-   "medianEndToEndResponseTimeSeconds": 7.542300367557755,
-   "medianReasoningTimeSeconds": 5.537616320846118
+   "cacheHitPrice": 0.04
   },
   {
    "slug": "hermes-4-llama-3-1-70b-reasoning",
@@ -1984,8 +1539,7 @@
    "modelCreatorName": "Nous Research",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
   },
   {
    "releaseDate": "2026-09-11",
@@ -1995,8 +1549,7 @@
    "modelCreatorName": "InclusionAI",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 262144
   },
   {
    "releaseDate": "2026-04-02",
@@ -2007,15 +1560,9 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false,
-   "price1mInputTokens": 0.1,
-   "price1mOutputTokens": 0.34,
-   "cacheHitPrice": 0.05,
-   "medianOutputTokensPerSecond": 111.935216168363,
-   "medianTimeToFirstTokenSeconds": 0.931406631000002,
-   "medianTimeToFirstAnswerTokenSeconds": 18.798884520994672,
-   "medianEndToEndResponseTimeSeconds": 23.26575399349334,
-   "medianReasoningTimeSeconds": 17.86747788999467
+   "price1mInputTokens": 0.09,
+   "price1mOutputTokens": 0.32,
+   "cacheHitPrice": 0.05
   },
   {
    "slug": "nvidia-nemotron-nano-12b-v2-vl-reasoning",
@@ -2024,8 +1571,7 @@
    "modelCreatorName": "NVIDIA",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
   },
   {
    "releaseDate": "2026-03-30",
@@ -2036,13 +1582,8 @@
    "isReasoning": false,
    "isOpenWeights": false,
    "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.1,
-   "price1mOutputTokens": 0.8,
-   "medianOutputTokensPerSecond": 239.192292036678,
-   "medianTimeToFirstTokenSeconds": 1.83053843950001,
-   "medianTimeToFirstAnswerTokenSeconds": 1.83053843950001,
-   "medianEndToEndResponseTimeSeconds": 3.9209068027218876
+   "price1mOutputTokens": 0.8
   },
   {
    "releaseDate": "2026-09-22",
@@ -2053,17 +1594,12 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 27.7552004938153,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 27.8552004938153,
    "omniscience": -8.266666666666667,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.5,
    "cacheHitPrice": 0.01,
-   "cacheWritePrice": 0.125,
-   "medianOutputTokensPerSecond": 117.109410061136,
-   "medianTimeToFirstTokenSeconds": 112.812156098,
-   "medianTimeToFirstAnswerTokenSeconds": 112.812156098,
-   "medianEndToEndResponseTimeSeconds": 117.08166782843207
+   "cacheWritePrice": 0.125
   },
   {
    "slug": "nova-2-0-lite-reasoning-low",
@@ -2073,14 +1609,8 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.3,
-   "price1mOutputTokens": 2.5,
-   "medianOutputTokensPerSecond": 180.804664910455,
-   "medianTimeToFirstTokenSeconds": 7.50141668300004,
-   "medianTimeToFirstAnswerTokenSeconds": 18.56307817824142,
-   "medianEndToEndResponseTimeSeconds": 21.328493552051764,
-   "medianReasoningTimeSeconds": 11.06166149524138
+   "price1mOutputTokens": 2.5
   },
   {
    "releaseDate": "2025-09-17",
@@ -2091,14 +1621,8 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.5,
-   "price1mOutputTokens": 1.5,
-   "medianOutputTokensPerSecond": 74.0155755720895,
-   "medianTimeToFirstTokenSeconds": 1.50033637700002,
-   "medianTimeToFirstAnswerTokenSeconds": 28.521675933456553,
-   "medianEndToEndResponseTimeSeconds": 35.27701082257069,
-   "medianReasoningTimeSeconds": 27.02133955645653
+   "price1mOutputTokens": 1.5
   },
   {
    "slug": "gemma-4-26b-a4b-non-reasoning",
@@ -2108,14 +1632,9 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false,
-   "price1mInputTokens": 0.115,
+   "price1mInputTokens": 0.13,
    "price1mOutputTokens": 0.4,
-   "cacheHitPrice": 0.060000000000000005,
-   "medianOutputTokensPerSecond": 127.596948095261,
-   "medianTimeToFirstTokenSeconds": 0.92426041200001,
-   "medianTimeToFirstAnswerTokenSeconds": 0.92426041200001,
-   "medianEndToEndResponseTimeSeconds": 4.842849433633281
+   "cacheHitPrice": 0.07
   },
   {
    "releaseDate": "2025-12-02",
@@ -2126,14 +1645,9 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.2,
    "price1mOutputTokens": 0.2,
-   "cacheHitPrice": 0.02,
-   "medianOutputTokensPerSecond": 61.3226692984798,
-   "medianTimeToFirstTokenSeconds": 1.16961493299994,
-   "medianTimeToFirstAnswerTokenSeconds": 1.16961493299994,
-   "medianEndToEndResponseTimeSeconds": 9.32320651209963
+   "cacheHitPrice": 0.02
   },
   {
    "releaseDate": "2026-07-30",
@@ -2145,16 +1659,10 @@
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
    "intelligenceIndex": 12.9101620926084,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": -9.466666666666667,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 1.2,
-   "cacheHitPrice": 0.06,
-   "medianOutputTokensPerSecond": 229.939178139005,
-   "medianTimeToFirstTokenSeconds": 1.58857716349997,
-   "medianTimeToFirstAnswerTokenSeconds": 10.286529448912336,
-   "medianEndToEndResponseTimeSeconds": 12.461017520265429,
-   "medianReasoningTimeSeconds": 8.697952285412367
+   "cacheHitPrice": 0.06
   },
   {
    "slug": "gemini-3-8-flash-medium",
@@ -2164,8 +1672,7 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 29.978569475636,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 30.078569475636,
    "omniscience": 23.7,
    "price1mInputTokens": 0.75,
    "price1mOutputTokens": 3.75,
@@ -2179,8 +1686,7 @@
    "modelCreatorName": "Google",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
   },
   {
    "releaseDate": "2026-03-06",
@@ -2190,8 +1696,7 @@
    "modelCreatorName": "Sarvam",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 65536,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 65536
   },
   {
    "releaseDate": "2026-09-08",
@@ -2202,10 +1707,24 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 260000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.2,
    "price1mOutputTokens": 0.75,
    "cacheHitPrice": 0.02
+  },
+  {
+   "slug": "claude-fable-5-2-xhigh",
+   "name": "Claude Fable 5.2 (Xhigh, Default Fallback)",
+   "shortName": "Claude Fable 5.2 (xhigh)",
+   "modelCreatorName": "Anthropic",
+   "isReasoning": true,
+   "isOpenWeights": false,
+   "contextWindowTokens": 1000000,
+   "intelligenceIndex": 62.2167392403357,
+   "omniscience": 64.76666666666667,
+   "price1mInputTokens": 8,
+   "price1mOutputTokens": 40,
+   "cacheHitPrice": 0.2,
+   "cacheWritePrice": 10
   },
   {
    "releaseDate": "2025-10-29",
@@ -2216,13 +1735,8 @@
    "isReasoning": false,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.3,
-   "price1mOutputTokens": 2.5,
-   "medianOutputTokensPerSecond": 172.908048831674,
-   "medianTimeToFirstTokenSeconds": 1.04832673150003,
-   "medianTimeToFirstAnswerTokenSeconds": 1.04832673150003,
-   "medianEndToEndResponseTimeSeconds": 3.9400371138590957
+   "price1mOutputTokens": 2.5
   },
   {
    "slug": "nvidia-nemotron-3-nano-30b-a3b-reasoning",
@@ -2232,15 +1746,9 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.05,
    "price1mOutputTokens": 0.2,
-   "cacheHitPrice": 0.05,
-   "medianOutputTokensPerSecond": 241.91219295187,
-   "medianTimeToFirstTokenSeconds": 0.709328545500071,
-   "medianTimeToFirstAnswerTokenSeconds": 8.97679111361425,
-   "medianEndToEndResponseTimeSeconds": 11.043656755642795,
-   "medianReasoningTimeSeconds": 8.26746256811418
+   "cacheHitPrice": 0.05
   },
   {
    "releaseDate": "2026-08-21",
@@ -2251,15 +1759,9 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.44,
    "price1mOutputTokens": 1.32,
-   "cacheHitPrice": 0.014,
-   "medianOutputTokensPerSecond": 159.67934364017,
-   "medianTimeToFirstTokenSeconds": 1.56738878900001,
-   "medianTimeToFirstAnswerTokenSeconds": 14.092490373253181,
-   "medianEndToEndResponseTimeSeconds": 17.223765769316476,
-   "medianReasoningTimeSeconds": 12.525101584253171
+   "cacheHitPrice": 0.014
   },
   {
    "releaseDate": "2026-05-25",
@@ -2269,8 +1771,7 @@
    "modelCreatorName": "OpenBMB",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
   },
   {
    "releaseDate": "2025-07-07",
@@ -2280,8 +1781,21 @@
    "modelCreatorName": "AI21 Labs",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 256000
+  },
+  {
+   "slug": "muse-ember-xhigh",
+   "name": "Muse Ember (Xhigh)",
+   "shortName": "Muse Ember (xhigh)",
+   "modelCreatorName": "Meta",
+   "isReasoning": true,
+   "isOpenWeights": false,
+   "contextWindowTokens": 1048576,
+   "intelligenceIndex": 34.1149608609788,
+   "omniscience": 7.733333333333333,
+   "price1mInputTokens": 0.1,
+   "price1mOutputTokens": 0.5,
+   "cacheHitPrice": 0.004
   },
   {
    "releaseDate": "2026-10-07",
@@ -2292,17 +1806,12 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 36.2345435880142,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 36.4845435880142,
    "omniscience": 12.3,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.5,
    "cacheHitPrice": 0.01,
-   "cacheWritePrice": 0.125,
-   "medianOutputTokensPerSecond": 235.379056046412,
-   "medianTimeToFirstTokenSeconds": 370.077087912,
-   "medianTimeToFirstAnswerTokenSeconds": 370.077087912,
-   "medianEndToEndResponseTimeSeconds": 372.20132108889493
+   "cacheWritePrice": 0.125
   },
   {
    "slug": "gpt-6-luna-high",
@@ -2312,17 +1821,12 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 21.3790170864582,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 21.4290170864582,
    "omniscience": -12.8,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.5,
    "cacheHitPrice": 0.01,
-   "cacheWritePrice": 0.125,
-   "medianOutputTokensPerSecond": 119.05775606758,
-   "medianTimeToFirstTokenSeconds": 29.016549337,
-   "medianTimeToFirstAnswerTokenSeconds": 29.016549337,
-   "medianEndToEndResponseTimeSeconds": 33.21619173338607
+   "cacheWritePrice": 0.125
   },
   {
    "releaseDate": "2026-10-15",
@@ -2332,8 +1836,7 @@
    "modelCreatorName": "NVIDIA",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 262144
   },
   {
    "releaseDate": "2026-02-11",
@@ -2343,8 +1846,7 @@
    "modelCreatorName": "Nanbeige",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 256000
   },
   {
    "slug": "qwen3-8-27b-low",
@@ -2355,16 +1857,10 @@
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
    "intelligenceIndex": 15.6850612405479,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": -21.466666666666665,
    "price1mInputTokens": 0.5,
    "price1mOutputTokens": 3,
-   "cacheHitPrice": 0.1,
-   "medianOutputTokensPerSecond": 48.2211812458691,
-   "medianTimeToFirstTokenSeconds": 3.92650542300001,
-   "medianTimeToFirstAnswerTokenSeconds": 45.40205513636029,
-   "medianEndToEndResponseTimeSeconds": 55.770942564700356,
-   "medianReasoningTimeSeconds": 41.47554971336028
+   "cacheHitPrice": 0.1
   },
   {
    "releaseDate": "2026-08-12",
@@ -2374,8 +1870,7 @@
    "modelCreatorName": "Upstage",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 1048576,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 1048576
   },
   {
    "releaseDate": "2026-08-06",
@@ -2386,15 +1881,9 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": -15.866666666666667,
    "price1mInputTokens": 0,
-   "price1mOutputTokens": 0,
-   "medianOutputTokensPerSecond": 57.293067564309,
-   "medianTimeToFirstTokenSeconds": 2.66465965499998,
-   "medianTimeToFirstAnswerTokenSeconds": 37.572896986769415,
-   "medianEndToEndResponseTimeSeconds": 46.299956319711775,
-   "medianReasoningTimeSeconds": 34.908237331769435
+   "price1mOutputTokens": 0
   },
   {
    "releaseDate": "2026-07-24",
@@ -2405,14 +1894,9 @@
    "isReasoning": false,
    "isOpenWeights": false,
    "contextWindowTokens": 131072,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.2,
    "price1mOutputTokens": 0.7,
-   "cacheHitPrice": 0.02,
-   "medianOutputTokensPerSecond": 1689.85860806856,
-   "medianTimeToFirstTokenSeconds": 0.540361861500031,
-   "medianTimeToFirstAnswerTokenSeconds": 0.540361861500031,
-   "medianEndToEndResponseTimeSeconds": 0.8362446043594941
+   "cacheHitPrice": 0.02
   },
   {
    "releaseDate": "2026-02-17",
@@ -2423,7 +1907,6 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 8192,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0,
    "price1mOutputTokens": 0
   },
@@ -2436,7 +1919,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false
+   "omniscience": -8.033333333333333
   },
   {
    "releaseDate": "2025-07-15",
@@ -2446,8 +1929,7 @@
    "modelCreatorName": "LG AI Research",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 64000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 64000
   },
   {
    "slug": "hermes-4-llama-3-1-405b-reasoning",
@@ -2457,14 +1939,8 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 1,
-   "price1mOutputTokens": 3,
-   "medianOutputTokensPerSecond": 41.4292106541602,
-   "medianTimeToFirstTokenSeconds": 2.30842488249997,
-   "medianTimeToFirstAnswerTokenSeconds": 50.5835420865292,
-   "medianEndToEndResponseTimeSeconds": 62.6523213875365,
-   "medianReasoningTimeSeconds": 48.27511720402923
+   "price1mOutputTokens": 3
   },
   {
    "releaseDate": "2026-08-13",
@@ -2476,16 +1952,10 @@
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
    "intelligenceIndex": 23.0632981493003,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": -6.366666666666666,
    "price1mInputTokens": 1.32,
    "price1mOutputTokens": 3.96,
-   "cacheHitPrice": 0.044,
-   "medianOutputTokensPerSecond": 93.5371541819527,
-   "medianTimeToFirstTokenSeconds": 1.793188195,
-   "medianTimeToFirstAnswerTokenSeconds": 23.175065989886825,
-   "medianEndToEndResponseTimeSeconds": 28.520535438608533,
-   "medianReasoningTimeSeconds": 21.381877794886826
+   "cacheHitPrice": 0.044
   },
   {
    "releaseDate": "2025-09-18",
@@ -2495,8 +1965,7 @@
    "modelCreatorName": "Mistral",
    "isReasoning": true,
    "isOpenWeights": false,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
   },
   {
    "releaseDate": "2026-04-16",
@@ -2507,14 +1976,22 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.375,
-   "price1mOutputTokens": 2.25,
-   "medianOutputTokensPerSecond": 133.473142532539,
-   "medianTimeToFirstTokenSeconds": 2.04455730599997,
-   "medianTimeToFirstAnswerTokenSeconds": 42.46467402487299,
-   "medianEndToEndResponseTimeSeconds": 46.210746009939996,
-   "medianReasoningTimeSeconds": 40.42011671887302
+   "price1mOutputTokens": 2.25
+  },
+  {
+   "slug": "gemini-4-hydrogen-low",
+   "name": "Gemini 4 Hydrogen (Low)",
+   "shortName": "Gemini 4 Hydrogen (low)",
+   "modelCreatorName": "Google",
+   "isReasoning": true,
+   "isOpenWeights": false,
+   "contextWindowTokens": 1000000,
+   "intelligenceIndex": 26.8936694361562,
+   "omniscience": 36.1,
+   "price1mInputTokens": 1.5,
+   "price1mOutputTokens": 7.5,
+   "cacheHitPrice": 0.075
   },
   {
    "releaseDate": "2025-09-02",
@@ -2524,14 +2001,7 @@
    "modelCreatorName": "Swiss AI Initiative",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 65536,
-   "intelligenceIndexIsEstimated": false,
-   "price1mInputTokens": 0.1,
-   "price1mOutputTokens": 0.2,
-   "medianOutputTokensPerSecond": 145.817630196183,
-   "medianTimeToFirstTokenSeconds": 3.03013864500002,
-   "medianTimeToFirstAnswerTokenSeconds": 3.03013864500002,
-   "medianEndToEndResponseTimeSeconds": 6.459079297288088
+   "contextWindowTokens": 65536
   },
   {
    "releaseDate": "2026-09-02",
@@ -2542,17 +2012,12 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 30.5468119957291,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 30.8468119957291,
    "omniscience": 23.266666666666666,
    "price1mInputTokens": 0.75,
    "price1mOutputTokens": 3.75,
    "cacheHitPrice": 0.075,
-   "cacheWritePrice": 0.75,
-   "medianOutputTokensPerSecond": 130.74604237303,
-   "medianTimeToFirstTokenSeconds": 24.890338168,
-   "medianTimeToFirstAnswerTokenSeconds": 24.890338168,
-   "medianEndToEndResponseTimeSeconds": 28.714545699830722
+   "cacheWritePrice": 0.75
   },
   {
    "releaseDate": "2026-04-29",
@@ -2562,16 +2027,7 @@
    "modelCreatorName": "NVIDIA",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false,
-   "price1mInputTokens": 0.5,
-   "price1mOutputTokens": 0.9,
-   "cacheHitPrice": 0.1,
-   "medianOutputTokensPerSecond": 217.403127956321,
-   "medianTimeToFirstTokenSeconds": 0.856126988500023,
-   "medianTimeToFirstAnswerTokenSeconds": 10.05562664060174,
-   "medianEndToEndResponseTimeSeconds": 12.35550155362717,
-   "medianReasoningTimeSeconds": 9.199499652101718
+   "contextWindowTokens": 256000
   },
   {
    "releaseDate": "2026-06-12",
@@ -2582,15 +2038,9 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.95,
    "price1mOutputTokens": 4,
-   "cacheHitPrice": 0.19,
-   "medianOutputTokensPerSecond": 45.8087523266099,
-   "medianTimeToFirstTokenSeconds": 2.83834759949996,
-   "medianTimeToFirstAnswerTokenSeconds": 51.49717122577004,
-   "medianEndToEndResponseTimeSeconds": 62.41211596024067,
-   "medianReasoningTimeSeconds": 48.65882362627008
+   "cacheHitPrice": 0.19
   },
   {
    "releaseDate": "2026-08-12",
@@ -2601,16 +2051,10 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262000,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": 7.766666666666667,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 6,
-   "cacheHitPrice": 0.25,
-   "medianOutputTokensPerSecond": 38.2978663711164,
-   "medianTimeToFirstTokenSeconds": 3.04105430550004,
-   "medianTimeToFirstAnswerTokenSeconds": 55.263284667355556,
-   "medianEndToEndResponseTimeSeconds": 68.31884225781943,
-   "medianReasoningTimeSeconds": 52.222230361855516
+   "cacheHitPrice": 0.25
   },
   {
    "releaseDate": "2025-11-20",
@@ -2620,18 +2064,7 @@
    "modelCreatorName": "Allen Institute for AI",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 65536,
-   "intelligenceIndexIsEstimated": false
-  },
-  {
-   "slug": "jt-4-1-flash-236b-a21b-non-reasoning",
-   "name": "JT-4.1 Flash 236B A21B (Non-reasoning)",
-   "shortName": "JT-4.1 Flash 236B A21B (non-reasoning)",
-   "modelCreatorName": "China Mobile",
-   "isReasoning": false,
-   "isOpenWeights": false,
-   "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 65536
   },
   {
    "releaseDate": "2026-10-28",
@@ -2642,17 +2075,12 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 59.425738829526,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 60.025738829526,
    "omniscience": 53.5,
-   "price1mInputTokens": 4,
-   "price1mOutputTokens": 20,
-   "cacheHitPrice": 0.2,
-   "cacheWritePrice": 4,
-   "medianOutputTokensPerSecond": 94.6248042744194,
-   "medianTimeToFirstTokenSeconds": 137.574520929,
-   "medianTimeToFirstAnswerTokenSeconds": 137.574520929,
-   "medianEndToEndResponseTimeSeconds": 142.85854771070893
+   "price1mInputTokens": 2,
+   "price1mOutputTokens": 10,
+   "cacheHitPrice": 0.1,
+   "cacheWritePrice": 4
   },
   {
    "releaseDate": "2025-04-05",
@@ -2663,14 +2091,9 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.25,
-   "price1mOutputTokens": 0.9199999999999999,
-   "cacheHitPrice": 0.22,
-   "medianOutputTokensPerSecond": 59.9882470883475,
-   "medianTimeToFirstTokenSeconds": 0.975182748000066,
-   "medianTimeToFirstAnswerTokenSeconds": 0.975182748000066,
-   "medianEndToEndResponseTimeSeconds": 9.310148749984197
+   "price1mOutputTokens": 0.97,
+   "cacheHitPrice": 0.24
   },
   {
    "releaseDate": "2026-09-22",
@@ -2681,7 +2104,6 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1050000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 10,
    "cacheHitPrice": 0.2,
@@ -2695,8 +2117,7 @@
    "modelCreatorName": "Allen Institute for AI",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 65536,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 65536
   },
   {
    "releaseDate": "2025-12-02",
@@ -2707,34 +2128,24 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.15,
    "price1mOutputTokens": 0.15,
-   "cacheHitPrice": 0.015,
-   "medianOutputTokensPerSecond": 91.0644874310927,
-   "medianTimeToFirstTokenSeconds": 0.860542140999996,
-   "medianTimeToFirstAnswerTokenSeconds": 0.860542140999996,
-   "medianEndToEndResponseTimeSeconds": 6.351156694541995
+   "cacheHitPrice": 0.015
   },
   {
    "slug": "claude-sonnet-5-5-xhigh",
    "name": "Claude Sonnet 5.5 (Xhigh, Default Fallback)",
-   "shortName": "Claude Sonnet 5.5 (xhigh with fallback)",
+   "shortName": "Claude Sonnet 5.5 (xhigh)",
    "modelCreatorName": "Anthropic",
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 49.5740327787242,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 49.9240327787242,
    "omniscience": 20.6,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 10,
    "cacheHitPrice": 0.1,
-   "cacheWritePrice": 2.5,
-   "medianOutputTokensPerSecond": 108.046174225648,
-   "medianTimeToFirstTokenSeconds": 32.9367031120001,
-   "medianTimeToFirstAnswerTokenSeconds": 32.9367031120001,
-   "medianEndToEndResponseTimeSeconds": 37.564354239709445
+   "cacheWritePrice": 2.5
   },
   {
    "releaseDate": "2024-12-06",
@@ -2745,14 +2156,9 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.6,
    "price1mOutputTokens": 0.71,
-   "cacheHitPrice": 0.6,
-   "medianOutputTokensPerSecond": 91.0860403735276,
-   "medianTimeToFirstTokenSeconds": 1.77065000300002,
-   "medianTimeToFirstAnswerTokenSeconds": 1.77065000300002,
-   "medianEndToEndResponseTimeSeconds": 7.259965357466953
+   "cacheHitPrice": 0.6
   },
   {
    "releaseDate": "2026-03-19",
@@ -2762,8 +2168,7 @@
    "modelCreatorName": "NVIDIA",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 1000000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 1000000
   },
   {
    "releaseDate": "2025-02-18",
@@ -2773,8 +2178,7 @@
    "modelCreatorName": "Perplexity",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
   },
   {
    "releaseDate": "2026-08-26",
@@ -2785,36 +2189,11 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 28.5750026655353,
    "omniscience": -12.233333333333333,
    "price1mInputTokens": 0.15,
    "price1mOutputTokens": 0.47,
-   "cacheHitPrice": 0.016,
-   "medianOutputTokensPerSecond": 52.1418352931317,
-   "medianTimeToFirstTokenSeconds": 2.38580599850002,
-   "medianTimeToFirstAnswerTokenSeconds": 40.742722067072826,
-   "medianEndToEndResponseTimeSeconds": 50.33195108421603,
-   "medianReasoningTimeSeconds": 38.35691606857281
-  },
-  {
-   "slug": "claude-fable-5-1-xhigh",
-   "name": "Claude Fable 5.1 (Xhigh, Default Fallback)",
-   "shortName": "Claude Fable 5.1 (xhigh with fallback)",
-   "modelCreatorName": "Anthropic",
-   "isReasoning": true,
-   "isOpenWeights": false,
-   "contextWindowTokens": 1000000,
-   "intelligenceIndex": 49.6716384248632,
-   "intelligenceIndexIsEstimated": false,
-   "omniscience": 44.333333333333336,
-   "price1mInputTokens": 10,
-   "price1mOutputTokens": 50,
-   "cacheHitPrice": 0.25,
-   "cacheWritePrice": 12.5,
-   "medianOutputTokensPerSecond": 62.3458905882748,
-   "medianTimeToFirstTokenSeconds": 73.482591952,
-   "medianTimeToFirstAnswerTokenSeconds": 73.482591952,
-   "medianEndToEndResponseTimeSeconds": 81.50236671633762
+   "cacheHitPrice": 0.016
   },
   {
    "releaseDate": "2024-09-25",
@@ -2824,28 +2203,7 @@
    "modelCreatorName": "Meta",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
-  },
-  {
-   "slug": "claude-fable-5-1-high",
-   "name": "Claude Fable 5.1 (High, Default Fallback)",
-   "shortName": "Claude Fable 5.1 (high with fallback)",
-   "modelCreatorName": "Anthropic",
-   "isReasoning": true,
-   "isOpenWeights": false,
-   "contextWindowTokens": 1000000,
-   "intelligenceIndex": 47.024988245604,
-   "intelligenceIndexIsEstimated": false,
-   "omniscience": 39.93333333333333,
-   "price1mInputTokens": 10,
-   "price1mOutputTokens": 50,
-   "cacheHitPrice": 0.25,
-   "cacheWritePrice": 12.5,
-   "medianOutputTokensPerSecond": 57.6028352558684,
-   "medianTimeToFirstTokenSeconds": 17.047461533,
-   "medianTimeToFirstAnswerTokenSeconds": 17.047461533,
-   "medianEndToEndResponseTimeSeconds": 25.72758982493267
+   "contextWindowTokens": 128000
   },
   {
    "releaseDate": "2026-09-03",
@@ -2855,8 +2213,7 @@
    "modelCreatorName": "Institute of Foundation Models",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 131072,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 131072
   },
   {
    "releaseDate": "2026-03-16",
@@ -2868,7 +2225,6 @@
    "isOpenWeights": true,
    "contextWindowTokens": 262000,
    "intelligenceIndex": 1.81584603785463,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": -71.16666666666667
   },
   {
@@ -2880,13 +2236,8 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.075,
-   "price1mOutputTokens": 0.3,
-   "medianOutputTokensPerSecond": 44.1967653374968,
-   "medianTimeToFirstTokenSeconds": 0.842700513000011,
-   "medianTimeToFirstAnswerTokenSeconds": 0.842700513000011,
-   "medianEndToEndResponseTimeSeconds": 12.155745623470958
+   "price1mOutputTokens": 0.3
   },
   {
    "slug": "nova-2-0-pro",
@@ -2896,13 +2247,8 @@
    "isReasoning": false,
    "isOpenWeights": false,
    "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 1.25,
-   "price1mOutputTokens": 10,
-   "medianOutputTokensPerSecond": 122.22167594305,
-   "medianTimeToFirstTokenSeconds": 1.095609446,
-   "medianTimeToFirstAnswerTokenSeconds": 1.095609446,
-   "medianEndToEndResponseTimeSeconds": 5.186536821541621
+   "price1mOutputTokens": 10
   },
   {
    "slug": "gpt-6-1-sol-medium",
@@ -2912,17 +2258,12 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 46.1468797067114,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 46.3468797067114,
    "omniscience": 40.166666666666664,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 10,
    "cacheHitPrice": 0.1,
-   "cacheWritePrice": 2.5,
-   "medianOutputTokensPerSecond": 62.5606897406558,
-   "medianTimeToFirstTokenSeconds": 8.14014780349993,
-   "medianTimeToFirstAnswerTokenSeconds": 8.14014780349993,
-   "medianEndToEndResponseTimeSeconds": 16.132387052663276
+   "cacheWritePrice": 2.5
   },
   {
    "releaseDate": "2025-12-05",
@@ -2932,8 +2273,7 @@
    "modelCreatorName": "Institute of Foundation Models",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 512000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 512000
   },
   {
    "slug": "gpt-6-astra-low",
@@ -2943,17 +2283,12 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 43.0349823228524,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 43.3349823228524,
    "omniscience": 40.3,
    "price1mInputTokens": 10,
    "price1mOutputTokens": 50,
    "cacheHitPrice": 1,
-   "cacheWritePrice": 12.5,
-   "medianOutputTokensPerSecond": 56.6646212484613,
-   "medianTimeToFirstTokenSeconds": 2.55393467850001,
-   "medianTimeToFirstAnswerTokenSeconds": 2.55393467850001,
-   "medianEndToEndResponseTimeSeconds": 11.377782592485268
+   "cacheWritePrice": 12.5
   },
   {
    "releaseDate": "2026-02-05",
@@ -2963,8 +2298,7 @@
    "modelCreatorName": "Google",
    "isReasoning": true,
    "isOpenWeights": false,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
   },
   {
    "releaseDate": "2025-11-13",
@@ -2974,8 +2308,7 @@
    "modelCreatorName": "Baidu",
    "isReasoning": true,
    "isOpenWeights": false,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
   },
   {
    "releaseDate": "2026-10-01",
@@ -2986,15 +2319,9 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 0.9,
-   "cacheHitPrice": 0.06,
-   "medianOutputTokensPerSecond": 217.08430534338,
-   "medianTimeToFirstTokenSeconds": 1.80432153499999,
-   "medianTimeToFirstAnswerTokenSeconds": 11.01733210633741,
-   "medianEndToEndResponseTimeSeconds": 13.320584749171761,
-   "medianReasoningTimeSeconds": 9.213010571337419
+   "cacheHitPrice": 0.06
   },
   {
    "releaseDate": "2025-10-28",
@@ -3004,8 +2331,7 @@
    "modelCreatorName": "IBM",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 32768,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 32768
   },
   {
    "releaseDate": "2026-03-02",
@@ -3015,8 +2341,7 @@
    "modelCreatorName": "Alibaba",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 262144
   },
   {
    "releaseDate": "2025-11-25",
@@ -3026,8 +2351,7 @@
    "modelCreatorName": "ServiceNow",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
   },
   {
    "releaseDate": "2026-06-01",
@@ -3038,15 +2362,9 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.4,
    "price1mOutputTokens": 1.6,
-   "cacheHitPrice": 0.08,
-   "medianOutputTokensPerSecond": 57.1032283992178,
-   "medianTimeToFirstTokenSeconds": 2.368008105,
-   "medianTimeToFirstAnswerTokenSeconds": 37.39229755528608,
-   "medianEndToEndResponseTimeSeconds": 46.14836991785759,
-   "medianReasoningTimeSeconds": 35.024289450286076
+   "cacheHitPrice": 0.08
   },
   {
    "releaseDate": "2025-03-13",
@@ -3056,8 +2374,7 @@
    "modelCreatorName": "Nous Research",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 32000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 32000
   },
   {
    "releaseDate": "2025-10-28",
@@ -3068,13 +2385,8 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.2,
-   "price1mOutputTokens": 0.6,
-   "medianOutputTokensPerSecond": 193.486187865624,
-   "medianTimeToFirstTokenSeconds": 1.0312067575,
-   "medianTimeToFirstAnswerTokenSeconds": 1.0312067575,
-   "medianEndToEndResponseTimeSeconds": 3.615370544670429
+   "price1mOutputTokens": 0.6
   },
   {
    "slug": "step-3-vl-10b",
@@ -3083,8 +2395,7 @@
    "modelCreatorName": "StepFun",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 65536,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 65536
   },
   {
    "releaseDate": "2025-04-05",
@@ -3095,13 +2406,8 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 10000000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.18,
-   "price1mOutputTokens": 0.66,
-   "medianOutputTokensPerSecond": 111.778678275065,
-   "medianTimeToFirstTokenSeconds": 0.831989894000003,
-   "medianTimeToFirstAnswerTokenSeconds": 0.831989894000003,
-   "medianEndToEndResponseTimeSeconds": 5.305114891681581
+   "price1mOutputTokens": 0.66
   },
   {
    "releaseDate": "2026-08-25",
@@ -3112,16 +2418,11 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 5.09826495217051,
    "omniscience": -16.666666666666668,
    "price1mInputTokens": 0.06,
    "price1mOutputTokens": 0.25,
-   "cacheHitPrice": 0.015,
-   "medianOutputTokensPerSecond": 61.0743275907637,
-   "medianTimeToFirstTokenSeconds": 0.911392137000007,
-   "medianTimeToFirstAnswerTokenSeconds": 33.65837567157536,
-   "medianEndToEndResponseTimeSeconds": 41.845121555219194,
-   "medianReasoningTimeSeconds": 32.74698353457535
+   "cacheHitPrice": 0.015
   },
   {
    "releaseDate": "2025-06-30",
@@ -3131,8 +2432,7 @@
    "modelCreatorName": "Baidu",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 131072,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 131072
   },
   {
    "slug": "claude-haiku-5-5-medium",
@@ -3142,17 +2442,12 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 24.5513254343023,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 24.6013254343023,
    "omniscience": 4.166666666666667,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.5,
    "cacheHitPrice": 0.01,
-   "cacheWritePrice": 0.125,
-   "medianOutputTokensPerSecond": 172.267307230615,
-   "medianTimeToFirstTokenSeconds": 13.7650371729999,
-   "medianTimeToFirstAnswerTokenSeconds": 13.7650371729999,
-   "medianEndToEndResponseTimeSeconds": 16.6675031605285
+   "cacheWritePrice": 0.125
   },
   {
    "releaseDate": "2024-09-25",
@@ -3162,8 +2457,7 @@
    "modelCreatorName": "Allen Institute for AI",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 4096,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 4096
   },
   {
    "releaseDate": "2026-08-14",
@@ -3175,16 +2469,10 @@
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
    "intelligenceIndex": 20.1068756031705,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": -6.366666666666666,
    "price1mInputTokens": 0.5,
    "price1mOutputTokens": 3,
-   "cacheHitPrice": 0.1,
-   "medianOutputTokensPerSecond": 41.1060539303921,
-   "medianTimeToFirstTokenSeconds": 4.00940060449994,
-   "medianTimeToFirstAnswerTokenSeconds": 52.664034381479524,
-   "medianEndToEndResponseTimeSeconds": 64.82769282572443,
-   "medianReasoningTimeSeconds": 48.65463377697959
+   "cacheHitPrice": 0.1
   },
   {
    "releaseDate": "2026-08-12",
@@ -3194,8 +2482,7 @@
    "modelCreatorName": "Motif Technologies",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 262144
   },
   {
    "releaseDate": "2026-04-02",
@@ -3205,8 +2492,7 @@
    "modelCreatorName": "Google",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
   },
   {
    "releaseDate": "2026-10-26",
@@ -3217,17 +2503,12 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 50.9765188577015,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 51.3265188577015,
    "omniscience": 29.566666666666666,
    "price1mInputTokens": 1,
    "price1mOutputTokens": 5,
    "cacheHitPrice": 0.05,
-   "cacheWritePrice": 1.25,
-   "medianOutputTokensPerSecond": 106.778718262753,
-   "medianTimeToFirstTokenSeconds": 264.32581858,
-   "medianTimeToFirstAnswerTokenSeconds": 264.32581858,
-   "medianEndToEndResponseTimeSeconds": 269.0083996048971
+   "cacheWritePrice": 1.25
   },
   {
    "releaseDate": "2026-08-03",
@@ -3238,38 +2519,27 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 983616,
-   "intelligenceIndex": 33.5545627367888,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 33.6545627367888,
    "omniscience": 10.466666666666667,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 6,
-   "cacheHitPrice": 0.25,
-   "medianOutputTokensPerSecond": 39.5127950871991,
-   "medianTimeToFirstTokenSeconds": 2.89710141500006,
-   "medianTimeToFirstAnswerTokenSeconds": 53.51361678897665,
-   "medianEndToEndResponseTimeSeconds": 66.1677456324708,
-   "medianReasoningTimeSeconds": 50.61651537397659
+   "cacheHitPrice": 0.25
   },
   {
    "releaseDate": "2026-09-28",
    "slug": "claude-sonnet-5-5",
    "name": "Claude Sonnet 5.5 (Max, Default Fallback)",
-   "shortName": "Claude Sonnet 5.5 (max with fallback)",
+   "shortName": "Claude Sonnet 5.5 (max)",
    "modelCreatorName": "Anthropic",
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 54.24133407109,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 54.54133407109,
    "omniscience": 30.466666666666665,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 10,
    "cacheHitPrice": 0.1,
-   "cacheWritePrice": 2.5,
-   "medianOutputTokensPerSecond": 136.807590705413,
-   "medianTimeToFirstTokenSeconds": 514.90744377,
-   "medianTimeToFirstAnswerTokenSeconds": 514.90744377,
-   "medianEndToEndResponseTimeSeconds": 518.5622117358846
+   "cacheWritePrice": 2.5
   },
   {
    "releaseDate": "2026-07-06",
@@ -3280,15 +2550,9 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.136,
    "price1mOutputTokens": 0.5549999999999999,
-   "cacheHitPrice": 0.034,
-   "medianOutputTokensPerSecond": 96.6370362621371,
-   "medianTimeToFirstTokenSeconds": 2.75246665499992,
-   "medianTimeToFirstAnswerTokenSeconds": 23.448465594524627,
-   "medianEndToEndResponseTimeSeconds": 28.622465329405802,
-   "medianReasoningTimeSeconds": 20.695998939524706
+   "cacheHitPrice": 0.034
   },
   {
    "releaseDate": "2026-09-29",
@@ -3299,17 +2563,24 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 54.5087338138148,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 54.6087338138148,
    "omniscience": 42.03333333333333,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 10,
    "cacheHitPrice": 0.1,
-   "cacheWritePrice": 2.5,
-   "medianOutputTokensPerSecond": 86.6532754396548,
-   "medianTimeToFirstTokenSeconds": 331.44517755,
-   "medianTimeToFirstAnswerTokenSeconds": 331.44517755,
-   "medianEndToEndResponseTimeSeconds": 337.2152998848239
+   "cacheWritePrice": 2.5
+  },
+  {
+   "releaseDate": "2026-11-11",
+   "slug": "jt-4-1-flash-236b-a21b",
+   "name": "JT-4.1 Flash 236B A21B",
+   "shortName": "JT-4.1 Flash 236B A21B",
+   "modelCreatorName": "China Mobile",
+   "isReasoning": true,
+   "isOpenWeights": false,
+   "contextWindowTokens": 262144,
+   "intelligenceIndex": 18.952876906667,
+   "omniscience": 1.9666666666666666
   },
   {
    "slug": "nova-2-0-omni-reasoning-low",
@@ -3318,8 +2589,22 @@
    "modelCreatorName": "Amazon",
    "isReasoning": true,
    "isOpenWeights": false,
+   "contextWindowTokens": 1000000
+  },
+  {
+   "slug": "gemini-4-carbon-low",
+   "name": "Gemini 4 Carbon (Low)",
+   "shortName": "Gemini 4 Carbon (low)",
+   "modelCreatorName": "Google",
+   "isReasoning": true,
+   "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndexIsEstimated": false
+   "intelligenceIndex": 54.2206114502924,
+   "omniscience": 39.2,
+   "price1mInputTokens": 2,
+   "price1mOutputTokens": 10,
+   "cacheHitPrice": 0.1,
+   "cacheWritePrice": 4
   },
   {
    "releaseDate": "2025-07-07",
@@ -3329,8 +2614,7 @@
    "modelCreatorName": "AI21 Labs",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 258000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 258000
   },
   {
    "releaseDate": "2026-04-01",
@@ -3340,8 +2624,7 @@
    "modelCreatorName": "Arcee AI",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 512000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 512000
   },
   {
    "releaseDate": "2025-02-13",
@@ -3351,8 +2634,7 @@
    "modelCreatorName": "Nous Research",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
   },
   {
    "slug": "qwen3-omni-30b-a3b-reasoning",
@@ -3362,14 +2644,8 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 65536,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.25,
-   "price1mOutputTokens": 0.97,
-   "medianOutputTokensPerSecond": 97.4053291884927,
-   "medianTimeToFirstTokenSeconds": 1.87619452800002,
-   "medianTimeToFirstAnswerTokenSeconds": 22.408951992735087,
-   "medianEndToEndResponseTimeSeconds": 27.542141358918855,
-   "medianReasoningTimeSeconds": 20.532757464735067
+   "price1mOutputTokens": 0.97
   },
   {
    "releaseDate": "2026-09-03",
@@ -3380,36 +2656,25 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 524288,
-   "intelligenceIndex": 17.7702731734027,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 17.8202731734027,
    "omniscience": -5,
    "price1mInputTokens": 0,
-   "price1mOutputTokens": 0,
-   "medianOutputTokensPerSecond": 720.295461157322,
-   "medianTimeToFirstTokenSeconds": 2.37830557999996,
-   "medianTimeToFirstAnswerTokenSeconds": 5.154943928916577,
-   "medianEndToEndResponseTimeSeconds": 5.849103516145732,
-   "medianReasoningTimeSeconds": 2.776638348916617
+   "price1mOutputTokens": 0
   },
   {
    "slug": "claude-sonnet-5-5-low",
    "name": "Claude Sonnet 5.5 (Low, Default Fallback)",
-   "shortName": "Claude Sonnet 5.5 (low with fallback)",
+   "shortName": "Claude Sonnet 5.5 (low)",
    "modelCreatorName": "Anthropic",
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 25.299704549789,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 25.649704549789,
    "omniscience": 20.266666666666666,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 10,
    "cacheHitPrice": 0.1,
-   "cacheWritePrice": 2.5,
-   "medianOutputTokensPerSecond": 105.783287872628,
-   "medianTimeToFirstTokenSeconds": 1.15332550149998,
-   "medianTimeToFirstAnswerTokenSeconds": 1.15332550149998,
-   "medianEndToEndResponseTimeSeconds": 5.879970041061297
+   "cacheWritePrice": 2.5
   },
   {
    "releaseDate": "2026-02-19",
@@ -3420,14 +2685,9 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 12,
-   "cacheHitPrice": 0.2,
-   "medianOutputTokensPerSecond": 143.159101799936,
-   "medianTimeToFirstTokenSeconds": 17.6689249065,
-   "medianTimeToFirstAnswerTokenSeconds": 17.6689249065,
-   "medianEndToEndResponseTimeSeconds": 21.161542516652005
+   "cacheHitPrice": 0.2
   },
   {
    "slug": "gpt-6-luna-low",
@@ -3438,16 +2698,11 @@
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
    "intelligenceIndex": 9.66610812336462,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": -18.1,
    "price1mInputTokens": 0.1,
    "price1mOutputTokens": 0.5,
    "cacheHitPrice": 0.01,
-   "cacheWritePrice": 0.125,
-   "medianOutputTokensPerSecond": 120.631510365411,
-   "medianTimeToFirstTokenSeconds": 2.81399962450001,
-   "medianTimeToFirstAnswerTokenSeconds": 2.81399962450001,
-   "medianEndToEndResponseTimeSeconds": 6.9588536388899875
+   "cacheWritePrice": 0.125
   },
   {
    "releaseDate": "2026-08-20",
@@ -3457,8 +2712,7 @@
    "modelCreatorName": "AI9Stars",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 131072,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 131072
   },
   {
    "slug": "deepseek-v4-1-flash-1017-high",
@@ -3468,8 +2722,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 28.5437391540402,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 28.6437391540402,
    "omniscience": 1.5333333333333334,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 1.2,
@@ -3483,8 +2736,7 @@
    "modelCreatorName": "Google",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 256000
   },
   {
    "releaseDate": "2026-06-25",
@@ -3495,15 +2747,9 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 400000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 5,
    "price1mOutputTokens": 30,
-   "cacheHitPrice": 0.5,
-   "medianOutputTokensPerSecond": 154.1850079204,
-   "medianTimeToFirstTokenSeconds": 0.881376879000015,
-   "medianTimeToFirstAnswerTokenSeconds": 13.85280663715475,
-   "medianEndToEndResponseTimeSeconds": 17.09566407669343,
-   "medianReasoningTimeSeconds": 12.971429758154734
+   "cacheHitPrice": 0.5
   },
   {
    "slug": "gpt-6-1-terra-medium",
@@ -3513,17 +2759,12 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 38.1152076677975,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 38.1652076677975,
    "omniscience": 26.6,
    "price1mInputTokens": 1,
    "price1mOutputTokens": 5,
    "cacheHitPrice": 0.05,
-   "cacheWritePrice": 1.25,
-   "medianOutputTokensPerSecond": 90.9163239292786,
-   "medianTimeToFirstTokenSeconds": 4.89561480950002,
-   "medianTimeToFirstAnswerTokenSeconds": 4.89561480950002,
-   "medianEndToEndResponseTimeSeconds": 10.39517724659258
+   "cacheWritePrice": 1.25
   },
   {
    "releaseDate": "2026-01-04",
@@ -3533,8 +2774,7 @@
    "modelCreatorName": "TII UAE",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 256000
   },
   {
    "slug": "qwen3-next-80b-a3b-reasoning",
@@ -3543,8 +2783,7 @@
    "modelCreatorName": "Alibaba",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 262144
   },
   {
    "slug": "gpt-6-1-terra-low",
@@ -3554,17 +2793,12 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 29.2169280792131,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 29.4169280792131,
    "omniscience": 22.933333333333334,
    "price1mInputTokens": 1,
    "price1mOutputTokens": 5,
    "cacheHitPrice": 0.05,
-   "cacheWritePrice": 1.25,
-   "medianOutputTokensPerSecond": 90.938407519845,
-   "medianTimeToFirstTokenSeconds": 1.43220868650002,
-   "medianTimeToFirstAnswerTokenSeconds": 1.43220868650002,
-   "medianEndToEndResponseTimeSeconds": 6.930435603338076
+   "cacheWritePrice": 1.25
   },
   {
    "slug": "gpt-oss-120b-low",
@@ -3574,15 +2808,9 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.125,
    "price1mOutputTokens": 0.595,
-   "cacheHitPrice": 0.125,
-   "medianOutputTokensPerSecond": 257.834134495028,
-   "medianTimeToFirstTokenSeconds": 0.736963610499998,
-   "medianTimeToFirstAnswerTokenSeconds": 8.493888440941978,
-   "medianEndToEndResponseTimeSeconds": 10.433119648552474,
-   "medianReasoningTimeSeconds": 7.756924830441981
+   "cacheHitPrice": 0.125
   },
   {
    "slug": "glm-5-3-low",
@@ -3592,17 +2820,11 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 23.0579373025379,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 23.1079373025379,
    "omniscience": -11.166666666666666,
    "price1mInputTokens": 1.4,
    "price1mOutputTokens": 4.4,
-   "cacheHitPrice": 0.26,
-   "medianOutputTokensPerSecond": 80.4042971702806,
-   "medianTimeToFirstTokenSeconds": 1.63484585699996,
-   "medianTimeToFirstAnswerTokenSeconds": 26.509138281500487,
-   "medianEndToEndResponseTimeSeconds": 32.727711387625625,
-   "medianReasoningTimeSeconds": 24.874292424500528
+   "cacheHitPrice": 0.26
   },
   {
    "releaseDate": "2026-04-02",
@@ -3613,15 +2835,10 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 4.38438284215374,
    "omniscience": -48.53333333333333,
    "price1mInputTokens": 0,
-   "price1mOutputTokens": 0,
-   "medianOutputTokensPerSecond": 35.0274777782619,
-   "medianTimeToFirstTokenSeconds": 1.08212682850004,
-   "medianTimeToFirstAnswerTokenSeconds": 50.64321743826596,
-   "medianEndToEndResponseTimeSeconds": 64.91772510236905,
-   "medianReasoningTimeSeconds": 49.56109060976592
+   "price1mOutputTokens": 0
   },
   {
    "releaseDate": "2026-08-18",
@@ -3633,16 +2850,10 @@
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
    "intelligenceIndex": 31.653381843882,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": 6.033333333333333,
    "price1mInputTokens": 1.4,
    "price1mOutputTokens": 4.4,
-   "cacheHitPrice": 0.26,
-   "medianOutputTokensPerSecond": 88.9741843342523,
-   "medianTimeToFirstTokenSeconds": 1.432242352,
-   "medianTimeToFirstAnswerTokenSeconds": 23.910672640121923,
-   "medianEndToEndResponseTimeSeconds": 29.5302802121524,
-   "medianReasoningTimeSeconds": 22.478430288121924
+   "cacheHitPrice": 0.26
   },
   {
    "slug": "llama-3-1-nemotron-ultra-253b-v1-reasoning",
@@ -3651,8 +2862,22 @@
    "modelCreatorName": "NVIDIA",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
+  },
+  {
+   "slug": "claude-fable-5-2-low",
+   "name": "Claude Fable 5.2 (Low, Default Fallback)",
+   "shortName": "Claude Fable 5.2 (low)",
+   "modelCreatorName": "Anthropic",
+   "isReasoning": true,
+   "isOpenWeights": false,
+   "contextWindowTokens": 1000000,
+   "intelligenceIndex": 53.9249388799182,
+   "omniscience": 62.93333333333333,
+   "price1mInputTokens": 8,
+   "price1mOutputTokens": 40,
+   "cacheHitPrice": 0.2,
+   "cacheWritePrice": 10
   },
   {
    "slug": "gemma-4-31b-non-reasoning",
@@ -3662,14 +2887,23 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false,
-   "price1mInputTokens": 0.16499999999999998,
+   "price1mInputTokens": 0.15,
    "price1mOutputTokens": 0.4,
-   "cacheHitPrice": 0.14,
-   "medianOutputTokensPerSecond": 61.6056942389675,
-   "medianTimeToFirstTokenSeconds": 1.76333069500004,
-   "medianTimeToFirstAnswerTokenSeconds": 1.76333069500004,
-   "medianEndToEndResponseTimeSeconds": 9.879463565129026
+   "cacheHitPrice": 0.14
+  },
+  {
+   "slug": "tencent-hy4",
+   "name": "Tencent Hy4",
+   "shortName": "Tencent Hy4",
+   "modelCreatorName": "Tencent",
+   "isReasoning": true,
+   "isOpenWeights": false,
+   "contextWindowTokens": 1048576,
+   "intelligenceIndex": 34.5552385392508,
+   "omniscience": 5.4,
+   "price1mInputTokens": 0.834,
+   "price1mOutputTokens": 2.501,
+   "cacheHitPrice": 0.042
   },
   {
    "slug": "minicpm5-1b-non-reasoning",
@@ -3678,8 +2912,7 @@
    "modelCreatorName": "OpenBMB",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
   },
   {
    "releaseDate": "2026-09-30",
@@ -3691,15 +2924,10 @@
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
    "intelligenceIndex": 50.4121935905389,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": 46.1,
-   "price1mInputTokens": 4,
-   "price1mOutputTokens": 20,
-   "cacheHitPrice": 0.2,
-   "medianOutputTokensPerSecond": 83.2883200602061,
-   "medianTimeToFirstTokenSeconds": 40.471191687,
-   "medianTimeToFirstAnswerTokenSeconds": 40.471191687,
-   "medianEndToEndResponseTimeSeconds": 46.474434394243566
+   "price1mInputTokens": 2,
+   "price1mOutputTokens": 10,
+   "cacheHitPrice": 0.1
   },
   {
    "releaseDate": "2025-08-27",
@@ -3710,13 +2938,8 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 1,
-   "price1mOutputTokens": 3,
-   "medianOutputTokensPerSecond": 43.1101442954417,
-   "medianTimeToFirstTokenSeconds": 2.32027282850001,
-   "medianTimeToFirstAnswerTokenSeconds": 2.32027282850001,
-   "medianEndToEndResponseTimeSeconds": 13.918471075608824
+   "price1mOutputTokens": 3
   },
   {
    "releaseDate": "2026-10-19",
@@ -3727,17 +2950,26 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 28.9095214290458,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 29.0595214290458,
    "omniscience": -6.4,
    "price1mInputTokens": 0.15,
    "price1mOutputTokens": 0.6,
-   "cacheHitPrice": 0.015,
-   "medianOutputTokensPerSecond": 135.942802529148,
-   "medianTimeToFirstTokenSeconds": 0.903627819000008,
-   "medianTimeToFirstAnswerTokenSeconds": 15.615697621821475,
-   "medianEndToEndResponseTimeSeconds": 19.29371507252684,
-   "medianReasoningTimeSeconds": 14.712069802821468
+   "cacheHitPrice": 0.015
+  },
+  {
+   "releaseDate": "2026-11-07",
+   "slug": "agnes-2-5-pro-theta",
+   "name": "Agnes 2.5 Pro Theta",
+   "shortName": "Agnes 2.5 Pro Theta",
+   "modelCreatorName": "Sapiens AI",
+   "isReasoning": true,
+   "isOpenWeights": false,
+   "contextWindowTokens": 1000000,
+   "intelligenceIndex": 24.029012523359,
+   "omniscience": -11.233333333333333,
+   "price1mInputTokens": 0.1,
+   "price1mOutputTokens": 0.3,
+   "cacheHitPrice": 0.01
   },
   {
    "slug": "deepseek-v4-pro-non-reasoning",
@@ -3747,15 +2979,11 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 12.5675939779921,
    "omniscience": -19.066666666666666,
    "price1mInputTokens": 1.32,
    "price1mOutputTokens": 3.96,
-   "cacheHitPrice": 0.044,
-   "medianOutputTokensPerSecond": 95.9089911698572,
-   "medianTimeToFirstTokenSeconds": 1.74079487049999,
-   "medianTimeToFirstAnswerTokenSeconds": 1.74079487049999,
-   "medianEndToEndResponseTimeSeconds": 6.954070434148528
+   "cacheHitPrice": 0.044
   },
   {
    "slug": "exaone-4-0-1-2b-reasoning",
@@ -3764,8 +2992,7 @@
    "modelCreatorName": "LG AI Research",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 64000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 64000
   },
   {
    "releaseDate": "2026-04-03",
@@ -3776,14 +3003,37 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.02,
-   "price1mOutputTokens": 0.1,
-   "medianOutputTokensPerSecond": 50.1015820331585,
-   "medianTimeToFirstTokenSeconds": 0.871803796000024,
-   "medianTimeToFirstAnswerTokenSeconds": 40.790702937275626,
-   "medianEndToEndResponseTimeSeconds": 50.770427722594526,
-   "medianReasoningTimeSeconds": 39.9188991412756
+   "price1mOutputTokens": 0.1
+  },
+  {
+   "releaseDate": "2026-11-12",
+   "slug": "gemini-4-hydrogen",
+   "name": "Gemini 4 Hydrogen (Xhigh)",
+   "shortName": "Gemini 4 Hydrogen (xhigh)",
+   "modelCreatorName": "Google",
+   "isReasoning": true,
+   "isOpenWeights": false,
+   "contextWindowTokens": 1000000,
+   "intelligenceIndex": 53.9192287317542,
+   "omniscience": 46.266666666666666,
+   "price1mInputTokens": 1.5,
+   "price1mOutputTokens": 7.5,
+   "cacheHitPrice": 0.075
+  },
+  {
+   "slug": "gemini-4-hydrogen-high",
+   "name": "Gemini 4 Hydrogen (High)",
+   "shortName": "Gemini 4 Hydrogen (high)",
+   "modelCreatorName": "Google",
+   "isReasoning": true,
+   "isOpenWeights": false,
+   "contextWindowTokens": 1000000,
+   "intelligenceIndex": 50.7870826951304,
+   "omniscience": 43.666666666666664,
+   "price1mInputTokens": 1.5,
+   "price1mOutputTokens": 7.5,
+   "cacheHitPrice": 0.075
   },
   {
    "slug": "k2-v2-low",
@@ -3792,8 +3042,7 @@
    "modelCreatorName": "Institute of Foundation Models",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 512000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 512000
   },
   {
    "releaseDate": "2025-10-28",
@@ -3803,8 +3052,7 @@
    "modelCreatorName": "IBM",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
   },
   {
    "releaseDate": "2025-03-10",
@@ -3815,14 +3063,23 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.1,
-   "price1mOutputTokens": 0.2,
-   "medianOutputTokensPerSecond": 90.5683154726659,
-   "medianTimeToFirstTokenSeconds": 1.43473455600002,
-   "medianTimeToFirstAnswerTokenSeconds": 23.517512507231903,
-   "medianEndToEndResponseTimeSeconds": 29.038206995039875,
-   "medianReasoningTimeSeconds": 22.082777951231883
+   "price1mOutputTokens": 0.2
+  },
+  {
+   "releaseDate": "2026-11-09",
+   "slug": "muse-ember",
+   "name": "Muse Ember (Max)",
+   "shortName": "Muse Ember (max)",
+   "modelCreatorName": "Meta",
+   "isReasoning": true,
+   "isOpenWeights": false,
+   "contextWindowTokens": 1048576,
+   "intelligenceIndex": 36.0212987864912,
+   "omniscience": 7.366666666666666,
+   "price1mInputTokens": 0.1,
+   "price1mOutputTokens": 0.5,
+   "cacheHitPrice": 0.004
   },
   {
    "releaseDate": "2026-04-29",
@@ -3833,16 +3090,11 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 4.64508756526957,
    "omniscience": -38.7,
    "price1mInputTokens": 1.5,
    "price1mOutputTokens": 7.5,
-   "cacheHitPrice": 0.15,
-   "medianOutputTokensPerSecond": 177.28055434862,
-   "medianTimeToFirstTokenSeconds": 2.44444505800004,
-   "medianTimeToFirstAnswerTokenSeconds": 13.725998228614708,
-   "medianEndToEndResponseTimeSeconds": 16.546386521268374,
-   "medianReasoningTimeSeconds": 11.281553170614668
+   "cacheHitPrice": 0.15
   },
   {
    "slug": "k2-v2-medium",
@@ -3851,8 +3103,7 @@
    "modelCreatorName": "Institute of Foundation Models",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 512000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 512000
   },
   {
    "releaseDate": "2025-12-11",
@@ -3862,28 +3113,22 @@
    "modelCreatorName": "Korea Telecom",
    "isReasoning": true,
    "isOpenWeights": false,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
   },
   {
    "slug": "claude-opus-5-5-xhigh",
    "name": "Claude Opus 5.5 (Xhigh, Default Fallback)",
-   "shortName": "Claude Opus 5.5 (xhigh with fallback)",
+   "shortName": "Claude Opus 5.5 (xhigh)",
    "modelCreatorName": "Anthropic",
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 56.9947060170507,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 57.4447060170507,
    "omniscience": 43.13333333333333,
    "price1mInputTokens": 4,
    "price1mOutputTokens": 20,
    "cacheHitPrice": 0.2,
-   "cacheWritePrice": 5,
-   "medianOutputTokensPerSecond": 82.1628063329991,
-   "medianTimeToFirstTokenSeconds": 128.762213329,
-   "medianTimeToFirstAnswerTokenSeconds": 128.762213329,
-   "medianEndToEndResponseTimeSeconds": 134.84769193319397
+   "cacheWritePrice": 5
   },
   {
    "slug": "gpt-6-astra-high",
@@ -3894,16 +3139,11 @@
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
    "intelligenceIndex": 54.849838322506,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": 44.56666666666667,
    "price1mInputTokens": 10,
    "price1mOutputTokens": 50,
    "cacheHitPrice": 1,
-   "cacheWritePrice": 12.5,
-   "medianOutputTokensPerSecond": 61.6735918512802,
-   "medianTimeToFirstTokenSeconds": 95.6809663575,
-   "medianTimeToFirstAnswerTokenSeconds": 95.6809663575,
-   "medianEndToEndResponseTimeSeconds": 103.78816402495062
+   "cacheWritePrice": 12.5
   },
   {
    "releaseDate": "2026-08-04",
@@ -3913,8 +3153,7 @@
    "modelCreatorName": "Liquid AI",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
   },
   {
    "releaseDate": "2026-05-28",
@@ -3924,8 +3163,7 @@
    "modelCreatorName": "Liquid AI",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 32768,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 32768
   },
   {
    "releaseDate": "2026-10-15",
@@ -3937,16 +3175,24 @@
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
    "intelligenceIndex": 13.6203422723141,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": -2.8666666666666667,
-   "price1mInputTokens": 0.2,
+   "price1mInputTokens": 0.175,
    "price1mOutputTokens": 0.5,
-   "cacheHitPrice": 0.05,
-   "medianOutputTokensPerSecond": 479.24273621774,
-   "medianTimeToFirstTokenSeconds": 0.714245038000058,
-   "medianTimeToFirstAnswerTokenSeconds": 4.887495561908503,
-   "medianEndToEndResponseTimeSeconds": 5.930808192885614,
-   "medianReasoningTimeSeconds": 4.173250523908445
+   "cacheHitPrice": 0.05
+  },
+  {
+   "slug": "inkling-2-small",
+   "name": "Inkling 2 Small",
+   "shortName": "Inkling 2 Small",
+   "modelCreatorName": "Thinking Machines",
+   "isReasoning": true,
+   "isOpenWeights": true,
+   "contextWindowTokens": 1024000,
+   "intelligenceIndex": 30.6286781498958,
+   "omniscience": 16.1,
+   "price1mInputTokens": 0.3,
+   "price1mOutputTokens": 1,
+   "cacheHitPrice": 0.03
   },
   {
    "releaseDate": "2026-04-23",
@@ -3956,8 +3202,7 @@
    "modelCreatorName": "OpenAI",
    "isReasoning": true,
    "isOpenWeights": false,
-   "contextWindowTokens": 922000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 922000
   },
   {
    "releaseDate": "2025-04-30",
@@ -3967,8 +3212,7 @@
    "modelCreatorName": "Amazon",
    "isReasoning": false,
    "isOpenWeights": false,
-   "contextWindowTokens": 1000000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 1000000
   },
   {
    "slug": "gpt-6-1-sol-low",
@@ -3978,17 +3222,12 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 34.502924431456,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 34.8029244314559,
    "omniscience": 38,
    "price1mInputTokens": 2,
    "price1mOutputTokens": 10,
    "cacheHitPrice": 0.1,
-   "cacheWritePrice": 2.5,
-   "medianOutputTokensPerSecond": 61.0426089732534,
-   "medianTimeToFirstTokenSeconds": 2.477400583,
-   "medianTimeToFirstAnswerTokenSeconds": 2.477400583,
-   "medianEndToEndResponseTimeSeconds": 10.668400417543136
+   "cacheWritePrice": 2.5
   },
   {
    "slug": "gpt-6-1-terra-xhigh",
@@ -3998,17 +3237,12 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 44.950051789066,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 45.250051789066,
    "omniscience": 28.933333333333334,
    "price1mInputTokens": 1,
    "price1mOutputTokens": 5,
    "cacheHitPrice": 0.05,
-   "cacheWritePrice": 1.25,
-   "medianOutputTokensPerSecond": 101.361017983949,
-   "medianTimeToFirstTokenSeconds": 68.8322850254999,
-   "medianTimeToFirstAnswerTokenSeconds": 68.8322850254999,
-   "medianEndToEndResponseTimeSeconds": 73.76514787499474
+   "cacheWritePrice": 1.25
   },
   {
    "slug": "gpt-6-astra-medium",
@@ -4018,17 +3252,12 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 51.4548393864113,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 51.5548393864113,
    "omniscience": 41.4,
    "price1mInputTokens": 10,
    "price1mOutputTokens": 50,
    "cacheHitPrice": 1,
-   "cacheWritePrice": 12.5,
-   "medianOutputTokensPerSecond": 56.6097407460613,
-   "medianTimeToFirstTokenSeconds": 5.08529383749999,
-   "medianTimeToFirstAnswerTokenSeconds": 5.08529383749999,
-   "medianEndToEndResponseTimeSeconds": 13.917696060341616
+   "cacheWritePrice": 12.5
   },
   {
    "releaseDate": "2026-10-12",
@@ -4039,8 +3268,7 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 49.7272123627021,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 50.0772123627021,
    "omniscience": 30.6
   },
   {
@@ -4051,17 +3279,12 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 42.3344508712563,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 42.4344508712563,
    "omniscience": 27.766666666666666,
    "price1mInputTokens": 1,
    "price1mOutputTokens": 5,
    "cacheHitPrice": 0.05,
-   "cacheWritePrice": 1.25,
-   "medianOutputTokensPerSecond": 96.130791969186,
-   "medianTimeToFirstTokenSeconds": 20.702116446,
-   "medianTimeToFirstAnswerTokenSeconds": 20.702116446,
-   "medianEndToEndResponseTimeSeconds": 25.90336351530815
+   "cacheWritePrice": 1.25
   },
   {
    "releaseDate": "2026-10-29",
@@ -4072,8 +3295,7 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 26.0249946754784,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 26.1249946754784,
    "omniscience": 5.133333333333334,
    "price1mInputTokens": 0.7,
    "price1mOutputTokens": 2.1,
@@ -4087,28 +3309,22 @@
    "modelCreatorName": "Deep Cogito",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 128000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 128000
   },
   {
    "slug": "claude-opus-5-5-medium",
    "name": "Claude Opus 5.5 (Medium, Default Fallback)",
-   "shortName": "Claude Opus 5.5 (medium with fallback)",
+   "shortName": "Claude Opus 5.5 (medium)",
    "modelCreatorName": "Anthropic",
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 48.0581024960691,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 48.2081024960691,
    "omniscience": 39.766666666666666,
    "price1mInputTokens": 4,
    "price1mOutputTokens": 20,
    "cacheHitPrice": 0.2,
-   "cacheWritePrice": 5,
-   "medianOutputTokensPerSecond": 79.8152646658465,
-   "medianTimeToFirstTokenSeconds": 19.8485451035,
-   "medianTimeToFirstAnswerTokenSeconds": 19.8485451035,
-   "medianEndToEndResponseTimeSeconds": 26.11301095590672
+   "cacheWritePrice": 5
   },
   {
    "releaseDate": "2026-05-08",
@@ -4119,15 +3335,9 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false,
    "omniscience": -36.03333333333333,
    "price1mInputTokens": 0.3,
-   "price1mOutputTokens": 2.5,
-   "medianOutputTokensPerSecond": 125.380379433447,
-   "medianTimeToFirstTokenSeconds": 3.94601817799998,
-   "medianTimeToFirstAnswerTokenSeconds": 19.897477322065,
-   "medianEndToEndResponseTimeSeconds": 23.885342108081257,
-   "medianReasoningTimeSeconds": 15.95145914406502
+   "price1mOutputTokens": 2.5
   },
   {
    "releaseDate": "2024-12-12",
@@ -4138,13 +3348,8 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 16000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.125,
-   "price1mOutputTokens": 0.5,
-   "medianOutputTokensPerSecond": 41.3134628832033,
-   "medianTimeToFirstTokenSeconds": 2.45519588449997,
-   "medianTimeToFirstAnswerTokenSeconds": 2.45519588449997,
-   "medianEndToEndResponseTimeSeconds": 14.55778823831797
+   "price1mOutputTokens": 0.5
   },
   {
    "releaseDate": "2025-08-05",
@@ -4155,15 +3360,25 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 3.81981165137417,
+   "omniscience": -46.43333333333333,
    "price1mInputTokens": 0.15,
    "price1mOutputTokens": 0.6,
-   "cacheHitPrice": 0.1,
-   "medianOutputTokensPerSecond": 217.46725869619,
-   "medianTimeToFirstTokenSeconds": 0.748126855999999,
-   "medianTimeToFirstAnswerTokenSeconds": 9.944913590660024,
-   "medianEndToEndResponseTimeSeconds": 12.24411027432503,
-   "medianReasoningTimeSeconds": 9.196786734660025
+   "cacheHitPrice": 0.1
+  },
+  {
+   "slug": "gemini-4-hydrogen-medium",
+   "name": "Gemini 4 Hydrogen (Medium)",
+   "shortName": "Gemini 4 Hydrogen (medium)",
+   "modelCreatorName": "Google",
+   "isReasoning": true,
+   "isOpenWeights": false,
+   "contextWindowTokens": 1000000,
+   "intelligenceIndex": 41.2329566992579,
+   "omniscience": 41.9,
+   "price1mInputTokens": 1.5,
+   "price1mOutputTokens": 7.5,
+   "cacheHitPrice": 0.075
   },
   {
    "releaseDate": "2026-10-17",
@@ -4174,17 +3389,11 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 32.4896393532027,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 32.5896393532027,
    "omniscience": 0.9,
    "price1mInputTokens": 0.3,
    "price1mOutputTokens": 1.2,
-   "cacheHitPrice": 0.006,
-   "medianOutputTokensPerSecond": 170.462089292569,
-   "medianTimeToFirstTokenSeconds": 1.27729528449998,
-   "medianTimeToFirstAnswerTokenSeconds": 13.010109356532983,
-   "medianEndToEndResponseTimeSeconds": 15.943312874541235,
-   "medianReasoningTimeSeconds": 11.732814072033003
+   "cacheHitPrice": 0.006
   },
   {
    "slug": "nvidia-nemotron-nano-9b-v2-reasoning",
@@ -4194,34 +3403,23 @@
    "isReasoning": true,
    "isOpenWeights": true,
    "contextWindowTokens": 131072,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.04,
-   "price1mOutputTokens": 0.16,
-   "medianOutputTokensPerSecond": 219.609011831468,
-   "medianTimeToFirstTokenSeconds": 0.537781693999989,
-   "medianTimeToFirstAnswerTokenSeconds": 9.644876085621936,
-   "medianEndToEndResponseTimeSeconds": 11.921649683527423,
-   "medianReasoningTimeSeconds": 9.107094391621947
+   "price1mOutputTokens": 0.16
   },
   {
    "slug": "claude-opus-5-5-high",
    "name": "Claude Opus 5.5 (High, Default Fallback)",
-   "shortName": "Claude Opus 5.5 (high with fallback)",
+   "shortName": "Claude Opus 5.5 (high)",
    "modelCreatorName": "Anthropic",
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 51.6859958227294,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 51.8359958227294,
    "omniscience": 42.36666666666667,
    "price1mInputTokens": 4,
    "price1mOutputTokens": 20,
    "cacheHitPrice": 0.2,
-   "cacheWritePrice": 5,
-   "medianOutputTokensPerSecond": 79.5521909252707,
-   "medianTimeToFirstTokenSeconds": 47.5034453215,
-   "medianTimeToFirstAnswerTokenSeconds": 47.5034453215,
-   "medianEndToEndResponseTimeSeconds": 53.78862734080714
+   "cacheWritePrice": 5
   },
   {
    "releaseDate": "2026-08-26",
@@ -4231,11 +3429,7 @@
    "modelCreatorName": "Sapiens AI",
    "isReasoning": true,
    "isOpenWeights": false,
-   "contextWindowTokens": 1000000,
-   "intelligenceIndexIsEstimated": false,
-   "price1mInputTokens": 0.1,
-   "price1mOutputTokens": 0.3,
-   "cacheHitPrice": 0.01
+   "contextWindowTokens": 1000000
   },
   {
    "slug": "nova-2-0-pro-reasoning-low",
@@ -4245,14 +3439,8 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 1.25,
-   "price1mOutputTokens": 10,
-   "medianOutputTokensPerSecond": 117.681089861195,
-   "medianTimeToFirstTokenSeconds": 9.93196302950004,
-   "medianTimeToFirstAnswerTokenSeconds": 26.927046966596496,
-   "medianEndToEndResponseTimeSeconds": 31.175817950870613,
-   "medianReasoningTimeSeconds": 16.995083937096457
+   "price1mOutputTokens": 10
   },
   {
    "slug": "gemini-3-8-flash-low",
@@ -4262,8 +3450,7 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndex": 22.348302237854,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 22.548302237854,
    "omniscience": 13.033333333333333,
    "price1mInputTokens": 0.75,
    "price1mOutputTokens": 3.75,
@@ -4278,8 +3465,7 @@
    "modelCreatorName": "AI21 Labs",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 262000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 262000
   },
   {
    "releaseDate": "2026-08-10",
@@ -4289,16 +3475,7 @@
    "modelCreatorName": "Multiverse Computing",
    "isReasoning": true,
    "isOpenWeights": false,
-   "contextWindowTokens": 1000000,
-   "intelligenceIndexIsEstimated": false,
-   "price1mInputTokens": 0.11,
-   "price1mOutputTokens": 0.33,
-   "cacheHitPrice": 0.0099,
-   "medianOutputTokensPerSecond": 178.442811700671,
-   "medianTimeToFirstTokenSeconds": 1.31431307749995,
-   "medianTimeToFirstAnswerTokenSeconds": 12.52238574200661,
-   "medianEndToEndResponseTimeSeconds": 15.324403908133275,
-   "medianReasoningTimeSeconds": 11.20807266450666
+   "contextWindowTokens": 1000000
   },
   {
    "releaseDate": "2026-02-25",
@@ -4308,8 +3485,7 @@
    "modelCreatorName": "Liquid AI",
    "isReasoning": false,
    "isOpenWeights": true,
-   "contextWindowTokens": 32768,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 32768
   },
   {
    "slug": "nova-2-0-lite-reasoning-medium",
@@ -4319,14 +3495,8 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1000000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.3,
-   "price1mOutputTokens": 2.5,
-   "medianOutputTokensPerSecond": 189.198791295389,
-   "medianTimeToFirstTokenSeconds": 17.2604896165,
-   "medianTimeToFirstAnswerTokenSeconds": 27.831381672979763,
-   "medianEndToEndResponseTimeSeconds": 30.474104687099704,
-   "medianReasoningTimeSeconds": 10.570892056479764
+   "price1mOutputTokens": 2.5
   },
   {
    "releaseDate": "2026-03-27",
@@ -4336,8 +3506,7 @@
    "modelCreatorName": "KwaiKAT",
    "isReasoning": false,
    "isOpenWeights": false,
-   "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false
+   "contextWindowTokens": 256000
   },
   {
    "releaseDate": "2026-02-03",
@@ -4348,14 +3517,24 @@
    "isReasoning": false,
    "isOpenWeights": true,
    "contextWindowTokens": 256000,
-   "intelligenceIndexIsEstimated": false,
    "price1mInputTokens": 0.31,
    "price1mOutputTokens": 1,
-   "cacheHitPrice": 0.28500000000000003,
-   "medianOutputTokensPerSecond": 79.722230009968,
-   "medianTimeToFirstTokenSeconds": 0.913789597499985,
-   "medianTimeToFirstAnswerTokenSeconds": 0.913789597499985,
-   "medianEndToEndResponseTimeSeconds": 7.185565988319496
+   "cacheHitPrice": 0.28500000000000003
+  },
+  {
+   "slug": "claude-fable-5-2-high",
+   "name": "Claude Fable 5.2 (High, Default Fallback)",
+   "shortName": "Claude Fable 5.2 (high)",
+   "modelCreatorName": "Anthropic",
+   "isReasoning": true,
+   "isOpenWeights": false,
+   "contextWindowTokens": 1000000,
+   "intelligenceIndex": 61.8218785440284,
+   "omniscience": 64.03333333333333,
+   "price1mInputTokens": 8,
+   "price1mOutputTokens": 40,
+   "cacheHitPrice": 0.2,
+   "cacheWritePrice": 10
   },
   {
    "releaseDate": "2026-06-03",
@@ -4365,15 +3544,7 @@
    "modelCreatorName": "Google",
    "isReasoning": true,
    "isOpenWeights": true,
-   "contextWindowTokens": 262144,
-   "intelligenceIndexIsEstimated": false,
-   "price1mInputTokens": 0.1,
-   "price1mOutputTokens": 0.3,
-   "medianOutputTokensPerSecond": 117.926112056278,
-   "medianTimeToFirstTokenSeconds": 2.27455834749997,
-   "medianTimeToFirstAnswerTokenSeconds": 19.234330573735477,
-   "medianEndToEndResponseTimeSeconds": 23.474273630294356,
-   "medianReasoningTimeSeconds": 16.959772226235508
+   "contextWindowTokens": 262144
   },
   {
    "releaseDate": "2026-10-12",
@@ -4384,17 +3555,11 @@
    "isReasoning": true,
    "isOpenWeights": false,
    "contextWindowTokens": 1048576,
-   "intelligenceIndex": 43.3248225998431,
-   "intelligenceIndexIsEstimated": false,
+   "intelligenceIndex": 43.5748225998431,
    "omniscience": 25.1,
    "price1mInputTokens": 4,
    "price1mOutputTokens": 20,
-   "cacheHitPrice": 0.2,
-   "medianOutputTokensPerSecond": 191.854153024369,
-   "medianTimeToFirstTokenSeconds": 26.3703580625001,
-   "medianTimeToFirstAnswerTokenSeconds": 36.79494344922333,
-   "medianEndToEndResponseTimeSeconds": 39.40108979590414,
-   "medianReasoningTimeSeconds": 10.424585386723233
+   "cacheHitPrice": 0.2
   }
  ]
 }

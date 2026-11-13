@@ -1,7 +1,8 @@
 """守卫证伪器 —— 「没见过它变红的守卫不算守卫」。
 
 本项目有多条测试层（selftest.js 的 DOM 桩、visual_check.js 的真浏览器桌面布局、
-mobile_check.js 的手机视口、check_deploy.js 的线上部署核验）。新写一条断言之后，必须把**它守护的那段代码拆掉**，
+mobile_check.js 的手机视口、check_unranked.py 的数据层注入夹具、
+check_deploy.js 的线上部署核验）。新写一条断言之后，必须把**它守护的那段代码拆掉**，
 确认断言真的变红。这件事以前每轮手工做，这里把它机械化了。
 
 用法：
@@ -37,6 +38,8 @@ CSS = os.path.join(ROOT, 'styles', 'radar.css')
 VC = os.path.join(ROOT, 'tools', 'visual_check.js')
 # 部署守卫（需要联网 + 真浏览器），同样要能被证伪。
 CD = os.path.join(ROOT, 'tools', 'check_deploy.js')
+# 数据层也是靶子：源站会给「预览版」算 Elo 但不给名次，合成层必须挡住它。
+BA = os.path.join(ROOT, 'tools', 'build_app.py')
 NODE = os.environ.get('NODE_BIN') or 'node'
 NET = os.environ.get('FALSIFY_NET') == '1'
 
@@ -110,6 +113,15 @@ CASES = [
      "var g = t.querySelector('thead tr.grp th');", 'mobile_check.js'),
     ('手机顶栏重新 sticky（盖住表格内部的表头）',
      CSS, '.topbar { position: static; }', '.topbar { position: sticky; }', 'mobile_check.js'),
+
+    # ── 数据层：无名次记录（2026-11-14）────────────────────────────────
+    # 拆掉合成层的过滤，check_unranked.py 的注入夹具会把 None 名次收进源索引 → 变红。
+    # 这条用例不需要重跑管道：守卫直接调 build_lmarena()，所以「拆了就红」是即时的。
+    ('无名次行不进源索引（源站预览版会把名次变成 None、崩掉合成）',
+     BA, "            if not isinstance(r.get('rank'), int):\n"
+         "                unranked.append((b, r.get('model'), r.get('score')))\n"
+         "                continue\n",
+     '', 'check_unranked.py'),
 ]
 
 # 需要联网 + 真浏览器的用例，默认不跑（每次推完手动开一次就够）。
@@ -138,11 +150,19 @@ SUMMARY = {
     'visual_check.js': '截图目录：',
     'check_deploy.js': '线上核验：',
     'mobile_check.js': '手机端核验：',
+    'check_unranked.py': '无名次核验：',
 }
 
 
 def run(tool):
-    r = subprocess.run([NODE, 'tools/' + tool], cwd=ROOT,
+    # Python 守卫用同一个解释器跑；PYTHONIOENCODING 必须显式给，否则 Windows
+    # 下子进程 stdout 走 cp936，中文收尾汇总会乱码 → 被误判成「没跑完」。
+    py = tool.endswith('.py')
+    cmd = [sys.executable if py else NODE, 'tools/' + tool]
+    env = dict(os.environ)
+    if py:
+        env['PYTHONIOENCODING'] = 'utf-8'
+    r = subprocess.run(cmd, cwd=ROOT, env=env,
                        capture_output=True, text=True,
                        encoding='utf-8', errors='replace')
     bad = [l.strip() for l in r.stdout.splitlines()
@@ -152,7 +172,7 @@ def run(tool):
 
 
 def main():
-    orig = {JS: read(JS), CSS: read(CSS), VC: read(VC), CD: read(CD)}
+    orig = {JS: read(JS), CSS: read(CSS), VC: read(VC), CD: read(CD), BA: read(BA)}
 
     # ⚠️ 这个脚本会**真的改源码**再还原。被 Ctrl-C / SIGTERM 打断时（无 TTY 环境里
     # 超时杀进程也算），`finally` 不保证执行 —— 于是替换留在源码里没人还原。
@@ -220,7 +240,7 @@ def main():
     print()
     print('还原后复跑：')
     ok_all = True
-    for t in ['selftest.js', 'visual_check.js', 'mobile_check.js']:
+    for t in ['selftest.js', 'visual_check.js', 'mobile_check.js', 'check_unranked.py']:
         bad, done, rc, _out = run(t)
         if bad or not done:
             ok_all = False

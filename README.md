@@ -109,23 +109,23 @@ python tools/run_all.py --no-snapshot --no-selftest --no-health   # 只抓取与
 
 | 源 | 站内规模（源站自述） | 抓取方式 | 备注 |
 |---|---|---|---|
-| **LMArena** | 12 榜 / 340 行 | 第三方中文镜像 `arena.atease.dev` 的 RSC payload | 官方无公开 API，这是目前唯一的自动通道 |
-| **Artificial Analysis** | 272 模型 | `leaderboards/models` 页面内嵌 RSC payload | 免 API key；官方 API 需付费 key。2026-10-27 起明细 benchmark 字段（HLE/GPQA/CritPt/LCR/MMMU-Pro/IFBench/GDPval/Terminal-Bench 等 17 个）从 payload 下线，只余 Intelligence Index + AA-Omniscience + 价格/速度，相关对照列已删 |
-| **llm-stats** | 418 模型 / 46 分类 | 站点内嵌数据 | 四个源里**唯一提供模型发布日期**（`release_date`，416/418 有值）的源，「新」标识完全依赖它 |
-| **LiveBench** | 31 模型 / 7 类 | `livebench.ai` 2.0 静态文件 `data/<release>/`（release 列表解自站点 JS bundle）；旧 release 走 GitHub raw | 2026-10-23 升级 2.0：类别整套更换、Overall 改加权平均，详见下文「LiveBench 2.0」 |
+| **LMArena** | 12 榜 / 342 行 | 第三方中文镜像 `arena.atease.dev` 的 RSC payload | 官方无公开 API，这是目前唯一的自动通道。2026-11-14 起出现「预览版有 Elo、无正式名次」的记录，抓取器留档、合成层跳过（见「已知陷阱」） |
+| **Artificial Analysis** | 288 模型 | `leaderboards/models` 页面内嵌 RSC payload | 免 API key；官方 API 需付费 key。2026-10-27 起明细 benchmark 字段（HLE/GPQA/CritPt/LCR/MMMU-Pro/IFBench/GDPval/Terminal-Bench 等 17 个）从 payload 下线，只余 Intelligence Index + AA-Omniscience + 价格/速度，相关对照列已删 |
+| **llm-stats** | 448 模型 / 46 分类 | 站点内嵌数据 | 四个源里**唯一提供模型发布日期**（`release_date`，446/448 有值）的源，「新」标识完全依赖它 |
+| **LiveBench** | 35 模型 / 7 类 | `livebench.ai` 2.0 静态文件 `data/<release>/`（release 列表解自站点 JS bundle）；旧 release 走 GitHub raw | 2026-10-23 升级 2.0：类别整套更换、Overall 改加权平均，详见下文「LiveBench 2.0」 |
 
 **当前快照规模** —— 下面的数字全部由 `python tools/stat_app.py` 输出，随数据更新变化：
 
 - 6 大类 / 17 子类（chat 4、general 5、code 2、agent 1、image 2、video 3）
 - 每个子类收录前 **30** 名
-- **模型库 182 个**，其中开源 30 个、覆盖 ≥3 个榜的 54 个
-- 其中 **116 个进入矩阵** —— 入选条件是**覆盖 ≥2 个榜，或在单榜排进前 10**；
-  其余 66 个只在「大类详情」视图里按子类出现
-- 矩阵 116 × 17 = **1972 格**，有值 387 格、空位 1585 格（**填充率 19.6%**）。
+- **模型库 186 个**，其中开源 28 个、覆盖 ≥3 个榜的 52 个
+- 其中 **118 个进入矩阵** —— 入选条件是**覆盖 ≥2 个榜，或在单榜排进前 10**；
+  其余 68 个只在「大类详情」视图里按子类出现
+- 矩阵 118 × 17 = **2006 格**，有值 385 格、空位 1621 格（**填充率 19.2%**）。
   空位多是正常的 —— 不是每个模型都参加了每一个榜
-- **「新」标识**（窗口 **30 天**）：矩阵里 **9 行**亮标；有发布日期的 64 行、无日期的 52 行。
-  各窗口的亮标数也由 `stat_app.py` 一并打印（14 天 2 行 / **30 天 9 行** / 45 天 15 行 /
-  60 天 21 行 / 90 天 31 行）—— 换窗口前先看这组数，别凭感觉调
+- **「新」标识**（窗口 **30 天**）：矩阵里 **10 行**亮标；有发布日期的 66 行、无日期的 52 行。
+  各窗口的亮标数也由 `stat_app.py` 一并打印（14 天 4 行 / **30 天 10 行** / 45 天 14 行 /
+  60 天 22 行 / 90 天 31 行）—— 换窗口前先看这组数，别凭感觉调
 
 **单源子类 10 个**（分歧度必然为空）：
 图生网页、文生图、图像编辑、文生视频、图生视频、视频编辑，
@@ -161,7 +161,7 @@ tools/run_all.py
 node tools/check_deploy.js --wait=120   # 等 Pages 追平 + 部署任务跑完，再逐字节比对 + 线上真渲染
 ```
 
-**五处设计上的保守**（都是被真实故障教出来的）：
+**六处设计上的保守**（都是被真实故障教出来的）：
 
 - **抓取器全绿 ≠ 抓全了。** 源站改版最典型的症状恰恰是「HTTP 200 + 解析无异常 + 结果为空」。
   所以第 2 步单独体检：与最近几次的**中位数**比（不用上次值，避免单次抖动误报；趋势性塌缩才该报警），
@@ -181,6 +181,13 @@ node tools/check_deploy.js --wait=120   # 等 Pages 追平 + 部署任务跑完�
   只能靠归一化后的 id 对齐。**故意不写模糊匹配**：实测 `Veo 3 ≈ o3`（0.67）、
   `Qwen 3.8 ≈ Qwen3.5-0.8B`（0.80）、`Seedream 5.0 Pro ≈ Seed 2.0 Pro`（0.73）——
   名字很像但根本不是一个东西，猜错等于给模型安上别人的发布日期。**宁可没有标识。**
+- **源站没给名次 ≠ 名次为 0，也 ≠ 可以按位置补。** 2026-11-14 LMArena `code` 榜新进一条
+  「预览版」（`Ernie 5.5 Flash Preview`）：有 Elo 1668、`rank: null`、票数 N/A，
+  而官方名次序列是 `1..17, 18..29`（**跳过这一位**）。按位置补 18 会把后面 12 个名次全部挤错位，
+  拿 `None` 参与排序则直接 `TypeError` 崩掉整条管道。现在的做法是：抓取器把这类行**保留在源数据里
+  留档**并把条数写进 `stats.unrankedRows`（不静默），合成层的 `build_lmarena()` 明确跳过并打印，
+  排序前还有一句点名到子类的报警器。`check_unranked.py` 用注入夹具守着它 —— 不依赖当天源站
+  是否恰好又出现无名次记录（活跃路径不执行的守卫全绿也是假的）。
 
 ---
 
@@ -218,10 +225,11 @@ llm-radar/
 | `health.py` | 抓取量体检 |
 | `snapshot.py` | 快照存档 + 变更 diff |
 | `selftest.js` | DOM 桩冒烟测试，**236 条断言** |
+| `check_unranked.py` | 数据层守卫：注入「源站没给名次」的夹具，断言无名次行不进源索引、产物里每个 rank 都是整数（7 项） |
 | `visual_check.js` | 真实浏览器量 DOM（桌面 ≥1680），**148 项检查** |
 | `mobile_check.js` | 真实浏览器量 DOM（375 手机 + 1680 桌面回归），**41 项检查** |
 | `check_deploy.js` | 线上部署核验：本地 vs 线上逐字节比对 + 线上真渲染（**38 项**，带 `GITHUB_TOKEN` 53 项），**推完跑一次** |
-| `falsify.py` | 证伪工具，**23 条用例**（+1 条联网用例），验证上面各层守卫真的会红 |
+| `falsify.py` | 证伪工具，**24 条用例**（+1 条联网用例），验证上面各层守卫真的会红 |
 | `verify_lmarena.py` | LMArena 数据的独立一致性校验（名次连续性、分数降序等 6 类断言） |
 | `stat_app.py` | 统计当前快照规模（含「新」标识的各窗口亮标数）—— **本文档里的所有规模数字都出自它** |
 | `make_preview.py` / `make_report.py` | 生成人工核对用的 HTML 预览 / 管道总览页 |
@@ -234,13 +242,16 @@ llm-radar/
 改完代码**不要靠看**。这个项目有四层，每一层都能独立抓 bug。
 前三层证明「我这份源码是对的」，第四层证明**「线上跑的就是这一份」**。
 其中第二层（真浏览器量 DOM）拆成桌面与手机两个脚本 —— `visual_check.js` 只在 ≥1680 跑，
-手机断点（≤720）的回归它一条都看不见。
+手机断点（≤720）的回归它一条都看不见。第一层里还有 `check_unranked.py` 这个**数据层**
+轻量守卫：它直接调 `build_lmarena()` 喂注入夹具，不依赖重跑管道、也不依赖当天源站是否
+恰好又冒出无名次记录。
 
 ```bash
 node tools/selftest.js          # 236 条断言：数据管道 + 前端逻辑（纯内置模块）
+python tools/check_unranked.py  # 7 项：无名次行不进源索引 + 产物 rank 全是整数
 node tools/visual_check.js      # 148 项检查：桌面 ≥1680，需先起 8758 端口 + 已装 playwright
 node tools/mobile_check.js      # 41 项检查：375 手机 + 1680 桌面回归，同样需 8758
-python tools/falsify.py         # 23 条证伪用例（退出码 0=全红通过 / 1=有用例失效 / 2=开跑前体检不过）
+python tools/falsify.py         # 24 条证伪用例（退出码 0=全红通过 / 1=有用例失效 / 2=开跑前体检不过）
 node tools/check_deploy.js      # 线上部署核验：推完跑一次，本地 vs 线上逐字节比对 + 线上真渲染
 node tools/check_deploy.js --wait=120   # 推完立刻跑：等线上追平 + 部署跑完（整轮 120s 预算）
 FALSIFY_NET=1 python tools/falsify.py   # 连联网用例一起证伪（含 check_deploy）
@@ -276,7 +287,7 @@ FALSIFY_NET=1 python tools/falsify.py   # 连联网用例一起证伪（含 chec
    点按 tooltip 用**合成 `click`（不派发 `mouseover`）**来测，否则 Playwright 的
    `tap()` 会补发兼容鼠标事件，把「只剩 hover」的回归伪装成通过。
 
-3. **`falsify.py`（23 条）** —— **证伪**：把被守卫保护的那行代码真的拆掉，看守卫是否变红。
+3. **`falsify.py`（24 条）** —— **证伪**：把被守卫保护的那行代码真的拆掉，看守卫是否变红。
    锚点直接绑在源码字符串上，**「锚点失效」和「拆了还全绿」都算失败**（退出码 1），
    防止过期用例长期假装通过。
 
@@ -299,12 +310,16 @@ FALSIFY_NET=1 python tools/falsify.py   # 连联网用例一起证伪（含 chec
    **两次都精确变红**。所以判定必须三分：`变红` / `仍然全绿（假守卫）` /
    **`没跑完（结论不作数）`**。做法是要求被测工具打出**末尾必定出现**的收尾汇总
    （`selftest.js` 的 `／ FAIL `、`visual_check.js` 的 `截图目录：`、
-   `mobile_check.js` 的 `手机端核验：`），打不出来就不给结论。
+   `mobile_check.js` 的 `手机端核验：`、`check_unranked.py` 的 `无名次核验：`），
+   打不出来就不给结论。
    顺带修掉一个 Windows 坑：`subprocess(..., text=True)` 默认按本地编码解码，
-   而 node 输出的是 UTF-8 —— 必须显式 `encoding='utf-8', errors='replace'`。
+   而 node 输出的是 UTF-8 —— 必须显式 `encoding='utf-8', errors='replace'`；
+   Python 子进程还要给 `PYTHONIOENCODING=utf-8`，否则中文收尾汇总会乱码成「没跑完」。
 
    ⚠️ **靶子不止 `radar.js` / `radar.css` —— `tools/visual_check.js` 自己也是靶子，
-   手机适配又新增了 `mobile_check.js` 的 6 条用例。**
+   手机适配又新增了 `mobile_check.js` 的 6 条用例，2026-11-14 再加 1 条数据层用例
+   （靶子 `tools/build_app.py`，跑 `check_unranked.py` 判定「拆了会不会变红」）。**
+   为了跑得动 Python 守卫，`run()` 现在按后缀选解释器（`.py` 用 `sys.executable`）。
    守卫也会写出没信息量的产物，同样要被证伪。实测：`shot('17-newbadge')` 原先是整屏截图，
    与 `06-trend-pending` / `14-flash` 拍出来的 PNG **md5 完全相同**（都是「矩阵停在顶部」那一屏），
    等于什么也没记录 —— 而「靠形状传意」的元素（17px 宽的徽章）恰恰只能靠特写肉眼看。
@@ -389,7 +404,7 @@ FALSIFY_NET=1 python tools/falsify.py   # 连联网用例一起证伪（含 chec
 **已知陷阱**
 
 - **`transition` 在本项目里永不触发，必须用 `@keyframes`。**
-  `renderMatrix()` 是 `t.innerHTML = h` 整块替换，全部格子节点（当前 1972 个）销毁重建；
+  `renderMatrix()` 是 `t.innerHTML = h` 整块替换，全部格子节点（当前 2006 个）销毁重建；
   `transition` 要求「同一个元素」保存前一个值，新元素只有终值。
   实测：给每个 `td` 打身份标记，重渲染后**带标记的 = 0**；而 `@keyframes` 在**新建**节点上全部 `running`。
   技巧：`@keyframes` **只写 `from`、省略 `to`**，隐式 `to` 会取元素自身样式值，省得把六个档位色再抄一遍。
@@ -417,8 +432,8 @@ FALSIFY_NET=1 python tools/falsify.py   # 连联网用例一起证伪（含 chec
   它**永远不会换行**，只会提前变成省略号。所以插入一个元素要吃掉「自身宽度 + 一个新的 8px 间隙」，
   而且**必须用 `scrollWidth > clientWidth` 去量截断，量行高是量不出来的**。
   实测（1680px 视口、首列 319px）：名字富余宽度最小 **41.2px**；
-  「新」徽章 17px + 间隙 8px = 25px，116 行一个都不会被截断（`visual_check.js` 实测零截断，
-  且检测器会先自证伪：压窄首列后应报出 113/116 行截断）。
+  「新」徽章 17px + 间隙 8px = 25px，118 行一个都不会被截断（`visual_check.js` 实测零截断，
+  且检测器会先自证伪：压窄首列后应报出 116/118 行截断）。
   想做 `NEW`（约 37px）或 `新 12d`（约 50px）就会开始截断。
 
 - **给这个表格做浏览器自动化时，要滚的是 `.tablewrap`，不是窗口。**
@@ -467,8 +482,9 @@ FALSIFY_NET=1 python tools/falsify.py   # 连联网用例一起证伪（含 chec
 **开发循环**
 
 ```bash
-# 改前端逻辑或数据
+# 改前端逻辑或数据（含合成层）
 node tools/selftest.js
+python tools/check_unranked.py
 
 # 改样式（先起 8758 端口）—— 手机断点也要跑
 node tools/visual_check.js
@@ -499,14 +515,14 @@ node tools/check_deploy.js --wait=120
 - **单个子类只有一个源时，分歧度无法计算**（当前 17 个子类里有 10 个如此），留空属正常。
 - **页面上的名次走势是本站自建的。** LMArena / AA / LiveBench 都只提供「当下快照」，
   走势来自对 `snapshots/` 的逐日重算 —— 所以**只能从本站开始抓取的那天算起，再往前的补不回来**，
-  且历史只记各榜前 40 名。当前快照 **3 天**（2026-09-21 起），微折线已开始绘制
-  （`build_history.py` 实测 489/678 条序列可画）；只有 1 天时页面显示「积累中」、不画假线，
+  且历史只记各榜前 40 名。当前快照 **5 天**（2026-09-21 起），微折线已开始绘制
+  （`build_history.py` 实测 510/738 条序列可画，长度全部对齐 5）；只有 1 天时页面显示「积累中」、不画假线，
   这条降级路径由 `visual_check.js` 的 1 天夹具守着。
 - **llm-stats 自带的 14 天名次变化被抓了、但前端没用。** 它提供 `rank_delta_14d`，
-  抓取器与 `build_app.py` 已完整保留（落成 `delta14d` 字段，当前数据里 364 处字段、36 处有实际值），
+  抓取器与 `build_app.py` 已完整保留（落成 `delta14d` 字段，当前数据里 356 处字段、40 处有实际值），
   却**从未被读取**。这是一条现成的、比自建快照更早可用的历史信号，属于尚未开发的缺口。
-- **「新」标识的覆盖是不完整的。** 四个源里**只有 llm-stats 提供发布日期**，矩阵 116 行里
-  只有 64 行查得到（`releasedAt`），其余 52 行在源里根本没有这个模型 —— 它们不带标识，
+- **「新」标识的覆盖是不完整的。** 四个源里**只有 llm-stats 提供发布日期**，矩阵 118 行里
+  只有 66 行查得到（`releasedAt`），其余 52 行在源里根本没有这个模型 —— 它们不带标识，
   **但那不等于它们不新**。好在漏掉的行覆盖榜数全部 ≤3（Flux / Seedance / GPT Image
   这类长尾图像视频模型），头部模型是齐的。窗口默认 30 天，可用 `?new=NN` 覆盖。
   发布日期**不参与任何名次、原始分或分歧度的计算**。
@@ -520,7 +536,7 @@ node tools/check_deploy.js --wait=120
   Mathematics 被删除**），`general.if` / `general.math` 两个子类因此改由 llm-stats 主源；
   Overall 从等权平均改为**加权平均**（权重在 `categories.json` 的 `_overall_weights`：
   Long Agentic ×2 / Coding ×1.5 / Design ×1.5），成本公式不变（已从 bundle 逐行核对）。
-  2.0 的旗舰套件 Long Agentic 已接入 `agent.work` 子类（覆盖 18/29 行）。
+  2.0 的旗舰套件 Long Agentic 已接入 `agent.work` 子类（覆盖 16/26 行）。
 - **同名模型跨源靠规则归一化**，推理强度变体（High / Max / thinking）已合并为同一条并保留最优名次。
   `normalize.py` 的别名表目前为空，**无法归一的模型会保持独立 id**；
   docstring 里提到的 `check_merge.py`（未匹配清单报告）**尚未实现** —— 排查合并问题时需要人工比对。

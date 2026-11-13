@@ -201,9 +201,18 @@ UNIT_FIX = {
 def build_lmarena(raw):
     """返回 boards[board] = {total, updated, rows:[{id,...}]}"""
     out = {}
+    unranked = []
     for b, v in raw['boards'].items():
         rows = []
         for r in v['rows']:
+            # 源站会给「预览版 / 票数不足」的记录算 Elo 但**不给正式名次**：
+            # 2026-11-14 code 榜 Ernie 5.5 Flash Preview score=1668、rank=null、
+            # votes=N/A，且官方名次序列是 1..17, 18..29（跳过这一位）。
+            # 本站名次一律来自源站，按位置补 18 会把后面 12 个名次全部挤错位，
+            # 也不能拿它参与排序/变体比较/百分位 —— 直接不收录这一行。
+            if not isinstance(r.get('rank'), int):
+                unranked.append((b, r.get('model'), r.get('score')))
+                continue
             fid, variant = canonical(r['model'])
             rows.append({
                 "id": fid,
@@ -231,6 +240,14 @@ def build_lmarena(raw):
                   "label": v.get('label'),
                   "sourceUrl": v.get('sourceUrl'),
                   "rows": rows}
+    # 不静默：这类记录是源站的产品事件（未定榜），保留在源数据里留档，
+    # 但合成层必须明确说清「跳过了几条、为什么」，否则下次变成一整榜无名次
+    # 也只会表现为矩阵空一大片（参考 AA 明细字段下线那两次）。
+    if unranked:
+        print('⚠ LMArena 有 %d 条记录源站未给正式名次，保留在源数据、合成时跳过：'
+              % len(unranked))
+        for b, name, score in unranked:
+            print('    %-22s %-34s Elo=%s' % (b, name, score))
     return out
 
 
@@ -263,14 +280,21 @@ def build_aa(raw):
 def build_llmstats(raw):
     """返回 idx[cat] = {total, rows:[{id, rank, value, mu, sigma, games, delta}]}"""
     idx = {}
+    skipped = 0
     for cat, v in raw['indexes'].items():
         rows = []
         for r in v['rows']:
+            # 与 build_lmarena 同一条防线：名次只能是源站给的整数。
+            if not isinstance(r.get('rank'), int):
+                skipped += 1
+                continue
             fid, _ = canonical(r['model_name'])
             rows.append({"id": fid, "name": r['model_name'], "rank": r['rank'],
                          "value": r['conservative'], "mu": r['mu'], "sigma": r['sigma'],
                          "games": r.get('games_played'), "delta14d": r.get('rank_delta_14d')})
         idx[cat] = {"total": v['count'], "rows": rows}
+    if skipped:
+        print('⚠ llm-stats 有 %d 条记录名次不是整数，合成时跳过' % skipped)
     return idx
 
 
@@ -525,6 +549,14 @@ def main():
                 rows.append({"id": fid, "name": mm['name'] or fid, "vendor": mm['vendor'],
                              "open": bool(mm['open']), "values": vals, "diverge": None,
                              "primaryRank": primary_entry['values'][fid]['rank']})
+            # 报警器：下面所有运算（排序、变体比较、百分位、色阶）都假定名次是整数。
+            # 与其让某天源站又冒出一个 null 名次、崩成一句看不懂的 TypeError，
+            # 不如在这里点名道姓地说清是哪个子类、哪些模型。
+            bad = [r['id'] for r in rows if not isinstance(r['primaryRank'], int)]
+            if bad:
+                raise SystemExit('数据层错误：子类 %s 有 %d 行主源名次不是整数（%s …）—— '
+                                 '检查源索引构建时是否漏了无名次过滤'
+                                 % (key, len(bad), ', '.join(bad[:4])))
             rows.sort(key=lambda r: r['primaryRank'])
 
             distinct = list(dict.fromkeys(s['key'] for s in srcs))
